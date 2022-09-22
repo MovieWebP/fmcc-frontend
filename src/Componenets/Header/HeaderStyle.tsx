@@ -72,7 +72,7 @@ export const Input = styled(motion.input)`
     /* transform-origin: left center; */
     transform-origin: right center;
     position: absolute;
-    right: 150px;
+    right: 65px;
     padding: 5px 10px;
     padding-left: 40px;
     z-index: -1;
@@ -85,11 +85,13 @@ export const Login = styled(Link)`
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
-    padding: 8px;
+    padding: 8px 15px;
     color: #fafafa;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
     &:hover{
-        background-color: #172431;
-        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+        background-color: #686464;
+        /* transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2); */
     }
 `;
 
