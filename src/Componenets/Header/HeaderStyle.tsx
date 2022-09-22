@@ -40,11 +40,18 @@ export const Title = styled.h1`
     margin-right: 50px;
     padding: 0 5px;
     border-radius: 5px;
+text-shadow: none;
+font-size: 24px;
+margin: 10px 0;
+margin-right: 50px;
+padding: 0 10px;
+border-radius: 5px;
     background-color: #fafafa;
     color: #9486CC;
 `;
 
 export const LinkStyle = styled(Link)`
+    align-items: center;
     color: #919191;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
     font-weight: 700;
