@@ -58,44 +58,46 @@ export interface IGetCredits {
 }
 
 //Movie
-export function getMovieNowPlaying() {
+export function getNowPlayingMovie() {
     return fetch(`${BASE_PATH}/movie/now_playing?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
-export function getMoviePopular() {
+export function getPopularMovie() {
     return fetch(`${BASE_PATH}/movie/popular?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
-export function getMovieTopRated(query: string) {
-    return fetch(`${BASE_PATH}/movie/top_rated?api_key=${Api_KEY}`)
-        .then(res => res.json())
-}
-
-export function getMovieUpcoming() {
+export function getUpcomingMovie() {
     return fetch(`${BASE_PATH}/movie/upcoming?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
+export function getTopRatedMovie() {
+    return fetch(`${BASE_PATH}/movie/top_rated?api_key=${Api_KEY}`)
+        .then(res => res.json())
+}
+
+
+
 //TV
 
-export function getTvAiringToday() {
+export function getAiringTodayTv() {
     return fetch(`${BASE_PATH}/tv/airing_today?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
-export function getTvOnTheAir() {
+export function getOnTheAirTv() {
     return fetch(`${BASE_PATH}/tv/on_the_air?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
-export function getTvPopular() {
+export function getPopularTv() {
     return fetch(`${BASE_PATH}/tv/popular?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
-export function getTvTopRated() {
+export function getTopRatedTv() {
     return fetch(`${BASE_PATH}/tv/top_rated?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
