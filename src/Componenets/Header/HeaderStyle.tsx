@@ -33,12 +33,13 @@ export const MenuItem = styled.li`
 `;
 
 export const Title = styled.h1`
-text-shadow: none;
-font-size: 24px;
-margin: 10px 0;
-margin-right: 50px;
-padding: 0 5px;
-border-radius: 5px;
+    text-shadow: none;
+    font-size: 24px;
+    font-weight: 900;
+    margin: 10px 0;
+    margin-right: 50px;
+    padding: 0 5px;
+    border-radius: 5px;
     background-color: #fafafa;
     color: #9486CC;
 `;
@@ -69,7 +70,6 @@ export const Input = styled(motion.input)`
     border: 1px solid #919191;
     border-radius: 50px;
     outline: 0;
-    /* transform-origin: left center; */
     transform-origin: right center;
     position: absolute;
     right: 65px;
@@ -79,6 +79,7 @@ export const Input = styled(motion.input)`
     color: white;
     font-size: 16px;
     background-color: transparent;
+    caret-color: auto;
 `
 
 export const Login = styled(Link)`

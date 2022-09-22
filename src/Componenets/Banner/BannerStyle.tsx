@@ -1,16 +1,49 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 
 export const Wrap = styled.div`
-    border: 1px solid red;
+    position: relative;
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
 `;
 
-export const MainImage = styled.div < { bgPhoto: string }> `
-    background-image: url(${(props) => props.bgPhoto});
+export const asdf = keyframes`
+`;
+
+export const MainImage = styled.div < { bgPhoto: string[] }> `
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-size: cover;
-    /* max-width: 1200px; */
     width: 100%;
-    height: 40vh;
+    height: 50vh;
+    resize: both;
+    animation: identifier 3s linear infinite;
+    @keyframes identifier { 
+        0%,
+		100% {
+			background-image: url(${(props) => props.bgPhoto[0]});
+		}
+		50% {
+			background-image: url(${(props) => props.bgPhoto[4]});
+		}
+		75% {
+			background-image: url(${(props) => props.bgPhoto[2]});
+		}
+    }
+`;
+
+export const BannerWrap = styled.div`
+    width: 100%;
+    border: 1px solid;
+`;
+
+export const TitleWrap = styled.div``;
+
+export const Title = styled.h1`
+    
 `;

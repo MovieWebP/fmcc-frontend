@@ -48,11 +48,11 @@ function Home() {
                 <div>loading</div>
             ) : (
                 <>
-                    {/* <Banner
+                    <Banner
                         id="banner"
                         part="movie"
-                        movies={nowPlaying?.results}
-                    /> */}
+                        movies={nowPlaying?.results ?? []}
+                    />
                 </>
             )}
         </>

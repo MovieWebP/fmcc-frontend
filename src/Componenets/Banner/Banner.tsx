@@ -8,13 +8,15 @@ import * as S from "./BannerStyle";
 interface IBanner {
     id: string;
     part: string;
-    movies?: IMovie[];
+    movies: IMovie[];
 }
 
 function Banner({ part, id, movies }: IBanner) {
+    const totalMovies = movies?.length;
+    const maxIndex = Math.floor(totalMovies / 5);
     const [movie, setMovie] = useState<IMovie>();
     useEffect(() => {
-        if (movies) setMovie(movies[0]);
+        if (movies) setMovie(movies[Math.floor(Math.random() * totalMovies)]);
     }, [movies])
     const [isModalActive, setisModalActive] = useRecoilState(modalState);
     const navigate = useNavigate();
@@ -27,8 +29,13 @@ function Banner({ part, id, movies }: IBanner) {
             {movie ? (
                 <S.Wrap>
                     <S.MainImage
-                        bgPhoto={makeImagePath(movie?.backdrop_path)}
-                    >asfd</S.MainImage>
+                        bgPhoto={[makeImagePath(movie?.backdrop_path), makeImagePath(movie?.backdrop_path), makeImagePath(movie?.backdrop_path), makeImagePath(movie?.backdrop_path), makeImagePath(movie?.backdrop_path)]}
+                    >
+                        <S.BannerWrap>
+
+                            <S.Title>{part === "movie" ? movie?.title : movie?.name}</S.Title>
+                        </S.BannerWrap>
+                    </S.MainImage>
                 </S.Wrap>
             ) : null}
         </>
