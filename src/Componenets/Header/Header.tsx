@@ -3,6 +3,7 @@ import { useMatch, useNavigate } from "react-router-dom";
 import { motion, useAnimation, useScroll } from "framer-motion";
 import { useForm } from "react-hook-form";
 import * as S from "./HeaderStyle";
+import Login from "./Login/Login";
 
 interface IForm {
     keyword: string;
@@ -93,6 +94,7 @@ function Header() {
                         placeholder="Search"
                     />
                 </S.Search>
+                <S.Login to="/login">Login</S.Login>
             </S.MenuWrap>
         </S.Nav >
     );
