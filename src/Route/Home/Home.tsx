@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
 import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getTrailer, getUpcomingMovie, IGetCredits, IGetMovieResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
+import Header from "../../Componenets/Header/Header";
 
 function Home() {
     const bigMovieMatch: PathMatch<string> | null = useMatch("/:part/:sliderPart/:id");
@@ -46,13 +47,13 @@ function Home() {
             {isLoading ? (
                 <div>loading</div>
             ) : (
-
-                <Banner
-                    id="banner"
-                    part="movie"
-                    movies={nowPlaying?.results}
-                />
-
+                <>
+                    {/* <Banner
+                        id="banner"
+                        part="movie"
+                        movies={nowPlaying?.results}
+                    /> */}
+                </>
             )}
         </>
     );

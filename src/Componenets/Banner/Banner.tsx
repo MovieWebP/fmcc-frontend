@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { IMovie } from "../../Api/api";
+import { makeImagePath } from "../../Api/utils";
 import { modalState } from "../../atom";
-
+import * as S from "./BannerStyle";
 interface IBanner {
     id: string;
     part: string;
@@ -24,7 +25,11 @@ function Banner({ part, id, movies }: IBanner) {
     return (
         <>
             {movie ? (
-                <div>hello</div>
+                <S.Wrap>
+                    <S.MainImage
+                        bgPhoto={makeImagePath(movie?.backdrop_path)}
+                    >asfd</S.MainImage>
+                </S.Wrap>
             ) : null}
         </>
     );
