@@ -51,7 +51,7 @@ function Home() {
                     <Banner
                         id="banner"
                         part="movie"
-                        movies={nowPlaying?.results ?? []}
+                        movies={nowPlaying?.results || []}
                     />
                 </>
             )}
