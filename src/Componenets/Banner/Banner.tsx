@@ -28,15 +28,20 @@ function Banner({ part, id, movies }: IBanner) {
         <>
             {movie ? (
                 <S.Wrap>
-                    <S.MainImage
-                        bgPhoto={makeImagePath(movie?.backdrop_path)}
-                    >
-                        <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
-                            <S.BannerWrap>
-                                <S.TitleWrap>{movie?.title || movie?.name}</S.TitleWrap>
-                            </S.BannerWrap>
-                        </S.BannerImage>
-                    </S.MainImage>
+                    <S.AllWrap>
+                        <S.MainImage
+                            bgPhoto={makeImagePath(movie?.backdrop_path)}
+                        >
+                            <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
+                                <S.BannerWrap>
+                                    <S.Title>{movie?.title || movie?.name}</S.Title>
+                                </S.BannerWrap>
+                                <S.BannerWrap>
+                                    <S.Overview>{movie?.overview.slice(0, 150) || movie?.overview}...</S.Overview>
+                                </S.BannerWrap>
+                            </S.BannerImage>
+                        </S.MainImage>
+                    </S.AllWrap>
                 </S.Wrap>
             ) : null}
         </>
