@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled, { keyframes } from "styled-components";
 
 
@@ -18,7 +19,7 @@ export const AllWrap = styled(Wrap)`
     height: 400px;
 `;
 
-export const MainImage = styled.div < { bgPhoto: string }> `
+export const MainImage = styled(motion.div) < { bgPhoto: string }> `
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,4 +81,11 @@ export const Overview = styled.p`
     font-weight: 300;
     font-size: 16px;
     width: 300px;
+`;
+
+export const ArrowBox = styled.span`
+    
+`
+
+export const RightArrow = styled(ArrowBox)`
 `;
