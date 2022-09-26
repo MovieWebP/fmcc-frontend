@@ -14,9 +14,7 @@ export const Nav = styled(motion.nav)`
 `;
 
 export const MenuWrap = styled.div`
-    /* border: 1px solid white; */
     display: flex;
-    /* width: 30%; */
     justify-content: center;
     align-items: center;
     margin: 0px 20px;
@@ -46,8 +44,8 @@ margin: 10px 0;
 margin-right: 50px;
 padding: 0 10px;
 border-radius: 5px;
-    background-color: #fafafa;
-    color: #9486CC;
+    background-color: ${(props) => props.theme.white};
+    color: ${(props) => props.theme.purple};
 `;
 
 export const LinkStyle = styled(Link)`
@@ -58,13 +56,13 @@ export const LinkStyle = styled(Link)`
     transition: all .25s ease-in-out;   
     transition-delay: 0s;
     &:hover{
-        color: #fafafa;
+        color: ${(props) => props.theme.white};
     }
     text-decoration: none;
 `;
 
 export const Search = styled.form`
-    color: white;
+    color: ${(props) => props.theme.white};
     display: flex;
     align-items: center;
     position: relative;
@@ -83,7 +81,7 @@ export const Input = styled(motion.input)`
     padding: 5px 10px;
     padding-left: 40px;
     z-index: -1;
-    color: white;
+    color: ${(props) => props.theme.white};
     font-size: 16px;
     background-color: transparent;
     caret-color: auto;
@@ -94,7 +92,7 @@ export const Login = styled(Link)`
     font-size: 18px;
     font-weight: 600;
     padding: 8px 15px;
-    color: #fafafa;
+    color: ${(props) => props.theme.white};
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
     &:hover{

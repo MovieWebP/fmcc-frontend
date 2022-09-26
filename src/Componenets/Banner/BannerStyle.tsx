@@ -10,12 +10,11 @@ export const Wrap = styled.div`
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 `;
 
 export const AllWrap = styled(Wrap)`
-    border: 1px solid blue;
-    /* width: 1200px; */
+    /* border: 1px solid blue; */
     height: 400px;
 `;
 
@@ -56,7 +55,6 @@ export const BannerImage = styled.div< { bgPhoto: string }>`
     flex-direction: column;
     flex-wrap: wrap;
     margin-top: 50px;
-    border: 1px solid;
     background-image: url(${(props) => props.bgPhoto});
     background-size: cover;
 `;
@@ -71,11 +69,14 @@ export const BannerWrap = styled.div`
 
 
 export const Title = styled.h1`
+    color: ${(props) => props.theme.white};
     font-weight: 700;
     font-size: 28px;
+    margin-bottom: 10px;
 `;
 
 export const Overview = styled.p`
+    color: ${(props) => props.theme.white};
     font-weight: 300;
     font-size: 16px;
     width: 300px;

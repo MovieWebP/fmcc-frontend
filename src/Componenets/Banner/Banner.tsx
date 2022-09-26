@@ -24,6 +24,7 @@ function Banner({ part, id, movies }: IBanner) {
         navigate(`/${part}/${sliderId}/${id}`);
         setisModalActive(true)
     }
+
     return (
         <>
             {movie ? (
@@ -35,9 +36,9 @@ function Banner({ part, id, movies }: IBanner) {
                             <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
                                 <S.BannerWrap>
                                     <S.Title>{movie?.title || movie?.name}</S.Title>
+                                    <S.Overview>{movie?.overview.slice(0, 150) || movie?.overview}...</S.Overview>
                                 </S.BannerWrap>
                                 <S.BannerWrap>
-                                    <S.Overview>{movie?.overview.slice(0, 150) || movie?.overview}...</S.Overview>
                                 </S.BannerWrap>
                             </S.BannerImage>
                         </S.MainImage>
