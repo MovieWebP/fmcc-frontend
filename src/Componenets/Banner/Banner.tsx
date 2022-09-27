@@ -17,8 +17,8 @@ interface IBanner {
     movies: IMovie[];
 }
 interface Props {
-    className?: any;
-    style?: any;
+    className?: string | undefined;
+    style?: React.CSSProperties;
     onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
@@ -67,7 +67,7 @@ function Banner({ part, id, movies }: IBanner) {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
     }
-    console.log(settings)
+    console.log(NextArrow)
     return (
         <S.StyledSlider {...settings}>
             <S.Wrap>
