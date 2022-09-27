@@ -3,7 +3,11 @@ import styled, { keyframes } from "styled-components";
 import Slider from "react-slick";
 
 export const Wrap = styled.div`
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100vw;
     height: fit-content;
     display: flex;
@@ -11,7 +15,7 @@ export const Wrap = styled.div`
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
-    /* border: 1px solid red; */
+    border: 1px solid white;
 `;
 
 export const AllWrap = styled(Wrap)`

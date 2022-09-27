@@ -17,10 +17,12 @@ interface IBanner {
     movies: IMovie[];
 }
 interface Props {
-    className?: string | undefined;
-    style?: React.CSSProperties;
+    className?: any;
+    style?: any;
     onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
+
+const offset = 1;
 
 function Banner({ part, id, movies }: IBanner) {
 
@@ -31,11 +33,14 @@ function Banner({ part, id, movies }: IBanner) {
         setisModalActive(true)
     }
 
+    const totlaLength = movies.length - 16;
+    const maxIndex = Math.floor(totlaLength / offset);
+
     const NextArrow: React.FC<Props> = ({ className, style, onClick }) => {
         return (
             <div
                 className={className}
-                style={{ ...style, display: "block" }}
+                style={{ ...style, display: "block", border: "1px solid red" }}
                 onClick={onClick}
             >
                 <FontAwesomeIcon icon={faChevronRight} size="3x" className="slick-arrow-icon-right" style={{ color: "white" }} />
@@ -67,28 +72,26 @@ function Banner({ part, id, movies }: IBanner) {
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
     }
-    console.log(NextArrow)
     return (
         <S.StyledSlider {...settings}>
             <S.Wrap>
-                <S.AllWrap>
-                    {movies
-                        .filter((item, index) => (index >= 10))
-                        .map((item, index) => (
-                            < S.MainImage
-                                bgphoto={makeImagePath(item?.backdrop_path)}
-                            >
-                                <S.BannerImage bgphoto={makeImagePath(item?.backdrop_path)}>
-                                    <S.BannerWrap>
-                                        <S.Title>{item?.title || item?.name}</S.Title>
-                                        <S.Overview>{item?.overview.slice(0, 150)}...</S.Overview>
-                                    </S.BannerWrap>
-                                </S.BannerImage>
-                            </S.MainImage>
-                        ))}
+                {movies
+                    .filter((item, index) => (index >= 10))
+                    .map((item, index) => (
+                        < S.MainImage
+                            key={item.id}
+                            bgphoto={makeImagePath(item?.backdrop_path)}
+                        >
+                            <S.BannerImage bgphoto={makeImagePath(item?.backdrop_path)}>
+                                <S.BannerWrap>
+                                    <S.Title>{item?.title || item?.name}</S.Title>
+                                    <S.Overview>{item?.overview.slice(0, 150)}...</S.Overview>
+                                </S.BannerWrap>
+                            </S.BannerImage>
+                        </S.MainImage>
 
-                </S.AllWrap>
-            </S.Wrap >
+                    ))}
+            </S.Wrap>
         </S.StyledSlider >
     );
 }
