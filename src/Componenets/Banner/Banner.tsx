@@ -10,14 +10,23 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "translate(100vw), transition(transform 0.5)" : "translate(-100vw), transition(transform 0.5)",
+        x: prev ? 'translate' : 'translate', // translate는 
     }),
     visible: ({ prev }: { prev: boolean }) => ({
         x: 0,
     }),
     exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "translate(-100vw), transition(transform 0.5)" : "translate(100vw), transition(transform 0.5)",
+        x: prev ? 'translate' : 'translate',
     }),
+    // hidden: ({ prev }: { prev: boolean }) => ({
+    //     x: prev ? "-100vw" : "100vw",
+    // }),
+    // visible: ({ prev }: { prev: boolean }) => ({
+    //     x: 0,
+    // }),
+    // exit: ({ prev }: { prev: boolean }) => ({
+    //     x: prev ? "-100vw" : "100vw",
+    // }),
 }
 interface IBanner {
     id: string;
