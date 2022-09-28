@@ -7,7 +7,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { theme } from "./Style/theme";
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './Style/Style';
-import SliderTest from './Componenets/um/umm';
 
 const client = new QueryClient();
 
@@ -20,8 +19,7 @@ root.render(
     <QueryClientProvider client={client} >
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        {/* <App /> */}
-        <SliderTest />
+        <App />
       </ThemeProvider>
     </QueryClientProvider>
   </ RecoilRoot >
