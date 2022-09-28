@@ -3,11 +3,6 @@ import styled, { keyframes } from "styled-components";
 import Slider from "react-slick";
 
 export const Wrap = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
     width: 100vw;
     height: fit-content;
     display: flex;
@@ -23,7 +18,7 @@ export const AllWrap = styled(Wrap)`
     height: 400px;
 `;
 
-export const MainImage = styled(motion.div) < { bgphoto: string }> `
+export const MainImage = styled.div < { bgphoto: string }> `
     display: flex;
     justify-content: center;
     align-items: center;
