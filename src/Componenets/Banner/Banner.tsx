@@ -10,20 +10,20 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? 'translate' : 'translate', // translate는 
+        x: prev ? '0.5s ease-in-out' : '0.5s ease-in-out',
     }),
     visible: ({ prev }: { prev: boolean }) => ({
         x: 0,
     }),
     exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? 'translate' : 'translate',
+        x: prev ? '0.5s ease-in-out' : '0.5s ease-in-out',
     }),
     // hidden: ({ prev }: { prev: boolean }) => ({
-    //     x: prev ? "-100vw" : "100vw",
+    //     x: prev ? "transition: all 0.5s ease-inout" : "100vw",
     // }),
-    // visible: ({ prev }: { prev: boolean }) => ({
+    // visible: {
     //     x: 0,
-    // }),
+    // },
     // exit: ({ prev }: { prev: boolean }) => ({
     //     x: prev ? "-100vw" : "100vw",
     // }),
@@ -55,9 +55,9 @@ function Banner({ part, id, movies }: IBanner) {
     // slider - 1
     const moveSliderPrev = () => {
         if (!sliderMoving && movies) {
-            setSliderMoving(true);
-            setSliderMovingPrev(false);
-            setIndex((prev) => prev === maxIndex ? 0 : prev - 1);
+            setSliderMoving(false);
+            setSliderMovingPrev(true);
+            setIndex((prev) => prev === 0 ? maxIndex : prev - 1);
         }
     }
 
@@ -65,13 +65,6 @@ function Banner({ part, id, movies }: IBanner) {
     const ExitMoveSlider = () => {
         setSliderMoving(false);
         setSliderMovingPrev(false);
-    }
-
-    const [isModalActive, setisModalActive] = useRecoilState(modalState);
-    const navigate = useNavigate();
-    const handleModal = (part: string, id: number, sliderId: string) => {
-        navigate(`/${part}/${sliderId}/${id}`);
-        setisModalActive(true)
     }
 
     return (
