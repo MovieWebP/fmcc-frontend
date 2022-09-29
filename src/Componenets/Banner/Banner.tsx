@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, transform } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useRecoilState } from "recoil";
@@ -10,13 +10,15 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? '0.5s ease-in-out' : '0.5s ease-in-out',
+        x: prev ? 'transition' : 'transition',
+        // visibility: prev ? "visible" : "hidden",
     }),
     visible: ({ prev }: { prev: boolean }) => ({
         x: 0,
     }),
     exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? '0.5s ease-in-out' : '0.5s ease-in-out',
+        x: prev ? 'transition' : 'transition',
+        // visibility: prev ? "hidden" : "visible",
     }),
     // hidden: ({ prev }: { prev: boolean }) => ({
     //     x: prev ? "transition: all 0.5s ease-inout" : "100vw",
@@ -85,7 +87,7 @@ function Banner({ part, id, movies }: IBanner) {
                                 animate="visible"
                                 exit="exit"
                                 custom={{ prev: sliderMoving }}
-                                transition={{ type: "tween", duration: 0.5 }}
+                                transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
                                 key={index}
                             >
                                 {index === 0 ? null : (
@@ -93,9 +95,6 @@ function Banner({ part, id, movies }: IBanner) {
                                         <MdKeyboardArrowLeft size="60px" />
                                     </S.ArrowBox>
                                 )}
-                                <S.RightArrow onClick={moveSlider} >
-                                    <MdKeyboardArrowRight size="60px" />
-                                </S.RightArrow>
                                 <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
                                     <S.BannerWrap>
                                         <S.Title>{movie?.title || movie?.name}</S.Title>
@@ -104,6 +103,9 @@ function Banner({ part, id, movies }: IBanner) {
                                     <S.BannerWrap>
                                     </S.BannerWrap>
                                 </S.BannerImage>
+                                <S.RightArrow onClick={moveSlider} >
+                                    <MdKeyboardArrowRight size="60px" />
+                                </S.RightArrow>
                             </S.MainImage>
                         ))}
                 </AnimatePresence>

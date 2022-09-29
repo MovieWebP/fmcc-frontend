@@ -42,6 +42,7 @@ width: 650px;
 height: 80%;
 display: flex;
 justify-content: center;
+align-items: center;
 flex-direction: column;
 flex-wrap: wrap;
 margin-top: 50px;
@@ -49,21 +50,23 @@ background-image: url(${(props) => props.bgPhoto});
 background-size: cover;
 `;
 export const BannerWrap = styled.div`
+position: absolute;
+bottom: 20px;
 background-color: rgba(0, 0, 0, 0.5);
 margin-left: 20px;
-border: 1px solid red;
-width: fit - content;
+/* border: 1px solid red; */
+width: fit-content;
 margin-bottom: 10px;
 `;
-export const Title = styled.h1`
+export const Title = styled.h3`
 color: ${(props) => props.theme.white};
-font-weight: 700;
+font-weight: 500;
 font-size: 28px;
-margin-bottom: 10px;
+margin-bottom: 3px;
 `;
-export const Overview = styled.p`
+export const Overview = styled.h2`
 color: ${(props) => props.theme.white};
-font-weight: 300;
+font-weight: 350;
 font-size: 16px;
 width: 300px;
 `;
