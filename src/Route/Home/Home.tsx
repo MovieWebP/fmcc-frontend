@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
-import { moviesApi, getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getTrailer, getUpcomingMovie, IGetCredits, IGetMovieResults } from "../../Api/api";
+import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getTrailer, getUpcomingMovie, IGetCredits, IGetMovieResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
 import Header from "../../Componenets/Header/Header";
 
@@ -41,21 +41,6 @@ function Home() {
     const clipsData = clips?.results?.slice(-3).reverse();
     const isLoading = playingLoading || popularLoading || upComingLoading || topRatedLoading || AiringTodayLoading || onTheAirTvLoading || popularTvLoading || topRatedTvLoading || false;
 
-    const [trendingData, setTrending] = useState([]);
-    // console.log(trendingData)
-
-    async function getMoviesData() {
-        const { data: { results } } = await moviesApi.trending();
-        setTrending(results)
-    }
-
-    useEffect(() => {
-        try {
-            getMoviesData()
-        } catch {
-            console.log("error")
-        }
-    }, [])
     return (
         <>
             <Helmet>

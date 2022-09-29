@@ -154,18 +154,3 @@ export async function getCast(part?: string, id?: string) {
         `${BASE_PATH}/${part}/${id}/credits?api_key=${Api_KEY}`
     ).then((res) => res.json());
 }
-
-const api = axios.create({
-    baseURL: "https://api.themoviedb.org/3/",
-    params: {
-        api_key: "b35b41610f8287ba322c0ed02d033aeb",
-        language: "en-US"
-    }
-})
-
-export const moviesApi = {
-    nowPlaying: () => api.get("movie/now_playing"),
-    popular: () => api.get("movie/popular"),
-    upcoming: () => api.get("movie/upcoming"),
-    trending: () => api.get("trending/movie/day")
-}

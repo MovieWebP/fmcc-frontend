@@ -25,11 +25,13 @@ display: flex;
 justify-content: center;
 align-items: center;
 transition: transform 0.5;
-background-image: linear-gradient(
+background-image: 
+linear-gradient(
   rgba(19, 16, 16, 0.3),
   rgba(19, 16, 16, 0.3),
       #181818
-), url(${(props) => props.bgPhoto});
+), 
+url(${(props) => props.bgPhoto});
 background-size: cover;
 width: 100%;
 height: 100%;
@@ -37,6 +39,7 @@ resize: both;
 `;
 
 export const BannerImage = styled.div< { bgPhoto: string }>`
+border-radius: 10px;
 z-index: 1;
 width: 650px;
 height: 80%;
@@ -53,9 +56,10 @@ export const BannerWrap = styled.div`
 position: absolute;
 bottom: 20px;
 background-color: rgba(0, 0, 0, 0.5);
-margin-left: 20px;
-/* border: 1px solid red; */
-width: fit-content;
+border-radius: 10px;
+padding: 0 10px;
+width: 80%;
+max-width: 600px;
 margin-bottom: 10px;
 `;
 export const Title = styled.h3`
@@ -68,7 +72,7 @@ export const Overview = styled.h2`
 color: ${(props) => props.theme.white};
 font-weight: 350;
 font-size: 16px;
-width: 300px;
+/* width: 300px; */
 `;
 
 export const ArrowBox = styled.span`
