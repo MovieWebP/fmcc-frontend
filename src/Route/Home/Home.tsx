@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
+import Slider from "../../Componenets/Slider/Slider";
 import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getTrailer, getUpcomingMovie, IGetCredits, IGetMovieResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
 import Header from "../../Componenets/Header/Header";
@@ -55,6 +56,13 @@ function Home() {
                         part="movie"
                         movies={nowPlaying?.results || []}
                     // movies={trendingData}
+                    />
+                    <Slider
+                        id="nowPlaying"
+                        part="movie"
+                        title="Now Playing"
+                        query="nowPlaying"
+                        movies={nowPlaying?.results || []}
                     />
                 </>
             )}
