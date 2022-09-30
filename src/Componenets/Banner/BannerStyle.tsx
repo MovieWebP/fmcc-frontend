@@ -58,10 +58,18 @@ bottom: 20px;
 background-color: rgba(0, 0, 0, 0.5);
 border-radius: 10px;
 padding: 0 10px;
+padding-bottom: 5px;
 width: 80%;
 max-width: 600px;
 margin-bottom: 10px;
 `;
+
+export const TitleDiv = styled.div`
+display: flex;
+width: fit-content;
+align-items: center;
+`;
+
 export const Title = styled.h3`
 color: ${(props) => props.theme.white};
 font-weight: 500;
@@ -70,13 +78,42 @@ margin-bottom: 3px;
 `;
 export const Overview = styled.h2`
 color: ${(props) => props.theme.white};
-font-weight: 350;
+font-weight: 300;
 font-size: 16px;
 /* width: 300px; */
 `;
 
-export const ArrowBox = styled.span`
+export const Date = styled.h2`
+  color: ${(props) => props.theme.lightPurple};
+  font-weight: 500;
+  font-size: 16px;
+`;
 
+export const Button = styled.div`
+  border-radius: 5px;
+  color: ${(props) => props.theme.white};
+  background-color: ${(props) => props.theme.lightPurple};
+  width: fit-content;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-top: 2px;
+  padding: 5px 10px;
+  transition: all .3s ease-in-out;
+  &:hover {
+    background-color: ${(props) => props.theme.purple};
+  }
+`;
+
+export const ButtonText = styled.h2`
+  position: relative;
+  top: 2px;
+  font-weight: 500;
+`;
+
+export const ArrowBox = styled.span`
+  position: relative;
+  top: 20px;
   `
 
 export const RightArrow = styled(ArrowBox)`

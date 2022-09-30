@@ -7,6 +7,7 @@ import { makeImagePath } from "../../Api/utils";
 import { modalState } from "../../atom";
 import * as S from "./BannerStyle";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { BsPlayFill } from "react-icons/bs";
 
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
@@ -42,6 +43,12 @@ function Banner({ part, id, movies }: IBanner) {
     const [index, setIndex] = useState(0);
     const [sliderMoving, setSliderMoving] = useState(false);
     const [sliderMovingPrev, setSliderMovingPrev] = useState(false);
+    const [modalActive, SetModalActive] = useRecoilState(modalState);
+    const history = useNavigate();
+    const boxClick = (part: string, id: number, sliderId: string) => {
+        history(`/${part}/${sliderId}/${id}`);
+        SetModalActive(true);
+    }
 
     const totlaLength = movies.length - 16;
     const maxIndex = Math.floor(totlaLength / offset);
@@ -97,10 +104,15 @@ function Banner({ part, id, movies }: IBanner) {
                                 )}
                                 <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
                                     <S.BannerWrap>
-                                        <S.Title>{movie?.title || movie?.name}({movie?.release_date.slice(0, 4)})</S.Title>
+                                        <S.TitleDiv>
+                                            <S.Title>{movie?.title || movie?.name}</S.Title>
+                                            <S.Date>({movie?.release_date.slice(0, 4)})</S.Date>
+                                        </S.TitleDiv>
                                         <S.Overview>{movie?.overview.slice(0, 150) || movie?.overview}...</S.Overview>
-                                    </S.BannerWrap>
-                                    <S.BannerWrap>
+                                        <S.Button onClick={() => boxClick(part, movie.id, id)}>
+                                            <BsPlayFill size="20px" />
+                                            <S.ButtonText>Watch Now</S.ButtonText>
+                                        </S.Button>
                                     </S.BannerWrap>
                                 </S.BannerImage>
                                 <S.RightArrow onClick={moveSlider} >
