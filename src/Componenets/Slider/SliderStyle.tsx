@@ -1,16 +1,13 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const SliderWrap = styled.div`
+export const SliderWrap = styled.div`   
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 100px;
-    /* overflow: hidden; */
     position: relative;
-    /* min-height: 330px; */
     height: 400px;
 `;
 
@@ -40,6 +37,7 @@ export const Slider = styled(motion.div)`
     padding: 0 30px;
   padding-top: 50px;
   justify-content: center;  
+  align-items: baseline;
   flex-wrap: wrap;
   display: grid; 
   grid-template-columns: repeat(6, 1fr); 

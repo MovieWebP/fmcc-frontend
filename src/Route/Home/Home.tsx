@@ -5,7 +5,7 @@ import { PathMatch, useMatch } from "react-router-dom";
 import Slider from "../../Componenets/Slider/Slider";
 import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getTrailer, getUpcomingMovie, IGetCredits, IGetMovieResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
-import Header from "../../Componenets/Header/Header";
+import * as S from "../Style";
 
 function Home() {
     const bigMovieMatch: PathMatch<string> | null = useMatch("/:part/:sliderPart/:id");
@@ -57,13 +57,54 @@ function Home() {
                         movies={nowPlaying?.results || []}
                     // movies={trendingData}
                     />
-                    <Slider
-                        id="nowPlaying"
-                        part="movie"
-                        title="Now Playing"
-                        query="nowPlaying"
-                        movies={nowPlaying?.results || []}
-                    />
+                    <S.SliderWrap>
+                        <S.SliderTitle>Movie</S.SliderTitle>
+                        <Slider
+                            id="nowPlaying"
+                            part="movie"
+                            title="Now Playing"
+                            query="nowPlaying"
+                            movies={nowPlaying?.results || []}
+                        />
+                        <Slider
+                            id="popular"
+                            part="movie"
+                            title="Popular"
+                            query="popular"
+                            movies={popular?.results || []}
+                        />
+                        <Slider
+                            id="upComing"
+                            part="movie"
+                            title="Up Coming"
+                            query="upComing"
+                            movies={upComing?.results || []}
+                        />
+                    </S.SliderWrap>
+                    <S.SliderWrap>
+                        <S.SliderTitle>TV Shows</S.SliderTitle>
+                        <Slider
+                            id="airingToday"
+                            part="tv"
+                            title="Now Playing"
+                            query="airingToday"
+                            movies={airingToday?.results || []}
+                        />
+                        <Slider
+                            id="onTheAir"
+                            part="tv"
+                            title="On The Air"
+                            query="onTheAir"
+                            movies={onTheAir?.results || []}
+                        />
+                        <Slider
+                            id="popularTv"
+                            part="tv"
+                            title="Popular Tv"
+                            query="popularTv"
+                            movies={popularTv?.results || []}
+                        />
+                    </S.SliderWrap>
                 </>
             )}
         </>

@@ -100,7 +100,11 @@ function Slider({ id, part, title, movies }: IProps) {
                                     <S.MovieTitle
                                         onClick={() => boxClick(part, movie.id, id)}
                                         key={movie.id}
-                                    >{movie.title}</S.MovieTitle>
+                                    >{part === "movie" ? (
+                                        movie.title
+                                    ) : (
+                                        movie.name
+                                    )}</S.MovieTitle>
                                 </S.Movie>
                             ))
                         }
