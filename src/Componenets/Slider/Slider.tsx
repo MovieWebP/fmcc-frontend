@@ -75,6 +75,7 @@ function Slider({ id, part, title, movies }: IProps) {
                         <MdKeyboardArrowLeft size="60" />
                     </S.IconLeft>
                 )}
+
                 <AnimatePresence
                     custom={{ prev: sliderMovPrev }}
                     initial={false}
@@ -87,17 +88,19 @@ function Slider({ id, part, title, movies }: IProps) {
                         animate="visible" // animate은 애니메이션
                         exit="exit" // exit은 애니메이션 종료
                         custom={{ prev: sliderMovPrev }}
-                        transition={{ type: "tween", duration: 3 }}
+                        transition={{ type: "tween", duration: 1 }}
                     >
 
                         {movies
                             ?.slice(1)
                             .slice(offset * index, offset * index + offset)
                             .map((movie) => (
-                                <S.Movie
-                                    onClick={() => boxClick(part, movie.id, id)}
-                                    key={movie.id}>
+                                <S.Movie>
                                     <img src={makeImagePath(movie.poster_path)} />
+                                    <S.MovieTitle
+                                        onClick={() => boxClick(part, movie.id, id)}
+                                        key={movie.id}
+                                    >{movie.title}</S.MovieTitle>
                                 </S.Movie>
                             ))
                         }

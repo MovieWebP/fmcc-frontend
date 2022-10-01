@@ -2,22 +2,20 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const SliderWrap = styled.div`
-    border: 1px solid red;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 50px;
-    overflow: hidden;
+    margin-top: 100px;
+    /* overflow: hidden; */
     position: relative;
-    min-height: 300px;
-  max-height: 400px;
+    /* min-height: 330px; */
+    height: 400px;
 `;
 
 export const Wrap = styled.div`
-    min-height: 300px;
-    border: 1px solid green;
+    height: 100%;
   position: relative;
   text-align: left;
   display: flex;
@@ -28,9 +26,12 @@ export const Wrap = styled.div`
   overflow: hidden;
 `;
 
-export const Title = styled.h1`
+export const Title = styled.div`
+    border-bottom: 1px solid ${(props) => props.theme.lightPurple};
+    height: fit-content;
+    width: 90%;
+    color: ${(props) => props.theme.lightPurple};
     text-align: left;
-    margin-left: 40px;
     font-size: 20px;
     font-weight: 500;
 `;
@@ -48,26 +49,34 @@ export const Slider = styled(motion.div)`
 `;
 
 export const IconLeft = styled.span`
-    /* border: 1px solid red; */
-    width: fit-content;
     position: absolute;
+    left: 0;
+    top: 35px;
+    bottom: 0;
+    align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
 `;
 
-export const IconRight = styled(IconLeft)`
-    /* border: 1px solid blue; */
+export const IconRight = styled.span`
+    position: absolute;
     width: fit-content;
     right: 0;
+    top: 35px;
+    bottom: 0;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 `;
 
-export const Movie = styled(motion.div)`
+export const Movie = styled.div`
     width: fit-content;
     margin: 0;
     padding: 0;
-    /* border: 5px solid green; */
     justify-self: center;
     display: flex;
     flex-direction: column;
@@ -79,3 +88,15 @@ export const Movie = styled(motion.div)`
         border-radius: 10px;
     }
 `;
+
+export const MovieTitle = styled(motion.div)`   
+    width: 55%;
+    text-align: left;
+    color: ${(props) => props.theme.white};
+    margin-top: 10px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    &:hover{
+        text-decoration: underline ${(props) => props.theme.white};
+    }
+`
