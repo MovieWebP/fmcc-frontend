@@ -96,7 +96,7 @@ function Slider({ id, part, title, movies }: IProps) {
                             .slice(offset * index, offset * index + offset)
                             .map((movie) => (
                                 <S.Movie>
-                                    <img src={makeImagePath(movie.poster_path)} />
+                                    <S.MovieImage src={makeImagePath(movie.poster_path)} />
                                     <S.MovieTitle
                                         onClick={() => boxClick(part, movie.id, id)}
                                         key={movie.id}

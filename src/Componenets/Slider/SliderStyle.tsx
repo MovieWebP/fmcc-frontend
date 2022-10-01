@@ -51,26 +51,36 @@ export const Slider = styled(motion.div)`
 export const IconLeft = styled.span`
     position: absolute;
     left: 0;
-    top: 35px;
-    bottom: 0;
+    top: 0;
+    bottom: 20px;
     align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
+    opacity: 0.3;
+    transition: opacity 0.2s ease-in-out;
+    &:hover{
+        opacity: 1;
+    }
 `;
 
 export const IconRight = styled.span`
     position: absolute;
     width: fit-content;
     right: 0;
-    top: 35px;
-    bottom: 0;
+    top: 0;
+    bottom: 20px;
     align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
+    opacity: 0.3;
+    transition: opacity 0.2s ease-in-out;
+    &:hover{
+        opacity: 1;
+    }
 `;
 
 export const Movie = styled.div`
@@ -82,11 +92,12 @@ export const Movie = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    img{
-        width: 100%;
-        max-width: 60%;
-        border-radius: 10px;
-    }
+`;
+
+export const MovieImage = styled.img`
+    width: 100%;
+    max-width: 60%;
+    border-radius: 10px;
 `;
 
 export const MovieTitle = styled(motion.div)`   
