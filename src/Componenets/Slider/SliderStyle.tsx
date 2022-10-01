@@ -44,6 +44,7 @@ export const Slider = styled(motion.div)`
   position: absolute;
   margin-top: 10px;
   width: 100%;
+  overflow: hidden;
 `;
 
 export const IconLeft = styled.span`
