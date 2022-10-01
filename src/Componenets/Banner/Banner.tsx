@@ -10,15 +10,6 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { BsPlayFill } from "react-icons/bs";
 
 const rowVariants = {
-    // hidden: ({ prev }: { prev: boolean }) => ({
-    //     x: prev ? 'transition' : 'transition',
-    // }),
-    // visible: ({ prev }: { prev: boolean }) => ({
-    //     x: 0,
-    // }),
-    // exit: ({ prev }: { prev: boolean }) => ({
-    //     x: prev ? 'transition' : 'transition',
-    // }),
     hidden: ({ prev }: { prev: boolean }) => ({
         x: prev ? "-100vw" : "100vw",
     }),
@@ -105,9 +96,9 @@ function Banner({ part, id, movies }: IBanner) {
                                         <S.BannerWrap>
                                             <S.TitleDiv>
                                                 <S.Title>{part === "movie" ? movie?.title : movie?.name}</S.Title>
-                                                <S.Date>({movie?.release_date.slice(0, 4)})</S.Date>
+                                                <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
                                             </S.TitleDiv>
-                                            <S.Overview>{movie?.overview.slice(0, 150) || movie?.overview}...</S.Overview>
+                                            <S.Overview>{movie?.overview.slice(0, 150)}...</S.Overview>
                                             <S.Button onClick={() => boxClick(part, movie.id, id)}>
                                                 <BsPlayFill size="20px" />
                                                 <S.ButtonText>Watch Now</S.ButtonText>

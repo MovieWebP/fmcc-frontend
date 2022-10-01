@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const SliderWrap = styled.div`
     display: flex;
@@ -9,7 +10,7 @@ export const SliderWrap = styled.div`
     margin-top: 100px;
 `;
 
-export const SliderTitle = styled.div`
+export const SliderTitle = styled(Link)`
     background-color: ${(props) => props.theme.lightPurple};
     color: ${(props) => props.theme.white};
     width: fit-content;

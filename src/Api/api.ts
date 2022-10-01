@@ -15,7 +15,7 @@ export interface IMovie {
     release_date: string; // 개봉일
     vote_average: number; // 평점
     is_tv?: boolean; // TV 프로그램인지 여부
-    frist_air_date?: string; // 첫 방영일
+    first_air_date?: string; // 첫 방영일
     name?: string; // tv 제목
 }
 
