@@ -10,13 +10,13 @@ import { makeImagePath } from "../../Api/utils";
 
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "-100vw" : "100vw",
+        x: prev ? "-1550px" : "1550px",
     }),
     visible: {
         x: 0,
     },
     exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "100vw" : "-100vw",
+        x: prev ? "1550px" : "-1550px",
     }),
 }
 
@@ -28,15 +28,15 @@ interface IProps {
     movies: IMovie[];
 }
 
-const offset = 8;
+const offset = 6;
 
 function Slider({ id, part, title, movies }: IProps) {
     const [index, setIndex] = useState(0);
     const [sliderMov, setSliderMov] = useState(false);
     const [sliderMovPrev, setsliderMovPrev] = useState(false);
 
-    const totalLength = 10;
-    const maxIndex = Math.floor(totalLength / offset);
+    const totalLength = movies.length - 1;
+    const maxIndex = Math.floor(totalLength / offset) - 1;
 
     const nextslider = () => {
         if (!sliderMov && movies) {
@@ -47,10 +47,10 @@ function Slider({ id, part, title, movies }: IProps) {
     };
 
     const prevslider = () => {
-        if (!sliderMovPrev && movies) {
+        if (!sliderMov && movies) {
             setSliderMov(false);
             setsliderMovPrev(true);
-            setIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+            setIndex((prev) => (prev === maxIndex ? prev - 1 : 0));
         };
     };
 
@@ -70,6 +70,11 @@ function Slider({ id, part, title, movies }: IProps) {
         <S.SliderWrap>
             <S.Wrap>
                 <S.Title>{title}</S.Title>
+                {index === 0 ? null : (
+                    <S.IconLeft onClick={prevslider}>
+                        <MdKeyboardArrowLeft size="60" />
+                    </S.IconLeft>
+                )}
                 <AnimatePresence
                     custom={{ prev: sliderMovPrev }}
                     initial={false}
@@ -78,27 +83,31 @@ function Slider({ id, part, title, movies }: IProps) {
                     <S.Slider
                         key={index}
                         variants={rowVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
+                        initial="hidden" // initial은 초기값
+                        animate="visible" // animate은 애니메이션
+                        exit="exit" // exit은 애니메이션 종료
                         custom={{ prev: sliderMovPrev }}
-                        transition={{ type: "tween", duration: 0.5 }}
+                        transition={{ type: "tween", duration: 3 }}
                     >
-                        {index === 0 ? null : (
-                            <S.IconLeft onClick={prevslider}>
-                                <MdKeyboardArrowLeft className="fas fa-chevron-left" />
-                            </S.IconLeft>
-                        )}
-                        {movies?.
-                            slice(1)
-                            .slice(index * offset, (index + 1) * offset).map((movie) => (
-                                <S.Movie>
+
+                        {movies
+                            ?.slice(1)
+                            .slice(offset * index, offset * index + offset)
+                            .map((movie) => (
+                                <S.Movie
+                                    onClick={() => boxClick(part, movie.id, id)}
+                                    key={movie.id}>
                                     <img src={makeImagePath(movie.poster_path)} />
                                 </S.Movie>
                             ))
                         }
+
                     </S.Slider>
+
                 </AnimatePresence>
+                <S.IconRight onClick={nextslider} >
+                    <MdKeyboardArrowRight size="60" />
+                </S.IconRight>
             </S.Wrap>
         </S.SliderWrap>
     );

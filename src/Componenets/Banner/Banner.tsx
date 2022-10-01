@@ -10,26 +10,24 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { BsPlayFill } from "react-icons/bs";
 
 const rowVariants = {
-    hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? 'transition' : 'transition',
-        // visibility: prev ? "visible" : "hidden",
-    }),
-    visible: ({ prev }: { prev: boolean }) => ({
-        x: 0,
-    }),
-    exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? 'transition' : 'transition',
-        // visibility: prev ? "hidden" : "visible",
-    }),
     // hidden: ({ prev }: { prev: boolean }) => ({
-    //     x: prev ? "transition: all 0.5s ease-inout" : "100vw",
+    //     x: prev ? 'transition' : 'transition',
     // }),
-    // visible: {
+    // visible: ({ prev }: { prev: boolean }) => ({
     //     x: 0,
-    // },
-    // exit: ({ prev }: { prev: boolean }) => ({
-    //     x: prev ? "-100vw" : "100vw",
     // }),
+    // exit: ({ prev }: { prev: boolean }) => ({
+    //     x: prev ? 'transition' : 'transition',
+    // }),
+    hidden: ({ prev }: { prev: boolean }) => ({
+        x: prev ? "-100vw" : "100vw",
+    }),
+    visible: {
+        x: 0,
+    },
+    exit: ({ prev }: { prev: boolean }) => ({
+        x: prev ? "100vw" : "-100vw",
+    }),
 }
 interface IBanner {
     id: string;
@@ -66,7 +64,7 @@ function Banner({ part, id, movies }: IBanner) {
         if (!sliderMoving && movies) {
             setSliderMoving(false);
             setSliderMovingPrev(true);
-            setIndex((prev) => prev === 0 ? maxIndex : prev - 1);
+            setIndex((prev) => prev === maxIndex ? 0 : prev - 1);
         }
     }
 
@@ -84,42 +82,44 @@ function Banner({ part, id, movies }: IBanner) {
                     initial={false}
                     onExitComplete={ExitMoveSlider}
                 >
-                    {movies
-                        ?.slice(1)
-                        .slice(offset * index, offset * index + offset).map((movie) => (
-                            < S.MainImage
-                                bgPhoto={makeImagePath(movie?.backdrop_path)}
-                                variants={rowVariants}
-                                initial="hidden"
-                                animate="visible"
-                                exit="exit"
-                                custom={{ prev: sliderMoving }}
-                                transition={{ type: "tween", duration: 0.5, ease: "easeInOut" }}
-                                key={index}
-                            >
-                                {index === 0 ? null : (
-                                    <S.ArrowBox onClick={moveSliderPrev}>
-                                        <MdKeyboardArrowLeft size="60px" />
-                                    </S.ArrowBox>
-                                )}
-                                <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
-                                    <S.BannerWrap>
-                                        <S.TitleDiv>
-                                            <S.Title>{movie?.title || movie?.name}</S.Title>
-                                            <S.Date>({movie?.release_date.slice(0, 4)})</S.Date>
-                                        </S.TitleDiv>
-                                        <S.Overview>{movie?.overview.slice(0, 150) || movie?.overview}...</S.Overview>
-                                        <S.Button onClick={() => boxClick(part, movie.id, id)}>
-                                            <BsPlayFill size="20px" />
-                                            <S.ButtonText>Watch Now</S.ButtonText>
-                                        </S.Button>
-                                    </S.BannerWrap>
-                                </S.BannerImage>
-                                <S.RightArrow onClick={moveSlider} >
-                                    <MdKeyboardArrowRight size="60px" />
-                                </S.RightArrow>
-                            </S.MainImage>
-                        ))}
+                    <S.Banner
+                        key={index}
+                        variants={rowVariants}
+                        initial="hidden" // initial은 초기값
+                        animate="visible" // animate은 애니메이션
+                        exit="exit" // exit은 애니메이션 종료
+                        custom={{ prev: sliderMovingPrev }}
+                        transition={{ type: "tween", duration: 1.3 }}>
+                        {movies
+                            ?.slice(1)
+                            .slice(offset * index, offset * index + offset).map((movie) => (
+                                < S.MainImage
+                                    bgPhoto={makeImagePath(movie?.backdrop_path)}
+                                >
+                                    {index === 0 ? null : (
+                                        <S.ArrowBox onClick={moveSliderPrev}>
+                                            <MdKeyboardArrowLeft size="60px" />
+                                        </S.ArrowBox>
+                                    )}
+                                    <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
+                                        <S.BannerWrap>
+                                            <S.TitleDiv>
+                                                <S.Title>{movie?.title || movie?.name}</S.Title>
+                                                <S.Date>({movie?.release_date.slice(0, 4)})</S.Date>
+                                            </S.TitleDiv>
+                                            <S.Overview>{movie?.overview.slice(0, 150) || movie?.overview}...</S.Overview>
+                                            <S.Button onClick={() => boxClick(part, movie.id, id)}>
+                                                <BsPlayFill size="20px" />
+                                                <S.ButtonText>Watch Now</S.ButtonText>
+                                            </S.Button>
+                                        </S.BannerWrap>
+                                    </S.BannerImage>
+                                    <S.RightArrow onClick={moveSlider} >
+                                        <MdKeyboardArrowRight size="60px" />
+                                    </S.RightArrow>
+                                </S.MainImage>
+                            ))}
+                    </S.Banner>
                 </AnimatePresence>
             </S.AllWrap>
         </S.Wrap >

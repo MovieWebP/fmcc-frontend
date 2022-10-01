@@ -14,10 +14,18 @@ export const Wrap = styled.div`
     /* border: 1px solid red; */
 `;
 export const AllWrap = styled(Wrap)`
-    /* border: 1px solid blue; */
-  transition: all 0.5 ease-in-out;
     height: 400px;
-transition: transform 0.5 ease-in-out;
+`;
+
+export const Banner = styled(motion.div)`
+  position: absolute;
+  width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
 `;
 
 export const MainImage = styled(motion.div) < { bgPhoto: string }> `
