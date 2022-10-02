@@ -34,6 +34,7 @@ export const Title = styled.div`
 `;
 
 export const Slider = styled(motion.div)`
+    /* border: 1px solid red; */
     padding: 0 30px;
   padding-top: 50px;
   justify-content: center;  
@@ -44,14 +45,13 @@ export const Slider = styled(motion.div)`
   position: absolute;
   margin-top: 10px;
   width: 100%;
-  overflow: hidden;
 `;
 
 export const IconLeft = styled.span`
     position: absolute;
     left: 0;
     top: 0;
-    bottom: 20px;
+    bottom: 50px;
     align-self: center;
     display: flex;
     justify-content: center;
@@ -68,8 +68,8 @@ export const IconRight = styled.span`
     position: absolute;
     width: fit-content;
     right: 0;
-    top: 0;
-    bottom: 20px;
+    top: -10px;
+    bottom: 50px;
     align-self: center;
     display: flex;
     justify-content: center;
