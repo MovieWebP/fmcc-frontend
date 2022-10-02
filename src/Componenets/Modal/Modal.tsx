@@ -5,6 +5,7 @@ import { modalState } from "../../atom";
 import { useRecoilState } from "recoil";
 import { AnimatePresence } from "framer-motion";
 import { makeImagePath } from "../../Api/utils";
+import Trailer from "./Trailer/Trailer";
 
 interface IModal {
     detail: IGetDetail;
@@ -66,7 +67,9 @@ function Modal({ detail, recommend, cast, clips }: IModal) {
                                     <S.ModalClips bgPhoto={makeImagePath(
                                         detail?.backdrop_path
                                     )}>
-
+                                        <S.Video>
+                                            <Trailer part={part} id={id} />
+                                        </S.Video>
                                     </S.ModalClips>
                                 </S.ModalContianerWrap>
                             </S.Wrap>

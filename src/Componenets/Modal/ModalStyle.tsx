@@ -12,7 +12,6 @@ export const Wrap = styled.div < { bgPhoto: string }> `
   rgba(19, 16, 16, 0.5),
       #181818
 ), url(${(props) => props.bgPhoto});
-    border: 1px solid red;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
@@ -29,25 +28,22 @@ export const Wrap = styled.div < { bgPhoto: string }> `
 `;
 
 export const ModalContianerWrap = styled.div`
-    border: 1px solid red;
     position: relative;
     top: 100px;
     display: flex;
     justify-content: space-between;
     width: 80%;
     height: fit-content;
+    align-items: center;
 `;
 
 export const ModalContianer = styled.div`
-    /* border: 3px solid white; */
     display: flex;
     justify-content: space-between;
     width: fit-content;
     background-color: rgba(0, 0, 0, 0.3);
     height: fit-content;
     padding: 20px;
-    /* width: 100%;
-    height: 100%; */
 `;
 
 export const ModalImage = styled.image < { bgPhoto: string } > `
@@ -59,7 +55,6 @@ export const ModalImage = styled.image < { bgPhoto: string } > `
 `
 
 export const ModalInfo = styled.div`
-    /* border: 1px solid red; */
     margin-left: 20px;
     display: flex;
     flex-direction: column;
@@ -101,6 +96,12 @@ export const Genre = styled(Genres)`
 export const ModalClips = styled.div < { bgPhoto: string } >`
     background-image: url(${(props) => props.bgPhoto});
     background-size: cover;
-    width: 300px;
-    height: 200px;
+    width: 450px;
+    height: 300px;
+    border-radius: 10px;
+`;
+
+export const Video = styled.div`
+    overflow: hidden;
+    border-radius: 10px;
 `;
