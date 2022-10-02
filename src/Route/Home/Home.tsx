@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
 import Slider from "../../Componenets/Slider/Slider";
-import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getTrailer, getUpcomingMovie, IGetCredits, IGetMovieResults, getRecommend, getCast } from "../../Api/api";
+import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getUpcomingMovie, IGetCredits, IGetMovieResults, getRecommend, getCast } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
 import * as S from "../Style";
 import Modal from "../../Componenets/Modal/Modal";
@@ -34,11 +34,18 @@ function Home() {
         useQuery<IGetMovieResults>(["topRatedTv", "tv"], getTopRatedTv);
 
     // Api
-    const { data: datail } = useQuery(["detail", id], () => getDetail(part, id || ""));
-    const { data: clips } = useQuery(["clips", id], () => getClips(part, id || ""));
-    const { data: trailer } = useQuery(["trailer", id], () => getTrailer(part, id || ""));
-    const { data: recommend } = useQuery(["recommend", id], () => getRecommend(part, id || ""));
-    const { data: credits } = useQuery<IGetCredits>(["credits", id], () => getCast(part, id || ""));
+    const { data: detail } = useQuery(["detail", id], () =>
+        getDetail(part, id || "")
+    );
+    const { data: clips } = useQuery(["clips", id], () =>
+        getClips(part, id || "")
+    );
+    const { data: recommend } = useQuery(["recommend", id], () =>
+        getRecommend(part, id || "")
+    );
+    const { data: cast } = useQuery<IGetCredits>(["cast", id], () =>
+        getCast(part, id || "")
+    );
 
     const clipsData = clips?.results?.slice(-3).reverse();
     const isLoading = playingLoading || popularLoading || upComingLoading || topRatedLoading || AiringTodayLoading || onTheAirTvLoading || popularTvLoading || topRatedTvLoading || false;
@@ -106,14 +113,15 @@ function Home() {
                             movies={popularTv?.results || []}
                         />
                     </S.SliderWrap>
-                    <Modal
-                        movieDetail={datail ?? []} // movieDetail은 getDetail의 data를 받아온다.
-                        movieClips={clips ?? []} // movieClips은 getClip의 data를 받아온다.
-                        movieCast={credits?.cast ?? []} // movieCredits은 getMovieCredits의 data를 받아온다.
-                        movieRecommend={recommend ?? []}
-                    />
+
                 </>
             )}
+            <Modal
+                detail={detail ?? []} // detail은 배열이 아니라서 ?? []를 해줘야함
+                recommend={recommend ?? []} // 
+                cast={cast?.cast ?? []} // 
+                clips={clips ?? []}
+            />
         </>
     );
 }

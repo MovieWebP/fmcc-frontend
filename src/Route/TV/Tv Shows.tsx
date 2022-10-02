@@ -3,8 +3,9 @@ import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
 import Slider from "../../Componenets/Slider/Slider";
-import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getTrailer, getUpcomingMovie, IGetCredits, IGetMovieResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
+import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getUpcomingMovie, IGetCredits, IGetMovieResults, getRecommend, getCast } from "../../Api/api";
+import Modal from "../../Componenets/Modal/Modal";
 import * as S from "../Style";
 
 function TV() {
@@ -23,11 +24,10 @@ function TV() {
         useQuery<IGetMovieResults>(["topRatedTv", "tv"], getTopRatedTv);
 
     // Api
-    const { data: datail } = useQuery(["detail", id], () => getDetail(part, id || ""));
+    const { data: detail } = useQuery(["detail", id], () => getDetail(part, id || ""));
     const { data: clips } = useQuery(["clips", id], () => getClips(part, id || ""));
-    const { data: trailer } = useQuery(["trailer", id], () => getTrailer(part, id || ""));
-    const { data: recommend } = useQuery(["recommend", id], () => getDetail(part, id || ""));
-    const { data: credits } = useQuery<IGetCredits>(["credits", id], () => getDetail(part, id || ""));
+    const { data: recommend } = useQuery(["recommend", id], () => getRecommend(part, id || ""));
+    const { data: cast } = useQuery<IGetCredits>(["cast", id], () => getCast(part, id || ""));
 
     const clipsData = clips?.results?.slice(-3).reverse();
     const isLoading = AiringTodayLoading || onTheAirTvLoading || popularTvLoading || topRatedTvLoading || false;
@@ -77,6 +77,12 @@ function TV() {
                             movies={topRatedTv?.results || []}
                         />
                     </S.SliderWrap>
+                    <Modal
+                        detail={detail ?? []} // movieDetail은 getDetail의 data를 받아온다.
+                        recommend={recommend ?? []} // movieClips은 getClip의 data를 받아온다.
+                        cast={cast?.cast ?? []} // movieCredits은 getMovieCredits의 data를 받아온다.
+                        clips={clips ?? []}
+                    />
                 </>
             )}
         </>
