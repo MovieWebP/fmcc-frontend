@@ -10,10 +10,11 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/movie" element={<Movie />} />
-        <Route path="/tv" element={<TV />} />
+        <Route path="/fm" element={<Home />} />
+        <Route path="/fm/login" element={<Login />} />
+        <Route path="/fm/movie" element={<Movie />} />
+        <Route path="/:part/:sliderPart/:id" element={<Home />} />
+        <Route path="/fm/tv" element={<TV />} />
       </Routes>
     </Router>
   );

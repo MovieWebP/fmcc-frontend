@@ -34,7 +34,7 @@ function Home() {
         useQuery<IGetMovieResults>(["topRatedTv", "tv"], getTopRatedTv);
 
     // Api
-    const { data: detail } = useQuery(["detail", id], () =>
+    const { data: detail } = useQuery(["movie", id], () => // movieDetail은 getDetail의 data를 받아온다.
         getDetail(part, id || "")
     );
     const { data: clips } = useQuery(["clips", id], () =>
@@ -117,10 +117,10 @@ function Home() {
                 </>
             )}
             <Modal
-                detail={detail ?? []} // detail은 배열이 아니라서 ?? []를 해줘야함
+                detail={detail ?? []} // detail은 getDetail의 data를 받아온다.
                 recommend={recommend ?? []} // 
                 cast={cast?.cast ?? []} // 
-                clips={clips ?? []}
+                clips={clipsData ?? []}
             />
         </>
     );

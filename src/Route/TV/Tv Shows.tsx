@@ -77,12 +77,12 @@ function TV() {
                             movies={topRatedTv?.results || []}
                         />
                     </S.SliderWrap>
-                    <Modal
+                    {/* <Modal
                         detail={detail ?? []} // movieDetail은 getDetail의 data를 받아온다.
                         recommend={recommend ?? []} // movieClips은 getClip의 data를 받아온다.
                         cast={cast?.cast ?? []} // movieCredits은 getMovieCredits의 data를 받아온다.
                         clips={clips ?? []}
-                    />
+                    /> */}
                 </>
             )}
         </>

@@ -31,16 +31,23 @@ export interface IGetMovieResults {
 }
 
 export interface IGetDetail {
-    genres: [number];
-    id: number;
-    name?: string;
-    title: string;
-    overview: string;
-    backdrop_path: string;
-    poster_path: string;
-    release_date: string;
-    frist_air_date?: string;
-    vote_average: number;
+    genres: [number]; // 장르 아이디
+    homepage: string; // 홈페이지
+    id: number; // 영화 아이디
+    name?: string; // TV 프로그램 제목
+    first_air_date?: string; // TV 프로그램 첫 방영일
+    episode_run_time?: [number]; // TV 프로그램 한 에피소드의 길이
+    original_language: string; // 원본 언어
+    original_title?: string; // 원본 제목
+    overview: string; // 줄거리
+    popularity: number; // 인기도
+    poster_path: string; // 포스터 이미지
+    release_date?: string; // 개봉일
+    runtime: number; // 영화 한 편의 길이
+    tagline: string; // 태그라인
+    title: string; // 영화 제목
+    vote_average: number; // 평점
+    backdrop_path: string; // 백그라운드 이미지
 }
 
 export interface IGetRecommends {

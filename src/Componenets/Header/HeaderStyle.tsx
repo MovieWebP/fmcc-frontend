@@ -6,7 +6,7 @@ export const Nav = styled(motion.nav)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
+    z-index: 100;
     border-bottom: 1px solid #B0A8A8;
     position: fixed;
     width: 100%;

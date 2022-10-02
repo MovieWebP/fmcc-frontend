@@ -11,9 +11,9 @@ interface IForm {
 
 function Header() {
     const [searchOpen, setSearchOpen] = useState(false);
-    const homeMatch = useMatch("/");
-    const movieMatch = useMatch("/movie");
-    const tvMatch = useMatch("/tv");
+    const homeMatch = useMatch("/fm/");
+    const movieMatch = useMatch("/fm/movie");
+    const tvMatch = useMatch("/fm/tv");
     const navAnimation = useAnimation();
     const inputAnimation = useAnimation();
     const { scrollY } = useScroll();
@@ -52,20 +52,20 @@ function Header() {
         >
             <S.MenuWrap>
                 <S.MenuItems>
-                    <S.LinkStyle to="/">
+                    <S.LinkStyle to="/fm/">
                         <S.Title>FM</S.Title>
                     </S.LinkStyle>
                     <S.MenuItem>
-                        <S.LinkStyle to="/">
+                        <S.LinkStyle to="/fm/">
                             Home
                         </S.LinkStyle>
                     </S.MenuItem>
                     <S.MenuItem>
-                        <S.LinkStyle to="/movie">Movie
+                        <S.LinkStyle to="/fm/movie">Movie
                         </S.LinkStyle>
                     </S.MenuItem>
                     <S.MenuItem>
-                        <S.LinkStyle to="/tv">
+                        <S.LinkStyle to="/fm/tv">
                             Tv shows
                         </S.LinkStyle>
                     </S.MenuItem>
