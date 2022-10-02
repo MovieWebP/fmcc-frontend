@@ -23,17 +23,29 @@ export const Wrap = styled.div < { bgPhoto: string }> `
     bottom: 0;
     left: 0;
     z-index: 20;
-    padding: 0 20px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+`;
+
+export const ModalContianerWrap = styled.div`
+    border: 1px solid red;
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: fit-content;
 `;
 
 export const ModalContianer = styled.div`
-    border: 3px solid white;
+    /* border: 3px solid white; */
     display: flex;
     justify-content: space-between;
-    position: relative;
-    top: 100px;
     width: fit-content;
+    background-color: rgba(0, 0, 0, 0.3);
     height: fit-content;
+    padding: 20px;
     /* width: 100%;
     height: 100%; */
 `;
@@ -47,7 +59,7 @@ export const ModalImage = styled.image < { bgPhoto: string } > `
 `
 
 export const ModalInfo = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin-left: 20px;
     display: flex;
     flex-direction: column;
@@ -77,7 +89,18 @@ export const InfoGenre = styled.div`
     height: fit-content;
 `;
 
-export const Genres = styled.span``;
+export const Genres = styled.span`
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 400;
+`;
 
-export const Genre = styled.span`  
+export const Genre = styled(Genres)`  
+`;
+
+export const ModalClips = styled.div < { bgPhoto: string } >`
+    background-image: url(${(props) => props.bgPhoto});
+    background-size: cover;
+    width: 300px;
+    height: 200px;
 `;
