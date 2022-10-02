@@ -9,9 +9,6 @@ import * as S from "../Style";
 import Modal from "../../Componenets/Modal/Modal";
 
 function Home() {
-    const bigMovieMatch: PathMatch<string> | null = useMatch("/:part/:sliderPart/:id");
-    const id = bigMovieMatch?.params.id;
-    const part = bigMovieMatch?.params.part;
 
     // Movie
     const { data: nowPlaying, isLoading: playingLoading } =
@@ -33,21 +30,7 @@ function Home() {
     const { data: topRatedTv, isLoading: topRatedTvLoading } =
         useQuery<IGetMovieResults>(["topRatedTv", "tv"], getTopRatedTv);
 
-    // Api
-    const { data: detail } = useQuery(["movie", id], () => // movieDetail은 getDetail의 data를 받아온다.
-        getDetail(part, id || "")
-    );
-    const { data: clips } = useQuery(["clips", id], () =>
-        getClips(part, id || "")
-    );
-    const { data: recommend } = useQuery(["recommend", id], () =>
-        getRecommend(part, id || "")
-    );
-    const { data: cast } = useQuery<IGetCredits>(["cast", id], () =>
-        getCast(part, id || "")
-    );
 
-    const clipsData = clips?.results?.slice(-3).reverse();
     const isLoading = playingLoading || popularLoading || upComingLoading || topRatedLoading || AiringTodayLoading || onTheAirTvLoading || popularTvLoading || topRatedTvLoading || false;
 
     return (
@@ -113,15 +96,8 @@ function Home() {
                             movies={popularTv?.results || []}
                         />
                     </S.SliderWrap>
-
                 </>
             )}
-            <Modal
-                detail={detail ?? []} // detail은 getDetail의 data를 받아온다.
-                recommend={recommend ?? []} // 
-                cast={cast?.cast ?? []} // 
-                clips={clipsData ?? []}
-            />
         </>
     );
 }

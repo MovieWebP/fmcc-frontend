@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const ModalWrap = styled(motion.div)`
-    position: fixed;
+    position: relative;
     z-index: 10; 
 `;
 
@@ -14,7 +14,7 @@ export const Wrap = styled.div < { bgPhoto: string }> `
 ), url(${(props) => props.bgPhoto});
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.7);
-    position: fixed;
+    position: relative;
     height: 100vh;
     width: 100vw;
     top: 0;
