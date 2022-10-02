@@ -25,6 +25,7 @@ export const Wrap = styled.div < { bgPhoto: string }> `
     padding: 0 40px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 `;
 
 export const ModalContianerWrap = styled.div`
@@ -32,7 +33,8 @@ export const ModalContianerWrap = styled.div`
     top: 100px;
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
+    max-width: 90%;
     height: fit-content;
     align-items: center;
 `;
@@ -104,4 +106,20 @@ export const ModalClips = styled.div < { bgPhoto: string } >`
 export const Video = styled.div`
     overflow: hidden;
     border-radius: 10px;
+`;
+
+export const ModalContainers = styled(ModalContianer)`
+    flex-direction: column;
+`;
+
+export const OverviewTitle = styled.h1`
+color: ${(props) => props.theme.lightPurple};
+font-size: 28px;
+font-weight: 700;
+    margin-bottom: 20px;
+`;
+
+export const InfoOverview = styled.span`
+width: 1000px;
+max-width: 620px;
 `;

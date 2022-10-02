@@ -62,7 +62,6 @@ function Modal({ detail, recommend, cast, clips }: IModal) {
                                                 </S.Genre>
                                             ) : null}</S.Genres>
                                         </S.ModalInfo>
-
                                     </S.ModalContianer>
                                     <S.ModalClips bgPhoto={makeImagePath(
                                         detail?.backdrop_path
@@ -71,6 +70,16 @@ function Modal({ detail, recommend, cast, clips }: IModal) {
                                             <Trailer part={part} id={id} />
                                         </S.Video>
                                     </S.ModalClips>
+                                </S.ModalContianerWrap>
+                                <S.ModalContianerWrap>
+                                    <S.ModalContainers>
+                                        <S.OverviewTitle>Summary</S.OverviewTitle>
+                                        <S.InfoOverview>{detail?.overview}</S.InfoOverview>
+                                    </S.ModalContainers>
+                                    <S.ModalContainers>
+                                        <S.OverviewTitle>Summary</S.OverviewTitle>
+                                        <S.InfoOverview>{detail?.overview}</S.InfoOverview>
+                                    </S.ModalContainers>
                                 </S.ModalContianerWrap>
                             </S.Wrap>
                         </S.ModalWrap>
