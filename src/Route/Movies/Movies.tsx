@@ -4,7 +4,7 @@ import { getDetail, getClips, getRecommend, getCast, IGetCredits } from "../../A
 import Modal from "../../Componenets/Modal/Modal";
 
 
-function Components() {
+function Movies() {
     const bigMovieMatch: PathMatch<string> | null = useMatch("/:part/:sliderPart/:id");
     const id = bigMovieMatch?.params.id;
     const part = bigMovieMatch?.params.part;
@@ -34,4 +34,4 @@ function Components() {
     )
 }
 
-export default Components;
+export default Movies;

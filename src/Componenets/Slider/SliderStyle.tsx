@@ -12,6 +12,7 @@ export const SliderWrap = styled.div`
 `;
 
 export const Wrap = styled.div`
+    border: 1px solid red;
     height: 100%;
   position: relative;
   text-align: left;
@@ -34,12 +35,10 @@ export const Title = styled.div`
 `;
 
 export const Slider = styled(motion.div)`
-    /* border: 1px solid red; */
     padding: 0 30px;
   padding-top: 50px;
   justify-content: center;  
   align-items: baseline;
-  flex-wrap: wrap;
   display: grid; 
   grid-template-columns: repeat(6, 1fr); 
   position: absolute;

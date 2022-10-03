@@ -1,67 +1,69 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const ModalWrap = styled(motion.div)`
-    position: relative;
-    z-index: 10; 
-`;
-
 export const Wrap = styled.div < { bgPhoto: string }> `
  background-image: linear-gradient(
   rgba(19, 16, 16, 0.5),
   rgba(19, 16, 16, 0.5),
       #181818
 ), url(${(props) => props.bgPhoto});
+    border: 1px solid white;
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
     background-color: rgba(0, 0, 0, 0.7);
-    position: relative;
-    height: 100vh;
-    width: 100vw;
+    /* position: fixed; */
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 20;
+    z-index: -20;
     padding: 0 40px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
+    height: 100vh;
 `;
 
-export const ModalContianerWrap = styled.div`
+export const ModalContianerWrap = styled.div`   
+    border: 1px solid white;
     position: relative;
     top: 100px;
     display: flex;
     justify-content: space-between;
+    transition: all 0.5s ease-in-out;
+    /* flex-wrap: wrap;  */
     width: 100%;
-    max-width: 90%;
+    /* max-width: 2000px; */
     height: fit-content;
     align-items: center;
 `;
 
-export const ModalContianer = styled.div`
+export const ModalContianer = styled.div`   
+    border: 1px solid red;
     display: flex;
     justify-content: space-between;
-    width: fit-content;
+    min-width: fit-content;
     background-color: rgba(0, 0, 0, 0.3);
     height: fit-content;
     padding: 20px;
 `;
 
-export const ModalImage = styled.image < { bgPhoto: string } > `
-    background-image: url(${(props) => props.bgPhoto});
-    background-size: cover;
+export const ModalImage = styled.img`
     width: 200px;
     height: 280px;
     border-radius: 10px;
 `
 
 export const ModalInfo = styled.div`
+    /* width: fit-content; */
     margin-left: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 400px;
+    width: 20vw;
+    /* max-width: 300px; */
 `;
 
 export const InfoTitle = styled.span`
@@ -81,12 +83,9 @@ export const InfoDate = styled.span`
     color: ${(props) => props.theme.lightPurple};
 `;
 
-export const InfoGenre = styled.div`
+export const Genres = styled.span`
     width: fit-content;
     height: fit-content;
-`;
-
-export const Genres = styled.span`
     margin-top: 5px;
     font-size: 14px;
     font-weight: 400;
@@ -109,7 +108,8 @@ export const Video = styled.div`
 `;
 
 export const ModalContainers = styled(ModalContianer)`
-    flex-direction: column;
+    flex-direction: column; 
+    width: 30%;
 `;
 
 export const OverviewTitle = styled.h1`
@@ -120,6 +120,6 @@ font-weight: 700;
 `;
 
 export const InfoOverview = styled.span`
-width: 1000px;
-max-width: 620px;
+    width: 100%;
+    max-width: 200px;
 `;

@@ -46,43 +46,40 @@ function Modal({ detail, recommend, cast, clips }: IModal) {
             <AnimatePresence>
                 {modalMatch ? (
                     <>
-                        <S.ModalWrap
-                        >
-                            <S.Wrap bgPhoto={makeImagePath(detail?.backdrop_path)}>
-                                <S.ModalContianerWrap>
-                                    <S.ModalContianer>
-                                        <S.ModalImage bgPhoto={makeImagePath(detail?.poster_path)} />
-                                        <S.ModalInfo>
-                                            <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
-                                            <S.InfoDate>{part === "movie" ? detail?.release_date?.slice(0, 4) : detail?.first_air_date?.slice(0, 4)}</S.InfoDate>
-                                            <S.Genres>Genres: {detail?.genres?.length ? (
-                                                <S.Genre>
-                                                    {(detail.genres || []).map
-                                                        ((genre: any) => genre.name).join("/")}
-                                                </S.Genre>
-                                            ) : null}</S.Genres>
-                                        </S.ModalInfo>
-                                    </S.ModalContianer>
-                                    <S.ModalClips bgPhoto={makeImagePath(
-                                        detail?.backdrop_path
-                                    )}>
-                                        <S.Video>
-                                            <Trailer part={part} id={id} />
-                                        </S.Video>
-                                    </S.ModalClips>
-                                </S.ModalContianerWrap>
-                                <S.ModalContianerWrap>
-                                    <S.ModalContainers>
-                                        <S.OverviewTitle>Summary</S.OverviewTitle>
-                                        <S.InfoOverview>{detail?.overview}</S.InfoOverview>
-                                    </S.ModalContainers>
-                                    <S.ModalContainers>
-                                        <S.OverviewTitle>Summary</S.OverviewTitle>
-                                        <S.InfoOverview>{detail?.overview}</S.InfoOverview>
-                                    </S.ModalContainers>
-                                </S.ModalContianerWrap>
-                            </S.Wrap>
-                        </S.ModalWrap>
+                        <S.Wrap bgPhoto={makeImagePath(detail?.backdrop_path)}>
+                            <S.ModalContianerWrap>
+                                <S.ModalContianer>
+                                    <S.ModalImage src={makeImagePath(detail?.poster_path)} />
+                                    <S.ModalInfo>
+                                        <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
+                                        <S.InfoDate>{part === "movie" ? detail?.release_date?.slice(0, 4) : detail?.first_air_date?.slice(0, 4)}</S.InfoDate>
+                                        <S.Genres>Genres: {detail?.genres?.length ? (
+                                            <S.Genre>
+                                                {(detail.genres || []).map
+                                                    ((genre: any) => genre.name).join("/")}
+                                            </S.Genre>
+                                        ) : null}</S.Genres>
+                                    </S.ModalInfo>
+                                </S.ModalContianer>
+                                <S.ModalClips bgPhoto={makeImagePath(
+                                    detail?.backdrop_path
+                                )}>
+                                    <S.Video>
+                                        <Trailer part={part} id={id} />
+                                    </S.Video>
+                                </S.ModalClips>
+                            </S.ModalContianerWrap>
+                            <S.ModalContianerWrap>
+                                <S.ModalContainers>
+                                    <S.OverviewTitle>Summary</S.OverviewTitle>
+                                    <S.InfoOverview>{detail?.overview}</S.InfoOverview>
+                                </S.ModalContainers>
+                                {/* <S.ModalContainers>
+                                    <S.OverviewTitle>Summary</S.OverviewTitle>
+                                    <S.InfoOverview>{detail?.overview}</S.InfoOverview>
+                                </S.ModalContainers> */}
+                            </S.ModalContianerWrap>
+                        </S.Wrap>
                     </>
                 ) : null}
             </AnimatePresence>
