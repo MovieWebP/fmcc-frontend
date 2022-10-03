@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
 import Slider from "../../Componenets/Slider/Slider";
 import Banner from "../../Componenets/Banner/Banner";
-import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getUpcomingMovie, IGetCredits, IGetMovieResults, getRecommend, getCast } from "../../Api/api";
+import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getUpcomingMovie, IGetCredits, IGetResults, getRecommend, getCast } from "../../Api/api";
 import Modal from "../../Componenets/Modal/Modal";
 import * as S from "../Style";
 
@@ -15,21 +15,14 @@ function TV() {
 
     //Tv
     const { data: airingToday, isLoading: AiringTodayLoading } =
-        useQuery<IGetMovieResults>(["airingToday", "tv"], getAiringTodayTv);
+        useQuery<IGetResults>(["airingToday", "tv"], getAiringTodayTv);
     const { data: onTheAir, isLoading: onTheAirTvLoading } =
-        useQuery<IGetMovieResults>(["onTheAirTv", "tv"], getOnTheAirTv);
+        useQuery<IGetResults>(["onTheAirTv", "tv"], getOnTheAirTv);
     const { data: popularTv, isLoading: popularTvLoading } =
-        useQuery<IGetMovieResults>(["popularTv", "tv"], getPopularTv);
+        useQuery<IGetResults>(["popularTv", "tv"], getPopularTv);
     const { data: topRatedTv, isLoading: topRatedTvLoading } =
-        useQuery<IGetMovieResults>(["topRatedTv", "tv"], getTopRatedTv);
+        useQuery<IGetResults>(["topRatedTv", "tv"], getTopRatedTv);
 
-    // Api
-    const { data: detail } = useQuery(["detail", id], () => getDetail(part, id || ""));
-    const { data: clips } = useQuery(["clips", id], () => getClips(part, id || ""));
-    const { data: recommend } = useQuery(["recommend", id], () => getRecommend(part, id || ""));
-    const { data: cast } = useQuery<IGetCredits>(["cast", id], () => getCast(part, id || ""));
-
-    const clipsData = clips?.results?.slice(-3).reverse();
     const isLoading = AiringTodayLoading || onTheAirTvLoading || popularTvLoading || topRatedTvLoading || false;
 
     return (
@@ -47,7 +40,7 @@ function TV() {
                         movies={airingToday?.results || []}
                     />
                     <S.SliderWrap>
-                        <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
+                        <S.SliderTitle to="/fm/tv">TV Shows</S.SliderTitle>
                         <Slider
                             id="airingToday"
                             part="tv"
@@ -77,12 +70,6 @@ function TV() {
                             movies={topRatedTv?.results || []}
                         />
                     </S.SliderWrap>
-                    {/* <Modal
-                        detail={detail ?? []} // movieDetail은 getDetail의 data를 받아온다.
-                        recommend={recommend ?? []} // movieClips은 getClip의 data를 받아온다.
-                        cast={cast?.cast ?? []} // movieCredits은 getMovieCredits의 data를 받아온다.
-                        clips={clips ?? []}
-                    /> */}
                 </>
             )}
         </>

@@ -19,7 +19,7 @@ export interface IMovie {
     name?: string; // tv 제목
 }
 
-export interface IGetMovieResults {
+export interface IGetResults {
     data: {
         minimum: string;
         maximum: string;

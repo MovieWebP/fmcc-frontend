@@ -10,11 +10,8 @@ function Movies() {
     const part = bigMovieMatch?.params.part;
 
     // Api
-    const { data: detail } = useQuery(["movie", id], () => // movieDetail은 getDetail의 data를 받아온다.
+    const { data: detail } = useQuery(["movie", id], () =>
         getDetail(part, id || "")
-    );
-    const { data: clips } = useQuery(["clips", id], () =>
-        getClips(part, id || "")
     );
     const { data: recommend } = useQuery(["recommend", id], () =>
         getRecommend(part, id || "")
@@ -23,12 +20,11 @@ function Movies() {
         getCast(part, id || "")
     );
 
-    const clipsData = clips?.results?.slice(-3).reverse();
     return (
         <Modal
-            detail={detail ?? []} // detail은 getDetail의 data를 받아온다.
-            recommend={recommend ?? []} // 
-            cast={cast?.cast ?? []} // 
+            detail={detail ?? []}
+            recommend={recommend ?? []}
+            cast={cast?.cast ?? []}
         />
     )
 }

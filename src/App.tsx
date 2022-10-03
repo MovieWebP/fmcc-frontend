@@ -5,6 +5,7 @@ import Movie from "./Route/Movie/Movie";
 import Home from "./Route/Home/Home";
 import TV from "./Route/TV/Tv Shows";
 import Movies from "./Route/Movies/Movies";
+import Search from "./Route/Search/Search";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/fm/movie" element={<Movie />} />
         <Route path="/:part/:sliderPart/:id" element={<Movies />} />
         <Route path="/fm/tv" element={<TV />} />
+        <Route path="/fm/search" element={<Search />} />
       </Routes>
     </Router>
   );

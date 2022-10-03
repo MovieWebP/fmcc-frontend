@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
 import Slider from "../../Componenets/Slider/Slider";
-import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getUpcomingMovie, IGetCredits, IGetMovieResults, getRecommend, getCast } from "../../Api/api";
+import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getUpcomingMovie, IGetCredits, IGetResults, getRecommend, getCast } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
 import * as S from "../Style";
 import Modal from "../../Componenets/Modal/Modal";
@@ -12,23 +12,23 @@ function Home() {
 
     // Movie
     const { data: nowPlaying, isLoading: playingLoading } =
-        useQuery<IGetMovieResults>(["nowPlaying", "movie"], getNowPlayingMovie);
+        useQuery<IGetResults>(["nowPlaying", "movie"], getNowPlayingMovie);
     const { data: popular, isLoading: popularLoading } =
-        useQuery<IGetMovieResults>(["popular", "movie"], getPopularMovie);
+        useQuery<IGetResults>(["popular", "movie"], getPopularMovie);
     const { data: upComing, isLoading: upComingLoading } =
-        useQuery<IGetMovieResults>(["upComing", "movie"], getUpcomingMovie);
+        useQuery<IGetResults>(["upComing", "movie"], getUpcomingMovie);
     const { data: topRated, isLoading: topRatedLoading } =
-        useQuery<IGetMovieResults>(["topRated", "movie"], getTopRatedMovie);
+        useQuery<IGetResults>(["topRated", "movie"], getTopRatedMovie);
 
     //Tv
     const { data: airingToday, isLoading: AiringTodayLoading } =
-        useQuery<IGetMovieResults>(["airingToday", "tv"], getAiringTodayTv);
+        useQuery<IGetResults>(["airingToday", "tv"], getAiringTodayTv);
     const { data: onTheAir, isLoading: onTheAirTvLoading } =
-        useQuery<IGetMovieResults>(["onTheAirTv", "tv"], getOnTheAirTv);
+        useQuery<IGetResults>(["onTheAirTv", "tv"], getOnTheAirTv);
     const { data: popularTv, isLoading: popularTvLoading } =
-        useQuery<IGetMovieResults>(["popularTv", "tv"], getPopularTv);
+        useQuery<IGetResults>(["popularTv", "tv"], getPopularTv);
     const { data: topRatedTv, isLoading: topRatedTvLoading } =
-        useQuery<IGetMovieResults>(["topRatedTv", "tv"], getTopRatedTv);
+        useQuery<IGetResults>(["topRatedTv", "tv"], getTopRatedTv);
 
 
     const isLoading = playingLoading || popularLoading || upComingLoading || topRatedLoading || AiringTodayLoading || onTheAirTvLoading || popularTvLoading || topRatedTvLoading || false;

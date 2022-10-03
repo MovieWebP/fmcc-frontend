@@ -41,7 +41,7 @@ function Header() {
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm<IForm>();
     const onSearch = (data: IForm) => {
-        navigate(`/search?keyword=${data.keyword}`);
+        navigate(`/fm/search?keyword=${data.keyword}`);
     }
 
     return (
@@ -61,7 +61,8 @@ function Header() {
                         </S.LinkStyle>
                     </S.MenuItem>
                     <S.MenuItem>
-                        <S.LinkStyle to="/fm/movie">Movie
+                        <S.LinkStyle to="/fm/movie">
+                            Movie
                         </S.LinkStyle>
                     </S.MenuItem>
                     <S.MenuItem>
@@ -88,6 +89,7 @@ function Header() {
                         ></path>
                     </motion.svg>
                     <S.Input
+                        {...register("keyword", { required: true, minLength: 2 })}
                         animate={inputAnimation}
                         initial={{ scaleX: 0 }}
                         transition={{ type: "linear" }}

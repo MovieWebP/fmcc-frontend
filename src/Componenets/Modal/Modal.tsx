@@ -52,7 +52,7 @@ function Modal({ detail, recommend, cast }: IModal) {
                                     <S.ModalInfo>
                                         <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
                                         <S.InfoDate>{part === "movie" ? detail?.release_date?.slice(0, 4) : detail?.first_air_date?.slice(0, 4)}</S.InfoDate>
-                                        <S.Genres>Genres: {detail?.genres?.length ? (
+                                        <S.Genres>{detail?.genres?.length ? (
                                             <S.Genre>
                                                 {(detail.genres || []).map
                                                     ((genre: any) => genre.name).join("/")}

@@ -54,6 +54,7 @@ export const ModalInfo = styled.div`
 export const InfoTitle = styled.span`
     width: fit-content;
     height: fit-content;
+    color: ${(props) => props.theme.white};
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -74,6 +75,7 @@ export const Genres = styled.span`
     margin-top: 5px;
     font-size: 14px;
     font-weight: 400;
+    color: ${(props) => props.theme.white};
 `;
 
 export const Genre = styled(Genres)`  
@@ -107,6 +109,7 @@ export const OverviewTitle = styled.h1`
 export const InfoOverview = styled.div`
     width: 30vw;
     max-width: 600px;
+    color: ${(props) => props.theme.white};
     min-width: 300px;
     margin-bottom: 10px;
 `;
@@ -117,6 +120,7 @@ export const InfoName = styled.span`
 
 export const InfoMovieName = styled.span`
     font-weight: 400;
+    color: ${(props) => props.theme.white};
 `;
 
 
@@ -153,6 +157,7 @@ export const RecommendTitle = styled.span`
     margin-top: 10px;
     font-size: 14px;
     font-weight: 400;
+    color: ${(props) => props.theme.white};
     transition: all 0.2s ease;
     &:hover{
         text-decoration: underline ${(props) => props.theme.white};
