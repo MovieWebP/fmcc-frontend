@@ -74,10 +74,32 @@ function Modal({ detail, recommend, cast, clips }: IModal) {
                                     <S.OverviewTitle>Summary</S.OverviewTitle>
                                     <S.InfoOverview>{detail?.overview}</S.InfoOverview>
                                 </S.ModalContainers>
-                                {/* <S.ModalContainers>
-                                    <S.OverviewTitle>Summary</S.OverviewTitle>
-                                    <S.InfoOverview>{detail?.overview}</S.InfoOverview>
-                                </S.ModalContainers> */}
+                                <S.ModalContainers>
+                                    <S.OverviewTitle>Info</S.OverviewTitle>
+                                    <S.InfoOverview>
+                                        <S.InfoName>Title: </S.InfoName>
+                                        <S.InfoMovieName>{part === "movie" ? detail?.title : detail?.name}</S.InfoMovieName>
+                                    </S.InfoOverview>
+                                    <S.InfoOverview>
+                                        <S.InfoName>Cast: </S.InfoName>
+                                        <S.InfoMovieName>{cast.slice(0, 4).map
+                                            ((casts: any) => casts.name).join(", ")}</S.InfoMovieName>
+                                    </S.InfoOverview>
+                                    <S.InfoOverview>
+                                        <S.InfoName>Genres: </S.InfoName>
+                                        <S.InfoMovieName>{detail?.genres?.length ? (
+                                            <S.InfoMovieName>
+                                                {(detail.genres || []).map
+                                                    ((genre: any) => genre.name).join(", ")}
+                                            </S.InfoMovieName>
+                                        ) : null}</S.InfoMovieName>
+                                    </S.InfoOverview>
+                                    <S.InfoOverview>
+                                        <S.InfoName>Rating: </S.InfoName>
+                                        <S.InfoMovieName>{detail?.vote_average}</S.InfoMovieName>
+                                    </S.InfoOverview>
+                                    
+                                </S.ModalContainers>
                             </S.ModalContianerWrap>
                         </S.Wrap>
                     </>

@@ -44,9 +44,7 @@ export const ModalContianer = styled.div`
     border: 1px solid red;
     display: flex;
     justify-content: space-between;
-    min-width: fit-content;
     background-color: rgba(0, 0, 0, 0.3);
-    height: fit-content;
     padding: 20px;
 `;
 
@@ -99,6 +97,7 @@ export const ModalClips = styled.div < { bgPhoto: string } >`
     background-size: cover;
     width: 450px;
     height: 300px;
+    margin-left: 10px;
     border-radius: 10px;
 `;
 
@@ -109,17 +108,26 @@ export const Video = styled.div`
 
 export const ModalContainers = styled(ModalContianer)`
     flex-direction: column; 
-    width: 30%;
 `;
 
 export const OverviewTitle = styled.h1`
-color: ${(props) => props.theme.lightPurple};
-font-size: 28px;
-font-weight: 700;
+    color: ${(props) => props.theme.lightPurple};
+    font-size: 28px;
+    font-weight: 700;
     margin-bottom: 20px;
 `;
 
-export const InfoOverview = styled.span`
-    width: 100%;
-    max-width: 200px;
+export const InfoOverview = styled.div`
+    width: 30vw;
+    max-width: 600px;
+    min-width: 300px;
+    margin-bottom: 10px;
+`;
+
+export const InfoName = styled.span`
+    opacity: 0.5;
+`;
+
+export const InfoMovieName = styled.span`
+    font-weight: 400;
 `;
