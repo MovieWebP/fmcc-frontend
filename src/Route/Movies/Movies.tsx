@@ -29,7 +29,6 @@ function Movies() {
             detail={detail ?? []} // detail은 getDetail의 data를 받아온다.
             recommend={recommend ?? []} // 
             cast={cast?.cast ?? []} // 
-            clips={clipsData ?? []}
         />
     )
 }

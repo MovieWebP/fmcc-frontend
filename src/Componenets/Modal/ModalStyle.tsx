@@ -7,44 +7,33 @@ export const Wrap = styled.div < { bgPhoto: string }> `
   rgba(19, 16, 16, 0.5),
       #181818
 ), url(${(props) => props.bgPhoto});
-    border: 1px solid white;
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 
     background-color: rgba(0, 0, 0, 0.7);
-    /* position: fixed; */
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     z-index: -20;
-    padding: 0 40px;
+    padding: 100px 40px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
-    height: 100vh;
-`;
-
-export const ModalContianerWrap = styled.div`   
-    border: 1px solid white;
-    position: relative;
-    top: 100px;
-    display: flex;
-    justify-content: space-between;
-    transition: all 0.5s ease-in-out;
-    /* flex-wrap: wrap;  */
-    width: 100%;
-    /* max-width: 2000px; */
     height: fit-content;
     align-items: center;
 `;
 
-export const ModalContianer = styled.div`   
-    border: 1px solid red;
+export const ModalContianerWrap = styled.div`   
     display: flex;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    max-width: 80vw;
+    height: fit-content;
+    align-items: center;
+    margin-bottom: 20px;
+`;
+
+export const ModalContianer = styled.div`   
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
 `;
 
@@ -55,13 +44,11 @@ export const ModalImage = styled.img`
 `
 
 export const ModalInfo = styled.div`
-    /* width: fit-content; */
     margin-left: 20px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 20vw;
-    /* max-width: 300px; */
 `;
 
 export const InfoTitle = styled.span`
@@ -125,9 +112,49 @@ export const InfoOverview = styled.div`
 `;
 
 export const InfoName = styled.span`
-    opacity: 0.5;
+    opacity: 0.7;
 `;
 
 export const InfoMovieName = styled.span`
     font-weight: 400;
+`;
+
+
+export const RecommendWrap = styled.div`
+    display: flex;
+    width: 500px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+`;
+
+export const RecommendImg = styled.img` 
+    align-self: center;
+    width: 180px;
+    height: 280px;
+    border-radius: 10px;
+`;
+
+export const RecommendSlider = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+`;
+
+export const RecommendTitle = styled.span`
+    width: 80%;
+    text-align: center;
+    color: ${(props) => props.theme.white};
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    &:hover{
+        text-decoration: underline ${(props) => props.theme.white};
+    }
 `;

@@ -10,11 +10,10 @@ import Trailer from "./Trailer/Trailer";
 interface IModal {
     detail: IGetDetail;
     cast: ICast[];
-    clips?: [string];
     recommend?: IGetRecommends;
 }
 
-function Modal({ detail, recommend, cast, clips }: IModal) {
+function Modal({ detail, recommend, cast }: IModal) {
     const modalMatch: PathMatch<string> | null = useMatch("/:part/:sliderPart/:id");
     const part = modalMatch?.params.part;
     const sliderPart = modalMatch?.params.sliderPart;
@@ -39,7 +38,7 @@ function Modal({ detail, recommend, cast, clips }: IModal) {
         // navigate("/");
     };
 
-    const recommends = recommend?.results?.slice(0, 3);
+    const recommends = recommend?.results?.slice(0, 4);
 
     return (
         <>
@@ -98,7 +97,57 @@ function Modal({ detail, recommend, cast, clips }: IModal) {
                                         <S.InfoName>Rating: </S.InfoName>
                                         <S.InfoMovieName>{detail?.vote_average}</S.InfoMovieName>
                                     </S.InfoOverview>
-                                    
+                                </S.ModalContainers>
+                            </S.ModalContianerWrap>
+                            <S.ModalContianerWrap>
+                                <S.ModalContainers>
+                                    {recommends ? (
+                                        <>
+                                            <S.OverviewTitle>Recommends</S.OverviewTitle>
+                                            <div>
+                                                <S.RecommendWrap>
+                                                    {recommends?.map((recommend: any) => (
+                                                        <S.RecommendSlider>
+                                                            <S.RecommendImg
+                                                                src={makeImagePath(
+                                                                    recommend.poster_path,
+                                                                    "w500"
+                                                                )}
+                                                            />
+                                                            <S.RecommendTitle
+                                                                key={recommend.id}
+                                                                onClick={() =>
+                                                                    modalOpen(part, recommend.id, id)
+                                                                }
+                                                            >{part === "movie" ? recommend?.title : recommend?.name}</S.RecommendTitle>
+                                                        </S.RecommendSlider>
+                                                    ))}
+                                                </S.RecommendWrap>
+                                            </div>
+                                        </>
+                                    ) : null}
+                                </S.ModalContainers>
+                                <S.ModalContainers>
+                                    {cast ? (
+                                        <>
+                                            <S.OverviewTitle>Cast</S.OverviewTitle>
+                                            <div>
+                                                <S.RecommendWrap>
+                                                    {cast.slice(0, 4).map((casts: any) => (
+                                                        <S.RecommendSlider>
+                                                            <S.RecommendImg
+                                                                src={makeImagePath(
+                                                                    casts?.profile_path,
+                                                                    "w500"
+                                                                )}
+                                                            />
+                                                            <S.RecommendTitle>{casts?.name}</S.RecommendTitle>
+                                                        </S.RecommendSlider>
+                                                    ))}
+                                                </S.RecommendWrap>
+                                            </div>
+                                        </>
+                                    ) : null}
                                 </S.ModalContainers>
                             </S.ModalContianerWrap>
                         </S.Wrap>
