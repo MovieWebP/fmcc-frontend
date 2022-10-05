@@ -1,71 +1,60 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Login_page = styled.div`
+export const Wrap = styled.div`
+    height: 100vh;
     display: flex;
-    width: 380px;
-    padding: 13% 0 0;
-    margin-left: -190px;  
-    margin: auto;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 `;
 
-export const Div_Form = styled.div`
-    width: 500px;
-    position: relative;
-    z-index: 1;
-    background: #FEE715;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: center;
-    border-radius: 20px;
-`;
-
-export const Input = styled.input`
-    font-family: "Roboto", sans-serif;
-    outline: 0;
-    background: #FFFF;
-    width: 90%;
-    border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
-    box-sizing: border-box;
-    font-size: 14px;
-    border-radius: 60px;
-    &::placeholder {
-        color: #101820;
-    }
-`;
-
-export const Button = styled.button`
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    outline: 0;
-    background: #1c2c3b;
-    width: 100%;
-    border: 0;
-    padding: 15px;
-    color: #FEE715;
-    font-size: 14px;
-    cursor: pointer;
+export const LoginFrom = styled.form`
+   display: flex;
+   width: 35vw;
+    height: 45vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
-    &:hover{
-        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-        background: #243d57;
+    background-color: #B0A8A8;
+`
+
+export const LoginInput = styled.input`
+    width: 80%;
+    height: 50px;
+    background-color: #575050;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 40px;
+    padding-left: 10px;
+    caret-color: auto; 
+    color: ${(props) => props.theme.white};
+    &:focus{
+        outline: none;
+    }
+    &::placeholder{
+        color: #d1cccc;
     }
 `;
 
-export const P = styled.p`
-    margin: 15px 0 0;
-    color: #101820;
-    font-size: 12px;
+export const LoginInputSecond = styled(LoginInput)`
+    margin-bottom: 0;
 `;
 
-export const StyledLink = styled(Link)`
-    text-decoration: none;
-    color: #243d57;
+export const LoginButton = styled.button`
+    margin-top: 10px;
+    width: 80%;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    color: ${props => props.theme.white};
+    background-color: #575050;
+    transition: all 0.2s ease-in-out;
     &:hover{
-        transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
-        color: #31567b;
+        cursor: pointer;
+        background-color: #797474;
     }
 `;

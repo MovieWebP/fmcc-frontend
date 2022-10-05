@@ -11,6 +11,10 @@ export const Wrap = styled.div`
     align-items: center;
     flex-wrap: wrap;
     flex-direction: column;
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    scrollbar-width:none;
     /* border: 1px solid red; */
 `;
 export const AllWrap = styled(Wrap)`

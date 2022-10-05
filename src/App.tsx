@@ -18,6 +18,8 @@ function App() {
         <Route path="/:part/:sliderPart/:id" element={<Movies />} />
         <Route path="/fm/tv" element={<TV />} />
         <Route path="/fm/search" element={<Search />} />
+        <Route path="/fm/login" element={<Login />} />
+        {/* <Route path="/fm/signin" element={<} /> */}
       </Routes>
     </Router>
   );

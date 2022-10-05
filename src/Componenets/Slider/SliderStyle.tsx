@@ -9,6 +9,10 @@ export const SliderWrap = styled.div`
     flex-wrap: wrap;
     position: relative;
     height: 400px;
+    ::-webkit-scrollbar{
+        display: none;
+    }
+    scrollbar-width:none;
 `;
 
 export const Wrap = styled.div`
@@ -21,6 +25,10 @@ export const Wrap = styled.div`
   width: 100%;
   max-width: 1600px;
   overflow: hidden;
+  ::-webkit-scrollbar{
+        display: none;
+    }
+    scrollbar-width:none;
 `;
 
 export const Title = styled.div`

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export const Wrap = styled.div < { bgPhoto: string }> `
  background-image: linear-gradient(
@@ -125,6 +125,7 @@ export const InfoMovieName = styled.span`
 
 
 export const RecommendWrap = styled.div`
+    border: 1px solid red;
     display: flex;
     width: 500px;
     flex-wrap: wrap;
@@ -136,6 +137,7 @@ export const RecommendWrap = styled.div`
 
 export const RecommendImg = styled.img` 
     align-self: center;
+    border: 1px solid white;
     width: 180px;
     height: 280px;
     border-radius: 10px;
@@ -143,6 +145,10 @@ export const RecommendImg = styled.img`
 
 export const RecommendSlider = styled.div`
     display: flex;
+    border: 1px solid red;
+    width: fit-content;
+    padding: 0;
+    margin: 0;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
@@ -151,7 +157,8 @@ export const RecommendSlider = styled.div`
 `;
 
 export const RecommendTitle = styled.span`
-    width: 80%;
+    width: 50%;
+    border: 1px solid blue;
     text-align: center;
     color: ${(props) => props.theme.white};
     margin-top: 10px;
@@ -161,5 +168,6 @@ export const RecommendTitle = styled.span`
     transition: all 0.2s ease;
     &:hover{
         text-decoration: underline ${(props) => props.theme.white};
+        cursor: default;
     }
 `;

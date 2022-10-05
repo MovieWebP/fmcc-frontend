@@ -1,19 +1,24 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import * as S from "./LoginStyle";
-import Menu from "../Header";
+
+interface IForm {
+    email: string;
+    password: string;
+};
 
 function Login() {
+    const { register, handleSubmit } = useForm<IForm>();
     return (
-        <S.Login_page>
-            <S.Div_Form>
-                <form>
-                    <S.Input type="text" placeholder="username" />
-                    <S.Input type="password" placeholder="password" />
-                    <S.StyledLink to="/"><S.Button>login</S.Button></S.StyledLink>
-                    <S.P>Not registered? <S.StyledLink to="/SignUp">Create an account</S.StyledLink></S.P>
-                </form>
-            </S.Div_Form>
-        </S.Login_page>
+        <S.Wrap>
+            <S.LoginFrom>
+                <S.LoginInput
+                    {...register({ required: true, minLength: 2 })}
+                    type="text" placeholder="Username" />
+                <S.LoginInputSecond type="text" placeholder="Username" />
+                <S.LoginButton>Login</S.LoginButton>
+            </S.LoginFrom>
+        </S.Wrap>
     )
 };
 

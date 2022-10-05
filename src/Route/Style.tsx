@@ -11,11 +11,11 @@ export const SliderWrap = styled.div`
 `;
 
 export const SliderTitle = styled(Link)`
-    background-color: ${(props) => props.theme.lightPurple};
+    /* background-color: ${(props) => props.theme.lightPurple}; */
     color: ${(props) => props.theme.white};
     width: fit-content;
     margin-bottom: 50px;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
     padding: 5px 20px;
     border-radius: 5px;

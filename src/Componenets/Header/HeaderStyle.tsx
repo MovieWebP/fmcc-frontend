@@ -38,12 +38,12 @@ export const Title = styled.h1`
     margin-right: 50px;
     padding: 0 5px;
     border-radius: 5px;
-text-shadow: none;
-font-size: 24px;
-margin: 10px 0;
-margin-right: 50px;
-padding: 0 10px;
-border-radius: 5px;
+    text-shadow: none;
+    font-size: 24px;
+    margin: 10px 0;
+    margin-right: 50px;
+    padding: 0 10px;
+    border-radius: 5px;
     background-color: ${(props) => props.theme.white};
     color: ${(props) => props.theme.purple};
 `;
@@ -74,7 +74,7 @@ export const Search = styled.form`
 export const Input = styled(motion.input)`
     border: 1px solid #919191;
     border-radius: 50px;
-    outline: 0;
+    outline: 0; 
     transform-origin: right center;
     position: absolute;
     right: 65px;
@@ -84,7 +84,7 @@ export const Input = styled(motion.input)`
     color: ${(props) => props.theme.white};
     font-size: 16px;
     background-color: transparent;
-    caret-color: auto;
+    caret-color: auto; 
 `
 
 export const Login = styled(Link)`
