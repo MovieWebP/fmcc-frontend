@@ -125,7 +125,6 @@ export const InfoMovieName = styled.span`
 
 
 export const RecommendWrap = styled.div`
-    border: 1px solid red;
     display: flex;
     width: 500px;
     flex-wrap: wrap;
@@ -137,7 +136,6 @@ export const RecommendWrap = styled.div`
 
 export const RecommendImg = styled.img` 
     align-self: center;
-    border: 1px solid white;
     width: 180px;
     height: 280px;
     border-radius: 10px;
@@ -145,8 +143,9 @@ export const RecommendImg = styled.img`
 
 export const RecommendSlider = styled.div`
     display: flex;
-    border: 1px solid red;
-    width: fit-content;
+    height: fit-content;
+    width: 180px;
+    overflow: hidden;
     padding: 0;
     margin: 0;
     flex-wrap: wrap;
@@ -158,7 +157,6 @@ export const RecommendSlider = styled.div`
 
 export const RecommendTitle = styled.span`
     width: 50%;
-    border: 1px solid blue;
     text-align: center;
     color: ${(props) => props.theme.white};
     margin-top: 10px;

@@ -116,4 +116,5 @@ export const MovieTitle = styled(motion.div)`
     &:hover{
         text-decoration: underline ${(props) => props.theme.white};
     }
+    cursor: default;
 `
