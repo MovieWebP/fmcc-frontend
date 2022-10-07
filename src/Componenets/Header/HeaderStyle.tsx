@@ -61,6 +61,15 @@ export const LinkStyle = styled(Link)`
     text-decoration: none;
 `;
 
+export const Match = styled(Link)`
+    align-items: center;
+    color: ${(props) => props.theme.white};
+    text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
+    font-weight: 700;
+    transition: all .25s ease-in-out;   
+    transition-delay: 0s;
+`;
+
 export const Search = styled.form`
     color: ${(props) => props.theme.white};
     display: flex;

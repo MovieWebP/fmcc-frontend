@@ -55,19 +55,37 @@ function Header() {
                         <S.Title>FM</S.Title>
                     </S.LinkStyle>
                     <S.MenuItem>
-                        <S.LinkStyle to="/fm/">
-                            Home
-                        </S.LinkStyle>
+                        {homeMatch ? (
+                            <S.Match to="/fm/">
+                                Home
+                            </S.Match>
+                        ) : (
+                            <S.LinkStyle to="/fm/">
+                                Home
+                            </S.LinkStyle>
+                        )}
                     </S.MenuItem>
                     <S.MenuItem>
-                        <S.LinkStyle to="/fm/movie">
-                            Movie
-                        </S.LinkStyle>
+                        {movieMatch ? (
+                            <S.Match to="/fm/movie">
+                                Movie
+                            </S.Match>
+                        ) : (
+                            <S.LinkStyle to="/fm/movie">
+                                Movie
+                            </S.LinkStyle>
+                        )}
                     </S.MenuItem>
                     <S.MenuItem>
-                        <S.LinkStyle to="/fm/tv">
-                            Tv shows
-                        </S.LinkStyle>
+                        {tvMatch ? (
+                            <S.Match to="/fm/tv">
+                                TV Shows
+                            </S.Match>
+                        ) : (
+                            <S.LinkStyle to="/fm/tv">
+                                Tv Shows
+                            </S.LinkStyle>
+                        )}
                     </S.MenuItem>
                 </S.MenuItems>
             </S.MenuWrap>
@@ -91,7 +109,7 @@ function Header() {
                         {...register("keyword", { required: true, minLength: 2 })}
                         animate={inputAnimation}
                         initial={{ scaleX: 0 }}
-                        transition={{ type: "linear" }} 
+                        transition={{ type: "linear" }}
                         placeholder="Search"
                     />
                 </S.Search>
