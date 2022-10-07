@@ -21,6 +21,10 @@ export const LoginFrom = styled.form`
     background-color: #B0A8A8;
 `
 
+export const SignUpFrom = styled(LoginFrom)`
+    height: 60vh;
+`;
+
 export const UserDiv = styled.div`
     margin-bottom: 40px;
     height: 50px;
@@ -53,6 +57,7 @@ export const Message = styled.span`
 export const PasswordDiv = styled(UserDiv)`
     margin-bottom: 0;
 `;
+
 
 export const Password = styled(Username)`
 `;
