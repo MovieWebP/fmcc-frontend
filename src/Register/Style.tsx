@@ -21,14 +21,19 @@ export const LoginFrom = styled.form`
     background-color: #B0A8A8;
 `
 
-export const LoginInput = styled.input`
-    width: 80%;
+export const UserDiv = styled.div`
+    margin-bottom: 40px;
     height: 50px;
+    width: 80%;
+`;
+
+export const Username = styled.input`
     background-color: #575050;
     border-radius: 10px;
-    border: none;
-    margin-bottom: 40px;
+    height: 50px;
     padding-left: 10px;
+    width: 100%;
+    border: none;
     caret-color: auto; 
     color: ${(props) => props.theme.white};
     &:focus{
@@ -39,12 +44,23 @@ export const LoginInput = styled.input`
     }
 `;
 
-export const LoginInputSecond = styled(LoginInput)`
+export const Message = styled.span`
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+`;
+
+export const PasswordDiv = styled(UserDiv)`
     margin-bottom: 0;
 `;
 
+export const Password = styled(Username)`
+`;
+
+export const CheckPassword = styled(Username)``;
+
 export const LoginButton = styled.button`
-    margin-top: 10px;
+    margin-top: 25px;
     width: 80%;
     border-radius: 3px;
     border: none;
@@ -56,5 +72,19 @@ export const LoginButton = styled.button`
     &:hover{
         cursor: pointer;
         background-color: #797474;
+    }
+`;
+
+export const LinkDiv = styled.div`
+    margin-top: 10px;
+    font-size: 14px;
+    color: ${props => props.theme.white};
+`;
+
+export const LinkStyle = styled(Link)`
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        cursor: pointer;
+        color: #797474;
     }
 `;

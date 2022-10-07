@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./Componenets/Header/Header";
-import Login from "./Componenets/Header/Login/Login";
+import Login from "./Register/Login/Login";
+import SignUp from "./Register/SignUp/SignUp";
+
 import Movie from "./Route/Movie/Movie";
 import Home from "./Route/Home/Home";
 import TV from "./Route/TV/Tv Shows";
@@ -19,7 +21,7 @@ function App() {
         <Route path="/fm/tv" element={<TV />} />
         <Route path="/fm/search" element={<Search />} />
         <Route path="/fm/login" element={<Login />} />
-        {/* <Route path="/fm/signin" element={<} /> */}
+        <Route path="/fm/signup" element={<SignUp />} />
       </Routes>
     </Router>
   );
