@@ -84,31 +84,39 @@ function Banner({ part, id, movies }: IBanner) {
                         {movies
                             ?.slice(1)
                             .slice(offset * index, offset * index + offset).map((movie) => (
-                                < S.MainImage
-                                    bgPhoto={makeImagePath(movie?.backdrop_path)}
-                                >
-                                    {index === 0 ? null : (
-                                        <S.ArrowBox onClick={moveSliderPrev}>
-                                            <MdKeyboardArrowLeft size="60px" />
-                                        </S.ArrowBox>
-                                    )}
-                                    <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
-                                        <S.BannerWrap>
-                                            <S.TitleDiv>
-                                                <S.Title>{part === "movie" ? movie?.title : movie?.name}</S.Title>
-                                                <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
-                                            </S.TitleDiv>
-                                            <S.Overview>{movie?.overview.slice(0, 150)}...</S.Overview>
-                                            <S.Button onClick={() => boxClick(part, movie.id, id)}>
-                                                <BsPlayFill size="20px" />
-                                                <S.ButtonText>Watch Now</S.ButtonText>
-                                            </S.Button>
-                                        </S.BannerWrap>
-                                    </S.BannerImage>
-                                    <S.RightArrow onClick={moveSlider} >
-                                        <MdKeyboardArrowRight size="60px" />
-                                    </S.RightArrow>
-                                </S.MainImage>
+                                <>
+                                    < S.MainImage
+                                        bgPhoto={makeImagePath(movie?.backdrop_path)}
+                                    ></S.MainImage>
+                                    <S.ImageWrap>
+                                        {index === 0 ? (
+                                            <S.HiddenBox onClick={moveSliderPrev}>
+                                                <MdKeyboardArrowLeft size="60px" />
+                                            </S.HiddenBox>
+                                        ) : (
+                                            <S.ArrowBox onClick={moveSliderPrev}>
+                                                <MdKeyboardArrowLeft size="60px" />
+                                            </S.ArrowBox>
+                                        )}
+
+                                        <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
+                                            <S.BannerWrap>
+                                                <S.TitleDiv>
+                                                    <S.Title>{part === "movie" ? movie?.title : movie?.name}</S.Title>
+                                                    <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
+                                                </S.TitleDiv>
+                                                <S.Overview>{movie?.overview.slice(0, 150)}...</S.Overview>
+                                                <S.Button onClick={() => boxClick(part, movie.id, id)}>
+                                                    <BsPlayFill size="20px" />
+                                                    <S.ButtonText>Watch Now</S.ButtonText>
+                                                </S.Button>
+                                            </S.BannerWrap>
+                                        </S.BannerImage>
+                                        <S.RightArrow onClick={moveSlider} >
+                                            <MdKeyboardArrowRight size="60px" />
+                                        </S.RightArrow>
+                                    </S.ImageWrap>
+                                </>
                             ))}
                     </S.Banner>
                 </AnimatePresence>

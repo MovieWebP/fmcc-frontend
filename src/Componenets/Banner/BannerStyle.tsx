@@ -32,11 +32,20 @@ export const Banner = styled(motion.div)`
     flex-direction: column;
 `;
 
+export const ImageWrap = styled(motion.div)`
+  display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+position: absolute;
+top: 0;
+`;
+
 export const MainImage = styled(motion.div) < { bgPhoto: string }> `
 display: flex;
 justify-content: center;
 align-items: center;
-transition: transform 0.5;
+z-index: -100;
 background-image: 
 linear-gradient(
   rgba(19, 16, 16, 0.3),
@@ -44,15 +53,16 @@ linear-gradient(
       #181818
 ), 
 url(${(props) => props.bgPhoto});
+filter: blur(4px);
 background-size: cover;
 width: 100%;
 height: 100%;
-resize: both;
+resize: both;  
 `;
 
 export const BannerImage = styled.div< { bgPhoto: string }>`
 border-radius: 10px;
-z-index: 1;
+z-index: 100;
 width: 650px;
 height: 80%;
 display: flex;
@@ -92,7 +102,6 @@ export const Overview = styled.h2`
 color: ${(props) => props.theme.white};
 font-weight: 300;
 font-size: 16px;
-/* width: 300px; */
 `;
 
 export const Date = styled.h2`
@@ -123,6 +132,7 @@ export const ButtonText = styled.h2`
   font-weight: 500;
 `;
 
+
 export const ArrowBox = styled.span`
   position: relative;
   top: 20px;
@@ -131,6 +141,9 @@ export const ArrowBox = styled.span`
   &:hover {
     opacity: 1;
   }
+  `
+export const HiddenBox = styled(ArrowBox)`
+  opacity: 0;
   `
 
 export const RightArrow = styled(ArrowBox)`
