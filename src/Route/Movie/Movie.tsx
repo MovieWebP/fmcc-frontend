@@ -1,12 +1,9 @@
-import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
-import { PathMatch, useMatch } from "react-router-dom";
 import Slider from "../../Componenets/Slider/Slider";
-import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getUpcomingMovie, IGetCredits, IGetResults, getRecommend, getCast } from "../../Api/api";
+import { getNowPlayingMovie, getPopularMovie, getTopRatedMovie, getUpcomingMovie, IGetResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
 import * as S from "../Style";
-import Modal from "../../Componenets/Modal/Modal";
 
 function Home() {
 

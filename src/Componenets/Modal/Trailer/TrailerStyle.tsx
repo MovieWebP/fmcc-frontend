@@ -37,7 +37,6 @@ export const Volum = styled.svg`
     position: relative;
     padding: 5px;
     border-radius: 50%;
-    /* bottom: 14px; */
     border: 1px solid white;
 `;
 

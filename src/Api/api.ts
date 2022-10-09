@@ -1,6 +1,3 @@
-import axios from "axios";
-
-
 const Api_KEY = "3e354f52d83220768ad48a5e6ab5121b";
 const BASE_PATH = "https://api.themoviedb.org/3"
 

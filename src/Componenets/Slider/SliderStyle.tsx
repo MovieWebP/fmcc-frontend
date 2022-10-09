@@ -17,17 +17,17 @@ export const SliderWrap = styled.div`
 
 export const Wrap = styled.div`
     height: 100%;
-  position: relative;
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 1600px;
-  overflow: hidden;
-  ::-webkit-scrollbar{
-        display: none;
-    }
+    position: relative;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1600px;
+    overflow: hidden;
+    ::-webkit-scrollbar{
+          display: none;
+      }
     scrollbar-width:none;
 `;
 
@@ -42,17 +42,16 @@ export const Title = styled.div`
 `;
 
 export const Slider = styled(motion.div)`
-    /* border: 1px solid red; */
     padding: 0 30px;
-  padding-top: 50px;
-  justify-content: center;  
-  align-items: baseline;
-  flex-wrap: wrap;
-  display: grid; 
-  grid-template-columns: repeat(6, 1fr); 
-  position: absolute;
-  margin-top: 10px;
-  width: 100%;
+    padding-top: 50px;
+    justify-content: center;  
+    align-items: baseline;
+    flex-wrap: wrap;
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr); 
+    position: absolute;
+    margin-top: 10px;
+    width: 100%;
 `;
 
 export const IconLeft = styled.span`

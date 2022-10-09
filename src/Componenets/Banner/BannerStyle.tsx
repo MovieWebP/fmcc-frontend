@@ -1,107 +1,108 @@
 import { motion } from "framer-motion";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 
 export const Wrap = styled.div`
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    ::-webkit-scrollbar{
-        display: none;
-    }
-    scrollbar-width:none;
-    /* border: 1px solid red; */
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  scrollbar-width:none;
+  height: fit-content;
 `;
 export const AllWrap = styled(Wrap)`
-    height: 400px;
+  height: 400px;  
 `;
 
 export const Banner = styled(motion.div)`
   position: absolute;
   width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 400px;
 `;
 
 export const ImageWrap = styled(motion.div)`
   display: flex;
-justify-content: center;
-align-items: center;
-height: 100%;
-position: absolute;
-top: 0;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  justify-content: center;
 `;
 
 export const MainImage = styled(motion.div) < { bgPhoto: string }> `
-display: flex;
-justify-content: center;
-align-items: center;
-z-index: -100;
-background-image: 
-linear-gradient(
-  rgba(19, 16, 16, 0.3),
-  rgba(19, 16, 16, 0.3),
-      #181818
-), 
-url(${(props) => props.bgPhoto});
-filter: blur(4px);
-background-size: cover;
-width: 100%;
-height: 100%;
-resize: both;  
+  justify-content: center;
+  z-index: -100;
+  display: flex;
+  background-image: 
+  linear-gradient(
+    rgba(19, 16, 16, 0.3),
+    rgba(19, 16, 16, 0.3),
+    #181818
+    ), 
+    url(${(props) => props.bgPhoto});
+    filter: blur(4px);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    resize: both;  
+    align-items: center;
 `;
 
 export const BannerImage = styled.div< { bgPhoto: string }>`
-border-radius: 10px;
-z-index: 100;
-width: 650px;
-height: 80%;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-flex-wrap: wrap;
-margin-top: 50px;
-background-image: url(${(props) => props.bgPhoto});
-background-size: cover;
+  z-index: 100;
+  width: 650px;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  background-image: url(${(props) => props.bgPhoto});
+  background-size: cover;
+  border-radius: 10px;
 `;
+
 export const BannerWrap = styled.div`
-position: absolute;
-bottom: 20px;
-background-color: rgba(0, 0, 0, 0.5);
-border-radius: 10px;
-padding: 0 10px;
-padding-bottom: 5px;
-width: 80%;
-max-width: 600px;
-margin-bottom: 10px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 0 10px;
+  padding-bottom: 5px;
+  width: 80%;
+  max-width: 600px;
+  margin-bottom: 10px;
+  bottom: 20px;
 `;
 
 export const TitleDiv = styled.div`
-display: flex;
-width: fit-content;
-align-items: center;
+  display: flex;
+  align-items: center;
+  width: fit-content;
 `;
 
 export const Title = styled.h3`
-color: ${(props) => props.theme.white};
-font-weight: 500;
-font-size: 28px;
-margin-bottom: 3px;
+  color: ${(props) => props.theme.white};
+  font-size: 28px;
+  margin-bottom: 3px;
+  font-weight: 500;
 `;
+
 export const Overview = styled.h2`
-color: ${(props) => props.theme.white};
-font-weight: 300;
-font-size: 16px;
+  color: ${(props) => props.theme.white};
+  font-size: 16px;
+  font-weight: 300;
 `;
 
 export const Date = styled.h2`

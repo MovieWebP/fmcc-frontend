@@ -2,11 +2,11 @@ import styled from "styled-components";
 // import { motion } from "framer-motion";
 
 export const Wrap = styled.div < { bgPhoto: string }> `
- background-image: linear-gradient(
-  rgba(19, 16, 16, 0.5),
-  rgba(19, 16, 16, 0.5),
-      #181818
-), url(${(props) => props.bgPhoto});
+    background-image: linear-gradient(
+        rgba(19, 16, 16, 0.5),
+        rgba(19, 16, 16, 0.5),
+        #181818
+        ), url(${(props) => props.bgPhoto});
     background-size: cover;
     background-position: center;
     background-attachment: fixed; 

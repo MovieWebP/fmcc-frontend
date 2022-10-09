@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
-import { getDetail, getClips, getRecommend, getCast, IGetCredits } from "../../Api/api";
+import { getDetail, getRecommend, getCast, IGetCredits } from "../../Api/api";
 import Modal from "../../Componenets/Modal/Modal";
 
 

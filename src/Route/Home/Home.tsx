@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
+
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
-import { PathMatch, useMatch } from "react-router-dom";
 import Slider from "../../Componenets/Slider/Slider";
-import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getUpcomingMovie, IGetCredits, IGetResults, getRecommend, getCast } from "../../Api/api";
+import { getAiringTodayTv, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getUpcomingMovie, IGetResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
 import * as S from "../Style";
-import Modal from "../../Componenets/Modal/Modal";
 
 function Home() {
 
@@ -17,8 +15,6 @@ function Home() {
         useQuery<IGetResults>(["popular", "movie"], getPopularMovie);
     const { data: upComing, isLoading: upComingLoading } =
         useQuery<IGetResults>(["upComing", "movie"], getUpcomingMovie);
-    const { data: topRated, isLoading: topRatedLoading } =
-        useQuery<IGetResults>(["topRated", "movie"], getTopRatedMovie);
 
     //Tv
     const { data: airingToday, isLoading: AiringTodayLoading } =
@@ -27,11 +23,9 @@ function Home() {
         useQuery<IGetResults>(["onTheAirTv", "tv"], getOnTheAirTv);
     const { data: popularTv, isLoading: popularTvLoading } =
         useQuery<IGetResults>(["popularTv", "tv"], getPopularTv);
-    const { data: topRatedTv, isLoading: topRatedTvLoading } =
-        useQuery<IGetResults>(["topRatedTv", "tv"], getTopRatedTv);
 
 
-    const isLoading = playingLoading || popularLoading || upComingLoading || topRatedLoading || AiringTodayLoading || onTheAirTvLoading || popularTvLoading || topRatedTvLoading || false;
+    const isLoading = playingLoading || popularLoading || upComingLoading || AiringTodayLoading || onTheAirTvLoading || popularTvLoading || false;
 
     return (
         <>
@@ -46,7 +40,6 @@ function Home() {
                         id="banner"
                         part="movie"
                         movies={nowPlaying?.results || []}
-                    // movies={trendingData}
                     />
                     <S.SliderWrap>
                         <S.SliderTitle to="/fm/movie">Movie</S.SliderTitle>

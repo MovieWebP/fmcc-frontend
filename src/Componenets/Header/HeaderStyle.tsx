@@ -106,7 +106,6 @@ export const Login = styled(Link)`
     transition: all 0.3s ease-in-out;
     &:hover{
         background-color: #686464;
-        /* transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2); */
     }
 `;
 

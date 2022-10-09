@@ -1,17 +1,12 @@
-import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
 import Slider from "../../Componenets/Slider/Slider";
 import Banner from "../../Componenets/Banner/Banner";
-import { getAiringTodayTv, getClips, getDetail, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getTopRatedMovie, getTopRatedTv, getUpcomingMovie, IGetCredits, IGetResults, getRecommend, getCast } from "../../Api/api";
-import Modal from "../../Componenets/Modal/Modal";
+import { getAiringTodayTv, getOnTheAirTv, getPopularTv, getTopRatedTv, IGetResults } from "../../Api/api";
 import * as S from "../Style";
 
 function TV() {
-    const bigMovieMatch: PathMatch<string> | null = useMatch("/:part/:sliderPart/:id");
-    const id = bigMovieMatch?.params.id;
-    const part = bigMovieMatch?.params.part;
 
     //Tv
     const { data: airingToday, isLoading: AiringTodayLoading } =
