@@ -55,6 +55,7 @@ export const Slider = styled(motion.div)`
 `;
 
 export const IconLeft = styled.span`
+    height: 80%;
     position: absolute;
     left: 0;
     top: 0;
@@ -72,9 +73,11 @@ export const IconLeft = styled.span`
 `;
 
 export const IconRight = styled.span`
+    height: 80%;
     position: absolute;
     right: 0;
     top: 0;
+    bottom: 0;
     bottom: 50px;
     align-self: center;
     display: flex;

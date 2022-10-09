@@ -25,9 +25,9 @@ export const ModalContianerWrap = styled.div`
     justify-content: space-between;
     transition: all 0.5s ease-in-out;
     width: 100%;
-    max-width: 80vw;
+    max-width: 90vw;
     height: fit-content;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 20px;
 `;
 
@@ -35,6 +35,23 @@ export const ModalContianer = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 20px;
+`;
+
+export const ModalContainers = styled(ModalContianer)`
+    flex-direction: column; 
+`;
+
+export const CopyContainer = styled.div`
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 0px;
+`;
+
+export const InfoModalContainer = styled.div`
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 450px;
 `;
 
 export const ModalImage = styled.img`
@@ -48,7 +65,7 @@ export const ModalInfo = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 20vw;
+    width: 200px;
 `;
 
 export const InfoTitle = styled.span`
@@ -95,9 +112,6 @@ export const Video = styled.div`
     border-radius: 10px;
 `;
 
-export const ModalContainers = styled(ModalContianer)`
-    flex-direction: column; 
-`;
 
 export const OverviewTitle = styled.h1`
     color: ${(props) => props.theme.lightPurple};
@@ -143,20 +157,19 @@ export const RecommendImg = styled.img`
 
 export const RecommendSlider = styled.div`
     display: flex;
-    height: fit-content;
+    height: 380px;
     width: 180px;
     overflow: hidden;
     padding: 0;
     margin: 0;
     flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: baseline;
     padding: 10px 0;
 `;
 
 export const RecommendTitle = styled.span`
-    width: 50%;
+    width: 100%;
     text-align: center;
     color: ${(props) => props.theme.white};
     margin-top: 10px;

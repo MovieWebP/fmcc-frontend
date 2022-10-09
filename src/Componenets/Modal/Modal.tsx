@@ -6,6 +6,7 @@ import { useRecoilState } from "recoil";
 import { AnimatePresence } from "framer-motion";
 import { makeImagePath } from "../../Api/utils";
 import Trailer from "./Trailer/Trailer";
+import { Helmet } from "react-helmet";
 
 interface IModal {
     detail: IGetDetail;
@@ -42,6 +43,9 @@ function Modal({ detail, recommend, cast }: IModal) {
 
     return (
         <>
+            <Helmet>
+                <title>{detail?.title || detail?.name}</title>
+            </Helmet>
             <AnimatePresence>
                 {modalMatch ? (
                     <>
@@ -73,7 +77,7 @@ function Modal({ detail, recommend, cast }: IModal) {
                                     <S.OverviewTitle>Summary</S.OverviewTitle>
                                     <S.InfoOverview>{detail?.overview}</S.InfoOverview>
                                 </S.ModalContainers>
-                                <S.ModalContainers>
+                                <S.InfoModalContainer>
                                     <S.OverviewTitle>Info</S.OverviewTitle>
                                     <S.InfoOverview>
                                         <S.InfoName>Title: </S.InfoName>
@@ -97,7 +101,7 @@ function Modal({ detail, recommend, cast }: IModal) {
                                         <S.InfoName>Rating: </S.InfoName>
                                         <S.InfoMovieName>{detail?.vote_average}</S.InfoMovieName>
                                     </S.InfoOverview>
-                                </S.ModalContainers>
+                                </S.InfoModalContainer>
                             </S.ModalContianerWrap>
                             <S.ModalContianerWrap>
                                 <S.ModalContainers>
@@ -127,7 +131,7 @@ function Modal({ detail, recommend, cast }: IModal) {
                                         </>
                                     ) : null}
                                 </S.ModalContainers>
-                                <S.ModalContainers>
+                                <S.CopyContainer>
                                     {cast ? (
                                         <>
                                             <S.OverviewTitle>Cast</S.OverviewTitle>
@@ -148,7 +152,7 @@ function Modal({ detail, recommend, cast }: IModal) {
                                             </div>
                                         </>
                                     ) : null}
-                                </S.ModalContainers>
+                                </S.CopyContainer>
                             </S.ModalContianerWrap>
                         </S.Wrap>
                     </>
