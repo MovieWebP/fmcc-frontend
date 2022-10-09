@@ -10,7 +10,7 @@ interface IForm {
 
 function Header() {
     const [searchOpen, setSearchOpen] = useState(false);
-    const homeMatch = useMatch("/fm/");
+    const homeMatch = useMatch("/fm");
     const movieMatch = useMatch("/fm/movie");
     const tvMatch = useMatch("/fm/tv");
     const navAnimation = useAnimation();
@@ -51,16 +51,16 @@ function Header() {
         >
             <S.MenuWrap>
                 <S.MenuItems>
-                    <S.LinkStyle to="/fm/">
+                    <S.LinkStyle to="/fm">
                         <S.Title>FM</S.Title>
                     </S.LinkStyle>
                     <S.MenuItem>
                         {homeMatch ? (
-                            <S.Match to="/fm/">
+                            <S.Match to="/fm">
                                 Home
                             </S.Match>
                         ) : (
-                            <S.LinkStyle to="/fm/">
+                            <S.LinkStyle to="/fm">
                                 Home
                             </S.LinkStyle>
                         )}
