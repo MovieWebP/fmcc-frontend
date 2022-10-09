@@ -60,7 +60,7 @@ export const MainImage = styled(motion.div) < { bgPhoto: string }> `
 `;
 
 export const BannerImage = styled.div< { bgPhoto: string }>`
-  z-index: 100;
+  z-index: 1;
   width: 650px;
   height: 80%;
   display: flex;
@@ -124,6 +124,7 @@ export const Button = styled.div`
   transition: all .3s ease-in-out;
   &:hover {
     background-color: ${(props) => props.theme.purple};
+    cursor: default;
   }
 `;
 
