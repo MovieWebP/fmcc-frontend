@@ -109,11 +109,3 @@ export const Login = styled(Link)`
     }
 `;
 
-export const navVariants = {
-    top: {
-        backgroundColor: '#2E2B2B'
-    },
-    scroll: {
-        backgroundColor: '#2E2B2B'
-    }
-}

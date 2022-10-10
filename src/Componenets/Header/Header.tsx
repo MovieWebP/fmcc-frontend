@@ -8,6 +8,16 @@ interface IForm {
     keyword: string;
 }
 
+export const navVariants = {
+    top: {
+        backgroundColor: '#2E2B2B'
+    },
+    scroll: {
+        opacity: 0.3,
+    }
+}
+
+
 function Header() {
     const [searchOpen, setSearchOpen] = useState(false);
     const homeMatch = useMatch("/fm");
@@ -37,6 +47,7 @@ function Header() {
             }
         })
     }, [scrollY, navAnimation]);
+
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm<IForm>();
     const onSearch = (data: IForm) => {
@@ -45,7 +56,7 @@ function Header() {
 
     return (
         <S.Nav
-            variants={S.navVariants}
+            variants={navVariants}
             animate={navAnimation}
             initial="top"
         >

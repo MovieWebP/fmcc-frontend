@@ -143,10 +143,10 @@ export const ArrowBox = styled.span`
   &:hover {
     opacity: 1;
   }
-  `
+`;
 export const HiddenBox = styled(ArrowBox)`
-  opacity: 0;
-  `
+  visibility: hidden;
+`;
 
 export const RightArrow = styled(ArrowBox)`
-  `;
+`;
