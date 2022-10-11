@@ -64,8 +64,9 @@ export const Password = styled(Username)`
 
 export const CheckPassword = styled(Username)``;
 
-export const LoginButton = styled.button`
+export const LoginButton = styled(Link)`
     margin-top: 25px;
+    text-align: center;
     width: 80%;
     border-radius: 3px;
     border: none;

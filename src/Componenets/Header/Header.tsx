@@ -13,7 +13,7 @@ export const navVariants = {
         backgroundColor: '#2E2B2B'
     },
     scroll: {
-        opacity: 0.3,
+        backgroundColor: '#2E2B2B'
     }
 }
 
