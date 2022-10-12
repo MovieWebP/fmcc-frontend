@@ -42,7 +42,7 @@ function Header() {
         scrollY.onChange(() => {
             if (scrollY.get() > 80) {
                 navAnimation.start("scroll");
-            } else {
+            } else if (scrollY.get() < 80) {
                 navAnimation.start("top");
             }
         })
