@@ -1,31 +1,40 @@
 import styled from "styled-components";
 // import { motion } from "framer-motion";
 
-export const Wrap = styled.div < { bgPhoto: string }> `
-    background-image: linear-gradient(
-        rgba(19, 16, 16, 0.5),
-        rgba(19, 16, 16, 0.5),
-        #181818
-        ), url(${(props) => props.bgPhoto});
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; 
-    background-color: rgba(0, 0, 0, 0.7);
+export const Wrap = styled.div`
     z-index: -20;
-    padding: 100px 40px;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: fit-content;
     align-items: center;
+    position: absolute;
+`;
+
+export const WrapImage = styled.div < { bgPhoto: string }> `
+background-image: linear-gradient(
+    rgba(19, 16, 16, 0.5),
+    rgba(19, 16, 16, 0.5),
+    #181818
+    ), url(${(props) => props.bgPhoto});
+background-size: cover;
+background-position: center;
+background-attachment: fixed; 
+width: 100%;
+height: 110%;
+filter: blur(4px);
+position: absolute;
 `;
 
 export const ModalContianerWrap = styled.div`   
     display: flex;
     justify-content: space-between;
     transition: all 0.5s ease-in-out;
-    width: 100%;
-    max-width: 90vw;
+    position: relative;
+    top: 100px;
+    width: 100vw;
+    max-width: 70vw;
+    flex-wrap: wrap;
     height: fit-content;
     align-items: flex-start;
     margin-bottom: 20px;
@@ -33,6 +42,7 @@ export const ModalContianerWrap = styled.div`
 
 export const ModalContianer = styled.div`   
     display: flex;
+    width: fit-content;
     justify-content: space-between;
     padding: 20px;
 `;
@@ -51,7 +61,12 @@ export const CopyContainer = styled.div`
 export const InfoModalContainer = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
-    width: 450px;
+    margin-bottom: 20px;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; // flex-wrap: wrap 해석: flex item이 한 줄에 다 들어가지 않을 때, 다음 줄로 넘어가도록 함
+    white-space: normal; // white-space: normal 해석: 공백을 무시하고, 모든 공백을 하나의 공백으로 처리
 `;
 
 export const ModalImage = styled.img`
@@ -65,7 +80,8 @@ export const ModalInfo = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 200px;
+    width: 18vw;
+    height: fit-content;
 `;
 
 export const InfoTitle = styled.span`
@@ -124,7 +140,11 @@ export const InfoOverview = styled.div`
     width: 30vw;
     max-width: 600px;
     color: ${(props) => props.theme.white};
-    min-width: 300px;
+    min-width: 100px;
+    margin-bottom: 10px;
+`;
+
+export const Overview = styled.div`
     margin-bottom: 10px;
 `;
 
@@ -137,14 +157,22 @@ export const InfoMovieName = styled.span`
     color: ${(props) => props.theme.white};
 `;
 
+
 export const RecommendWrap = styled.div`
     display: flex;
-    width: 500px;
+    max-width: 30vw{
     flex-wrap: wrap;
     justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 20px;
+    };
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // grid-template-columns: repeat(2, 1fr) 해석: 2개의 열을 만들고, 각 열의 너비는 1fr
+    grid-gap: 5vw;
+    flex-wrap: wrap;
     align-items: flex-start;
     margin-bottom: 20px;
-    flex-wrap: wrap;
 `;
 
 export const RecommendImg = styled.img` 
@@ -156,10 +184,9 @@ export const RecommendImg = styled.img`
 
 export const RecommendSlider = styled.div`
     display: flex;
-    height: 380px;
-    width: 180px;
+    height: fit-content;
+    width:  180px;
     overflow: hidden;
-    padding: 0;
     margin: 0;
     flex-wrap: wrap;
     flex-direction: column;

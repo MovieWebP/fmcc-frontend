@@ -3,10 +3,10 @@ import Header from "./Componenets/Header/Header";
 import Login from "./Register/Login/Login";
 import SignUp from "./Register/SignUp/SignUp";
 
-import Movie from "./Route/Detail/Movie";
+import Movie from "./Route/Movie/Movie";
 import Home from "./Route/Home/Home";
 import TV from "./Route/TV/Tv Shows";
-import Movies from "./Route/Movies/Movies";
+import Movies from "./Route/Detail/Detail";
 import Search from "./Route/Search/Search";
 import Shopping from "./Route/Shopping/Shopping";
 

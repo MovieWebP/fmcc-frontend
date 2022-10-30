@@ -50,7 +50,8 @@ function Detail({ detail, recommend, cast }: IModal) {
             <AnimatePresence>
                 {modalMatch ? (
                     <>
-                        <S.Wrap bgPhoto={makeImagePath(detail?.backdrop_path)}>
+                        <S.Wrap>
+                            <S.WrapImage bgPhoto={makeImagePath(detail?.backdrop_path)}></S.WrapImage>
                             <S.ModalContianerWrap>
                                 <S.ModalContianer>
                                     <S.ModalImage src={makeImagePath(detail?.poster_path)} />
@@ -80,16 +81,16 @@ function Detail({ detail, recommend, cast }: IModal) {
                                 </S.ModalContainers>
                                 <S.InfoModalContainer>
                                     <S.OverviewTitle>Info</S.OverviewTitle>
-                                    <S.InfoOverview>
+                                    <S.Overview>
                                         <S.InfoName>Title: </S.InfoName>
                                         <S.InfoMovieName>{part === "movie" ? detail?.title : detail?.name}</S.InfoMovieName>
-                                    </S.InfoOverview>
-                                    <S.InfoOverview>
+                                    </S.Overview>
+                                    <S.Overview>
                                         <S.InfoName>Cast: </S.InfoName>
                                         <S.InfoMovieName>{cast.slice(0, 4).map
                                             ((casts: any) => casts.name).join(", ")}</S.InfoMovieName>
-                                    </S.InfoOverview>
-                                    <S.InfoOverview>
+                                    </S.Overview>
+                                    <S.Overview>
                                         <S.InfoName>Genres: </S.InfoName>
                                         <S.InfoMovieName>{detail?.genres?.length ? (
                                             <S.InfoMovieName>
@@ -97,8 +98,8 @@ function Detail({ detail, recommend, cast }: IModal) {
                                                     ((genre: any) => genre.name).join(", ")}
                                             </S.InfoMovieName>
                                         ) : null}</S.InfoMovieName>
-                                    </S.InfoOverview>
-                                    <S.InfoOverview>
+                                    </S.Overview>
+                                    <S.Overview>
                                         <S.InfoName>Rating: </S.InfoName>
                                         <S.InfoMovieName>
                                             <Rating
@@ -110,7 +111,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                                             />
                                             {Math.round(detail?.vote_average * 10) / 10}
                                         </S.InfoMovieName>
-                                    </S.InfoOverview>
+                                    </S.Overview>
                                 </S.InfoModalContainer>
                             </S.ModalContianerWrap>
                             <S.ModalContianerWrap>
@@ -124,8 +125,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                                                         <S.RecommendSlider>
                                                             <S.RecommendImg
                                                                 src={makeImagePath(
-                                                                    recommend.poster_path,
-                                                                    "w500"
+                                                                    recommend.poster_path
                                                                 )}
                                                             />
                                                             <S.RecommendTitle
