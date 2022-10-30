@@ -3,11 +3,12 @@ import Header from "./Componenets/Header/Header";
 import Login from "./Register/Login/Login";
 import SignUp from "./Register/SignUp/SignUp";
 
-import Movie from "./Route/Movie/Movie";
+import Movie from "./Route/Detail/Movie";
 import Home from "./Route/Home/Home";
 import TV from "./Route/TV/Tv Shows";
 import Movies from "./Route/Movies/Movies";
 import Search from "./Route/Search/Search";
+import Shopping from "./Route/Shopping/Shopping";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/fm/search" element={<Search />} />
         <Route path="/fm/login" element={<Login />} />
         <Route path="/fm/signup" element={<SignUp />} />
+        <Route path="/fm/shopping" element={<Shopping />} />
       </Routes>
     </Router>
   );

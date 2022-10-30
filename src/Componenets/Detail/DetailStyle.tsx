@@ -137,7 +137,6 @@ export const InfoMovieName = styled.span`
     color: ${(props) => props.theme.white};
 `;
 
-
 export const RecommendWrap = styled.div`
     display: flex;
     width: 500px;

@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
 import { getDetail, getRecommend, getCast, IGetCredits } from "../../Api/api";
-import Modal from "../../Componenets/Modal/Modal";
+import Detail from "../../Componenets/Detail/Detail";
 
 
 function Movies() {
@@ -21,7 +21,7 @@ function Movies() {
     );
 
     return (
-        <Modal
+        <Detail
             detail={detail ?? []}
             recommend={recommend ?? []}
             cast={cast?.cast ?? []}

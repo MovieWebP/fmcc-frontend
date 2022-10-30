@@ -1,12 +1,13 @@
 import { ICast, IGetDetail, IGetRecommends } from "../../Api/api";
 import { PathMatch, useMatch, useNavigate } from "react-router-dom";
-import * as S from "./ModalStyle"
+import * as S from "./DetailStyle"
 import { modalState } from "../../atom";
 import { useRecoilState } from "recoil";
 import { AnimatePresence } from "framer-motion";
 import { makeImagePath } from "../../Api/utils";
 import Trailer from "./Trailer/Trailer";
 import { Helmet } from "react-helmet";
+import { Rating } from "react-simple-star-rating";
 
 interface IModal {
     detail: IGetDetail;
@@ -14,7 +15,7 @@ interface IModal {
     recommend?: IGetRecommends;
 }
 
-function Modal({ detail, recommend, cast }: IModal) {
+function Detail({ detail, recommend, cast }: IModal) {
     const modalMatch: PathMatch<string> | null = useMatch("/:part/:sliderPart/:id");
     const part = modalMatch?.params.part;
     const sliderPart = modalMatch?.params.sliderPart;
@@ -99,7 +100,16 @@ function Modal({ detail, recommend, cast }: IModal) {
                                     </S.InfoOverview>
                                     <S.InfoOverview>
                                         <S.InfoName>Rating: </S.InfoName>
-                                        <S.InfoMovieName>{detail?.vote_average}</S.InfoMovieName>
+                                        <S.InfoMovieName>
+                                            <Rating
+                                                readonly
+                                                initialValue={detail?.vote_average / 2}
+                                                size={20}
+                                                transition
+                                                emptyColor="gray"
+                                            />
+                                            {Math.round(detail?.vote_average * 10) / 10}
+                                        </S.InfoMovieName>
                                     </S.InfoOverview>
                                 </S.InfoModalContainer>
                             </S.ModalContianerWrap>
@@ -162,4 +172,4 @@ function Modal({ detail, recommend, cast }: IModal) {
     )
 };
 
-export default Modal;
+export default Detail;

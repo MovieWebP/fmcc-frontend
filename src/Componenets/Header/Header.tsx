@@ -98,6 +98,17 @@ function Header() {
                             </S.LinkStyle>
                         )}
                     </S.MenuItem>
+                    <S.MenuItem>
+                        {tvMatch ? (
+                            <S.Match to="/fm/shopping">
+                                Shopping
+                            </S.Match>
+                        ) : (
+                            <S.LinkStyle to="/fm/shopping">
+                                Shopping
+                            </S.LinkStyle>
+                        )}
+                    </S.MenuItem>
                 </S.MenuItems>
             </S.MenuWrap>
             <S.MenuWrap>
