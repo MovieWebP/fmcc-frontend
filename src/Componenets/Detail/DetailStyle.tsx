@@ -54,12 +54,10 @@ export const ModalContainers = styled(ModalContianer)`
 export const CopyContainer = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 0px;
 `;
 
 export const InfoModalContainer = styled.div`
-    padding-top: 20px;
+    /* padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 20px;
     width: 20vw;
@@ -67,6 +65,13 @@ export const InfoModalContainer = styled.div`
     flex-direction: column;
     flex-wrap: wrap; // flex-wrap: wrap 해석: flex item이 한 줄에 다 들어가지 않을 때, 다음 줄로 넘어가도록 함
     white-space: normal; // white-space: normal 해석: 공백을 무시하고, 모든 공백을 하나의 공백으로 처리
+    border: 1px solid red; */
+    /* padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 0px; */
+    width: 450px;
+    /* border: 1px solid red; */
 `;
 
 export const ModalImage = styled.img`
@@ -169,7 +174,7 @@ export const RecommendWrap = styled.div`
     };
     display: grid;
     grid-template-columns: repeat(2, 1fr); // grid-template-columns: repeat(2, 1fr) 해석: 2개의 열을 만들고, 각 열의 너비는 1fr
-    grid-gap: 5vw;
+    grid-gap: 4.5vw;
     flex-wrap: wrap;
     align-items: flex-start;
     margin-bottom: 20px;
