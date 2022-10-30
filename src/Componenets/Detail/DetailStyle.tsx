@@ -174,7 +174,7 @@ export const RecommendWrap = styled.div`
     };
     display: grid;
     grid-template-columns: repeat(2, 1fr); // grid-template-columns: repeat(2, 1fr) 해석: 2개의 열을 만들고, 각 열의 너비는 1fr
-    grid-gap: 4.5vw;
+    grid-gap: 4vw;
     flex-wrap: wrap;
     align-items: flex-start;
     margin-bottom: 20px;
