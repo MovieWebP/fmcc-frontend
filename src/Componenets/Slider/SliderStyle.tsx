@@ -1,11 +1,24 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const SliderWrap = styled.div`   
+export const SliderContainer = styled(motion.div)`
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    position: relative;
+    &::-webkit-scrollbar{ 
+        display:none; 
+    }
+`;
+
+export const SliderWrap = styled.div`   
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
     flex-wrap: wrap;
     position: relative;
     height: 400px;
@@ -24,6 +37,7 @@ export const Wrap = styled.div`
     flex-wrap: wrap;
     width: 100%;
     max-width: 1600px;
+    min-width: 1200px;
     overflow: hidden;
     ::-webkit-scrollbar{
           display: none;
@@ -48,7 +62,7 @@ export const Slider = styled(motion.div)`
     align-items: baseline;
     flex-wrap: wrap;
     display: grid; 
-    grid-template-columns: repeat(6, 1fr); 
+    grid-template-columns: repeat(6, 1fr); // 해석: 6개의 열을 만들고, 각 열의 너비는 1fr 
     position: absolute;
     margin-top: 10px;
     width: 100%;
@@ -57,7 +71,7 @@ export const Slider = styled(motion.div)`
 export const IconLeft = styled.span`
     height: 80%;
     position: absolute;
-    left: 0;
+    left: 30px;
     top: 0;
     bottom: 50px;
     align-self: center;
@@ -75,7 +89,7 @@ export const IconLeft = styled.span`
 export const IconRight = styled.span`
     height: 80%;
     position: absolute;
-    right: 0;
+    right: 30px;
     top: 0;
     bottom: 0;
     bottom: 50px;

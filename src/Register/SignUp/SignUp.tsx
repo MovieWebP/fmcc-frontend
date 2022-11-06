@@ -50,7 +50,7 @@ function SignUp() {
                     })} type="password" placeholder="Check Password" />
                     <S.Message>{errors.checkPassword?.message}</S.Message>
                 </S.PasswordDiv>
-                <S.LoginButton to="/fm">Sign Up</S.LoginButton>
+                <S.LoginButton to="/fm/login">Sign Up</S.LoginButton>
                 <S.LinkDiv>Already Registerd? <S.LinkStyle to="/fm/login">Sign In</S.LinkStyle></S.LinkDiv>
             </S.SignUpFrom>
         </S.Wrap>
