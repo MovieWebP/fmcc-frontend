@@ -12,19 +12,17 @@ export const Wrap = styled.div`
 export const LoginFrom = styled.form`
    display: flex;
    width: 35vw;
-    height: 350px;
+    height: 45vh;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    border: 1px solid red;
     background-color: #B0A8A8;
 `
 
 export const SignUpFrom = styled(LoginFrom)`
-    height: 400px;
-    border: 1px solid red;
+    height: 60vh;
 `;
 
 export const UserDiv = styled.div`
@@ -90,7 +88,6 @@ export const LinkDiv = styled.div`
 `;
 
 export const LinkStyle = styled(Link)`
-    color: #575050;
     transition: all 0.3s ease-in-out;
     &:hover{
         cursor: pointer;

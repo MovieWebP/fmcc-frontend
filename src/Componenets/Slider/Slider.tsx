@@ -8,18 +8,15 @@ import { modalState } from "../../atom";
 import * as S from "./SliderStyle";
 import { makeImagePath } from "../../Api/utils";
 
-const size = "95%"
-const minusSize = "-95%"
-
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? minusSize : size,
+        x: prev ? "-1550px" : "1550px",
     }),
     visible: {
         x: 0,
     },
     exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? size : minusSize,
+        x: prev ? "1550px" : "-1550px",
     }),
 }
 
@@ -70,56 +67,53 @@ function Slider({ id, part, title, movies }: IProps) {
     };
 
     return (
-        <>
-            <S.Title>{title}</S.Title>
-            <S.SliderContainer>
+        <S.SliderWrap>
+            <S.Wrap>
+                <S.Title>{title}</S.Title>
                 {index === 0 ? null : (
                     <S.IconLeft onClick={prevslider}>
                         <MdKeyboardArrowLeft size="60" />
                     </S.IconLeft>
                 )}
-                <S.SliderWrap>
-                    <S.Wrap>
-                        <AnimatePresence
-                            custom={{ prev: sliderMovPrev }}
-                            initial={false}
-                            onExitComplete={ExitSlider}
-                        >
-                            <S.Slider
-                                key={index}
-                                variants={rowVariants}
-                                initial="hidden" // initial은 초기값
-                                animate="visible" // animate은 애니메이션
-                                exit="exit" // exit은 애니메이션 종료
-                                custom={{ prev: sliderMovPrev }}
-                                transition={{ type: "tween", duration: 1 }}
-                            >
 
-                                {movies
-                                    ?.slice(1)
-                                    .slice(offset * index, offset * index + offset)
-                                    .map((movie) => (
-                                        <S.Movie>
-                                            <S.MovieImage src={makeImagePath(movie.poster_path)} />
-                                            <S.MovieTitle
-                                                onClick={() => boxClick(part, movie.id, id)}
-                                                key={movie.id}
-                                            >{part === "movie" ? movie.title : movie.name}
-                                            </S.MovieTitle>
-                                        </S.Movie>
-                                    ))
-                                }
+                <AnimatePresence
+                    custom={{ prev: sliderMovPrev }}
+                    initial={false}
+                    onExitComplete={ExitSlider}
+                >
+                    <S.Slider
+                        key={index}
+                        variants={rowVariants}
+                        initial="hidden" // initial은 초기값
+                        animate="visible" // animate은 애니메이션
+                        exit="exit" // exit은 애니메이션 종료
+                        custom={{ prev: sliderMovPrev }}
+                        transition={{ type: "tween", duration: 1 }}
+                    >
 
-                            </S.Slider>
+                        {movies
+                            ?.slice(1)
+                            .slice(offset * index, offset * index + offset)
+                            .map((movie) => (
+                                <S.Movie>
+                                    <S.MovieImage src={makeImagePath(movie.poster_path)} />
+                                    <S.MovieTitle
+                                        onClick={() => boxClick(part, movie.id, id)}
+                                        key={movie.id}
+                                    >{part === "movie" ? movie.title : movie.name}
+                                    </S.MovieTitle>
+                                </S.Movie>
+                            ))
+                        }
 
-                        </AnimatePresence>
-                    </S.Wrap>
-                </S.SliderWrap>
+                    </S.Slider>
+
+                </AnimatePresence>
                 <S.IconRight onClick={nextslider} >
                     <MdKeyboardArrowRight size="60" />
                 </S.IconRight>
-            </S.SliderContainer>
-        </>
+            </S.Wrap>
+        </S.SliderWrap>
     );
 }
 

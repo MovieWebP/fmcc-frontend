@@ -115,7 +115,7 @@ function Header() {
                 <S.Search onSubmit={handleSubmit(onSearch)}>
                     <motion.svg
                         onClick={toggleSearch}
-                        animate={{ x: searchOpen ? -252 : -50 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
+                        animate={{ x: searchOpen ? -250 : -50 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
                         transition={{ type: "linear" }}
                         fill="currentColor"
                         viewBox="0 0 20 20"
