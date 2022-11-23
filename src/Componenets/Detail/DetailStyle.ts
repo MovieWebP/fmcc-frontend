@@ -33,7 +33,7 @@ export const ModalContianerWrap = styled.div`
     position: relative;
     top: 100px;
     width: 100vw;
-    max-width: 70vw;
+    max-width: 75vw;
     flex-wrap: wrap;
     height: fit-content;
     align-items: flex-start;
