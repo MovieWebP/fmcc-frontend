@@ -37,8 +37,8 @@ function Login() {
                     })} type="password" placeholder="Password" />
                     <S.Message>{errors.password?.message}</S.Message>
                 </S.PasswordDiv>
-                <S.LoginButton to="/fm">Login</S.LoginButton>
-                <S.LinkDiv>Not Registerd? <S.LinkStyle to="/fm/signup">Make Account</S.LinkStyle></S.LinkDiv>
+                <S.LoginButton to="/">Login</S.LoginButton>
+                <S.LinkDiv>Not Registerd? <S.LinkStyle to="/signup">Make Account</S.LinkStyle></S.LinkDiv>
             </S.LoginFrom>
         </S.Wrap>
     )

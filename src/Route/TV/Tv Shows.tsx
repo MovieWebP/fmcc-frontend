@@ -35,7 +35,7 @@ function TV() {
                         movies={airingToday?.results || []}
                     />
                     <S.SliderWrap>
-                        <S.SliderTitle to="/fm/tv">TV Shows</S.SliderTitle>
+                        <S.SliderTitle to="s/tv">TV Shows</S.SliderTitle>
                         <Slider
                             id="airingToday"
                             part="tv"

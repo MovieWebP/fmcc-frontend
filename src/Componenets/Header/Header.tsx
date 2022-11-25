@@ -62,53 +62,53 @@ function Header() {
         >
             <S.MenuWrap>
                 <S.MenuItems>
-                    <S.LinkStyle to="/fm">
+                    <S.LinkStyle to="/">
                         <S.Title>FM</S.Title>
                     </S.LinkStyle>
                     <S.MenuItem>
                         {homeMatch ? (
-                            <S.Match to="/fm">
+                            <S.Match to="/">
                                 Home
                             </S.Match>
                         ) : (
-                            <S.LinkStyle to="/fm">
+                            <S.LinkStyle to="/">
                                 Home
                             </S.LinkStyle>
                         )}
                     </S.MenuItem>
                     <S.MenuItem>
                         {movieMatch ? (
-                            <S.Match to="/fm/movie">
+                            <S.Match to="/movie">
                                 Movie
                             </S.Match>
                         ) : (
-                            <S.LinkStyle to="/fm/movie">
+                            <S.LinkStyle to="/movie">
                                 Movie
                             </S.LinkStyle>
                         )}
                     </S.MenuItem>
                     <S.MenuItem>
                         {tvMatch ? (
-                            <S.Match to="/fm/tv">
+                            <S.Match to="/tv">
                                 TV Shows
                             </S.Match>
                         ) : (
-                            <S.LinkStyle to="/fm/tv">
+                            <S.LinkStyle to="/tv">
                                 Tv Shows
                             </S.LinkStyle>
                         )}
                     </S.MenuItem>
-                    <S.MenuItem>
+                    {/* <S.MenuItem>
                         {tvMatch ? (
-                            <S.Match to="/fm/shopping">
+                            <S.Match to="/shopping">
                                 Shopping
                             </S.Match>
                         ) : (
-                            <S.LinkStyle to="/fm/shopping">
+                            <S.LinkStyle to="/shopping">
                                 Shopping
                             </S.LinkStyle>
                         )}
-                    </S.MenuItem>
+                    </S.MenuItem> */}
                 </S.MenuItems>
             </S.MenuWrap>
             <S.MenuWrap>
@@ -135,7 +135,7 @@ function Header() {
                         placeholder="Search"
                     />
                 </S.Search>
-                <S.Login to="/fm/login">Login</S.Login>
+                <S.Login to="/login">Login</S.Login>
             </S.MenuWrap>
         </S.Nav >
     );

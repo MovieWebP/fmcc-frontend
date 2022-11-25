@@ -15,15 +15,15 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/fm" element={<Home />} />
-        <Route path="/fm/login" element={<Login />} />
-        <Route path="/fm/movie" element={<Movie />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/movie" element={<Movie />} />
         <Route path="/:part/:sliderPart/:id" element={<Movies />} />
-        <Route path="/fm/tv" element={<TV />} />
-        <Route path="/fm/search" element={<Search />} />
-        <Route path="/fm/login" element={<Login />} />
-        <Route path="/fm/signup" element={<SignUp />} />
-        <Route path="/fm/shopping" element={<Shopping />} />
+        <Route path="/tv" element={<TV />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/shopping" element={<Shopping />} />
       </Routes>
     </Router>
   );

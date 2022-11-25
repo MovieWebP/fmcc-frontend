@@ -42,7 +42,7 @@ function Home() {
                         movies={nowPlaying?.results || []}
                     />
                     <S.SliderWrap>
-                        <S.SliderTitle to="/fm/movie">Movie</S.SliderTitle>
+                        <S.SliderTitle to="/movie">Movie</S.SliderTitle>
                         <Slider
                             id="nowPlaying"
                             part="movie"
@@ -66,7 +66,7 @@ function Home() {
                         />
                     </S.SliderWrap>
                     <S.SliderWrap>
-                        <S.SliderTitle to="/fm/tv">TV Shows</S.SliderTitle>
+                        <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
                         <Slider
                             id="airingToday"
                             part="tv"

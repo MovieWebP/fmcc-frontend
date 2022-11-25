@@ -24,7 +24,7 @@ function Search() {
                     <div> loading</div >
                 ) : (
                     <S.SliderWrap>
-                        <S.SliderTitle to="/fm/movie">Movie</S.SliderTitle>
+                        <S.SliderTitle to="/movie">Movie</S.SliderTitle>
                         <Slider
                             id="searchMovie"
                             movies={movies?.results ?? []}
@@ -32,7 +32,7 @@ function Search() {
                             query="searchMovie"
                             part="movie"
                         ></Slider>
-                        <S.SliderTitle to="/fm/tv">TV Shows</S.SliderTitle>
+                        <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
                         <Slider
                             id="searchTv"
                             movies={tv?.results ?? []}
