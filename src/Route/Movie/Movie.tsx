@@ -26,7 +26,7 @@ function Home() {
                 <title>Movie</title>
             </Helmet >
             {isLoading ? (
-                <div>loading</div>
+                <S.SliderWrap>Loading...</S.SliderWrap>
             ) : (
                 <>
                     <Banner

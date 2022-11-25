@@ -26,7 +26,7 @@ function TV() {
                 <title>Tv Shows</title>
             </Helmet >
             {isLoading ? (
-                <div>loading</div>
+                <S.SliderWrap>Loading...</S.SliderWrap>
             ) : (
                 <>
                     <Banner
@@ -35,7 +35,7 @@ function TV() {
                         movies={airingToday?.results || []}
                     />
                     <S.SliderWrap>
-                        <S.SliderTitle to="s/tv">TV Shows</S.SliderTitle>
+                        <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
                         <Slider
                             id="airingToday"
                             part="tv"

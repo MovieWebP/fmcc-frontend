@@ -84,11 +84,11 @@ export const Input = styled(motion.input)`
     border: 1px solid #919191;
     border-radius: 50px;
     outline: 0; 
-    transform-origin: right center;
+    /* transform-origin: right center; */
     position: absolute;
     right: 65px;
     padding: 5px 10px;
-    padding-left: 40px;
+    /* padding-left: 40px; */
     z-index: -1;
     color: ${(props) => props.theme.white};
     font-size: 16px;

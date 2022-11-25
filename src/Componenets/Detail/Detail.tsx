@@ -139,7 +139,11 @@ function Detail({ detail, recommend, cast }: IModal) {
                                                 </S.RecommendWrap>
                                             </div>
                                         </>
-                                    ) : null}
+                                    ) : (
+                                        <>
+                                            <S.OverviewTitle>No Recommends</S.OverviewTitle>
+                                        </>
+                                    )}
                                 </S.ModalContainers>
                                 <S.CopyContainer>
                                     {cast ? (

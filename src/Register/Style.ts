@@ -11,8 +11,8 @@ export const Wrap = styled.div`
 
 export const LoginFrom = styled.form`
    display: flex;
-   width: 35vw;
-    height: 45vh;
+   width: 400px;
+    height: 330px;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
@@ -22,7 +22,7 @@ export const LoginFrom = styled.form`
 `
 
 export const SignUpFrom = styled(LoginFrom)`
-    height: 60vh;
+    height: 400px;
 `;
 
 export const UserDiv = styled.div`

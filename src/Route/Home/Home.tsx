@@ -33,7 +33,7 @@ function Home() {
                 <title>Home</title>
             </Helmet >
             {isLoading ? (
-                <div>loading</div>
+                <S.SliderWrap>Loading...</S.SliderWrap>
             ) : (
                 <>
                     <Banner

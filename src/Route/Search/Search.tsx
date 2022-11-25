@@ -21,7 +21,7 @@ function Search() {
         <>
             {
                 isLoading ? (
-                    <div> loading</div >
+                    <S.SliderWrap>Searching...</S.SliderWrap>
                 ) : (
                     <S.SliderWrap>
                         <S.SliderTitle to="/movie">Movie</S.SliderTitle>
