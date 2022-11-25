@@ -20,9 +20,9 @@ export const navVariants = {
 
 function Header() {
     const [searchOpen, setSearchOpen] = useState(false);
-    const homeMatch = useMatch("/fm");
-    const movieMatch = useMatch("/fm/movie");
-    const tvMatch = useMatch("/fm/tv");
+    const homeMatch = useMatch("/");
+    const movieMatch = useMatch("/movie");
+    const tvMatch = useMatch("/tv");
     const navAnimation = useAnimation();
     const inputAnimation = useAnimation();
     const { scrollY } = useScroll();
