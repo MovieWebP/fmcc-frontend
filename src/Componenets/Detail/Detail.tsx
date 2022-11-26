@@ -53,19 +53,6 @@ function Detail({ detail, recommend, cast }: IModal) {
                         <S.Wrap>
                             <S.WrapImage bgPhoto={makeImagePath(detail?.backdrop_path)}></S.WrapImage>
                             <S.ModalContianerWrap>
-                                <S.ModalContianer>
-                                    <S.ModalImage src={makeImagePath(detail?.poster_path)} />
-                                    <S.ModalInfo>
-                                        <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
-                                        <S.InfoDate>{part === "movie" ? detail?.release_date?.slice(0, 4) : detail?.first_air_date?.slice(0, 4)}</S.InfoDate>
-                                        <S.Genres>{detail?.genres?.length ? (
-                                            <S.Genre>
-                                                {(detail.genres || []).map
-                                                    ((genre: any) => genre.name).join("/")}
-                                            </S.Genre>
-                                        ) : null}</S.Genres>
-                                    </S.ModalInfo>
-                                </S.ModalContianer>
                                 <S.ModalClips bgPhoto={makeImagePath(
                                     detail?.backdrop_path
                                 )}>
@@ -73,12 +60,27 @@ function Detail({ detail, recommend, cast }: IModal) {
                                         <Trailer part={part} id={id} />
                                     </S.Video>
                                 </S.ModalClips>
-                            </S.ModalContianerWrap>
-                            <S.ModalContianerWrap>
-                                <S.ModalContainers>
-                                    <S.OverviewTitle>Summary</S.OverviewTitle>
-                                    <S.InfoOverview>{detail?.overview}</S.InfoOverview>
-                                </S.ModalContainers>
+                                <S.ModalContianer>
+                                    <S.ModalImage src={makeImagePath(detail?.poster_path)} />
+                                    <S.ModalInfo>
+                                        <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
+
+                                        <S.Genres>
+                                            <S.InfoDate>{part === "movie" ? detail?.release_date?.slice(0, 4) : detail?.first_air_date?.slice(0, 4)}</S.InfoDate>
+                                            {detail?.genres?.length ? (
+                                                <S.Genre>
+                                                    {(detail.genres || []).map
+                                                        ((genre: any) => genre.name).join("/")}
+                                                </S.Genre>
+                                            ) : null}
+                                        </S.Genres>
+                                        <S.DummyDiv></S.DummyDiv>
+                                        <S.SumDiv>
+                                            <S.InfoDate>Summary</S.InfoDate>
+                                            <S.InfoOverview>{detail?.overview}</S.InfoOverview>
+                                        </S.SumDiv>
+                                    </S.ModalInfo>
+                                </S.ModalContianer>
                                 <S.InfoModalContainer>
                                     <S.OverviewTitle>Info</S.OverviewTitle>
                                     <S.Overview>
@@ -113,6 +115,9 @@ function Detail({ detail, recommend, cast }: IModal) {
                                         </S.InfoMovieName>
                                     </S.Overview>
                                 </S.InfoModalContainer>
+                            </S.ModalContianerWrap>
+                            <S.ModalContianerWrap>
+
                             </S.ModalContianerWrap>
                             <S.ModalContianerWrap>
                                 <S.ModalContainers>

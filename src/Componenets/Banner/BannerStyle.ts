@@ -94,9 +94,24 @@ export const TitleDiv = styled.div`
 
 export const Title = styled.h3`
   color: ${(props) => props.theme.white};
-  font-size: 28px;
+  font-size: 25px;
   margin-bottom: 3px;
   font-weight: 500;
+  @media screen and (min-width: 1500px) {
+    font-size: ${props => props.theme.superBig};
+  };
+  @media screen and (max-width: 1500px) and (min-width: 1000px) {
+        font-size:14px
+  };
+  @media screen and (max-width: 1000px) and (min-width: 700px) {
+        font-size:12px
+  };
+  @media screen and (max-width: 700px) and (min-width: 500px) {
+        font-size:10px
+  };
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-size:8px
+  };
 `;
 
 export const Overview = styled.h2`

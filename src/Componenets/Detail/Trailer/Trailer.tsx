@@ -22,7 +22,7 @@ interface IVideo {
 };
 
 function Trailer({ id, part }: ITrailer) {
-    const [volume, setVolume] = useState(false);
+    const [volume, setVolume] = useState(true);
     const [videoKey, setVideoKey] = useState("");
     useEffect(() => {
         (async () => {

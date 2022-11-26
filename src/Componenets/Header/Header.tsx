@@ -20,7 +20,7 @@ export const navVariants = {
 
 function Header() {
     const [searchOpen, setSearchOpen] = useState(false);
-    const homeMatch = useMatch("/");
+    const homeMatch = useMatch("");
     const movieMatch = useMatch("/movie");
     const tvMatch = useMatch("/tv");
     const navAnimation = useAnimation();
@@ -113,9 +113,10 @@ function Header() {
             </S.MenuWrap>
             <S.MenuWrap>
                 <S.Search onSubmit={handleSubmit(onSearch)}>
-                    {/* <motion.svg
+                    <motion.svg
+                        // style={{ "position": "-260px" }}
                         onClick={toggleSearch}
-                        animate={{ x: searchOpen ? -260 : -50 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
+                        // animate={{ x: searchOpen ? -260 : -110 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
                         transition={{ type: "linear" }}
                         fill="currentColor"
                         viewBox="0 0 20 20"
@@ -126,8 +127,12 @@ function Header() {
                             d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                             clipRule="evenodd"
                         ></path>
-                    </motion.svg> */}
+                    </motion.svg>
                     <S.Input
+                        {...register("keyword", { required: true, minLength: 2 })}
+                        animate={inputAnimation}
+                        initial={{ scaleX: 0 }}
+                        transition={{ type: "linear" }}
                         placeholder="Search"
                     />
                 </S.Search>

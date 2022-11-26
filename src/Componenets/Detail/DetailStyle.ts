@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// import { motion } from "framer-motion";
 
 export const Wrap = styled.div`
     z-index: -20;
@@ -9,12 +8,13 @@ export const Wrap = styled.div`
     height: fit-content;
     align-items: center;
     position: absolute;
+    overflow:hidden;
 `;
 
 export const WrapImage = styled.div < { bgPhoto: string }> `
 background-image: linear-gradient(
-    rgba(19, 16, 16, 0.5),
-    rgba(19, 16, 16, 0.5),
+    rgba(0,0,0, 0.7),
+    rgba(0,0,0, 0.7),
     #181818
     ), url(${(props) => props.bgPhoto});
 background-size: cover;
@@ -32,8 +32,8 @@ export const ModalContianerWrap = styled.div`
     transition: all 0.5s ease-in-out;
     position: relative;
     top: 100px;
-    width: 100vw;
-    max-width: 75vw;
+    width: 100rem;
+    max-width: 75rem;
     flex-wrap: wrap;
     height: fit-content;
     align-items: flex-start;
@@ -71,6 +71,7 @@ export const InfoModalContainer = styled.div`
     padding-left: 20px;
     padding-right: 0px; */
     width: 450px;
+    padding: 20px;
     /* border: 1px solid red; */
 `;
 
@@ -86,7 +87,7 @@ export const ModalInfo = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     width: 18vw;
-    height: fit-content;
+    overflow: scroll;
 `;
 
 export const InfoTitle = styled.span`
@@ -111,21 +112,34 @@ export const Genres = styled.span`
     width: fit-content;
     height: fit-content;
     margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 14px;
     font-weight: 400;
     color: ${(props) => props.theme.white};
 `;
 
+export const DummyDiv = styled.div`
+    flex: 1;
+`;
+
+export const SumDiv = styled.div`  
+    flex: 1;
+    align-items: flex-end;
+`;
+
 export const Genre = styled(Genres)`  
+    margin-left: 10px;
 `;
 
 export const ModalClips = styled.div < { bgPhoto: string } >`
     background-image: url(${(props) => props.bgPhoto});
     background-size: cover;
-    width: 450px;
-    height: 300px;
+    box-shadow: 3px 10px 10px rgba(0,0,0,0.3);
+    width: 100%;
+    height: 400px;
     margin-left: 10px;
     border-radius: 10px;
+    margin-bottom: 20px;
 `;
 
 export const Video = styled.div`
@@ -141,12 +155,11 @@ export const OverviewTitle = styled.h1`
     margin-bottom: 20px;
 `;
 
+
 export const InfoOverview = styled.div`
-    width: 30vw;
-    max-width: 600px;
     color: ${(props) => props.theme.white};
     min-width: 100px;
-    margin-bottom: 10px;
+    margin-top: 5px;
 `;
 
 export const Overview = styled.div`

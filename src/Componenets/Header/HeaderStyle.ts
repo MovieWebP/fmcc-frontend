@@ -7,7 +7,7 @@ export const Nav = styled(motion.nav)`
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    border-bottom: 1px solid #B0A8A8;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.5);
     position: fixed;
     width: 100%;
     top: 0;
@@ -88,7 +88,7 @@ export const Input = styled(motion.input)`
     position: absolute;
     right: 65px;
     padding: 5px 10px;
-    /* padding-left: 40px; */
+    padding-left: 40px;
     z-index: -1;
     color: ${(props) => props.theme.white};
     font-size: 16px;

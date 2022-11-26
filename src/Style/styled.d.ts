@@ -5,5 +5,10 @@ declare module "styled-components" {
         lightPurple: string;
         purple: string;
         white: string;
+        superBig: string;
+        big: string;
+        normal: string;
+        small: string;
+        superSmall: string;
     }
 } 

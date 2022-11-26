@@ -66,4 +66,20 @@ a {
   text-decoration:none;
   color:inherit;
 }
+
+@media screen and (min-width: 1500px) {
+    font-size: 16px;
+  };
+  @media screen and (max-width: 1500px) and (min-width: 1000px) {
+        font-size:14px
+  };
+  @media screen and (max-width: 1000px) and (min-width: 700px) {
+        font-size:12px
+  };
+  @media screen and (max-width: 700px) and (min-width: 500px) {
+        font-size:10px
+  };
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-size:8px
+  };
 `;

@@ -72,7 +72,7 @@ export function getNowPlayingMovie() {
 }
 
 export function getPopularMovie() {
-    return fetch(`${BASE_PATH}/movie/popular?api_key=${Api_KEY}&language=en-US&page=5`)
+    return fetch(`${BASE_PATH}/movie/popular?api_key=${Api_KEY}&language=en-US&page=1`)
         .then(res => res.json())
 }
 
