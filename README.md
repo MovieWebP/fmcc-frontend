@@ -1,6 +1,6 @@
 # choi138.tk
 
-Movie site with reactJ && TS
+Movie site with reactJS && TS
 
 <!--
 ## Available Scripts
