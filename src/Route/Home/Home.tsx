@@ -89,6 +89,7 @@ function Home() {
                             movies={popularTv?.results || []}
                         />
                     </S.SliderWrap>
+                    <p style={{ "textAlign": "center" }}>© 2022-2023 by choi138.tk, Inc.</p>
                 </>
             )}
         </>

@@ -61,8 +61,8 @@ export const MainImage = styled(motion.div) < { bgPhoto: string }> `
 
 export const BannerImage = styled.div< { bgPhoto: string }>`
   z-index: 1;
-  width: 650px;
-  height: 80%;
+  width: 45rem;
+  height: 22rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,7 +70,9 @@ export const BannerImage = styled.div< { bgPhoto: string }>`
   flex-wrap: wrap;
   margin-top: 50px;
   background-image: url(${(props) => props.bgPhoto});
+  align-self: center;
   background-size: cover;
+  object-fit: cover;
   border-radius: 10px;
 `;
 
@@ -99,10 +101,12 @@ export const Title = styled.h3`
   font-weight: 500;
 `;
 
-export const Overview = styled.h2`
+export const Overview = styled.p`
   color: ${(props) => props.theme.white};
   font-size: 1rem;
   font-weight: 300;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Date = styled.h2`

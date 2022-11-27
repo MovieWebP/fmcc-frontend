@@ -21,11 +21,15 @@ function Movies() {
     );
 
     return (
-        <Detail
-            detail={detail ?? []}
-            recommend={recommend ?? []}
-            cast={cast?.cast ?? []}
-        />
+        <>
+            <Detail
+                detail={detail ?? []}
+                recommend={recommend ?? []}
+                cast={cast?.cast ?? []}
+            />
+            <p style={{ "textAlign": "center" }}>© 2022-2023 by choi138.tk, Inc.</p>
+
+        </>
     )
 }
 

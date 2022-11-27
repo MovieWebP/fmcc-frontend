@@ -23,24 +23,27 @@ function Search() {
                 isLoading ? (
                     <S.SliderWrap>Searching...</S.SliderWrap>
                 ) : (
-                    <S.SliderWrap>
-                        <S.SliderTitle to="/movie">Movie</S.SliderTitle>
-                        <Slider
-                            id="searchMovie"
-                            movies={movies?.results ?? []}
-                            title="Search Movie"
-                            query="searchMovie"
-                            part="movie"
-                        ></Slider>
-                        <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
-                        <Slider
-                            id="searchTv"
-                            movies={tv?.results ?? []}
-                            title="Search Tv"
-                            query="searchTv"
-                            part="tv"
-                        ></Slider>
-                    </S.SliderWrap>
+                    <>
+                        <S.SliderWrap>
+                            <S.SliderTitle to="/movie">Movie</S.SliderTitle>
+                            <Slider
+                                id="searchMovie"
+                                movies={movies?.results ?? []}
+                                title="Search Movie"
+                                query="searchMovie"
+                                part="movie"
+                            ></Slider>
+                            <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
+                            <Slider
+                                id="searchTv"
+                                movies={tv?.results ?? []}
+                                title="Search Tv"
+                                query="searchTv"
+                                part="tv"
+                            ></Slider>
+                        </S.SliderWrap>
+                        <p style={{ "textAlign": "center" }}>© 2022-2023 by choi138.tk, Inc.</p>
+                    </>
                 )
             }
         </>
