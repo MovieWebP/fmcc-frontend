@@ -95,3 +95,10 @@ export const LinkStyle = styled(Link)`
         color: #797474;
     }
 `;
+
+
+export const Doc = styled.p`
+    font-weight: 350;
+    font-size: .7rem;
+    text-align: center;
+`

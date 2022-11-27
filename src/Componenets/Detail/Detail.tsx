@@ -138,7 +138,8 @@ function Detail({ detail, recommend, cast }: IModal) {
                                                                 onClick={() =>
                                                                     modalOpen(part, recommend.id, id)
                                                                 }
-                                                            >{part === "movie" ? recommend?.title : recommend?.name}</S.RecommendTitle>
+                                                            >{part === "movie" ? recommend?.title : recommend?.name}
+                                                            </S.RecommendTitle>
                                                         </S.RecommendSlider>
                                                     ))}
                                                 </S.RecommendWrap>

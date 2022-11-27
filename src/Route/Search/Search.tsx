@@ -42,7 +42,7 @@ function Search() {
                                 part="tv"
                             ></Slider>
                         </S.SliderWrap>
-                        <p style={{ "textAlign": "center" }}>© 2022-2023 by choi138.tk, Inc.</p>
+                        <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
                     </>
                 )
             }

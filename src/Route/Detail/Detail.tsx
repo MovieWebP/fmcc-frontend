@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
 import { getDetail, getRecommend, getCast, IGetCredits } from "../../Api/api";
 import Detail from "../../Componenets/Detail/Detail";
+import * as S from "../Style";
 
 
 function Movies() {
@@ -10,25 +11,32 @@ function Movies() {
     const part = bigMovieMatch?.params.part;
 
     // Api
-    const { data: detail } = useQuery(["movie", id], () =>
+    const { data: detail, isLoading: DetailLoading } = useQuery(["movie", id], () =>
         getDetail(part, id || "")
     );
-    const { data: recommend } = useQuery(["recommend", id], () =>
+    const { data: recommend, isLoading: RecommendLoading } = useQuery(["recommend", id], () =>
         getRecommend(part, id || "")
     );
-    const { data: cast } = useQuery<IGetCredits>(["cast", id], () =>
+    const { data: cast, isLoading: CastLoading } = useQuery<IGetCredits>(["cast", id], () =>
         getCast(part, id || "")
     );
 
+    const isLoading = DetailLoading || RecommendLoading || CastLoading || false
+
     return (
         <>
-            <Detail
-                detail={detail ?? []}
-                recommend={recommend ?? []}
-                cast={cast?.cast ?? []}
-            />
-            <p style={{ "textAlign": "center" }}>© 2022-2023 by choi138.tk, Inc.</p>
-
+            {isLoading ? (
+                <S.SliderWrap>Loading...</S.SliderWrap>
+            ) : (
+                <>
+                    <Detail
+                        detail={detail ?? []}
+                        recommend={recommend ?? []}
+                        cast={cast?.cast ?? []}
+                    />
+                    <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
+                </>
+            )}
         </>
     )
 }

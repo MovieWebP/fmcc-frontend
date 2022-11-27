@@ -20,3 +20,9 @@ export const SliderTitle = styled(Link)`
     padding: 5px 20px;
     border-radius: 5px;
 `;
+
+export const Doc = styled.p`
+    font-weight: 350;
+    font-size: .7rem;
+    text-align: center;
+`

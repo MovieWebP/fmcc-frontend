@@ -51,7 +51,7 @@ function Header() {
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm<IForm>();
     const onSearch = (data: IForm) => {
-        navigate(`/fm/search?keyword=${data.keyword}`);
+        navigate(`/search?keyword=${data.keyword}`);
     }
 
     return (
@@ -114,10 +114,10 @@ function Header() {
             <S.MenuWrap>
                 <S.Search onSubmit={handleSubmit(onSearch)}>
                     <motion.svg
-                        // style={{ "position": "-260px" }}
+                        style={{ "position": "relative", "right": "255px" }}
                         onClick={toggleSearch}
                         // animate={{ x: searchOpen ? -260 : -110 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
-                        transition={{ type: "linear" }}
+                        // transition={{ type: "linear" }}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg"
@@ -130,9 +130,9 @@ function Header() {
                     </motion.svg>
                     <S.Input
                         {...register("keyword", { required: true, minLength: 2 })}
-                        animate={inputAnimation}
-                        initial={{ scaleX: 0 }}
-                        transition={{ type: "linear" }}
+                        // animate={inputAnimation}
+                        // initial={{ scaleX: 0 }}
+                        // transition={{ type: "linear" }}
                         placeholder="Search"
                     />
                 </S.Search>
