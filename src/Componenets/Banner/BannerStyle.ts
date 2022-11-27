@@ -64,7 +64,7 @@ export const BannerImage = styled.div< { bgPhoto: string }>`
   width: 45rem;
   height: 22rem;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
@@ -76,16 +76,16 @@ export const BannerImage = styled.div< { bgPhoto: string }>`
   border-radius: 10px;
 `;
 
+
 export const BannerWrap = styled.div`
-  position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 0 10px;
   padding-bottom: 5px;
-  width: 80%;
+  width: 40rem;
+  height: 8rem;
   max-width: 600px;
   margin-bottom: 10px;
-  bottom: 20px;
 `;
 
 export const TitleDiv = styled.div`
@@ -112,19 +112,19 @@ export const Overview = styled.p`
 export const Date = styled.h2`
   color: ${(props) => props.theme.lightPurple};
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
 `;
 
 export const Button = styled.div`
   border-radius: 5px;
   color: ${(props) => props.theme.white};
   background-color: ${(props) => props.theme.purple};
-  width: fit-content;
+  width: 7rem;
+  height: 1.7rem;
   display: flex;
-  text-align: center;
+  align-items: center;
   justify-content: center;
-  margin-top: 2px;
-  padding: 5px 10px;
+  margin-top: 5px;
   transition: all .3s ease-in-out;
   &:hover {
     background-color: ${(props) => props.theme.lightPurple};
@@ -133,8 +133,8 @@ export const Button = styled.div`
 `;
 
 export const ButtonText = styled.h2`
-  position: relative;
-  top: 2px;
+  /* position: relative;
+  top: 2px; */
   font-weight: 500;
 `;
 

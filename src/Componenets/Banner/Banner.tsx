@@ -107,7 +107,7 @@ function Banner({ part, id, movies }: IBanner) {
                                                 </S.TitleDiv>
                                                 <S.Overview>{movie?.overview.slice(0, 150)}...</S.Overview>
                                                 <S.Button onClick={() => boxClick(part, movie.id, id)}>
-                                                    <BsPlayFill size="20px" />
+                                                    <BsPlayFill size="1.2rem" />
                                                     <S.ButtonText>Watch Now</S.ButtonText>
                                                 </S.Button>
                                             </S.BannerWrap>
