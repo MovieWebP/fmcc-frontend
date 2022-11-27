@@ -7,6 +7,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { modalState } from "../../atom";
 import * as S from "./SliderStyle";
 import { makeImagePath } from "../../Api/utils";
+// import Slider from "react-slick";
 
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
