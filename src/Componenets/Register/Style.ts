@@ -18,7 +18,8 @@ export const LoginFrom = styled.form`
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: #B0A8A8;
+    background-color: #171717;
+    border: 1px solid #323232
 `
 
 export const SignUpFrom = styled(LoginFrom)`
@@ -32,7 +33,7 @@ export const UserDiv = styled.div`
 `;
 
 export const Username = styled.input`
-    background-color: #575050;
+    background-color: #444444;
     border-radius: 10px;
     height: 50px;
     padding-left: 10px;

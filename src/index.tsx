@@ -5,7 +5,8 @@ import { RecoilRoot } from "recoil";
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { theme } from "./Style/theme";
 import { ThemeProvider } from 'styled-components';
-import { GlobalStyle } from './Style/Style';
+import { Global } from "@emotion/react"
+import { globalStyle } from './Style/Style';
 
 const client = new QueryClient();
 
@@ -17,7 +18,7 @@ root.render(
   <RecoilRoot>
     <QueryClientProvider client={client} >
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
+        <Global styles={globalStyle} />
         <App />
       </ThemeProvider>
     </QueryClientProvider>

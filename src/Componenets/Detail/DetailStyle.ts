@@ -8,20 +8,19 @@ export const Wrap = styled.div`
     height: fit-content;
     align-items: center;
     position: absolute;
-    overflow:hidden;
 `;
 
 export const WrapImage = styled.div < { bgPhoto: string }> `
 background-image: linear-gradient(
-    rgba(0,0,0, 0.7),
-    rgba(0,0,0, 0.7),
+    rgba(17,17,17, 0.5),
+    rgba(17,17,17, 0.5),
     #181818
     ), url(${(props) => props.bgPhoto});
 background-size: cover;
 background-position: center;
 background-attachment: fixed; 
 width: 100%;
-height: 110%;
+height: 100%;
 filter: blur(4px);
 position: absolute;
 `;
