@@ -71,13 +71,13 @@ function Slider({ id, part, title, movies }: IProps) {
         <S.SliderWrap>
             <S.Wrap>
                 <S.Title>{title}</S.Title>
-                <S.IconDiv>
+                <S.IconLeftDiv>
                     {index === 0 ? null : (
                         <S.IconLeft onClick={prevslider}>
                             <MdKeyboardArrowLeft size="4rem" />
                         </S.IconLeft>
                     )}
-                </S.IconDiv>
+                </S.IconLeftDiv>
                 <AnimatePresence
                     custom={{ prev: sliderMovPrev }}
                     initial={false}
@@ -110,9 +110,11 @@ function Slider({ id, part, title, movies }: IProps) {
 
                     </S.Slider>
                 </AnimatePresence>
-                <S.IconRight onClick={nextslider} >
-                    <MdKeyboardArrowRight size="60" />
-                </S.IconRight>
+                <S.IconRightDiv>
+                    <S.IconLeft onClick={nextslider} >
+                        <MdKeyboardArrowRight size="4rem" />
+                    </S.IconLeft>
+                </S.IconRightDiv>
             </S.Wrap>
         </S.SliderWrap>
     );

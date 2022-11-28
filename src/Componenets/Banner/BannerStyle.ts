@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const Wrap = styled.div`
   position: relative;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;

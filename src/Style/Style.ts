@@ -60,7 +60,6 @@ body {
   color: #fafafa;
   background-color: #181818;
   line-height: 1.2;
-  min-width: 840px;
 }
 a {
   text-decoration:none;

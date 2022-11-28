@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const SliderWrap = styled.div`   
-    width: 100rem;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,22 +13,7 @@ export const SliderWrap = styled.div`
         display: none;
     }
     scrollbar-width:none;
-    @media screen and (min-width: 1500px) {
-        /* width: 70rem; */
-    };
-    @media screen and (max-width: 1500px) and (min-width: 1000px) {
-        width: 80rem;
-    };
-    @media screen and (max-width: 1000px) and (min-width: 700px) {
-        width: 50rem;
-    };
-    @media screen and (max-width: 700px) and (min-width: 500px) {
-        font-size: 10px;
-    };
-
-@media screen and (max-width: 500px) and (min-width: 300px) {
-    font-size: 8px;
-};
+    overflow: hidden;
 `;
 
 export const Wrap = styled.div`
@@ -38,13 +23,31 @@ export const Wrap = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 95%;
+    width: 90rem;
     overflow: hidden;
     ::-webkit-scrollbar{
           display: none;
       }
     scrollbar-width:none;
-    border: 1px solid red;
+    @media screen and (min-width: 1500px) {
+        width: 80rem;
+    };
+    @media screen and (max-width: 1500px) and (min-width: 1200px) {
+        width: 85rem;
+    };
+    @media screen and (max-width: 1200px) and (min-width: 1000px) {
+        width: 70rem;
+    };
+    @media screen and (max-width: 1000px) and (min-width: 700px) {
+        width: 60rem;
+    };
+    
+    @media screen and (max-width: 700px) and (min-width: 500px) {
+        width: 53rem;
+    };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 58rem;
+    };
 `;
 
 export const Title = styled.div`
@@ -71,7 +74,7 @@ export const Slider = styled(motion.div)`
     width:100%;
 `;
 
-export const IconDiv = styled.div`
+export const IconLeftDiv = styled.div`
     display: flex;
     width: 4rem;
     overflow: hidden;
@@ -82,13 +85,24 @@ export const IconDiv = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
+`;
+
+export const IconRightDiv = styled.div`
+    display: flex;
+    width: 4rem;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const IconLeft = styled.span`
-    border: 1px solid red;
     position: relative;
-    bottom: 1.1rem;
+    bottom: 1rem;
     align-self: center;
     display: flex;
     justify-content: center;
@@ -99,17 +113,29 @@ export const IconLeft = styled.span`
     &:hover{
         opacity: 1;
     }
+    @media screen and (min-width: 1500px) {
+        width: 80rem;
+    };
+    @media screen and (max-width: 1500px) and (min-width: 1200px) {
+        position: relative;
+        bottom: 3rem;
+    };
+    @media screen and (max-width: 1200px) and (min-width: 1000px) {
+        position: relative;
+        bottom: 3.8rem;
+    };
     @media screen and (max-width: 1000px) and (min-width: 700px) {
         position: relative;
-        bottom: .5rem;
+        bottom: 3.5rem;
     };
+    
     @media screen and (max-width: 700px) and (min-width: 500px) {
         position: relative;
-        bottom: .5rem;
+        bottom: 3rem;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         position: relative;
-        top: 1rem;
+        bottom: 1.8rem;
     };
 `;
 

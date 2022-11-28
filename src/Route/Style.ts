@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const SliderWrap = styled.div`
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 100px;
+    overflow: hidden;
 `;
 
 export const SliderTitle = styled(Link)`
@@ -15,7 +17,7 @@ export const SliderTitle = styled(Link)`
     color: ${(props) => props.theme.white};
     width: fit-content;
     margin-bottom: 50px;
-    font-size: 30px;
+    font-size: 2rem;
     font-weight: 600;
     padding: 5px 20px;
     border-radius: 5px;
