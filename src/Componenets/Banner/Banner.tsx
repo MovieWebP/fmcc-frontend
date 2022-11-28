@@ -11,13 +11,13 @@ import { BsPlayFill } from "react-icons/bs";
 
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? -window.innerWidth : window.innerWidth,
+        x: prev ? "-100vw" : "100vw",
     }),
     visible: {
         x: 0,
     },
     exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? window.innerWidth : -window.innerWidth,
+        x: prev ? "100vw" : "-100vw",
     }),
 }
 interface IBanner {
@@ -105,7 +105,7 @@ function Banner({ part, id, movies }: IBanner) {
                                                     <S.Title>{part === "movie" ? movie?.title : movie?.name}</S.Title>
                                                     <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
                                                 </S.TitleDiv>
-                                                <S.Overview>{movie?.overview.slice(0, 150)}...</S.Overview>
+                                                <S.Overview>{movie?.overview.slice(0, 120)}...</S.Overview>
                                                 <S.Button onClick={() => boxClick(part, movie.id, id)}>
                                                     <BsPlayFill size="1.2rem" />
                                                     <S.ButtonText>Watch Now</S.ButtonText>

@@ -16,19 +16,20 @@ export const Wrap = styled.div`
   scrollbar-width:none;
   height: fit-content;
 `;
+
 export const AllWrap = styled(Wrap)`
-  height: 400px;  
+  height: 30rem;  
 `;
 
 export const Banner = styled(motion.div)`
   position: absolute;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: start ;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: column;
-  height: 400px;
+  height: 100%;
 `;
 
 export const ImageWrap = styled(motion.div)`
@@ -53,10 +54,15 @@ export const MainImage = styled(motion.div) < { bgPhoto: string }> `
     url(${(props) => props.bgPhoto});
     filter: blur(4px);
     background-size: cover;
+    object-fit: cover;
     width: 100%;
     height: 40rem;
     resize: both;  
     align-items: center;
+    align-self: center;
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+        height: 28rem;
+  };
 `;
 
 export const BannerImage = styled.div< { bgPhoto: string }>`
@@ -74,6 +80,10 @@ export const BannerImage = styled.div< { bgPhoto: string }>`
   background-size: cover;
   object-fit: cover;
   border-radius: 10px;
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 32rem;
+        height: 15rem;
+  };
 `;
 
 
@@ -81,11 +91,18 @@ export const BannerWrap = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 0 10px;
-  padding-bottom: 5px;
   width: 40rem;
   height: 8rem;
   max-width: 600px;
   margin-bottom: 10px;
+  align-items: center;
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    padding: 0 5px;
+    margin-bottom: 3px;
+    width: 30rem;
+    border-radius: 5px;
+    height: 7.7rem;
+  };
 `;
 
 export const TitleDiv = styled.div`
@@ -99,6 +116,10 @@ export const Title = styled.h3`
   font-size: 2rem;
   margin-bottom: 3px;
   font-weight: 500;
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    font-size: 1.5rem;
+    padding-top: 2px;
+  };
 `;
 
 export const Overview = styled.p`
@@ -130,12 +151,21 @@ export const Button = styled.div`
     background-color: ${(props) => props.theme.lightPurple};
     cursor: default;
   }
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    width: 5rem;
+    height: 1.5rem;
+    /* margin-top: 0; */
+    border-radius: 3px;
+  };
 `;
 
 export const ButtonText = styled.h2`
   /* position: relative;
   top: 2px; */
   font-weight: 500;
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    font-size: 0.7rem;
+  };
 `;
 
 

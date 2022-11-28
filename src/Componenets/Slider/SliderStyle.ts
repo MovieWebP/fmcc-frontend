@@ -13,7 +13,7 @@ export const SliderWrap = styled.div`
         display: none;
     }
     scrollbar-width:none;
-    overflow: hidden;
+    overflow: scroll;
 `;
 
 export const Wrap = styled.div`
@@ -46,7 +46,7 @@ export const Wrap = styled.div`
         width: 53rem;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 58rem;
+        width: 48rem;
     };
 `;
 
@@ -175,6 +175,9 @@ export const MovieImage = styled.img`
     width: 100%;
     max-width: 60%;
     border-radius: 10px;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        border-radius: 5px;
+    };
 `;
 
 export const MovieTitle = styled(motion.div)`   
