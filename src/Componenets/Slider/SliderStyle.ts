@@ -2,17 +2,32 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const SliderWrap = styled.div`   
-    width: 100%;
+    width: 100rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     position: relative;
-    height: 400px;
+    height: 26rem;
     ::-webkit-scrollbar{
         display: none;
     }
     scrollbar-width:none;
+    /* @media screen and (min-width: 1500px) { 
+        width: 110rem;
+    };
+    @media screen and (max-width: 1500px) and (min-width: 1400px) { 
+        width: 100rem;
+    };
+    @media screen and (max-width: 900px) and (min-width: 700px) {
+        width: 50rem;
+    };
+    @media screen and (max-width: 700px) and (min-width: 500px) {
+    font-size: 10px;
+    };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-size: 8px;
+    }; */
 `;
 
 export const Wrap = styled.div`
@@ -22,13 +37,13 @@ export const Wrap = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 1600px;
+    width: 95%;
     overflow: hidden;
     ::-webkit-scrollbar{
           display: none;
       }
     scrollbar-width:none;
+    border: 1px solid red;
 `;
 
 export const Title = styled.div`
@@ -51,15 +66,28 @@ export const Slider = styled(motion.div)`
     grid-template-columns: repeat(6, 1fr); 
     position: absolute;
     margin-top: 10px;
-    width: 100%;
+    overflow: hidden;
+    width:100%;
+`;
+
+export const IconDiv = styled.div`
+    display: flex;
+    width: 4rem;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
 `;
 
 export const IconLeft = styled.span`
-    height: 80%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 50px;
+    border: 1px solid red;
+    position: relative;
+    bottom: 1.1rem;
     align-self: center;
     display: flex;
     justify-content: center;
@@ -70,10 +98,23 @@ export const IconLeft = styled.span`
     &:hover{
         opacity: 1;
     }
+    @media screen and (max-width: 1000px) and (min-width: 700px) {
+        position: relative;
+        bottom: .5rem;
+    };
+    @media screen and (max-width: 700px) and (min-width: 500px) {
+        position: relative;
+        bottom: .5rem;
+    };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        position: relative;
+        top: 1rem;
+    };
 `;
 
 export const IconRight = styled.span`
-    height: 80%;
+    height: 100%;
+    border: 1px solid blue;
     position: absolute;
     right: 0;
     top: 0;
@@ -100,6 +141,7 @@ export const Movie = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 `;
 
 export const MovieImage = styled.img`

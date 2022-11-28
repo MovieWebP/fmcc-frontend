@@ -54,7 +54,7 @@ export const MainImage = styled(motion.div) < { bgPhoto: string }> `
     filter: blur(4px);
     background-size: cover;
     width: 100%;
-    height: 100%;
+    height: 40rem;
     resize: both;  
     align-items: center;
 `;

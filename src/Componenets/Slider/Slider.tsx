@@ -11,13 +11,13 @@ import { makeImagePath } from "../../Api/utils";
 
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "-1550px" : "1550px",
+        x: prev ? "-95%" : "95%",
     }),
     visible: {
         x: 0,
     },
     exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "1550px" : "-1550px",
+        x: prev ? "95%" : "-95%",
     }),
 }
 
@@ -71,12 +71,13 @@ function Slider({ id, part, title, movies }: IProps) {
         <S.SliderWrap>
             <S.Wrap>
                 <S.Title>{title}</S.Title>
-                {index === 0 ? null : (
-                    <S.IconLeft onClick={prevslider}>
-                        <MdKeyboardArrowLeft size="60" />
-                    </S.IconLeft>
-                )}
-
+                <S.IconDiv>
+                    {index === 0 ? null : (
+                        <S.IconLeft onClick={prevslider}>
+                            <MdKeyboardArrowLeft size="4rem" />
+                        </S.IconLeft>
+                    )}
+                </S.IconDiv>
                 <AnimatePresence
                     custom={{ prev: sliderMovPrev }}
                     initial={false}
@@ -108,7 +109,6 @@ function Slider({ id, part, title, movies }: IProps) {
                         }
 
                     </S.Slider>
-
                 </AnimatePresence>
                 <S.IconRight onClick={nextslider} >
                     <MdKeyboardArrowRight size="60" />

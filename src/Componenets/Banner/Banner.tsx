@@ -11,13 +11,13 @@ import { BsPlayFill } from "react-icons/bs";
 
 const rowVariants = {
     hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "-100vw" : "100vw",
+        x: prev ? -window.innerWidth : window.innerWidth,
     }),
     visible: {
         x: 0,
     },
     exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "100vw" : "-100vw",
+        x: prev ? window.innerWidth : -window.innerWidth,
     }),
 }
 interface IBanner {
@@ -95,7 +95,7 @@ function Banner({ part, id, movies }: IBanner) {
                                             </S.HiddenBox>
                                         ) : (
                                             <S.ArrowBox onClick={moveSliderPrev}>
-                                                <MdKeyboardArrowLeft size="60px" />
+                                                <MdKeyboardArrowLeft size="5rem" />
                                             </S.ArrowBox>
                                         )}
 
@@ -113,7 +113,7 @@ function Banner({ part, id, movies }: IBanner) {
                                             </S.BannerWrap>
                                         </S.BannerImage>
                                         <S.RightArrow onClick={moveSlider} >
-                                            <MdKeyboardArrowRight size="60px" />
+                                            <MdKeyboardArrowRight size="5rem" />
                                         </S.RightArrow>
                                     </S.ImageWrap>
                                 </>
