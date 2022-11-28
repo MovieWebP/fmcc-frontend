@@ -18,6 +18,36 @@ export const MenuWrap = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0px 20px;
+    width: 38rem;
+    border: 1px solid red;
+    /* @media screen and (min-width: 1500px) {
+        font-size: 16px;    
+    };
+
+    @media screen and (max-width: 1500px) and (min-width: 1000px) {
+        width: 33vw;
+    };
+
+    @media screen and (max-width: 1000px) and (min-width: 700px) {
+        width: 30vw;
+    };
+
+    @media screen and (max-width: 700px) and (min-width: 500px) {
+        font-size: 10px;
+    };
+
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 15rem;
+    }; */
+`;
+
+export const MenuLogin = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
+    width: fit-content;
+    border: 1px solid blue;
 `;
 
 export const MenuItems = styled.ul`
@@ -35,7 +65,7 @@ export const Title = styled.h1`
     font-size: 24px;
     font-weight: 900;
     margin: 10px 0;
-    margin-right: 50px;
+    /* margin-right: 50px; */
     padding: 0 5px;
     border-radius: 5px;
     text-shadow: none;

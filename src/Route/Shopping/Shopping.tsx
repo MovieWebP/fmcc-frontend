@@ -1,5 +1,11 @@
+import * as S from "../Style";
+
 function Shopping() {
-    return <h1>asdf</h1>
+    return (
+        <S.SliderWrap>
+            <S.Title>See you soon! </S.Title>
+        </S.SliderWrap>
+    )
 }
 
 export default Shopping

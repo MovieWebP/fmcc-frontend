@@ -28,3 +28,10 @@ export const Doc = styled.p`
     font-size: .7rem;
     text-align: center;
 `
+
+export const Title = styled.h1`
+    font-size: 5rem;
+    font-weight: 600;
+    text-align: center;
+    justify-content: center;
+`;

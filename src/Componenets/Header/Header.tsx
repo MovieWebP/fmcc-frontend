@@ -98,7 +98,7 @@ function Header() {
                             </S.LinkStyle>
                         )}
                     </S.MenuItem>
-                    {/* <S.MenuItem>
+                    <S.MenuItem>
                         {tvMatch ? (
                             <S.Match to="/shopping">
                                 Shopping
@@ -108,10 +108,10 @@ function Header() {
                                 Shopping
                             </S.LinkStyle>
                         )}
-                    </S.MenuItem> */}
+                    </S.MenuItem>
                 </S.MenuItems>
             </S.MenuWrap>
-            <S.MenuWrap>
+            <S.MenuLogin>
                 <S.Search onSubmit={handleSubmit(onSearch)}>
                     <motion.svg
                         style={{ "position": "relative", "right": "255px" }}
@@ -137,7 +137,7 @@ function Header() {
                     />
                 </S.Search>
                 <S.Login to="/login">Login</S.Login>
-            </S.MenuWrap>
+            </S.MenuLogin>
         </S.Nav >
     );
 }
