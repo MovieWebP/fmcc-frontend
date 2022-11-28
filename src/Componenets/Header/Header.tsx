@@ -111,7 +111,7 @@ function Header() {
                     </S.MenuItem>
                 </S.MenuItems>
             </S.MenuWrap>
-            <S.MenuLogin>
+            <S.MenuWrap>
                 <S.Search onSubmit={handleSubmit(onSearch)}>
                     <motion.svg
                         style={{ "position": "relative", "right": "255px" }}
@@ -137,7 +137,7 @@ function Header() {
                     />
                 </S.Search>
                 <S.Login to="/login">Login</S.Login>
-            </S.MenuLogin>
+            </S.MenuWrap>
         </S.Nav >
     );
 }
