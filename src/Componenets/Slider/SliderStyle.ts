@@ -13,21 +13,22 @@ export const SliderWrap = styled.div`
         display: none;
     }
     scrollbar-width:none;
-    /* @media screen and (min-width: 1500px) { 
-        width: 110rem;
+    @media screen and (min-width: 1500px) {
+        /* width: 70rem; */
     };
-    @media screen and (max-width: 1500px) and (min-width: 1400px) { 
-        width: 100rem;
+    @media screen and (max-width: 1500px) and (min-width: 1000px) {
+        width: 80rem;
     };
-    @media screen and (max-width: 900px) and (min-width: 700px) {
+    @media screen and (max-width: 1000px) and (min-width: 700px) {
         width: 50rem;
     };
     @media screen and (max-width: 700px) and (min-width: 500px) {
-    font-size: 10px;
+        font-size: 10px;
     };
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        font-size: 8px;
-    }; */
+
+@media screen and (max-width: 500px) and (min-width: 300px) {
+    font-size: 8px;
+};
 `;
 
 export const Wrap = styled.div`
