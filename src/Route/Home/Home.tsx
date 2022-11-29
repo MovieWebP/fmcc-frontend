@@ -13,8 +13,8 @@ function Home() {
         useQuery<IGetResults>(["nowPlaying", "movie"], getNowPlayingMovie);
     const { data: popular, isLoading: popularLoading } =
         useQuery<IGetResults>(["popular", "movie"], getPopularMovie);
-    const { data: upComing, isLoading: upComingLoading } =
-        useQuery<IGetResults>(["upComing", "movie"], getUpcomingMovie);
+    const { data: topRated, isLoading: getTopRatedMovie } =
+        useQuery<IGetResults>(["topRated", "movie"], getPopularMovie);
 
     //Tv
     const { data: airingToday, isLoading: AiringTodayLoading } =
@@ -25,7 +25,7 @@ function Home() {
         useQuery<IGetResults>(["popularTv", "tv"], getPopularTv);
 
 
-    const isLoading = playingLoading || popularLoading || upComingLoading || AiringTodayLoading || onTheAirTvLoading || popularTvLoading || false;
+    const isLoading = playingLoading || popularLoading || getTopRatedMovie || AiringTodayLoading || onTheAirTvLoading || popularTvLoading || false;
 
     return (
         <>
@@ -58,11 +58,11 @@ function Home() {
                             movies={popular?.results || []}
                         />
                         <Slider
-                            id="upComing"
+                            id="topRated"
                             part="movie"
-                            title="Up Coming"
-                            query="upComing"
-                            movies={upComing?.results || []}
+                            title="Top Rated"
+                            query="topRated"
+                            movies={topRated?.results || []}
                         />
                     </S.SliderWrap>
                     <S.SliderWrap>

@@ -15,37 +15,41 @@ export const Nav = styled(motion.nav)`
 
 export const MenuWrap = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     margin: 0px 20px;
+    width: 30vw;
 `;
 
 export const MenuItems = styled.ul`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     list-style: none;
 `;
 
 export const MenuItem = styled.li`
-    margin-right: 50px;
+    margin-right: 2rem;
 `;
 
 export const Title = styled.h1`
     text-shadow: none;
-    font-size: 24px;
-    font-weight: 900;
+    font-weight: 800;
     margin: 10px 0;
-    margin-right: 50px;
-    padding: 0 5px;
+    width: 3.5rem;
     border-radius: 5px;
-    text-shadow: none;
-    font-size: 24px;
-    margin: 10px 0;
-    margin-right: 50px;
-    padding: 0 10px;
+    text-align: center;
+    margin-right: 1.3rem;
+    font-size: 1.8rem;
     border-radius: 5px;
     background-color: ${(props) => props.theme.white};
     color: ${(props) => props.theme.purple};
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        border-radius: 2px;
+        width: 2.5rem;
+        font-size: 1.3rem;
+        margin-right: 1.5rem;
+    };
 `;
 
 export const LinkStyle = styled(Link)`
@@ -59,6 +63,7 @@ export const LinkStyle = styled(Link)`
         color: ${(props) => props.theme.white};
     }
     text-decoration: none;
+    font-size: 1.3rem;
 `;
 
 export const Match = styled(Link)`
@@ -68,6 +73,7 @@ export const Match = styled(Link)`
     font-weight: 700;
     transition: all .25s ease-in-out;   
     transition-delay: 0s;
+    font-size: 1.3rem;
 `;
 
 export const Search = styled.form`
@@ -84,28 +90,35 @@ export const Input = styled(motion.input)`
     border: 1px solid #919191;
     border-radius: 50px;
     outline: 0; 
-    /* transform-origin: right center; */
-    position: absolute;
-    right: 65px;
-    padding: 5px 10px;
-    padding-left: 40px;
+    width: 20vw;
+    padding-left: 3rem;
     z-index: -1;
     color: ${(props) => props.theme.white};
-    font-size: 16px;
+    font-size: 1.3rem;
     background-color: transparent;
     caret-color: auto; 
-`
+`;
+
+export const LoginWrap = styled.div`
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 
 export const Login = styled(Link)`
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.3rem;
     font-weight: 600;
-    padding: 8px 15px;
+    padding: .5rem .9rem;
     color: ${(props) => props.theme.white};
-    border-radius: 10px;
+    border-radius: .5rem;
     transition: all 0.3s ease-in-out;
     &:hover{
         background-color: #686464;
     }
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        /* border-radius: 6px; */
+    };
 `;
 
