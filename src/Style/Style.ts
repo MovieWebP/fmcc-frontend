@@ -51,6 +51,7 @@ table {
   border-spacing: 0;
 }
 * {
+  
   box-sizing: border-box;
   caret-color: transparent;
 }

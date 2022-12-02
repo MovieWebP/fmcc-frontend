@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from "styled-components";
 
 export const Nav = styled(motion.nav)`
@@ -49,6 +50,7 @@ export const Title = styled.h1`
         width: 2.5rem;
         font-size: 1.3rem;
         margin-right: 1.5rem;
+        font-weight: 500;
     };
 `;
 
@@ -64,6 +66,9 @@ export const LinkStyle = styled(Link)`
     }
     text-decoration: none;
     font-size: 1.3rem;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-weight: 500;
+    };
 `;
 
 export const Match = styled(Link)`
@@ -91,12 +96,19 @@ export const Input = styled(motion.input)`
     border-radius: 50px;
     outline: 0; 
     width: 20vw;
-    padding-left: 3rem;
-    z-index: -1;
+    font-family: Arial, Helvetica, sans-serif, "FontAwesome";
+    padding-left: 2rem;
+    z-index: 3;
     color: ${(props) => props.theme.white};
     font-size: 1.3rem;
     background-color: transparent;
     caret-color: auto; 
+    &::placeholder{
+        color: #919191;
+    }
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        padding-left: 2rem;
+    };
 `;
 
 export const LoginWrap = styled.div`
@@ -104,6 +116,9 @@ export const LoginWrap = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        margin-left: 5px;
+    };
 `;
 
 export const Login = styled(Link)`
@@ -118,7 +133,7 @@ export const Login = styled(Link)`
         background-color: #686464;
     }
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        /* border-radius: 6px; */
+        font-weight: 500;
     };
 `;
 

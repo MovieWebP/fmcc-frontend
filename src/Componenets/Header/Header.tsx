@@ -114,9 +114,9 @@ function Header() {
             <S.MenuWrap>
                 <S.Search onSubmit={handleSubmit(onSearch)}>
                     <motion.svg
-                        style={{ "position": "relative", "left": "1.8rem" }}
+                        style={{ "position": "relative", "left": "1.8rem", "color": "#919191" }}
                         // style={{ "size": "1rem" }}
-                        onClick={toggleSearch}
+                        // onClick={toggleSearch}
                         // animate={{ x: searchOpen ? -260 : -110 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
                         // transition={{ type: "linear" }}
                         fill="currentColor"
@@ -136,7 +136,7 @@ function Header() {
                         // animate={inputAnimation}
                         // initial={{ scaleX: 0 }}
                         // transition={{ type: "linear" }}
-                        placeholder="Search"
+                        placeholder="&#xF002; Search"
                     />
                 </S.Search>
                 <S.LoginWrap>
