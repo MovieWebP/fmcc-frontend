@@ -28,7 +28,6 @@ function App() {
           <Route path="/shopping" element={<Shopping />} />
         </Routes>
       </Router>
-      
     </>
   );
 }

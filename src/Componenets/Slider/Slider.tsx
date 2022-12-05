@@ -92,7 +92,6 @@ function Slider({ id, part, title, movies }: IProps) {
                         custom={{ prev: sliderMovPrev }}
                         transition={{ type: "tween", duration: 1 }}
                     >
-
                         {movies
                             ?.slice(1)
                             .slice(offset * index, offset * index + offset)
@@ -107,7 +106,6 @@ function Slider({ id, part, title, movies }: IProps) {
                                 </S.Movie>
                             ))
                         }
-
                     </S.Slider>
                 </AnimatePresence>
                 <S.IconRightDiv>
