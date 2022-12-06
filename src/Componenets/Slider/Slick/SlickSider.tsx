@@ -1,11 +1,11 @@
-import * as S from "./SlideStyle";
+import * as S from "../SlideStyle";
 import Slider from "react-slick";
-import { IMovie } from "../../Api/api";
-import { makeImagePath } from "../../Api/utils";
+import { IMovie } from "../../../Api/api";
+import { makeImagePath } from "../../../Api/utils";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRecoilState } from "recoil";
-import { modalState } from "../../atom";
+import { modalState } from "../../../atom";
 import { useNavigate } from "react-router-dom";
 import { StyledSlider } from "./SlickStyle"
 
@@ -25,7 +25,7 @@ function SlickSider({ settings, movies, part, id }: IProp) {
     };
 
     return (
-        <StyledSlider  {...settings}>
+        <StyledSlider {...settings}>
             {movies
                 ?.map((movie) => (
                     <S.Movie>

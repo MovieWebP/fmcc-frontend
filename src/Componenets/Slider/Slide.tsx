@@ -7,7 +7,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { modalState } from "../../atom";
 import * as S from "./SlideStyle";
 import { makeImagePath } from "../../Api/utils";
-import SlickSider from "./SlickSider";
+import SlickSider from "./Slick/SlickSider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
@@ -71,7 +71,7 @@ function Slide({ id, part, title, movies }: IProps) {
     }
 
     const settingsBig = {
-        infinite: true,
+        infinite: false,
         slidesToShow: 6,
         slidesToScroll: 6,
         speed: 1000,
@@ -146,13 +146,6 @@ function Slide({ id, part, title, movies }: IProps) {
                 <S.Title>{title}</S.Title>
             </S.TitleWrap>
             <S.Wrap>
-                {/* <S.IconLeftDiv>
-                    {index === 0 ? null : (
-                        <S.IconLeft onClick={prevslider}>
-                            <MdKeyboardArrowLeft size="4rem" />
-                        </S.IconLeft>
-                    )}
-                </S.IconLeftDiv> */}
                 <AnimatePresence
                     custom={{ prev: sliderMovPrev }}
                     initial={false}
@@ -194,11 +187,6 @@ function Slide({ id, part, title, movies }: IProps) {
                         )}
                     </S.Slider>
                 </AnimatePresence>
-                {/* <S.IconRightDiv>
-                    <S.IconLeft onClick={nextslider} >
-                        <MdKeyboardArrowRight size="4rem" />
-                    </S.IconLeft>
-                </S.IconRightDiv> */}
             </S.Wrap>
         </S.SliderWrap >
     );

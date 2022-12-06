@@ -24,6 +24,8 @@ export const Title = styled.h1`
 
 export const Wrap = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 93vw;
     height: 25rem;
     border: 1px solid white;
@@ -31,25 +33,28 @@ export const Wrap = styled.div`
 
 export const Slider = styled(motion.div)`
     width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const Movie = styled.div`
-    height: 200px;
-    /* border: 1px solid blue; */
+    width: fit-content;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid red;
 `;
 
 export const MovieImage = styled.img`
-    width: 13rem;
+    align-self: center;
+    position: relative;
+    width: 12rem;
+    border-radius: .8rem;
+    margin-left: 2rem;
 `;
 
 export const MovieTitle = styled.p`
+    width: 70%;
 `;
 
-export const IconLeftDiv = styled.div`
-`;
-
-export const IconRightDiv = styled.div``;
-
-export const IconLeft = styled.span`
-`;
 

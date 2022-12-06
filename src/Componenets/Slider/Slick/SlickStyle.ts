@@ -2,12 +2,6 @@ import Slider from "react-slick";
 import styled from "styled-components";
 
 export const StyledSlider = styled(Slider)`
-  .slick-slider {
-    height: 100vh;
-  }
-  .slick-list {
-    height: calc(100vh - 60px);
-  }
   .slick-prev {
     left: 0;
     z-index: 1;
@@ -22,53 +16,31 @@ export const StyledSlider = styled(Slider)`
       display: none;
     }
   }
-  .slick-dots {
-    bottom: 35px;
-  }
   .slick-arrow-icon-left,
   .slick-arrow-icon-right {
     position: absolute;
     border: 1px solid red;
     display: block;
     width: 30px;
+    z-index: 10;
     height: 30px;
     top: 0;
     bottom: 0;
     cursor: pointer;
     background: transparent;
-    color: #fff;
+    color: #fafafa;
     padding: 0;
     border: none;
     outline: none;
     transition: .3s ease-in-out;
-    &:hover,
-    &:focus {
+    &:hover {
       outline: none;
       background: transparent;
-      opacity: 0.5;
+      opacity: 0.7;
       font-size: 40px;
-      &::before {
-        opacity: 1;
-      }
     }
-  }
-  .slick-arrow-icon-left {
-    left: 30px;
-    [dir="rtl"] & {
-      left: auto;
-      right: 30px;
-    }
-  }
-  .slick-arrow-icon-right {
-    right: 30px;
-    [dir="rtl"] & {
-      left: 30px;
-      right: auto;
-    }
-  }
-  .slick-dots li button {
     &:before {
-      color: #fff;
+      display: none;
     }
   }
 `;
