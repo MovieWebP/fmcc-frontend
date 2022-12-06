@@ -1,7 +1,7 @@
 
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
-import Slider from "../../Componenets/Slider/Slider";
+import Slide from "../../Componenets/Slider/Slide";
 import { getAiringTodayTv, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getUpcomingMovie, IGetResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
 import * as S from "../Style";
@@ -43,52 +43,52 @@ function Home() {
                     />
                     <S.SliderWrap>
                         <S.SliderTitle to="/movie">Movie</S.SliderTitle>
-                        <Slider
+                        <Slide
                             id="nowPlaying"
                             part="movie"
                             title="Now Playing"
                             query="nowPlaying"
                             movies={nowPlaying?.results || []}
                         />
-                        <Slider
+                        {/* <Slide
                             id="popular"
                             part="movie"
                             title="Popular"
                             query="popular"
                             movies={popular?.results || []}
                         />
-                        <Slider
+                        <Slide
                             id="topRated"
                             part="movie"
                             title="Top Rated"
                             query="topRated"
                             movies={topRated?.results || []}
-                        />
+                        /> */}
                     </S.SliderWrap>
-                    <S.SliderWrap>
+                    {/* <S.SliderWrap>
                         <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
-                        <Slider
+                        <Slide
                             id="airingToday"
                             part="tv"
                             title="Now Playing"
                             query="airingToday"
                             movies={airingToday?.results || []}
                         />
-                        <Slider
+                        <Slide
                             id="onTheAir"
                             part="tv"
                             title="On The Air"
                             query="onTheAir"
                             movies={onTheAir?.results || []}
                         />
-                        <Slider
+                        <Slide
                             id="popularTv"
                             part="tv"
                             title="Popular Tv"
                             query="popularTv"
                             movies={popularTv?.results || []}
                         />
-                    </S.SliderWrap>
+                    </S.SliderWrap> */}
                     <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
                 </>
             )}
