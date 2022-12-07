@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
-import Slider from "../../Componenets/Slider/Slider";
+import Slider from "../../Componenets/Slider/Slide";
 import { getNowPlayingMovie, getPopularMovie, getTopRatedMovie, getUpcomingMovie, IGetResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
 import * as S from "../Style";
