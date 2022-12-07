@@ -86,9 +86,10 @@ function Banner({ part, id, movies }: IBanner) {
                             .slice(offset * index, offset * index + offset).map((movie) => (
                                 <>
                                     < S.MainImage
-                                        bgPhoto={makeImagePath(movie?.backdrop_path)}
+                                        key={movie.name}
+                                        bgphoto={makeImagePath(movie?.backdrop_path)}
                                     ></S.MainImage>
-                                    <S.ImageWrap>
+                                    <S.ImageWrap key={movie.id}>
                                         {index === 0 ? (
                                             <S.HiddenBox onClick={moveSliderPrev}>
                                                 <MdKeyboardArrowLeft size="60px" />
@@ -99,7 +100,7 @@ function Banner({ part, id, movies }: IBanner) {
                                             </S.ArrowBox>
                                         )}
 
-                                        <S.BannerImage bgPhoto={makeImagePath(movie?.backdrop_path)}>
+                                        <S.BannerImage bgphoto={makeImagePath(movie?.backdrop_path)}>
                                             <S.BannerWrap>
                                                 <S.TitleDiv>
                                                     <S.Title>{part === "movie" ? movie?.title : movie?.name}</S.Title>

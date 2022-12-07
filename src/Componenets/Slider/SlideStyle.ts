@@ -8,12 +8,10 @@ export const SliderWrap = styled.div`
     justify-content: center;
     align-items: center;
     overflow: scroll;
-    border: 1px solid red;
     height: 30rem;
 `;
 
 export const TitleWrap = styled.div`
-    border: 1px solid white;
     align-items: flex-end;
 `;
 
@@ -28,7 +26,6 @@ export const Wrap = styled.div`
     align-items: center;
     width: 93vw;
     height: 25rem;
-    border: 1px solid white;
 `;
 
 export const Slider = styled.div`
@@ -36,13 +33,10 @@ export const Slider = styled.div`
     text-align: center;
     align-items: center;
     justify-content: center;
-    border: 1px solid white;
 `;
 
 export const Movie = styled.div`
     width: fit-content;
-    /* display: inline-block; */
-    border: 1px solid white;
     word-wrap: normal;
     text-align: center;
     display: flex;
@@ -63,7 +57,7 @@ export const MovieTitleWrap = styled.div`
 `;
 
 export const MovieTitle = styled.p`
-    width: 65%;
+    width: 60%;
 `;
 
 

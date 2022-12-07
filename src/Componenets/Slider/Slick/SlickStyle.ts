@@ -20,16 +20,16 @@ export const StyledSlider = styled(Slider)`
   .slick-arrow-icon-right {
     position: absolute;
     display: block;
-    width: 30px;
+    width: 2.3rem;
     z-index: 10;
-    height: 30px;
-    top: 0;
+    height: 2.3rem;
+    top: -30px;
     bottom: 0;
     cursor: pointer;
     background: transparent;
     color: #fafafa;
     padding: 0;
-    border: none;
+    border: 1px solid red;
     outline: none;
     transition: .3s ease-in-out;
     &:hover {
@@ -41,9 +41,5 @@ export const StyledSlider = styled(Slider)`
   .slick-arrow-icon-right{
     position: absolute;
     right: 0;
-  }
-
-  .slick-disabled {
-    display: none;
   }
 `;

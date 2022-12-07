@@ -17,28 +17,36 @@ interface IProps {
 function Slide({ id, part, title, movies }: IProps) {
 
     const NextArrow = (props: any) => {
-        const { className, style, onClick } = props;
+        const { className, style, onClick, slideCount, currentSlide, slidesToShow } = props;
         return (
-            <div
-                className={className}
-                style={{ ...style, display: "block" }}
-                onClick={onClick}
-            >
-                <FontAwesomeIcon icon={faChevronRight} size="3x" className="slick-arrow-icon-right" />
-            </div>
+            <>
+                {currentSlide !== slideCount - slidesToShow && (
+                    <div
+                        className={className}
+                        style={{ ...style, display: "block" }}
+                        onClick={onClick}
+                    >
+                        <FontAwesomeIcon icon={faChevronRight} size="3x" className="slick-arrow-icon-right" />
+                    </div>
+                )}
+            </>
         );
     }
 
     const PrevArrow = (props: any) => {
-        const { className, style, onClick } = props;
+        const { className, style, onClick, currentSlide } = props;
         return (
-            <div
-                className={className}
-                style={{ ...style, display: "block" }}
-                onClick={onClick}
-            >
-                <FontAwesomeIcon icon={faChevronLeft} size="3x" className="slick-arrow-icon-left" />
-            </div>
+            <>
+                {currentSlide !== 0 && (
+                    <div
+                        className={className}
+                        style={{ ...style, display: "block" }}
+                        onClick={onClick}
+                    >
+                        <FontAwesomeIcon icon={faChevronLeft} size="3x" className="slick-arrow-icon-left" />
+                    </div>
+                )}
+            </>
         );
     }
 

@@ -41,7 +41,7 @@ export const ImageWrap = styled(motion.div)`
   justify-content: center;
 `;
 
-export const MainImage = styled(motion.div) < { bgPhoto: string }> `
+export const MainImage = styled(motion.div) < { bgphoto: string }> `
   justify-content: center;
   z-index: -100;
   display: flex;
@@ -51,7 +51,7 @@ export const MainImage = styled(motion.div) < { bgPhoto: string }> `
     rgba(19, 16, 16, 0.3),
     #181818
     ), 
-    url(${(props) => props.bgPhoto});
+    url(${(props) => props.bgphoto});
     filter: blur(4px);
     background-size: cover;
     object-fit: cover;
@@ -65,7 +65,7 @@ export const MainImage = styled(motion.div) < { bgPhoto: string }> `
   };
 `;
 
-export const BannerImage = styled.div< { bgPhoto: string }>`
+export const BannerImage = styled.div< { bgphoto: string }>`
   z-index: 1;
   width: 45rem;
   height: 22rem;
@@ -75,7 +75,7 @@ export const BannerImage = styled.div< { bgPhoto: string }>`
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 50px;
-  background-image: url(${(props) => props.bgPhoto});
+  background-image: url(${(props) => props.bgphoto});
   align-self: center;
   background-size: cover;
   object-fit: cover;
