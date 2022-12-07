@@ -28,7 +28,7 @@ function SlickSider({ settings, movies, part, id }: IProp) {
         <StyledSlider {...settings}>
             {movies
                 ?.map((movie) => (
-                    <S.Movie>
+                    <S.Movie key={movie.id}>
                         <S.MovieImage src={makeImagePath(movie.poster_path)} />
                         <S.MovieTitle
                             onClick={() => boxClick(part, movie.id, id)}

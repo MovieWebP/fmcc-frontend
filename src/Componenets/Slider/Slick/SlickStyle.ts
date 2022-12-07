@@ -19,7 +19,6 @@ export const StyledSlider = styled(Slider)`
   .slick-arrow-icon-left,
   .slick-arrow-icon-right {
     position: absolute;
-    border: 1px solid red;
     display: block;
     width: 30px;
     z-index: 10;
@@ -37,10 +36,14 @@ export const StyledSlider = styled(Slider)`
       outline: none;
       background: transparent;
       opacity: 0.7;
-      font-size: 40px;
     }
-    &:before {
-      display: none;
-    }
+  }
+  .slick-arrow-icon-right{
+    position: absolute;
+    right: 0;
+  }
+
+  .slick-disabled {
+    display: none;
   }
 `;

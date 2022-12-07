@@ -1,28 +1,9 @@
-import { AnimatePresence } from "framer-motion";
-import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
 import { IMovie } from "../../Api/api";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { modalState } from "../../atom";
 import * as S from "./SlideStyle";
-import { makeImagePath } from "../../Api/utils";
-import SlickSider from "./Slick/SlickSider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
-
-const rowVariants = {
-    hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "-95%" : "95%",
-    }),
-    visible: {
-        x: 0,
-    },
-    exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "95%" : "-95%",
-    }),
-}
+import SlickSider from "./Slick/SlickSider";
 
 interface IProps {
     id: string;
@@ -32,18 +13,10 @@ interface IProps {
     movies: IMovie[];
 }
 
-const offset = 6
 
 function Slide({ id, part, title, movies }: IProps) {
-    const [index, setIndex] = useState(0);
-    const [sliderMov, setSliderMov] = useState(false);
-    const [sliderMovPrev, setsliderMovPrev] = useState(false);
 
-    const totalLength = movies.length - 1;
-    const maxIndex = Math.floor(totalLength / offset) - 1;
-
-
-    function NextArrow(props: any) {
+    const NextArrow = (props: any) => {
         const { className, style, onClick } = props;
         return (
             <div
@@ -56,8 +29,7 @@ function Slide({ id, part, title, movies }: IProps) {
         );
     }
 
-
-    function PrevArrow(props: any) {
+    const PrevArrow = (props: any) => {
         const { className, style, onClick } = props;
         return (
             <div
@@ -70,7 +42,7 @@ function Slide({ id, part, title, movies }: IProps) {
         );
     }
 
-    const settingsBig = {
+    const settings = {
         infinite: false,
         slidesToShow: 6,
         slidesToScroll: 6,
@@ -78,115 +50,49 @@ function Slide({ id, part, title, movies }: IProps) {
         pauseOnHover: true,
         draggable: true,
         nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />
+        prevArrow: <PrevArrow />,
+        responsive: [ // 반응형 웹 구현 옵션
+            {
+                breakpoint: 960, //화면 사이즈 960px일 때
+                settings: {
+                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                }
+            },
+            {
+                breakpoint: 700, //화면 사이즈 960px일 때
+                settings: {
+                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+            },
+            {
+                breakpoint: 500, //화면 사이즈 960px일 때
+                settings: {
+                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+        ]
     };
-
-    const settings2 = {
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        speed: 1000,
-        nextArrow: <MdKeyboardArrowRight size="4rem" />,
-        prevArrow: <MdKeyboardArrowLeft size="4rem" />
-    };
-
-    const settings3 = {
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        speed: 1000,
-        nextArrow: <MdKeyboardArrowRight size="2rem" />,
-        prevArrow: <MdKeyboardArrowLeft size="2rem" />
-    };
-
-
-
-    const nextslider = () => {
-        if (!sliderMov && movies) {
-            setSliderMov(true);
-            setsliderMovPrev(false);
-            setIndex((prev) => (prev === maxIndex ? 0 : prev + 1));
-        }
-    };
-
-    const prevslider = () => {
-        if (!sliderMov && movies) {
-            setSliderMov(false);
-            setsliderMovPrev(true);
-            setIndex((prev) => (prev === maxIndex ? prev - 1 : 0));
-        };
-    };
-
-    const ExitSlider = () => {
-        setSliderMov(false);
-        setsliderMovPrev(false);
-    }
-
-    const [windowDimension, detectHW] = useState({ winWidth: window.innerWidth })
-
-    const detectSize = () => {
-        detectHW({
-            winWidth: window.innerWidth
-        })
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', detectSize)
-
-        return () => {
-            window.removeEventListener('resize', detectSize)
-        }
-    }, [windowDimension]);
-
-    console.log(windowDimension.winWidth)
-
     return (
         <S.SliderWrap>
             <S.TitleWrap>
                 <S.Title>{title}</S.Title>
             </S.TitleWrap>
             <S.Wrap>
-                <AnimatePresence
-                    custom={{ prev: sliderMovPrev }}
-                    initial={false}
-                    onExitComplete={ExitSlider}
+                <S.Slider
                 >
-                    <S.Slider
-                        key={index}
-                        variants={rowVariants}
-                        initial="hidden" // initial은 초기값
-                        animate="visible" // animate은 애니메이션
-                        exit="exit" // exit은 애니메이션 종료
-                        custom={{ prev: sliderMovPrev }}
-                        transition={{ type: "tween", duration: 1 }}
-                    >
-                        {windowDimension.winWidth === 500 ? (
-                            <SlickSider
-                                settings={{ ...settingsBig }}
-                                id={id}
-                                part={part}
-                                movies={movies}
-                            />
-                        ) : (
-                            windowDimension.winWidth === 700 ?
-                                (
-                                    <SlickSider
-                                        settings={{ ...settingsBig }}
-                                        id={id}
-                                        part={part}
-                                        movies={movies}
-                                    />
-                                ) : (
-                                    <SlickSider
-                                        settings={{ ...settingsBig }}
-                                        id={id}
-                                        part={part}
-                                        movies={movies}
-                                    />
-                                )
-                        )}
-                    </S.Slider>
-                </AnimatePresence>
+                    <SlickSider
+                        settings={{ ...settings }}
+                        id={id}
+                        part={part}
+                        movies={movies}
+                    />
+                </S.Slider>
             </S.Wrap>
         </S.SliderWrap >
     );

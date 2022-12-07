@@ -31,30 +31,39 @@ export const Wrap = styled.div`
     border: 1px solid white;
 `;
 
-export const Slider = styled(motion.div)`
+export const Slider = styled.div`
     width: 100%;
     text-align: center;
     align-items: center;
     justify-content: center;
+    border: 1px solid white;
 `;
 
 export const Movie = styled.div`
     width: fit-content;
-    display: inline-block;
+    /* display: inline-block; */
+    border: 1px solid white;
+    word-wrap: normal;
     text-align: center;
-    border: 1px solid red;
+    display: flex;
 `;
 
 export const MovieImage = styled.img`
-    align-self: center;
-    position: relative;
-    width: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10rem;
     border-radius: .8rem;
-    margin-left: 2rem;
+`;
+
+export const MovieTitleWrap = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 `;
 
 export const MovieTitle = styled.p`
-    width: 70%;
+    width: 65%;
 `;
 
 
