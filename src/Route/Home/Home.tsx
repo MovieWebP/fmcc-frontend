@@ -5,6 +5,7 @@ import Slide from "../../Componenets/Slider/Slide";
 import { getAiringTodayTv, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getUpcomingMovie, IGetResults } from "../../Api/api";
 import Banner from "../../Componenets/Banner/Banner";
 import * as S from "../Style";
+import { useRecoilValue } from "recoil";
 
 function Home() {
 
@@ -50,7 +51,7 @@ function Home() {
                             query="nowPlaying"
                             movies={nowPlaying?.results || []}
                         />
-                        {/* <Slide
+                        <Slide
                             id="popular"
                             part="movie"
                             title="Popular"
@@ -63,9 +64,9 @@ function Home() {
                             title="Top Rated"
                             query="topRated"
                             movies={topRated?.results || []}
-                        /> */}
+                        />
                     </S.SliderWrap>
-                    {/* <S.SliderWrap>
+                    <S.SliderWrap>
                         <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
                         <Slide
                             id="airingToday"
@@ -88,7 +89,7 @@ function Home() {
                             query="popularTv"
                             movies={popularTv?.results || []}
                         />
-                    </S.SliderWrap> */}
+                    </S.SliderWrap>
                     <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
                 </>
             )}

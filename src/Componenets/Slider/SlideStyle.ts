@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 export const SliderWrap = styled.div`
     width: 100vw;
@@ -7,16 +6,32 @@ export const SliderWrap = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
     height: 30rem;
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        height: 50rem;
+        height: 35rem;
+    };
+`;
+export const Wrap = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 25rem;
+    @media screen and (max-width: 1500px) and (min-width: 1200px) {
+        width: 80%;
+    };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        height: 30rem;
     };
 `;
 
 export const TitleWrap = styled.div`
     align-items: flex-end;
     width: 90%;
+    margin-bottom: 10px;
+    @media screen and (max-width: 1500px) and (min-width: 1200px) {
+        width: 80%;
+    };
 `;
 
 export const Title = styled.h1`
@@ -28,16 +43,6 @@ export const Title = styled.h1`
     color: ${props => props.theme.lightPurple};
 `;
 
-export const Wrap = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 93vw;
-    height: 25rem;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        height: 40rem;
-    };
-`;
 
 export const Slider = styled.div`
     width: 100%;
@@ -56,29 +61,33 @@ export const Movie = styled.div`
 
 export const MovieTitleWrap = styled.div`
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    /* flex-wrap: wrap; */
     width: 100%;
-    /* border: 1px solid red; */
 `;
 
 export const MovieImage = styled.img`
-        margin-left: auto;
-        margin-right: auto;
-        width: 10rem;
+        width: 11rem;
         border-radius: .8rem;
+    @media screen and (max-width: 700px) and (min-width: 500px) {
+        width: 12rem;
+    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 12rem;
     };
 `;
 export const MovieTitle = styled.p`
     width: 60%;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    text-align: left;
     transition: all .3s ease;
     margin-top: 10px;
     &:hover{
         text-decoration: underline ${(props) => props.theme.white};
     }
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-size: 1.3rem;
+    };
 `;
 
 

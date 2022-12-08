@@ -67,22 +67,22 @@ export interface IGetCredits {
 
 //Movie
 export function getNowPlayingMovie() {
-    return fetch(`${BASE_PATH}/movie/now_playing?api_key=${Api_KEY}&language=en-US&page=1`)
+    return fetch(`${BASE_PATH}/movie/now_playing?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
 export function getPopularMovie() {
-    return fetch(`${BASE_PATH}/movie/popular?api_key=${Api_KEY}&language=en-US&page=1`)
+    return fetch(`${BASE_PATH}/movie/popular?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
 export function getUpcomingMovie() {
-    return fetch(`${BASE_PATH}/movie/upcoming?api_key=${Api_KEY}&language=en-US&page=1`)
+    return fetch(`${BASE_PATH}/movie/upcoming?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
 export function getTopRatedMovie() {
-    return fetch(`${BASE_PATH}/movie/top_rated?api_key=${Api_KEY}&language=en-US&page=1`)
+    return fetch(`${BASE_PATH}/movie/top_rated?api_key=${Api_KEY}`)
         .then(res => res.json())
 }
 
