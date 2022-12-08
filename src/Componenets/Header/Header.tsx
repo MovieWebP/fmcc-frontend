@@ -136,7 +136,7 @@ function Header() {
                         // animate={inputAnimation}
                         // initial={{ scaleX: 0 }}
                         // transition={{ type: "linear" }}
-                        placeholder="&#xF002; Search"
+                        placeholder="Search"
                     />
                 </S.Search>
                 <S.LoginWrap>

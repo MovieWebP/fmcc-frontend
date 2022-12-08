@@ -49,6 +49,9 @@ export const StyledSlider = styled(Slider)`
       height: 3rem;
       width: 3rem;
     };
+    &:focus{
+      border: none;
+    }
   }
   .slick-arrow-icon-right{
     position: absolute;

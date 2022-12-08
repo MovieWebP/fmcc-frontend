@@ -59,6 +59,7 @@ function Slide({ id, part, title, movies }: IProps) {
         draggable: true,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
+        // onSwipe: ,
         responsive: [ // 반응형 웹 구현 옵션
             {
                 breakpoint: 1200, //화면 사이즈 960px일 때
