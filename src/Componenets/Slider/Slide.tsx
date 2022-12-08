@@ -61,7 +61,7 @@ function Slide({ id, part, title, movies }: IProps) {
         prevArrow: <PrevArrow />,
         responsive: [ // 반응형 웹 구현 옵션
             {
-                breakpoint: 960, //화면 사이즈 960px일 때
+                breakpoint: 1100, //화면 사이즈 960px일 때
                 settings: {
                     //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
                     slidesToShow: 5,
@@ -69,19 +69,11 @@ function Slide({ id, part, title, movies }: IProps) {
                 }
             },
             {
-                breakpoint: 700, //화면 사이즈 960px일 때
+                breakpoint: 800, //화면 사이즈 960px일 때
                 settings: {
                     //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
                     slidesToShow: 4,
                     slidesToScroll: 4,
-                }
-            },
-            {
-                breakpoint: 500, //화면 사이즈 960px일 때
-                settings: {
-                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
                 }
             },
         ]

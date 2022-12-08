@@ -29,7 +29,6 @@ export const StyledSlider = styled(Slider)`
     background: transparent;
     color: #fafafa;
     padding: 0;
-    border: 1px solid red;
     outline: none;
     transition: .3s ease-in-out;
     &:hover {

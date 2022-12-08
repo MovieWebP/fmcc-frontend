@@ -66,7 +66,9 @@ a {
   text-decoration:none;
   color:inherit;
 }
-
+/* div{
+  border: solid 1px #ff0000
+} */
 html,body{
 @media screen and (min-width: 1500px) {
     font-size: 16px;
