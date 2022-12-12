@@ -9,17 +9,6 @@ import * as S from "./BannerStyle";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { BsPlayFill } from "react-icons/bs";
 
-const rowVariants = {
-    hidden: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "-100vw" : "100vw",
-    }),
-    visible: {
-        x: 0,
-    },
-    exit: ({ prev }: { prev: boolean }) => ({
-        x: prev ? "100vw" : "-100vw",
-    }),
-}
 interface IBanner {
     id: string;
     part: string;
@@ -67,61 +56,59 @@ function Banner({ part, id, movies }: IBanner) {
 
     return (
         <S.Wrap>
-            <S.AllWrap>
-                <AnimatePresence
-                    custom={{ prev: sliderMovingPrev }}
-                    initial={false}
-                    onExitComplete={ExitMoveSlider}
-                >
-                    <S.Banner
-                        key={index}
-                        variants={rowVariants}
-                        initial="hidden" // initial은 초기값
-                        animate="visible" // animate은 애니메이션
-                        exit="exit" // exit은 애니메이션 종료
-                        custom={{ prev: sliderMovingPrev }}
-                        transition={{ type: "tween", duration: 1.3 }}>
-                        {movies
-                            ?.slice(1)
-                            .slice(offset * index, offset * index + offset).map((movie) => (
-                                <>
-                                    < S.MainImage
-                                        key={movie.name}
-                                        bgphoto={makeImagePath(movie?.backdrop_path)}
-                                    ></S.MainImage>
-                                    <S.ImageWrap key={movie.id}>
-                                        {index === 0 ? (
-                                            <S.HiddenBox onClick={moveSliderPrev}>
-                                                <MdKeyboardArrowLeft size="60px" />
-                                            </S.HiddenBox>
-                                        ) : (
-                                            <S.ArrowBox onClick={moveSliderPrev}>
-                                                <MdKeyboardArrowLeft size="5rem" />
-                                            </S.ArrowBox>
-                                        )}
-
-                                        <S.BannerImage bgphoto={makeImagePath(movie?.backdrop_path)}>
-                                            <S.BannerWrap>
-                                                <S.TitleDiv>
-                                                    <S.Title>{part === "movie" ? movie?.title : movie?.name}</S.Title>
-                                                    <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
-                                                </S.TitleDiv>
-                                                <S.Overview>{movie?.overview.slice(0, 120)}...</S.Overview>
-                                                <S.Button onClick={() => boxClick(part, movie.id, id)}>
-                                                    <BsPlayFill size="1.2rem" />
-                                                    <S.ButtonText>Watch Now</S.ButtonText>
-                                                </S.Button>
-                                            </S.BannerWrap>
-                                        </S.BannerImage>
-                                        <S.RightArrow onClick={moveSlider} >
-                                            <MdKeyboardArrowRight size="5rem" />
-                                        </S.RightArrow>
-                                    </S.ImageWrap>
-                                </>
-                            ))}
-                    </S.Banner>
-                </AnimatePresence>
-            </S.AllWrap>
+            <AnimatePresence
+                custom={{ prev: sliderMovingPrev }}
+                initial={false}
+                onExitComplete={ExitMoveSlider}
+            >
+                <S.Banner
+                    key={index}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ type: "easeOut", duration: 0.8 }}>
+                    {movies
+                        ?.slice(0)
+                        .slice(offset * index, offset * index + offset).map((movie) => (
+                            <>
+                                < S.MainImage
+                                    key={movie.name}
+                                    bgphoto={makeImagePath(movie?.backdrop_path)}
+                                ></S.MainImage>
+                                <S.ImageWrap key={movie.id}>
+                                    {index === 0 ? (
+                                        <S.HiddenBox onClick={moveSliderPrev}>
+                                            <MdKeyboardArrowLeft size="5rem" />
+                                        </S.HiddenBox>
+                                        // <S.ArrowBox>
+                                        //     <MdKeyboardArrowLeft size="5rem" />
+                                        // </S.ArrowBox>
+                                    ) : (
+                                        <S.ArrowBox onClick={moveSliderPrev}>
+                                            <MdKeyboardArrowLeft size="5rem" />
+                                        </S.ArrowBox>
+                                    )}
+                                    <S.BannerImage bgphoto={makeImagePath(movie?.backdrop_path)}>
+                                        <S.BannerWrap>
+                                            <S.TitleDiv>
+                                                <S.Title>{part === "movie" ? movie?.title : movie?.name}</S.Title>
+                                                <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
+                                            </S.TitleDiv>
+                                            <S.Overview>{movie?.overview.slice(0, 120)}...</S.Overview>
+                                            <S.Button onClick={() => boxClick(part, movie.id, id)}>
+                                                <BsPlayFill size="1.5rem" />
+                                                <S.ButtonText>Watch Now</S.ButtonText>
+                                            </S.Button>
+                                        </S.BannerWrap>
+                                    </S.BannerImage>
+                                    <S.RightArrow onClick={moveSlider} >
+                                        <MdKeyboardArrowRight size="5rem" />
+                                    </S.RightArrow>
+                                </S.ImageWrap>
+                            </>
+                        ))}
+                </S.Banner>
+            </AnimatePresence>
         </S.Wrap >
     )
 }

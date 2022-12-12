@@ -14,11 +14,7 @@ export const Wrap = styled.div`
     display: none;
   }
   scrollbar-width:none;
-  height: fit-content;
-`;
-
-export const AllWrap = styled(Wrap)`
-  height: 30rem;  
+  height: 38rem;
 `;
 
 export const Banner = styled(motion.div)`
@@ -67,8 +63,8 @@ export const MainImage = styled(motion.div) < { bgphoto: string }> `
 
 export const BannerImage = styled.div< { bgphoto: string }>`
   z-index: 1;
-  width: 45rem;
-  height: 22rem;
+  width: 50rem;
+  height: 25rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -91,10 +87,9 @@ export const BannerWrap = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   padding: 0 10px;
-  width: 40rem;
-  height: 8rem;
-  max-width: 600px;
-  margin-bottom: 10px;
+  width: 49rem;
+  height: 10rem;
+  margin-bottom: .4rem;
   align-items: center;
   @media screen and (max-width: 500px) and (min-width: 300px) {
     padding: 0 5px;
@@ -124,8 +119,8 @@ export const Title = styled.h3`
 
 export const Overview = styled.p`
   color: ${(props) => props.theme.white};
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 450;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -140,12 +135,12 @@ export const Button = styled.div`
   border-radius: 5px;
   color: ${(props) => props.theme.white};
   background-color: ${(props) => props.theme.purple};
-  width: 7rem;
-  height: 1.7rem;
+  width: 10rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5px;
+  margin-top: .8rem;
   transition: all .3s ease-in-out;
   &:hover {
     background-color: ${(props) => props.theme.lightPurple};
@@ -154,15 +149,13 @@ export const Button = styled.div`
   @media screen and (max-width: 500px) and (min-width: 300px) {
     width: 5rem;
     height: 1.5rem;
-    /* margin-top: 0; */
     border-radius: 3px;
   };
 `;
 
 export const ButtonText = styled.h2`
-  /* position: relative;
-  top: 2px; */
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
   @media screen and (max-width: 500px) and (min-width: 300px) {
     font-size: 0.7rem;
   };
