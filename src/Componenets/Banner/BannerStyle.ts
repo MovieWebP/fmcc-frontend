@@ -88,7 +88,7 @@ export const BannerWrap = styled.div`
   border-radius: 10px;
   padding: 0 10px;
   width: 49rem;
-  height: 10rem;
+  height: 9rem;
   margin-bottom: .4rem;
   align-items: center;
   @media screen and (max-width: 500px) and (min-width: 300px) {
@@ -135,8 +135,8 @@ export const Button = styled.div`
   border-radius: 5px;
   color: ${(props) => props.theme.white};
   background-color: ${(props) => props.theme.purple};
-  width: 10rem;
-  height: 3rem;
+  width: 7.2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,7 +154,7 @@ export const Button = styled.div`
 `;
 
 export const ButtonText = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
   @media screen and (max-width: 500px) and (min-width: 300px) {
     font-size: 0.7rem;

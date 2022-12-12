@@ -29,7 +29,7 @@ function SlickSider({ settings, movies, part, id }: IProp) {
             {movies
                 ?.map((movie) => (
                     <S.Movie key={movie.id}>
-                        <S.MovieImage onClick={() => boxClick(part, movie.id, id)} src={makeImagePath(movie.poster_path)} />
+                        <S.MovieImage src={makeImagePath(movie.poster_path)} />
                         <S.MovieTitleWrap>
                             <S.MovieTitle
                                 onClick={() => boxClick(part, movie.id, id)}

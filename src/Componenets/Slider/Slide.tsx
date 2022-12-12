@@ -66,7 +66,7 @@ function Slide({ id, part, title, movies }: IProps) {
                 settings: {
                     //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
                     slidesToShow: 4.5,
-                    slidesToScroll: 5,
+                    slidesToScroll: 4,
                 }
             },
             {
@@ -74,7 +74,7 @@ function Slide({ id, part, title, movies }: IProps) {
                 settings: {
                     //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
                     slidesToShow: 3.5,
-                    slidesToScroll: 4,
+                    slidesToScroll: 3,
                 }
             },
         ]

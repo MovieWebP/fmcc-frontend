@@ -30,6 +30,7 @@ function Banner({ part, id, movies }: IBanner) {
 
     const totlaLength = movies.length - 16;
     const maxIndex = Math.floor(totlaLength / offset);
+
     // slider + 1
     const moveSlider = () => {
         if (!sliderMoving && movies) {

@@ -2,6 +2,9 @@ import Slider from "react-slick";
 import styled from "styled-components";
 
 export const StyledSlider = styled(Slider)`
+  .slick-slide{
+    border: none !important;
+  }
   .slick-prev {
     left: 0;
     z-index: 1;
