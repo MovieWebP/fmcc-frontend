@@ -77,6 +77,10 @@ export const BannerImage = styled.div< { bgphoto: string }>`
   background-size: cover;
   object-fit: cover;
   border-radius: 10px;
+  @media screen and (max-width: 600px) and (min-width: 501px) {
+    width: 43rem;
+    height: 22rem;
+  };
 `;
 
 
@@ -88,6 +92,13 @@ export const BannerWrap = styled.div`
   height: 9rem;
   margin-bottom: .4rem;
   align-items: center;
+  @media screen and (max-width: 700px) and (min-width: 601px) {
+    height: 10.5rem;
+  };
+  @media screen and (max-width: 600px) and (min-width: 501px) {
+    width: 42rem;
+    height: 10.5rem;
+  };
 `;
 
 export const TitleDiv = styled.div`
@@ -112,6 +123,12 @@ export const Overview = styled.p`
   font-weight: 450;
   display: flex;
   flex-wrap: wrap;
+  @media screen and (max-width: 700px) and (min-width: 601px) {
+    font-size: 1.4rem;
+  };
+  @media screen and (max-width: 600px) and (min-width: 501px) {
+    font-size: 1.3rem;
+  };
   @media screen and (max-width: 500px) and (min-width: 300px) {
     display: none;
   };
@@ -121,6 +138,12 @@ export const Date = styled.h2`
   color: ${(props) => props.theme.lightPurple};
   font-weight: 500;
   font-size: 1rem;
+  @media screen and (max-width: 700px) and (min-width: 601px) {
+    font-size: 1.3rem;
+  };
+  @media screen and (max-width: 600px) and (min-width: 501px) {
+    font-size: 1.3rem;
+  };
   @media screen and (max-width: 500px) and (min-width: 300px) {
     font-size: 1.5rem;
   };
@@ -141,6 +164,11 @@ export const Button = styled.div`
     background-color: ${(props) => props.theme.lightPurple};
     cursor: default;
   }
+  @media screen and (max-width: 700px) and (min-width: 501px) {
+    margin-top: 1rem;
+    width: 9.5rem;
+    height: 2.8rem;
+  };
   @media screen and (max-width: 500px) and (min-width: 300px) {
     width: 13rem;
     height: 3.8rem;
@@ -149,6 +177,9 @@ export const Button = styled.div`
 
 export const PlayIcon = styled(BsPlayFill)`
   font-size: 1.5rem;
+  @media screen and (max-width: 700px) and (min-width: 501px) {
+    font-size: 1.8rem;
+  };
   @media screen and (max-width: 500px) and (min-width: 300px) {
     font-size: 2.5rem;
   };
@@ -157,6 +188,9 @@ export const PlayIcon = styled(BsPlayFill)`
 export const ButtonText = styled.h2`
   font-size: 1.1rem;
   font-weight: 600;
+  @media screen and (max-width: 700px) and (min-width: 501px) {
+    font-size: 1.5rem;
+  };
   @media screen and (max-width: 500px) and (min-width: 300px) {
     font-size: 2rem;
   };
