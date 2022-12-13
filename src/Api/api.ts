@@ -72,12 +72,12 @@ export function getNowPlayingMovie() {
 }
 
 export function getPopularMovie() {
-    return fetch(`${BASE_PATH}/movie/popular?api_key=${Api_KEY}`)
+    return fetch(`${BASE_PATH}/movie/popular?api_key=${Api_KEY}&page=2`)
         .then(res => res.json())
 }
 
 export function getUpcomingMovie() {
-    return fetch(`${BASE_PATH}/movie/upcoming?api_key=${Api_KEY}`)
+    return fetch(`${BASE_PATH}/movie/upcoming?api_key=${Api_KEY}&page=1`)
         .then(res => res.json())
 }
 
@@ -101,7 +101,7 @@ export function getOnTheAirTv() {
 }
 
 export function getPopularTv() {
-    return fetch(`${BASE_PATH}/tv/popular?api_key=${Api_KEY}`)
+    return fetch(`${BASE_PATH}/tv/popular?api_key=${Api_KEY}&page=2`)
         .then(res => res.json())
 }
 

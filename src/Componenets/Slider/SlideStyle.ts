@@ -56,13 +56,13 @@ export const Movie = styled.div`
     word-wrap: normal;
     text-align: center;
     display: flex;
-    &:focus{
-        display: none;
-    }
     ::-webkit-scrollbar-thumb {
         width: 10px;
         background-color: white;
         border: 1px solid red;
+    }
+    &:focus{
+        outline: 0; 
     }
 `;
 
@@ -71,9 +71,6 @@ export const MovieTitleWrap = styled.div`
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    &:focus{
-        display: none;
-    }
     @media screen and (max-width: 1500px) and (min-width: 1200px) {
         display: flex;
         justify-content: center;
@@ -95,10 +92,10 @@ export const MovieImage = styled.img`
         width: 12rem;
     };
     &:focus{
-        border: none;
+        outline: 0; 
     }
-    
 `;
+
 export const MovieTitle = styled.p`
     width: 60%;
     font-size: 1.1rem;

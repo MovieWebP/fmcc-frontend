@@ -58,13 +58,6 @@ function Home() {
                             query="popular"
                             movies={popular?.results || []}
                         />
-                        <Slide
-                            id="topRated"
-                            part="movie"
-                            title="Top Rated"
-                            query="topRated"
-                            movies={topRated?.results || []}
-                        />
                     </S.SliderWrap>
                     <S.SliderWrap>
                         <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
@@ -74,13 +67,6 @@ function Home() {
                             title="Now Playing"
                             query="airingToday"
                             movies={airingToday?.results || []}
-                        />
-                        <Slide
-                            id="onTheAir"
-                            part="tv"
-                            title="On The Air"
-                            query="onTheAir"
-                            movies={onTheAir?.results || []}
                         />
                         <Slide
                             id="popularTv"
