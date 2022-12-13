@@ -81,9 +81,6 @@ function Banner({ part, id, movies }: IBanner) {
                                         <S.HiddenBox onClick={moveSliderPrev}>
                                             <MdKeyboardArrowLeft size="5rem" />
                                         </S.HiddenBox>
-                                        // <S.ArrowBox>
-                                        //     <MdKeyboardArrowLeft size="5rem" />
-                                        // </S.ArrowBox>
                                     ) : (
                                         <S.ArrowBox onClick={moveSliderPrev}>
                                             <MdKeyboardArrowLeft size="5rem" />
@@ -97,7 +94,7 @@ function Banner({ part, id, movies }: IBanner) {
                                             </S.TitleDiv>
                                             <S.Overview>{movie?.overview.slice(0, 120)}...</S.Overview>
                                             <S.Button onClick={() => boxClick(part, movie.id, id)}>
-                                                <BsPlayFill size="1.5rem" />
+                                                <S.PlayIcon />
                                                 <S.ButtonText>Watch Now</S.ButtonText>
                                             </S.Button>
                                         </S.BannerWrap>

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { BsPlayFill } from "react-icons/bs";
 import styled from "styled-components";
 
 
@@ -15,6 +16,9 @@ export const Wrap = styled.div`
   }
   scrollbar-width:none;
   height: 38rem;
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    height:43rem;
+  };
 `;
 
 export const Banner = styled(motion.div)`
@@ -56,9 +60,6 @@ export const MainImage = styled(motion.div) < { bgphoto: string }> `
     resize: both;  
     align-items: center;
     align-self: center;
-  @media screen and (max-width: 500px) and (min-width: 300px) {
-        height: 28rem;
-  };
 `;
 
 export const BannerImage = styled.div< { bgphoto: string }>`
@@ -76,10 +77,6 @@ export const BannerImage = styled.div< { bgphoto: string }>`
   background-size: cover;
   object-fit: cover;
   border-radius: 10px;
-  @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 32rem;
-        height: 15rem;
-  };
 `;
 
 
@@ -91,13 +88,6 @@ export const BannerWrap = styled.div`
   height: 9rem;
   margin-bottom: .4rem;
   align-items: center;
-  @media screen and (max-width: 500px) and (min-width: 300px) {
-    padding: 0 5px;
-    margin-bottom: 3px;
-    width: 30rem;
-    border-radius: 5px;
-    height: 7.7rem;
-  };
 `;
 
 export const TitleDiv = styled.div`
@@ -112,8 +102,7 @@ export const Title = styled.h3`
   margin-bottom: 3px;
   font-weight: 500;
   @media screen and (max-width: 500px) and (min-width: 300px) {
-    font-size: 1.5rem;
-    padding-top: 2px;
+    font-size: 2.5rem;
   };
 `;
 
@@ -123,33 +112,45 @@ export const Overview = styled.p`
   font-weight: 450;
   display: flex;
   flex-wrap: wrap;
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    display: none;
+  };
 `;
 
 export const Date = styled.h2`
   color: ${(props) => props.theme.lightPurple};
   font-weight: 500;
   font-size: 1rem;
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    font-size: 1.5rem;
+  };
 `;
 
 export const Button = styled.div`
   border-radius: 5px;
   color: ${(props) => props.theme.white};
   background-color: ${(props) => props.theme.purple};
-  width: 7.2rem;
-  height: 2rem;
+  width: 7.4rem;
+  height: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: .8rem;
+  margin-top: .6rem;
   transition: all .3s ease-in-out;
   &:hover {
     background-color: ${(props) => props.theme.lightPurple};
     cursor: default;
   }
   @media screen and (max-width: 500px) and (min-width: 300px) {
-    width: 5rem;
-    height: 1.5rem;
-    border-radius: 3px;
+    width: 13rem;
+    height: 3.8rem;
+  };
+`;
+
+export const PlayIcon = styled(BsPlayFill)`
+  font-size: 1.5rem;
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    font-size: 2.5rem;
   };
 `;
 
@@ -157,7 +158,7 @@ export const ButtonText = styled.h2`
   font-size: 1.1rem;
   font-weight: 600;
   @media screen and (max-width: 500px) and (min-width: 300px) {
-    font-size: 0.7rem;
+    font-size: 2rem;
   };
 `;
 
