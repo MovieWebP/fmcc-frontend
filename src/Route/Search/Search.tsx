@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { PathMatch, useLocation, useMatch } from "react-router-dom";
 import { getFindMovie, IGetResults, getFindTv, getDetail, getRecommend, getCast, IGetCredits } from "../../Api/api";
@@ -19,12 +20,15 @@ function Search() {
 
     return (
         <>
+            <Helmet>
+                <title>Search</title>
+            </Helmet >
             {
                 isLoading ? (
                     <S.SliderWrap>Searching...</S.SliderWrap>
                 ) : (
                     <>
-                        <S.SliderWrap>
+                        <S.SearchSliderWrap>
                             <S.SliderTitle to="/movie">Movie</S.SliderTitle>
                             <Slider
                                 id="searchMovie"
@@ -41,7 +45,7 @@ function Search() {
                                 query="searchTv"
                                 part="tv"
                             ></Slider>
-                        </S.SliderWrap>
+                        </S.SearchSliderWrap>
                         <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
                     </>
                 )

@@ -8,7 +8,12 @@ export const SliderWrap = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    overflow: hidden;
+    /* overflow: hidden; */
+`;
+
+export const SearchSliderWrap = styled(SliderWrap)`
+    position: relative;
+    top: 10rem;
 `;
 
 export const SliderTitle = styled(Link)`

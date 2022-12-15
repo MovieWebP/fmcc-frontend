@@ -2,9 +2,9 @@ import * as S from "../Style";
 
 function Shopping() {
     return (
-        <S.SliderWrap>
+        <S.SearchSliderWrap>
             <S.Title>See you soon! </S.Title>
-        </S.SliderWrap>
+        </S.SearchSliderWrap>
     )
 }
 
