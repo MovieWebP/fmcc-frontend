@@ -27,10 +27,10 @@ function Header() {
     }
     return (
         <S.Nav>
-            <S.LinkStyle to="/">
-                <S.Title>FM</S.Title>
-            </S.LinkStyle>
             <S.MenuWrap>
+                <S.LinkStyle to="/">
+                    <S.Title>FM</S.Title>
+                </S.LinkStyle>
                 <S.MenuItems>
                     <S.MenuSpanDiv onClick={onClick}>
                         <S.MenuSpan></S.MenuSpan>
@@ -85,29 +85,8 @@ function Header() {
             </S.MenuWrap>
             <S.Menu2Wrap>
                 <S.Search onSubmit={handleSubmit(onSearch)}>
-                    <motion.svg
-                        style={{ "position": "relative", "left": "1.8rem", "color": "#919191" }}
-                        // style={{ "size": "1rem" }}
-                        // onClick={toggleSearch}
-                        // animate={{ x: searchOpen ? -260 : -110 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
-                        // transition={{ type: "linear" }}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        width={"1.4rem"}
-                        // fontSize={"4rem"}
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            fillRule="evenodd"
-                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                            clipRule="evenodd"
-                        ></path>
-                    </motion.svg>
                     <S.Input
                         {...register("keyword", { required: true, minLength: 2 })}
-                        // animate={inputAnimation}
-                        // initial={{ scaleX: 0 }}
-                        // transition={{ type: "linear" }}
                         placeholder="Search"
                     />
                 </S.Search>

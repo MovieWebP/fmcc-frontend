@@ -15,7 +15,8 @@ export const Nav = styled.nav`
     top: 0;
     @media screen and (max-width: 700px) and (min-width: 300px) {
         flex-direction: column;
-        align-items: flex-end;
+        align-items: flex-start;
+        padding-bottom: 10px;
     };
 `;
 
@@ -27,10 +28,10 @@ export const MenuWrap = styled.div`
     width: 30vw;
     @media screen and (max-width: 700px) and (min-width: 300px) {
         /* border: 1px solid red; */
-        /* border: 1px solid red; */
-        width: 90%;
+        width: 100%;
         justify-content: center;
         margin: 0;
+        margin-top: 4.5rem;
     };
 `;
 
@@ -54,11 +55,10 @@ export const MenuItems = styled.ul`
     list-style: none;
     @media screen and (max-width: 700px) and (min-width: 300px) {
         /* border: 1px solid blue; */
-        width: 100vw;
+        width: 90%;
         flex-direction: column;
         align-items: flex-start;
         background-color: #2E2B2B;
-        padding-left: 5px;
         border-bottom: 1px solid #fafafa;
         margin-bottom: 10px;
     };
@@ -66,12 +66,15 @@ export const MenuItems = styled.ul`
 
 export const MenuItem = styled.li`
     margin-right: 2rem;
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        margin-bottom: 1.5rem;
+    };
 `;
 
 export const MenuSpanDiv = styled.div`
     position: absolute;
     top: 1rem;
-    left: 7rem;
+    left: 4rem;
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -80,6 +83,7 @@ export const MenuSpanDiv = styled.div`
     /* border: 1px solid red; */
     @media screen and (max-width: 700px) and (min-width: 300px) {
         display: flex;
+        left: 3.5rem;
     };
 `;
 
@@ -110,7 +114,7 @@ export const Title = styled.h1`
         font-weight: 500;
     };
     @media screen and (max-width: 700px) and (min-width: 300px) {
-        visibility: hidden;
+        display: none;
     };
 `;
 
@@ -122,8 +126,12 @@ export const Match = styled(Link)`
     transition: all .25s ease-in-out;   
     transition-delay: 0s;
     font-size: 1.3rem;
-    @media screen and (max-width: 700px) and (min-width: 300px) {
+    @media screen and (max-width: 700px) and (min-width: 500px) {
         font-size: 1.8rem;
+        padding-top: 1.3rem;
+    };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-size: 2.3rem;
     };
 `;
 
@@ -147,11 +155,14 @@ export const Search = styled.form`
 
 export const Input = styled(motion.input)`
     border: 1px solid #919191;
-    border-radius: 50px;
+    margin-left: 5px;
+    border-radius: 3px;
     outline: 0; 
     width: 20vw;
     font-family: Arial, Helvetica, sans-serif, "FontAwesome";
-    padding-left: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
     z-index: 3;
     color: ${(props) => props.theme.white};
     font-size: 1.3rem;
@@ -160,8 +171,13 @@ export const Input = styled(motion.input)`
     &::placeholder{
         color: #919191;
     }
+    @media screen and (max-width: 700px) and (min-width: 500px) {
+        width: 28vw;
+        font-size: 1.5rem;
+    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        padding-left: 2rem;
+        font-size: 1.8rem;
+        width: 30vw;
     };
 `;
 
@@ -170,7 +186,7 @@ export const LoginWrap = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
+    @media screen and (max-width: 700px) and (min-width: 300px) {
         margin-left: 5px;
     };
 `;
@@ -186,8 +202,14 @@ export const Login = styled(Link)`
     &:hover{
         background-color: #686464;
     }
+    @media screen and (max-width: 700px) and (min-width: 500px) {
+        font-size: 1.5rem;
+        padding: .7rem .9rem;
+    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-size: 1.8rem;
         font-weight: 500;
+        padding: .7rem .9rem;
     };
 `;
 
