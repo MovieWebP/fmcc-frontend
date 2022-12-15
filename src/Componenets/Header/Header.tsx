@@ -8,142 +8,174 @@ interface IForm {
     keyword: string;
 }
 
-export const navVariants = {
-    top: {
-        backgroundColor: '#2E2B2B'
-    },
-    scroll: {
-        backgroundColor: '#2E2B2B'
-    }
-}
-
-
 function Header() {
-    const [searchOpen, setSearchOpen] = useState(false);
     const homeMatch = useMatch("");
     const movieMatch = useMatch("/movie");
     const tvMatch = useMatch("/tv");
-    const navAnimation = useAnimation();
-    const inputAnimation = useAnimation();
-    const { scrollY } = useScroll();
-    const toggleSearch = () => {
-        if (searchOpen) {
-            inputAnimation.start({
-                scaleX: 0,
-            });
-        } else {
-            inputAnimation.start({
-                scaleX: 1,
-            });
-        }
-        setSearchOpen(!searchOpen);
-    };
-    useEffect(() => {
-        scrollY.onChange(() => {
-            if (scrollY.get() > 80) {
-                navAnimation.start("scroll");
-            } else if (scrollY.get() < 80) {
-                navAnimation.start("top");
-            }
-        })
-    }, [scrollY, navAnimation]);
 
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm<IForm>();
     const onSearch = (data: IForm) => {
+        setNavbar(false)
         navigate(`/search?keyword=${data.keyword}`);
     }
 
+    const [navbar, setNavbar] = useState(false);
+
+    const onClick = () => {
+        // console.log(navbar)
+        return setNavbar((props) => !props)
+    }
+
+    const MenuOnClick = () => {
+        setNavbar(false)
+    }
     return (
-        <S.Nav
-            variants={navVariants}
-            animate={navAnimation}
-            initial="top"
-        >
-            <S.MenuWrap>
-                <S.MenuItems>
-                    <S.LinkStyle to="/">
-                        <S.Title>FM</S.Title>
-                    </S.LinkStyle>
-                    <S.MenuItem>
-                        {homeMatch ? (
-                            <S.Match to="/">
-                                Home
-                            </S.Match>
-                        ) : (
+        <>
+            {
+                navbar ? (
+                    <S.Nav>
+                        <S.MenuWrap>
                             <S.LinkStyle to="/">
-                                Home
+                                <S.Title>FM</S.Title>
                             </S.LinkStyle>
-                        )}
-                    </S.MenuItem>
-                    <S.MenuItem>
-                        {movieMatch ? (
-                            <S.Match to="/movie">
-                                Movie
-                            </S.Match>
-                        ) : (
-                            <S.LinkStyle to="/movie">
-                                Movie
+                            <S.MenuItems>
+                                <S.MenuSpanDiv onClick={onClick}>
+                                    <S.MenuSpan></S.MenuSpan>
+                                    <S.MenuSpan></S.MenuSpan>
+                                    <S.MenuSpan></S.MenuSpan>
+                                </S.MenuSpanDiv>
+                                <S.MenuItem>
+                                    {homeMatch ? (
+                                        <S.Match to="/" onClick={MenuOnClick}>
+                                            Home
+                                        </S.Match>
+                                    ) : (
+                                        <S.LinkStyle to="/" onClick={MenuOnClick}>
+                                            Home
+                                        </S.LinkStyle>
+                                    )}
+                                </S.MenuItem>
+                                <S.MenuItem>
+                                    {movieMatch ? (
+                                        <S.Match to="/movie" onClick={MenuOnClick}>
+                                            Movie
+                                        </S.Match>
+                                    ) : (
+                                        <S.LinkStyle to="/movie" onClick={MenuOnClick}>
+                                            Movie
+                                        </S.LinkStyle>
+                                    )}
+                                </S.MenuItem>
+                                <S.MenuItem>
+                                    {tvMatch ? (
+                                        <S.Match to="/tv" onClick={MenuOnClick}>
+                                            TV Shows
+                                        </S.Match>
+                                    ) : (
+                                        <S.LinkStyle to="/tv" onClick={MenuOnClick}>
+                                            Tv Shows
+                                        </S.LinkStyle>
+                                    )}
+                                </S.MenuItem>
+                                <S.MenuItem>
+                                    {tvMatch ? (
+                                        <S.Match to="/shopping" onClick={MenuOnClick}>
+                                            Shopping
+                                        </S.Match>
+                                    ) : (
+                                        <S.LinkStyle to="/shopping" onClick={MenuOnClick}>
+                                            Shopping
+                                        </S.LinkStyle>
+                                    )}
+                                </S.MenuItem>
+                            </S.MenuItems>
+                        </S.MenuWrap>
+                        <S.Menu2Wrap>
+                            <S.Search onSubmit={handleSubmit(onSearch)}>
+                                <S.Input
+                                    {...register("keyword", { required: true, minLength: 2 })}
+                                    placeholder="Search"
+                                />
+                            </S.Search>
+                            <S.LoginWrap>
+                                <S.Login to="/login">Login</S.Login>
+                            </S.LoginWrap>
+                        </S.Menu2Wrap>
+                    </S.Nav >
+                ) : (
+                    <S.FalNav>
+                        <S.FalMenuWrap>
+                            <S.LinkStyle to="/">
+                                <S.Title>FM</S.Title>
                             </S.LinkStyle>
-                        )}
-                    </S.MenuItem>
-                    <S.MenuItem>
-                        {tvMatch ? (
-                            <S.Match to="/tv">
-                                TV Shows
-                            </S.Match>
-                        ) : (
-                            <S.LinkStyle to="/tv">
-                                Tv Shows
-                            </S.LinkStyle>
-                        )}
-                    </S.MenuItem>
-                    <S.MenuItem>
-                        {tvMatch ? (
-                            <S.Match to="/shopping">
-                                Shopping
-                            </S.Match>
-                        ) : (
-                            <S.LinkStyle to="/shopping">
-                                Shopping
-                            </S.LinkStyle>
-                        )}
-                    </S.MenuItem>
-                </S.MenuItems>
-            </S.MenuWrap>
-            <S.MenuWrap>
-                <S.Search onSubmit={handleSubmit(onSearch)}>
-                    <motion.svg
-                        style={{ "position": "relative", "left": "1.8rem", "color": "#919191" }}
-                        // style={{ "size": "1rem" }}
-                        // onClick={toggleSearch}
-                        // animate={{ x: searchOpen ? -260 : -110 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
-                        // transition={{ type: "linear" }}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        width={"1.4rem"}
-                        // fontSize={"4rem"}
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            fillRule="evenodd"
-                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                            clipRule="evenodd"
-                        ></path>
-                    </motion.svg>
-                    <S.Input
-                        {...register("keyword", { required: true, minLength: 2 })}
-                        // animate={inputAnimation}
-                        // initial={{ scaleX: 0 }}
-                        // transition={{ type: "linear" }}
-                        placeholder="Search"
-                    />
-                </S.Search>
-                <S.LoginWrap>
-                    <S.Login to="/login">Login</S.Login>
-                </S.LoginWrap>
-            </S.MenuWrap>
-        </S.Nav >
+                            <S.FalMenuItems>
+                                <S.MenuSpanDiv onClick={onClick}>
+                                    <S.MenuSpan></S.MenuSpan>
+                                    <S.MenuSpan></S.MenuSpan>
+                                    <S.MenuSpan></S.MenuSpan>
+                                </S.MenuSpanDiv>
+                                <S.MenuItem>
+                                    {homeMatch ? (
+                                        <S.Match to="/">
+                                            Home
+                                        </S.Match>
+                                    ) : (
+                                        <S.LinkStyle to="/">
+                                            Home
+                                        </S.LinkStyle>
+                                    )}
+                                </S.MenuItem>
+                                <S.MenuItem>
+                                    {movieMatch ? (
+                                        <S.Match to="/movie">
+                                            Movie
+                                        </S.Match>
+                                    ) : (
+                                        <S.LinkStyle to="/movie">
+                                            Movie
+                                        </S.LinkStyle>
+                                    )}
+                                </S.MenuItem>
+                                <S.MenuItem>
+                                    {tvMatch ? (
+                                        <S.Match to="/tv">
+                                            TV Shows
+                                        </S.Match>
+                                    ) : (
+                                        <S.LinkStyle to="/tv">
+                                            Tv Shows
+                                        </S.LinkStyle>
+                                    )}
+                                </S.MenuItem>
+                                <S.MenuItem>
+                                    {tvMatch ? (
+                                        <S.Match to="/shopping">
+                                            Shopping
+                                        </S.Match>
+                                    ) : (
+                                        <S.LinkStyle to="/shopping">
+                                            Shopping
+                                        </S.LinkStyle>
+                                    )}
+                                </S.MenuItem>
+                            </S.FalMenuItems>
+                        </S.FalMenuWrap>
+                        <S.FalMenu2Wrap>
+                            <S.Search onSubmit={handleSubmit(onSearch)}>
+                                <S.Input
+                                    {...register("keyword", { required: true, minLength: 2 })}
+                                    placeholder="Search"
+                                />
+                            </S.Search>
+                            <S.LoginWrap>
+                                <S.Login to="/login" onClick={MenuOnClick}>Login</S.Login>
+                            </S.LoginWrap>
+                        </S.FalMenu2Wrap>
+                    </S.FalNav>
+                )
+            }
+        </>
     );
 }
 

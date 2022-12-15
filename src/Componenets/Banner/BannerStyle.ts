@@ -17,7 +17,7 @@ export const Wrap = styled.div`
   scrollbar-width:none;
   height: 38rem;
   @media screen and (max-width: 500px) and (min-width: 300px) {
-    height:43rem;
+    height: 38rem;
   };
 `;
 
@@ -60,6 +60,9 @@ export const MainImage = styled(motion.div) < { bgphoto: string }> `
     resize: both;  
     align-items: center;
     align-self: center;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+    height: 38rem;
+  };
 `;
 
 export const BannerImage = styled.div< { bgphoto: string }>`
@@ -81,6 +84,10 @@ export const BannerImage = styled.div< { bgphoto: string }>`
     width: 43rem;
     height: 22rem;
   };
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    width: 38rem;
+    height: 20rem;
+  };
 `;
 
 
@@ -98,6 +105,10 @@ export const BannerWrap = styled.div`
   @media screen and (max-width: 600px) and (min-width: 501px) {
     width: 42rem;
     height: 10.5rem;
+  };
+  @media screen and (max-width: 500px) and (min-width: 300px) {
+    width: 37rem;
+    height: 8rem;
   };
 `;
 
@@ -170,8 +181,8 @@ export const Button = styled.div`
     height: 2.8rem;
   };
   @media screen and (max-width: 500px) and (min-width: 300px) {
-    width: 13rem;
-    height: 3.8rem;
+    width: 11.5rem;
+    height: 3rem;
   };
 `;
 
@@ -181,7 +192,7 @@ export const PlayIcon = styled(BsPlayFill)`
     font-size: 1.8rem;
   };
   @media screen and (max-width: 500px) and (min-width: 300px) {
-    font-size: 2.5rem;
+    font-size: 2rem;
   };
 `;
 
@@ -192,7 +203,7 @@ export const ButtonText = styled.h2`
     font-size: 1.5rem;
   };
   @media screen and (max-width: 500px) and (min-width: 300px) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   };
 `;
 
