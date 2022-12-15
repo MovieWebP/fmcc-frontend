@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from "styled-components";
 
-export const Nav = styled(motion.nav)`
+export const Nav = styled.nav`
+    background-color: #2E2B2B;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,6 +13,10 @@ export const Nav = styled(motion.nav)`
     position: fixed;
     width: 100%;
     top: 0;
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        flex-direction: column;
+        align-items: flex-end;
+    };
 `;
 
 export const MenuWrap = styled.div`
@@ -20,6 +25,26 @@ export const MenuWrap = styled.div`
     align-items: center;
     margin: 0px 20px;
     width: 30vw;
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        /* border: 1px solid red; */
+        /* border: 1px solid red; */
+        width: 90%;
+        justify-content: center;
+        margin: 0;
+    };
+`;
+
+export const Menu2Wrap = styled.div`
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0px 20px;
+    width: 30vw;
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        /* position: absolute; */
+        /* top: .7rem; */
+        /* right: 0; */
+    };
 `;
 
 export const MenuItems = styled.ul`
@@ -27,10 +52,42 @@ export const MenuItems = styled.ul`
     align-items: center;
     justify-content: space-between;
     list-style: none;
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        /* border: 1px solid blue; */
+        width: 100vw;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #2E2B2B;
+        padding-left: 5px;
+        border-bottom: 1px solid #fafafa;
+        margin-bottom: 10px;
+    };
 `;
 
 export const MenuItem = styled.li`
     margin-right: 2rem;
+`;
+
+export const MenuSpanDiv = styled.div`
+    position: absolute;
+    top: 1rem;
+    left: 7rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.5rem;
+    height: 2rem;
+    /* border: 1px solid red; */
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        display: flex;
+    };
+`;
+
+export const MenuSpan = styled.span`
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
 `;
 
 export const Title = styled.h1`
@@ -52,22 +109,8 @@ export const Title = styled.h1`
         margin-right: 1.5rem;
         font-weight: 500;
     };
-`;
-
-export const LinkStyle = styled(Link)`
-    align-items: center;
-    color: #919191;
-    text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
-    font-weight: 700;
-    transition: all .25s ease-in-out;   
-    transition-delay: 0s;
-    &:hover{
-        color: ${(props) => props.theme.white};
-    }
-    text-decoration: none;
-    font-size: 1.3rem;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        font-weight: 500;
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        visibility: hidden;
     };
 `;
 
@@ -79,7 +122,18 @@ export const Match = styled(Link)`
     transition: all .25s ease-in-out;   
     transition-delay: 0s;
     font-size: 1.3rem;
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        font-size: 1.8rem;
+    };
 `;
+
+export const LinkStyle = styled(Match)`
+    color: #919191;
+    &:hover{
+        color: ${(props) => props.theme.white};
+    }
+`;
+
 
 export const Search = styled.form`
     color: ${(props) => props.theme.white};

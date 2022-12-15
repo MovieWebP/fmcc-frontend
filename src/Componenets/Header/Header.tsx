@@ -8,45 +8,10 @@ interface IForm {
     keyword: string;
 }
 
-export const navVariants = {
-    top: {
-        backgroundColor: '#2E2B2B'
-    },
-    scroll: {
-        backgroundColor: '#2E2B2B'
-    }
-}
-
-
 function Header() {
-    const [searchOpen, setSearchOpen] = useState(false);
     const homeMatch = useMatch("");
     const movieMatch = useMatch("/movie");
     const tvMatch = useMatch("/tv");
-    const navAnimation = useAnimation();
-    const inputAnimation = useAnimation();
-    const { scrollY } = useScroll();
-    const toggleSearch = () => {
-        if (searchOpen) {
-            inputAnimation.start({
-                scaleX: 0,
-            });
-        } else {
-            inputAnimation.start({
-                scaleX: 1,
-            });
-        }
-        setSearchOpen(!searchOpen);
-    };
-    useEffect(() => {
-        scrollY.onChange(() => {
-            if (scrollY.get() > 80) {
-                navAnimation.start("scroll");
-            } else if (scrollY.get() < 80) {
-                navAnimation.start("top");
-            }
-        })
-    }, [scrollY, navAnimation]);
 
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm<IForm>();
@@ -54,17 +19,24 @@ function Header() {
         navigate(`/search?keyword=${data.keyword}`);
     }
 
+    const [navbar, setNavbar] = useState(false);
+
+    const onClick = () => {
+        // console.log(navbar)
+        return setNavbar((props) => !props)
+    }
     return (
-        <S.Nav
-            variants={navVariants}
-            animate={navAnimation}
-            initial="top"
-        >
+        <S.Nav>
+            <S.LinkStyle to="/">
+                <S.Title>FM</S.Title>
+            </S.LinkStyle>
             <S.MenuWrap>
                 <S.MenuItems>
-                    <S.LinkStyle to="/">
-                        <S.Title>FM</S.Title>
-                    </S.LinkStyle>
+                    <S.MenuSpanDiv onClick={onClick}>
+                        <S.MenuSpan></S.MenuSpan>
+                        <S.MenuSpan></S.MenuSpan>
+                        <S.MenuSpan></S.MenuSpan>
+                    </S.MenuSpanDiv>
                     <S.MenuItem>
                         {homeMatch ? (
                             <S.Match to="/">
@@ -111,7 +83,7 @@ function Header() {
                     </S.MenuItem>
                 </S.MenuItems>
             </S.MenuWrap>
-            <S.MenuWrap>
+            <S.Menu2Wrap>
                 <S.Search onSubmit={handleSubmit(onSearch)}>
                     <motion.svg
                         style={{ "position": "relative", "left": "1.8rem", "color": "#919191" }}
@@ -142,7 +114,7 @@ function Header() {
                 <S.LoginWrap>
                     <S.Login to="/login">Login</S.Login>
                 </S.LoginWrap>
-            </S.MenuWrap>
+            </S.Menu2Wrap>
         </S.Nav >
     );
 }
