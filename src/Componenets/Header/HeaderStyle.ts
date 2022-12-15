@@ -64,7 +64,12 @@ export const Menu2Wrap = styled.div`
 `;
 
 export const FalMenu2Wrap = styled(Menu2Wrap)`
-    @media screen and (max-width: 700px) and (min-width: 300px) {
+@media screen and (max-width: 700px) and (min-width: 500px) {
+        width: 40vw;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 50vw;
         margin-top: 5px;
         margin-bottom: 5px;
@@ -159,7 +164,7 @@ export const Match = styled(Link)`
     align-items: center;
     color: ${(props) => props.theme.white};
     text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
-    font-weight: 700;
+    font-weight: 550;
     transition: all .25s ease-in-out;   
     transition-delay: 0s;
     font-size: 1.3rem;
@@ -231,7 +236,7 @@ export const LoginWrap = styled.div`
 export const Login = styled(Link)`
     text-decoration: none;
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 550;
     padding: .5rem .9rem;
     color: ${(props) => props.theme.white};
     border-radius: .5rem;

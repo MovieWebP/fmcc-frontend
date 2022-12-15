@@ -164,7 +164,7 @@ export const Button = styled.div`
   border-radius: 5px;
   color: ${(props) => props.theme.white};
   background-color: ${(props) => props.theme.purple};
-  width: 7.4rem;
+  width: 7.8rem;
   height: 2.5rem;
   display: flex;
   align-items: center;
@@ -198,7 +198,7 @@ export const PlayIcon = styled(BsPlayFill)`
 
 export const ButtonText = styled.h2`
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 650;
   @media screen and (max-width: 700px) and (min-width: 501px) {
     font-size: 1.5rem;
   };

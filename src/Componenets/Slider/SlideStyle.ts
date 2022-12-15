@@ -99,7 +99,7 @@ export const MovieImage = styled.img`
 export const MovieTitle = styled.p`
     width: 60%;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     text-align: left;
     transition: all .3s ease;
     margin-top: 10px;

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
 
 export const globalStyle = css`
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang&family=Roboto+Slab&family=Source+Sans+Pro:ital,wght@0,300;0,400;1,300&display=swap');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
