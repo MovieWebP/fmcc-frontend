@@ -3,10 +3,6 @@ import { useMatch, useNavigate } from "react-router-dom";
 import { motion, useAnimation, useScroll } from "framer-motion";
 import { useForm } from "react-hook-form";
 import * as S from "./HeaderStyle";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 interface IForm {
     keyword: string;
@@ -24,10 +20,9 @@ export const navVariants = {
 
 function Header() {
     const [searchOpen, setSearchOpen] = useState(false);
-    const homeMatch = useMatch("/");
+    const homeMatch = useMatch("");
     const movieMatch = useMatch("/movie");
     const tvMatch = useMatch("/tv");
-    const shoppingMatch = useMatch("/shopping")
     const navAnimation = useAnimation();
     const inputAnimation = useAnimation();
     const { scrollY } = useScroll();
@@ -60,148 +55,74 @@ function Header() {
     }
 
     return (
-        // <S.Nav
-        //     variants={navVariants}
-        //     animate={navAnimation}
-        //     initial="top"
-        // >
-        //     <S.MenuWrap>
-        //         <S.MenuItems>
-        //             <S.LinkStyle to="/">
-        //                 <S.Title>FM</S.Title>
-        //             </S.LinkStyle>
-        //             <S.MenuItem>
-        //                 {homeMatch ? (
-        //                     <S.Match to="/">
-        //                         Home
-        //                     </S.Match>
-        //                 ) : (
-        //                     <S.LinkStyle to="/">
-        //                         Home
-        //                     </S.LinkStyle>
-        //                 )}
-        //             </S.MenuItem>
-        //             <S.MenuItem>
-        //                 {movieMatch ? (
-        //                     <S.Match to="/movie">
-        //                         Movie
-        //                     </S.Match>
-        //                 ) : (
-        //                     <S.LinkStyle to="/movie">
-        //                         Movie
-        //                     </S.LinkStyle>
-        //                 )}
-        //             </S.MenuItem>
-        //             <S.MenuItem>
-        //                 {tvMatch ? (
-        //                     <S.Match to="/tv">
-        //                         TV Shows
-        //                     </S.Match>
-        //                 ) : (
-        //                     <S.LinkStyle to="/tv">
-        //                         Tv Shows
-        //                     </S.LinkStyle>
-        //                 )}
-        //             </S.MenuItem>
-        //             <S.MenuItem>
-        //                 {tvMatch ? (
-        //                     <S.Match to="/shopping">
-        //                         Shopping
-        //                     </S.Match>
-        //                 ) : (
-        //                     <S.LinkStyle to="/shopping">
-        //                         Shopping
-        //                     </S.LinkStyle>
-        //                 )}
-        //             </S.MenuItem>
-        //         </S.MenuItems>
-        //     </S.MenuWrap>
-        //     <S.MenuWrap>
-        //         <S.Search onSubmit={handleSubmit(onSearch)}>
-        //             <motion.svg
-        //                 style={{ "position": "relative", "left": "1.8rem", "color": "#919191" }}
-        //                 // style={{ "size": "1rem" }}
-        //                 // onClick={toggleSearch}
-        //                 // animate={{ x: searchOpen ? -260 : -110 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
-        //                 // transition={{ type: "linear" }}
-        //                 fill="currentColor"
-        //                 viewBox="0 0 20 20"
-        //                 width={"1.4rem"}
-        //                 // fontSize={"4rem"}
-        //                 xmlns="http://www.w3.org/2000/svg"
-        //             >
-        //                 <path
-        //                     fillRule="evenodd"
-        //                     d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-        //                     clipRule="evenodd"
-        //                 ></path>
-        //             </motion.svg>
-        //             <S.Input
-        //                 {...register("keyword", { required: true, minLength: 2 })}
-        //                 // animate={inputAnimation}
-        //                 // initial={{ scaleX: 0 }}
-        //                 // transition={{ type: "linear" }}
-        //                 placeholder="Search"
-        //             />
-        //         </S.Search>
-        //         <S.LoginWrap>
-        //             <S.Login to="/login">Login</S.Login>
-        //         </S.LoginWrap>
-        //     </S.MenuWrap>
-        // </S.Nav >
-        <>
-            <S.NavBar expand="lg">
-                <S.MenuWrap>
-                    <S.Title href="/">FM</S.Title>
-                    <S.NavTog />
-                    <S.NavBarCo id="basic-navbar-nav">
-                        <S.MenuItems className="me-auto">
-                            {homeMatch ? (
-                                <S.MatchItemStyle href="/">Home</S.MatchItemStyle>
-                            ) : (
-                                <S.ItemStyle href="/">Home</S.ItemStyle>
-                            )}
-
-                            {movieMatch ? (
-                                <S.MatchItemStyle href="/movie">Movie</S.MatchItemStyle>
-                            ) : (
-                                <S.ItemStyle href="/movie">Movie</S.ItemStyle>
-                            )}
-
-                            {tvMatch ? (
-                                <S.MatchItemStyle href="/tv">TV Shows</S.MatchItemStyle>
-                            ) : (
-                                <S.ItemStyle href="/tv">TV Shows</S.ItemStyle>
-                            )}
-
-                            {shoppingMatch ? (
-                                <S.MatchItemStyle href="/shopping">Shopping</S.MatchItemStyle>
-                            ) : (
-                                <S.ItemStyle href="/shopping">Shopping</S.ItemStyle>
-                            )}
-
-                            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown> */}
-
-                        </S.MenuItems>
-                    </S.NavBarCo>
-                </S.MenuWrap>
-                <S.Menu2Wrap>
-                    <S.Search onSubmit={handleSubmit(onSearch)}>
-                        {/* <motion.svg
-                        style={{ "position": "relative", "left": "2rem", "color": "#919191" }}
+        <S.Nav
+            variants={navVariants}
+            animate={navAnimation}
+            initial="top"
+        >
+            <S.MenuWrap>
+                <S.MenuItems>
+                    <S.LinkStyle to="/">
+                        <S.Title>FM</S.Title>
+                    </S.LinkStyle>
+                    <S.MenuItem>
+                        {homeMatch ? (
+                            <S.Match to="/">
+                                Home
+                            </S.Match>
+                        ) : (
+                            <S.LinkStyle to="/">
+                                Home
+                            </S.LinkStyle>
+                        )}
+                    </S.MenuItem>
+                    <S.MenuItem>
+                        {movieMatch ? (
+                            <S.Match to="/movie">
+                                Movie
+                            </S.Match>
+                        ) : (
+                            <S.LinkStyle to="/movie">
+                                Movie
+                            </S.LinkStyle>
+                        )}
+                    </S.MenuItem>
+                    <S.MenuItem>
+                        {tvMatch ? (
+                            <S.Match to="/tv">
+                                TV Shows
+                            </S.Match>
+                        ) : (
+                            <S.LinkStyle to="/tv">
+                                Tv Shows
+                            </S.LinkStyle>
+                        )}
+                    </S.MenuItem>
+                    <S.MenuItem>
+                        {tvMatch ? (
+                            <S.Match to="/shopping">
+                                Shopping
+                            </S.Match>
+                        ) : (
+                            <S.LinkStyle to="/shopping">
+                                Shopping
+                            </S.LinkStyle>
+                        )}
+                    </S.MenuItem>
+                </S.MenuItems>
+            </S.MenuWrap>
+            <S.MenuWrap>
+                <S.Search onSubmit={handleSubmit(onSearch)}>
+                    <motion.svg
+                        style={{ "position": "relative", "left": "1.8rem", "color": "#919191" }}
+                        // style={{ "size": "1rem" }}
+                        // onClick={toggleSearch}
+                        // animate={{ x: searchOpen ? -260 : -110 }} // searchOpen가 참일때 x축으로 100만큼 이동 아니면 -0으로 설정
+                        // transition={{ type: "linear" }}
                         fill="currentColor"
                         viewBox="0 0 20 20"
                         width={"1.4rem"}
+                        // fontSize={"4rem"}
                         xmlns="http://www.w3.org/2000/svg"
                     >
                         <path
@@ -209,18 +130,20 @@ function Header() {
                             d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
                             clipRule="evenodd"
                         ></path>
-                    </motion.svg> */}
-                        <S.Input
-                            {...register("keyword", { required: true, minLength: 2 })}
-                            placeholder="Search"
-                        />
-                    </S.Search>
-                    <S.LoginWrap>
-                        <S.Login to="/login">Login</S.Login>
-                    </S.LoginWrap>
-                </S.Menu2Wrap >
-            </S.NavBar >
-        </>
+                    </motion.svg>
+                    <S.Input
+                        {...register("keyword", { required: true, minLength: 2 })}
+                        // animate={inputAnimation}
+                        // initial={{ scaleX: 0 }}
+                        // transition={{ type: "linear" }}
+                        placeholder="Search"
+                    />
+                </S.Search>
+                <S.LoginWrap>
+                    <S.Login to="/login">Login</S.Login>
+                </S.LoginWrap>
+            </S.MenuWrap>
+        </S.Nav >
     );
 }
 
