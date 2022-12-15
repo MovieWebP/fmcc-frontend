@@ -3,7 +3,19 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styled from "styled-components";
 
-export const Nav = styled.nav`
+export const FalNav = styled.nav`
+    background-color: #2E2B2B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 3px 3px 15px rgba(0,0,0,0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+`;
+
+export const Nav = styled(FalNav)`
     background-color: #2E2B2B;
     display: flex;
     justify-content: space-between;
@@ -20,7 +32,15 @@ export const Nav = styled.nav`
     };
 `;
 
-export const MenuWrap = styled.div`
+export const FalMenuWrap = styled.div`
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0px 20px;
+    width: 30vw;
+`;
+
+export const MenuWrap = styled(FalMenuWrap)`
     display: flex;
     justify-content: start;
     align-items: center;
@@ -41,21 +61,36 @@ export const Menu2Wrap = styled.div`
     align-items: center;
     margin: 0px 20px;
     width: 30vw;
-    @media screen and (max-width: 700px) and (min-width: 300px) {
-        /* position: absolute; */
-        /* top: .7rem; */
-        /* right: 0; */
-    };
 `;
 
-export const MenuItems = styled.ul`
+export const FalMenu2Wrap = styled(Menu2Wrap)`
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        width: 50vw;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+`;
+
+export const CopyMenuItems = styled.ul`
     display: flex;
     align-items: center;
     justify-content: space-between;
     list-style: none;
+`;
+
+export const FalMenuItems = styled(CopyMenuItems)`
     @media screen and (max-width: 700px) and (min-width: 300px) {
-        /* border: 1px solid blue; */
-        width: 90%;
+        li{
+            display: none;
+        }
+    }
+`;
+
+export const MenuItems = styled(CopyMenuItems)`
+    @media screen and (max-width: 700px) and (min-width: 300px) {
+        // This width is on Mobile
+        /* width: 90%; */
+        width: 86%;
         flex-direction: column;
         align-items: flex-start;
         background-color: #2E2B2B;
@@ -63,6 +98,7 @@ export const MenuItems = styled.ul`
         margin-bottom: 10px;
     };
 `;
+
 
 export const MenuItem = styled.li`
     margin-right: 2rem;
@@ -73,7 +109,8 @@ export const MenuItem = styled.li`
 
 export const MenuSpanDiv = styled.div`
     position: absolute;
-    top: 1rem;
+    transition: .3s all ease-in-out;
+    top: 1.5rem;
     left: 4rem;
     display: none;
     flex-direction: column;
@@ -177,7 +214,7 @@ export const Input = styled(motion.input)`
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 1.8rem;
-        width: 30vw;
+        width: 40vw;
     };
 `;
 
