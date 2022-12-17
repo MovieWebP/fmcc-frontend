@@ -137,7 +137,7 @@ function Slide({ id, part, title, movies }: IProps) {
         }
     }, [windowDimension]);
 
-    console.log(windowDimension.winWidth)
+    // console.log(windowDimension.winWidth)
     return (
         <S.SliderWrap>
             <S.TitleWrap>

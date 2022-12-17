@@ -61,10 +61,13 @@ export const Menu2Wrap = styled.div`
     align-items: center;
     margin: 0px 20px;
     width: 30vw;
+    @media screen and (max-width: 2400px) and (min-width: 1200px) {
+        width: 25vw;
+    };
 `;
 
 export const FalMenu2Wrap = styled(Menu2Wrap)`
-@media screen and (max-width: 700px) and (min-width: 500px) {
+    @media screen and (max-width: 700px) and (min-width: 500px) {
         width: 40vw;
         margin-top: 5px;
         margin-bottom: 5px;
@@ -228,8 +231,8 @@ export const LoginWrap = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 5px;
     @media screen and (max-width: 700px) and (min-width: 300px) {
-        margin-left: 5px;
     };
 `;
 

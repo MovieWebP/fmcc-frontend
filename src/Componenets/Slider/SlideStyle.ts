@@ -97,7 +97,7 @@ export const MovieImage = styled.img`
         width: 12rem;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 12rem;
+        width: 15rem;
     };
     &:focus{
         outline: 0; 
