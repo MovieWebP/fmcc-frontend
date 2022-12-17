@@ -4,13 +4,17 @@ import { MdPerson } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 
 export const Wrap = styled.div`
-    height: 99vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
     @media screen and (max-width: 1500px) and (min-width: 300px) {
-        height: 98vh;
+        height: 98%;
     };
 `;
 
@@ -185,4 +189,6 @@ export const Doc = styled.p`
     font-weight: 350;
     font-size: .7rem;
     text-align: center;
+    position: absolute;
+    bottom: 0;
 `

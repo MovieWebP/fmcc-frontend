@@ -21,9 +21,9 @@ function Banner({ part, id, movies }: IBanner) {
     const [sliderMoving, setSliderMoving] = useState(false);
     const [sliderMovingPrev, setSliderMovingPrev] = useState(false);
     const [modalActive, SetModalActive] = useRecoilState(modalState);
-    const history = useNavigate();
+    const navigate = useNavigate();
     const boxClick = (part: string, id: number, sliderId: string) => {
-        history(`/${part}/${sliderId}/${id}`);
+        navigate(`/${part}/${sliderId}/${id}`);
         SetModalActive(true);
     }
 

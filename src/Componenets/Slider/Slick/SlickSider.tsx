@@ -18,9 +18,9 @@ interface IProp {
 
 function SlickSider({ settings, movies, part, id }: IProp) {
     const [modalActive, setModalActive] = useRecoilState(modalState);
-    const history = useNavigate();
+    const navigate = useNavigate();
     const boxClick = (part: string, id: number, sliderId: string) => {
-        history(`/${part}/${sliderId}/${id}`);
+        navigate(`/${part}/${sliderId}/${id}`);
         setModalActive(true);
     };
 

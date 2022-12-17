@@ -73,8 +73,8 @@ function SignUp() {
                     <S.LoginButton><Link to="/login">Sign Up</Link></S.LoginButton>
                     <S.LinkDiv>Already Registerd? <S.LinkStyle to="/login">Sign In</S.LinkStyle></S.LinkDiv>
                 </S.SignUpFrom>
+                <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
             </S.Wrap >
-            <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
         </>
     )
 };

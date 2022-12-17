@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import * as S from "../Style";
 
 interface IForm {
@@ -14,6 +15,7 @@ interface IForm {
 
 function Login() {
     const { register, handleSubmit, formState: { errors }, setValue } = useForm<IForm>();
+    const navigate = useNavigate();
 
     const onValid = (data: IForm) => {
         console.log('email', data.email);
@@ -61,8 +63,8 @@ function Login() {
                     <S.LoginButton><Link to="/">Login</Link></S.LoginButton>
                     <S.LinkDiv>Not Registerd? <S.LinkStyle to="/signup">Make Account</S.LinkStyle></S.LinkDiv>
                 </S.LoginFrom>
+                <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
             </S.Wrap>
-            <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
         </>
     )
 };

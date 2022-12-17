@@ -18,9 +18,11 @@ function Slide({ id, part, title, movies }: IProps) {
 
     const NextArrow = (props: any) => {
         const { className, style, onClick, slideCount, currentSlide, slidesToShow } = props;
+        // console.log(slideCount)
+        console.log(currentSlide)
         return (
             <>
-                {currentSlide !== slideCount - slidesToShow && (
+                {currentSlide !== 17.5 && (
                     <div
                         className={className}
                         style={{ ...style, display: "block" }}
