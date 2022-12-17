@@ -17,6 +17,9 @@ function Login() {
     return (
         <>
             <S.Wrap>
+                <S.FormIConDiv>
+                    <S.TopIcon />
+                </S.FormIConDiv>
                 <S.LoginFrom onSubmit={handleSubmit(onSubmit)}>
                     <S.UserDiv>
                         <S.Username {...register("email", {
@@ -27,6 +30,7 @@ function Login() {
                             }
                         })} placeholder="Email" />
                         <S.Message>{errors.email?.message}</S.Message>
+                        <S.UserIcon />
                     </S.UserDiv>
                     <S.PasswordDiv>
                         <S.Password {...register("password", {
@@ -37,6 +41,7 @@ function Login() {
                             }
                         })} type="password" placeholder="Password" />
                         <S.Message>{errors.password?.message}</S.Message>
+                        <S.LockIcon />
                     </S.PasswordDiv>
                     <S.LoginButton to="/">Login</S.LoginButton>
                     <S.LinkDiv>Not Registerd? <S.LinkStyle to="/signup">Make Account</S.LinkStyle></S.LinkDiv>

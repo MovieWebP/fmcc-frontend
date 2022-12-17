@@ -7,7 +7,6 @@ import { makeImagePath } from "../../Api/utils";
 import { modalState } from "../../atom";
 import * as S from "./BannerStyle";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { BsPlayFill } from "react-icons/bs";
 
 interface IBanner {
     id: string;
