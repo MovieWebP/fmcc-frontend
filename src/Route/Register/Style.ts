@@ -9,7 +9,7 @@ export const Wrap = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
+    @media screen and (max-width: 1500px) and (min-width: 300px) {
         height: 98vh;
     };
 `;
@@ -18,6 +18,10 @@ export const TopIcon = styled(MdPerson)`
     color: rgba(0,0,0,0.5);
     width: 4rem;
     height: 4rem;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 5rem;
+        height: 5rem;
+    };
 `;
 
 export const FormIConDiv = styled.div`
@@ -38,6 +42,10 @@ export const LoginFrom = styled.form`
     border-radius: 1rem;
     background-color: #171717;
     border: 1px solid #323232;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 350px;
+        height: 280px;
+    };
 `;
 
 export const SignUpFrom = styled(LoginFrom)`
@@ -46,9 +54,14 @@ export const SignUpFrom = styled(LoginFrom)`
 
 export const UserDiv = styled.div`
     text-align: right;
-    margin-bottom: 2.5rem;
+    margin-bottom: 30px;
     height: 50px;
     width: 80%;
+`;
+
+export const InputDiv = styled.div`
+    display: flex;
+    flex-direction: column;
 `;
 
 export const Username = styled.input`
@@ -72,16 +85,36 @@ export const Username = styled.input`
 export const UserIcon = styled(MdPerson)`
     position: relative;
     margin-right: 3px;
-    bottom: 2.6rem;
+    bottom: 40px;
+    z-index: 10;
     color: #fafafa;
-    width: 2rem;
-    height: 2rem;
+    width: 30px;
+    height: 30px;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 25px;
+        height: 25px;
+        position: relative;
+        bottom: 38px;
+    };
 `;
 
-export const Message = styled.span`
+export const Message = styled.p`
     color: red;
     font-size: 12px;
-    margin-top: 5px;
+    position: relative;
+    bottom: 25px;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        position: relative;
+        bottom: 20px;
+    };
+`;
+
+export const UserMessage = styled(Message)`
+    bottom: 33px;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        position: relative;
+        bottom: 25px;
+    };
 `;
 
 export const PasswordDiv = styled(UserDiv)`
@@ -90,11 +123,18 @@ export const PasswordDiv = styled(UserDiv)`
 
 export const LockIcon = styled(FaLock)`
     position: relative;
-    bottom: 2.4rem;
+    z-index: 10;
+    bottom: 35px;
     margin-right: 6px;
     color: #fafafa;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 23px;
+    height: 23px;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 18px;
+        height: 18px;
+        position: relative;
+        bottom: 33px;
+    };
 `;
 
 
@@ -103,14 +143,14 @@ export const Password = styled(Username)`
 
 export const CheckPassword = styled(Username)``;
 
-export const LoginButton = styled(Link)`
-    margin-top: 1.8rem;
+export const LoginButton = styled.button`
+    margin-top: 30px;
     text-align: center;
     width: 80%;
     border-radius: .3rem;
     border: none;
     padding: 10px;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 550;
     color: ${props => props.theme.white};
     background-color: #323232;
@@ -119,6 +159,9 @@ export const LoginButton = styled(Link)`
         cursor: pointer;
         background-color: #797474;
     }
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-size: 1.5rem;
+    };
 `;
 
 export const LinkDiv = styled.div`

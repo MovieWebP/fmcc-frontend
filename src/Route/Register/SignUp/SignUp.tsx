@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as S from "../Style";
 
@@ -24,37 +25,55 @@ function SignUp() {
     return (
         <>
             <S.Wrap>
+                <S.FormIConDiv>
+                    <S.TopIcon />
+                </S.FormIConDiv>
                 <S.SignUpFrom onSubmit={handleSubmit(onSubmit)}>
                     <S.UserDiv>
-                        <S.Username {...register("email", {
-                            required: "Email is required",
-                            minLength: {
-                                value: 5,
-                                message: "Email should be longer than 5 chars"
-                            }
-                        })} placeholder="Email" />
-                        <S.Message>{errors.email?.message}</S.Message>
+                        <S.InputDiv>
+                            <div>
+                                <S.Username {...register("email", {
+                                    required: "Email is required",
+                                    minLength: {
+                                        value: 5,
+                                        message: "Email should be longer than 5 chars"
+                                    }
+                                })} placeholder="Email" />
+                                <S.UserIcon />
+                            </div>
+                            <S.UserMessage>{errors.email?.message}</S.UserMessage>
+                        </S.InputDiv>
                     </S.UserDiv>
                     <S.UserDiv>
-                        <S.Password {...register("password", {
-                            required: "Password is required",
-                            minLength: {
-                                value: 5,
-                                message: "Password should be longer than 5 chars"
-                            }
-                        })} type="password" placeholder="Password" />
-                        <S.Message>{errors.password?.message}</S.Message>
+                        <S.InputDiv>
+                            <div>
+                                <S.Password {...register("password", {
+                                    required: "Password is required",
+                                    minLength: {
+                                        value: 5,
+                                        message: "Password should be longer than 5 chars"
+                                    }
+                                })} type="password" placeholder="Password" />
+                                <S.LockIcon />
+                            </div>
+                            <S.Message>{errors.password?.message}</S.Message>
+                        </S.InputDiv>
                     </S.UserDiv>
                     <S.PasswordDiv>
-                        <S.Password {...register("checkPassword", {
-                            required: "checkPassword is required"
-                        })} type="password" placeholder="Check Password" />
-                        <S.Message>{errors.checkPassword?.message}</S.Message>
+                        <S.InputDiv>
+                            <div>
+                                <S.Password {...register("checkPassword", {
+                                    required: "checkPassword is required"
+                                })} type="password" placeholder="Check Password" />
+                                <S.LockIcon />
+                            </div>
+                            <S.Message>{errors.checkPassword?.message}</S.Message>
+                        </S.InputDiv>
                     </S.PasswordDiv>
-                    <S.LoginButton to="/login">Sign Up</S.LoginButton>
+                    <S.LoginButton><Link to="/login">Sign Up</Link></S.LoginButton>
                     <S.LinkDiv>Already Registerd? <S.LinkStyle to="/login">Sign In</S.LinkStyle></S.LinkDiv>
                 </S.SignUpFrom>
-            </S.Wrap>
+            </S.Wrap >
             <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
         </>
     )
