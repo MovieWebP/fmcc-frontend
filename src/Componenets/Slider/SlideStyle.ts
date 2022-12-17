@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const SliderWrap = styled.div`
     width: 100vw;
@@ -44,11 +45,21 @@ export const Title = styled.h1`
 `;
 
 
-export const Slider = styled.div`
+export const Slider = styled(motion.div)`
     width: 100%;
     text-align: center;
     align-items: center;
     justify-content: center;
+    ::-webkit-scrollbar {
+        display: none;
+    } 
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        display: flex;
+        overflow: scroll;
+        text-align: center;
+        align-items: flex-start;
+        justify-content: flex-start;
+    };
 `;
 
 export const Movie = styled.div`
@@ -56,14 +67,11 @@ export const Movie = styled.div`
     word-wrap: normal;
     text-align: center;
     display: flex;
-    ::-webkit-scrollbar-thumb {
-        width: 10px;
-        background-color: white;
-        border: 1px solid red;
-    }
+    flex-direction: column;
     &:focus{
         outline: 0; 
     }
+    margin-right: 23px;
 `;
 
 
@@ -113,5 +121,3 @@ export const MovieTitle = styled.p`
         text-align: center;
     };
 `;
-
-

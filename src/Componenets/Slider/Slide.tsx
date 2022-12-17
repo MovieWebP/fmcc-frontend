@@ -4,6 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 import SlickSider from "./Slick/SlickSider";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { useRecoilState } from "recoil";
+import { useNavigate } from "react-router-dom";
+import { modalState } from "../../atom";
+import { makeImagePath } from "../../Api/utils";
+import { StyledSlider } from "./Slick/SlickStyle";
+import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface IProps {
     id: string;
@@ -105,20 +113,62 @@ function Slide({ id, part, title, movies }: IProps) {
             },
         ]
     };
+
+    const [modalActive, setModalActive] = useRecoilState(modalState);
+    const navigate = useNavigate();
+    const boxClick = (part: string, id: number, sliderId: string) => {
+        navigate(`/${part}/${sliderId}/${id}`);
+        setModalActive(true);
+    };
+
+    const [windowDimension, detectHW] = useState({ winWidth: window.innerWidth })
+
+    const detectSize = () => {
+        detectHW({
+            winWidth: window.innerWidth
+        })
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', detectSize)
+
+        return () => {
+            window.removeEventListener('resize', detectSize)
+        }
+    }, [windowDimension]);
+
+    console.log(windowDimension.winWidth)
     return (
         <S.SliderWrap>
             <S.TitleWrap>
                 <S.Title>{title}</S.Title>
             </S.TitleWrap>
             <S.Wrap>
-                <S.Slider
-                >
-                    <SlickSider
-                        settings={{ ...settings }}
-                        id={id}
-                        part={part}
-                        movies={movies}
-                    />
+                <S.Slider>
+                    {windowDimension.winWidth <= 500 ? (
+                        <>
+                            {movies
+                                ?.map((movie) => (
+                                    <S.Movie key={movie.id}>
+                                        <S.MovieImage src={makeImagePath(movie.poster_path)} />
+                                        <S.MovieTitleWrap>
+                                            <S.MovieTitle
+                                                onClick={() => boxClick(part, movie.id, id)}
+                                                key={movie.id}
+                                            >{part === "movie" ? movie.title : movie.name}
+                                            </S.MovieTitle>
+                                        </S.MovieTitleWrap>
+                                    </S.Movie>
+                                ))}
+                        </>
+                    ) : (
+                        <SlickSider
+                            settings={{ ...settings }}
+                            id={id}
+                            part={part}
+                            movies={movies}
+                        />
+                    )}
                 </S.Slider>
             </S.Wrap>
         </S.SliderWrap >
