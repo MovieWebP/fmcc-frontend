@@ -39,6 +39,8 @@ export const NavTog = styled(Navbar.Toggle)`
     color: none;
     display: flex;
     justify-content: flex-start;
+    height: fit-content;
+    border: 1px solid red;
     &:focus{
         outline: 0;
         text-decoration: none;
@@ -218,6 +220,6 @@ export const TogIcon = styled(MdDehaze)`
     margin: 0;
     padding: 0;
     width: 30px;
-    height: fit-content;
+    height: 30px;
     color: #fafafa;
 `;
