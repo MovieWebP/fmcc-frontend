@@ -9,6 +9,7 @@ import Navbar from 'react-bootstrap/Navbar';
 export const NavBar = styled(Navbar)`
     margin: 0;
     padding: 0;
+    padding: 5px;
     background-color: #2E2B2B;
     display: flex;
     justify-content: space-between;
@@ -46,6 +47,8 @@ export const NavTog = styled(Navbar.Toggle)`
 `;
 
 export const NavBarCo = styled(Navbar.Collapse)`
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,6 +69,7 @@ export const Title = styled(Navbar.Brand)`
     text-shadow: none;
     font-weight: 800;
     margin: 0;
+    padding: 0;
     padding: 0 .6rem;
     border-radius: 5px;
     text-align: center;
@@ -85,6 +89,8 @@ export const Title = styled(Navbar.Brand)`
 `;
 
 export const MenuItems = styled(Nav)`
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -95,6 +101,8 @@ export const MenuItems = styled(Nav)`
 `;
 
 export const MatchItemStyle = styled(Nav.Link)`
+    margin: 0;
+    padding: 0;
     align-items: center;
     color: ${(props) => props.theme.white};
     text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
@@ -121,6 +129,8 @@ export const ItemStyle = styled(MatchItemStyle)`
 
 
 export const Menu2Wrap = styled(MenuWrap)`
+    margin: 0;
+    padding: 0;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
@@ -146,6 +156,7 @@ export const Search = styled.form`
 
 export const Input = styled.input`
     margin: 0;
+    padding: 0;
     border: 1px solid #919191;
     outline: 0; 
     width: 28vw;
@@ -186,6 +197,7 @@ export const LoginWrap = styled.div`
 export const Login = styled(Link)`
     text-decoration: none;
     margin: 0;
+    padding: 0;
     font-size: 1.3rem;
     padding: .5rem .9rem;
     color: ${(props) => props.theme.white};
