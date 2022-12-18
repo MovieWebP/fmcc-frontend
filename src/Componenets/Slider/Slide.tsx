@@ -27,7 +27,7 @@ function Slide({ id, part, title, movies }: IProps) {
     const NextArrow = (props: any) => {
         const { className, style, onClick, slideCount, currentSlide, slidesToShow } = props;
         // console.log(slideCount)
-        console.log(currentSlide)
+        // console.log(currentSlide)
         return (
             <>
                 {currentSlide !== 17.5 && (

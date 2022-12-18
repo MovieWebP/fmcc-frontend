@@ -4,6 +4,11 @@ import { motion, useAnimation, useScroll } from "framer-motion";
 import { useForm } from "react-hook-form";
 import * as S from "./HeaderStyle";
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 interface IForm {
     keyword: string;
 }
@@ -12,6 +17,7 @@ function Header() {
     const homeMatch = useMatch("");
     const movieMatch = useMatch("/movie");
     const tvMatch = useMatch("/tv");
+    const shoppingMatch = useMatch("/shopping")
 
     const navigate = useNavigate();
     const { register, handleSubmit } = useForm<IForm>();
@@ -32,7 +38,7 @@ function Header() {
     }
     return (
         <>
-            {
+            {/* {
                 navbar ? (
                     <S.Nav>
                         <S.MenuWrap>
@@ -174,7 +180,64 @@ function Header() {
                         </S.FalMenu2Wrap>
                     </S.FalNav>
                 )
-            }
+            } */}
+            <S.NavWrap expand="sm">
+                <S.MenuWrap>
+                    <S.Title href="/">FM</S.Title>
+                    <S.ToggleBtn bg="light" aria-controls="basic-navbar-nav" />
+                    <S.MenuItems id="basic-navbar-nav">
+                        <S.HiddenNav className="me-auto">
+                            {homeMatch ? (
+                                <S.Match href="/">
+                                    Home
+                                </S.Match>
+                            ) : (
+                                <S.LinkStyle href="/">
+                                    Home
+                                </S.LinkStyle>
+                            )}
+                            {movieMatch ? (
+                                <S.Match href="/movie">
+                                    Movie
+                                </S.Match>
+                            ) : (
+                                <S.LinkStyle href="/movie">
+                                    Movie
+                                </S.LinkStyle>
+                            )}
+                            {tvMatch ? (
+                                <S.Match href="/tv">
+                                    Tv Shows
+                                </S.Match>
+                            ) : (
+                                <S.LinkStyle href="/tv">
+                                    Tv Shows
+                                </S.LinkStyle>
+                            )}
+                            {shoppingMatch ? (
+                                <S.Match href="/shopping">
+                                    shopping
+                                </S.Match>
+                            ) : (
+                                <S.LinkStyle href="/shopping">
+                                    shopping
+                                </S.LinkStyle>
+                            )}
+                        </S.HiddenNav>
+                    </S.MenuItems>
+                </S.MenuWrap>
+                <S.Menu2Wrap>
+                    <S.Search onSubmit={handleSubmit(onSearch)}>
+                        <S.Input
+                            {...register("keyword", { required: true, minLength: 2 })}
+                            placeholder="Search"
+                        />
+                    </S.Search>
+                    <S.LoginWrap>
+                        <S.Login to="/login" onClick={MenuOnClick}>Login</S.Login>
+                    </S.LoginWrap>
+                </S.Menu2Wrap>
+            </S.NavWrap>
         </>
     );
 }
