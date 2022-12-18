@@ -1,6 +1,7 @@
 import { useMatch, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as S from "./HeaderStyle";
+import { useState } from "react";
 
 
 interface IForm {
@@ -18,6 +19,12 @@ function Header() {
     const onSearch = (data: IForm) => {
         navigate(`/search?keyword=${data.keyword}`);
     }
+
+    // const [show, setShow] = useState(true);
+
+    // const onClick = () => {
+    //     setShow(!show)
+    // }
 
     return (
         <>

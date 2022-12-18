@@ -10,7 +10,7 @@ export const NavBar = styled(Navbar)`
     margin: 0;
     padding: 0;
     padding: 5px;
-    background-color: #2E2B2B;
+    background-color: rgba(0,0,0,0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -142,14 +142,15 @@ export const Menu2Wrap = styled(MenuWrap)`
     justify-content: space-between;
     margin: 0px 20px;
     padding: 0;
-    width: 33vw;
+    width: fit-content;
     height: fit-content;
-    @media screen and (max-width: 1000px) and (min-width: 700px) {
-        width: fit-content;
-    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 50vw;
     };
+`;
+
+export const FalMenu2Wrap = styled.div`
+    display: none;
 `;
 
 export const Search = styled.form`
