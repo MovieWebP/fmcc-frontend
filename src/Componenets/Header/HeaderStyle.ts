@@ -16,6 +16,7 @@ export const NavBar = styled(Navbar)`
     position: fixed;
     width: 100%;
     top: 0;
+    height: fit-content;
 `;
 
 export const MenuWrap = styled(Container)`
@@ -123,7 +124,7 @@ export const Menu2Wrap = styled(MenuWrap)`
     justify-content: space-between;
     margin: 0px 20px;
     padding: 0;
-    width: fit-content;
+    width: 33vw;
     height: fit-content;
     @media screen and (max-width: 1000px) and (min-width: 700px) {
         width: fit-content;
