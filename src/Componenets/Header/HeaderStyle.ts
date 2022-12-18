@@ -24,15 +24,17 @@ export const MenuWrap = styled(Container)`
     justify-content: center;
     margin: 0px 20px;
     padding: 0;
-    /* border: 1px solid blue; */
     width: fit-content;
     height: fit-content;
 `;
 
 export const NavTog = styled(Navbar.Toggle)`
     margin: 0;
+    padding: 0;
     border: none;
     color: none;
+    display: flex;
+    justify-content: flex-start;
     &:focus{
         outline: 0;
         text-decoration: none;
@@ -45,7 +47,7 @@ export const NavBarCo = styled(Navbar.Collapse)`
     justify-content: center;
     align-items: center;
     align-self: center;
-    @media screen and (max-width: 575px) and (min-width: 300px) {
+    @media screen and (max-width: 765px) and (min-width: 300px) {
         border-bottom: 1px solid #fafafa;
         padding-bottom: 3px;
         margin-bottom: 10px;
@@ -74,7 +76,7 @@ export const Title = styled(Navbar.Brand)`
     &:hover{
         color: ${props => props.theme.purple};
     }
-    @media screen and (max-width: 575px) and (min-width: 300px) {
+    @media screen and (max-width: 765px) and (min-width: 300px) {
         display: none;
     };
 `;
@@ -83,7 +85,7 @@ export const MenuItems = styled(Nav)`
     display: flex;
     align-items: center;
     justify-content: center;
-    @media screen and (max-width: 575px) and (min-width: 300px) {
+    @media screen and (max-width: 765px) and (min-width: 300px) {
         align-items: flex-start;
         justify-content: flex-start;
     };
@@ -102,7 +104,6 @@ export const MatchItemStyle = styled(Nav.Link)`
     }
     @media screen and (max-width: 700px) and (min-width: 500px) {
         font-size: 1.8rem;
-        padding-top: 1.3rem;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 2.3rem;
@@ -117,8 +118,18 @@ export const ItemStyle = styled(MatchItemStyle)`
 
 
 export const Menu2Wrap = styled(MenuWrap)`
-    @media screen and (max-width: 1000px) and (min-width: 300px) {
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 20px;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+    @media screen and (max-width: 1000px) and (min-width: 700px) {
         width: fit-content;
+    };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 50vw;
     };
 `;
 
@@ -131,9 +142,10 @@ export const Search = styled.form`
 `
 
 export const Input = styled.input`
+    margin: 0;
     border: 1px solid #919191;
     outline: 0; 
-    width: 20vw;
+    width: 28vw;
     font-family: Arial, Helvetica, sans-serif, "FontAwesome";
     z-index: 3;
     color: ${(props) => props.theme.white};
@@ -141,11 +153,17 @@ export const Input = styled.input`
     background-color: transparent;
     caret-color: auto; 
     border-radius: 3px;
+    padding-left: .5rem;
     &::placeholder{
         color: #919191;
     }
-    @media screen and (max-width: 1000px) and (min-width: 300px) {
-        padding-left: .3rem;
+    @media screen and (max-width: 1000px) and (min-width: 700px) {  
+        width: 30vw;
+        font-size: 1.5rem;
+    };
+    @media screen and (max-width: 700px) and (min-width: 500px) {
+        width: 35vw;
+        font-size: 1.6rem;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 38vw;
@@ -164,6 +182,7 @@ export const LoginWrap = styled.div`
 
 export const Login = styled(Link)`
     text-decoration: none;
+    margin: 0;
     font-size: 1.3rem;
     padding: .5rem .9rem;
     color: ${(props) => props.theme.white};
@@ -175,20 +194,15 @@ export const Login = styled(Link)`
         color: #fafafa;
     }
     margin-left: 5px;
-    @media screen and (max-width: 1000px) and (min-width: 300px) {
-        font-weight: 500;
-    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 1.8rem;
     };
 `;
 
 export const TogIcon = styled(MdDehaze)`
+    margin: 0;
+    padding: 0;
     width: 30px;
-    height: 30px;
-    border: none;
+    height: fit-content;
     color: #fafafa;
-    &:focus{
-        outline: none;
-    }
 `;

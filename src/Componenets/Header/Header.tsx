@@ -21,7 +21,7 @@ function Header() {
 
     return (
         <>
-            <S.NavBar expand="sm" variants="dark">
+            <S.NavBar expand="md" variants="dark">
                 <S.MenuWrap>
                     <S.Title href="/">FM</S.Title>
                     <S.NavTog ><S.TogIcon /></S.NavTog>
