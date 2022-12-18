@@ -35,12 +35,12 @@ export const TitleWrap = styled.div`
     };
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h3`
     display: flex;
     justify-content: flex-start;
     font-size: 1.4rem;
     border-bottom: 1px solid  ${props => props.theme.lightPurple};
-    font-weight: 500;
+    font-weight: 450;
     color: ${props => props.theme.lightPurple};
 `;
 
@@ -115,7 +115,7 @@ export const MovieTitle = styled.p`
         text-decoration: underline ${(props) => props.theme.white};
     }
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     };
     @media screen and (max-width: 1500px) and (min-width: 1200px) {
         text-align: center;

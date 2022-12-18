@@ -34,13 +34,13 @@ export const MenuWrap = styled(Container)`
 
 export const NavTog = styled(Navbar.Toggle)`
     margin: 0;
+    /* margin-bottom: 10px; */
     padding: 0;
     border: none;
     color: none;
     display: flex;
     justify-content: flex-start;
     height: fit-content;
-    border: 1px solid red;
     &:focus{
         outline: 0;
         text-decoration: none;
@@ -58,6 +58,7 @@ export const NavBarCo = styled(Navbar.Collapse)`
     @media screen and (max-width: 765px) and (min-width: 300px) {
         border-bottom: 1px solid #fafafa;
         padding-bottom: 3px;
+        margin-top: 10px;
         margin-bottom: 10px;
         width: 90vw;
         justify-content: flex-start;
@@ -108,20 +109,23 @@ export const MatchItemStyle = styled(Nav.Link)`
     align-items: center;
     color: ${(props) => props.theme.white};
     text-shadow: 2px 2px 4px rgb(0 0 0 / 30%);
-    font-weight: 700;
+    font-weight: 500;
     transition: all .25s ease-in-out;   
     transition-delay: 0s;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     &:hover{
         color: ${(props) => props.theme.white};
     }
-    @media screen and (max-width: 700px) and (min-width: 500px) {
+    @media screen and (max-width: 765px) and (min-width: 500px) {
+        margin-bottom: 10px;
         font-size: 1.8rem;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
+        margin-bottom: 5px;
         font-size: 2.3rem;
     };
 `;
+
 export const ItemStyle = styled(MatchItemStyle)`
     color: #919191;
     &:hover{
@@ -205,7 +209,7 @@ export const Login = styled(Link)`
     color: ${(props) => props.theme.white};
     border-radius: .5rem;
     transition: all 0.3s ease-in-out;
-    font-weight: 600;
+    font-weight: 500;
     &:hover{
         background-color: #686464;
         color: #fafafa;
