@@ -7,6 +7,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 export const NavBar = styled(Navbar)`
+    margin: 0;
+    padding: 0;
     background-color: #2E2B2B;
     display: flex;
     justify-content: space-between;
