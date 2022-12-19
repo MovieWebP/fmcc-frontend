@@ -33,6 +33,7 @@ function Trailer({ id, part }: ITrailer) {
             const random = trailer[Math.ceil(Math.random() * trailer.length - 1)];
             const videoKey = random?.key;
             setVideoKey(videoKey);
+            console.log(videoKey)
         })();
     }, [id]);
 
@@ -45,20 +46,19 @@ function Trailer({ id, part }: ITrailer) {
             {videoKey ? (
                 <S.Wrapper>
                     <S.Player
-                        url={`https://www.youtube.com/embed/${videoKey}?autoplay=1&controls=0&rel=0`}
+                        url={`https://www.youtube.com/embed/${videoKey}?autoplay=1&controls=0&rel=0&showinfo=0&fs=0&modestbranding=1`}
                         muted={volume ? true : false}
                         playing={true}
                         controls={false}
                         frameBorder="0"
-                        style={{ borderRadius: "10px", width: "100%", height: "100%", position: "relative" }}
                         width="100%"
                         height="100%"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     />
                     {volume ? (
-                        <S.VolumDiv><S.Volum as={VolumeOff} onClick={handleVolume} /></S.VolumDiv>
+                        <S.VolumeDiv><S.Volume as={VolumeOff} onClick={handleVolume} /></S.VolumeDiv>
                     ) : (
-                        <S.VolumDiv><S.Volum as={VolumeUp} onClick={handleVolume} /></S.VolumDiv>
+                        <S.VolumeDiv><S.Volume as={VolumeUp} onClick={handleVolume} /></S.VolumeDiv>
                     )}
                     <S.ModalTitle />
                 </S.Wrapper>

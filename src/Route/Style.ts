@@ -8,12 +8,20 @@ export const SliderWrap = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* overflow: hidden; */
 `;
 
 export const SearchSliderWrap = styled(SliderWrap)`
     position: relative;
-    top: 10rem;
+    top: 6rem;
+`;
+
+export const Loading = styled.h1`   
+    color: ${(props) => props.theme.white};
+    width: fit-content;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 5px;
 `;
 
 export const SliderTitle = styled(Link)`
@@ -23,13 +31,16 @@ export const SliderTitle = styled(Link)`
     font-weight: 600;
     padding: 5px 20px;
     border-radius: 5px;
+    &:hover{
+        color: #fafafa;
+    }
 `;
 
 export const Doc = styled.div`
     position: relative;
-    bottom: 0;
+    bottom: 10px;
     font-weight: 350;
-    font-size: .7rem;
+    font-size: 1rem;
     text-align: center;
 `
 

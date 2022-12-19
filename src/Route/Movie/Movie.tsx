@@ -13,7 +13,7 @@ function Home() {
             ["nowPlaying", "movie"],
             getNowPlayingMovie,
             {
-                refetchInterval: 500
+                refetchInterval: 30000
             }
         );
     const { data: popular, isLoading: popularLoading } =
@@ -21,7 +21,7 @@ function Home() {
             ["popular", "movie"],
             getPopularMovie,
             {
-                refetchInterval: 500
+                refetchInterval: 30000
             }
         );
 
@@ -30,7 +30,7 @@ function Home() {
             ["upComing", "movie"],
             getUpcomingMovie,
             {
-                refetchInterval: 500
+                refetchInterval: 30000
             }
         );
 
@@ -39,7 +39,7 @@ function Home() {
             ["topRated", "movie"],
             getTopRatedMovie,
             {
-                refetchInterval: 500
+                refetchInterval: 30000
             }
         );
 
@@ -52,7 +52,7 @@ function Home() {
                 <title>Movie</title>
             </Helmet >
             {isLoading ? (
-                <S.SliderWrap>Loading...</S.SliderWrap>
+                <S.SearchSliderWrap>Loading...</S.SearchSliderWrap>
             ) : (
                 <>
                     <Banner

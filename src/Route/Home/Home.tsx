@@ -15,7 +15,7 @@ function Home() {
             ["nowPlaying", "movie"],
             getNowPlayingMovie,
             {
-                refetchInterval: 500
+                refetchInterval: 30000
             }
         );
     const { data: popular, isLoading: popularLoading } =
@@ -23,7 +23,7 @@ function Home() {
             ["popular", "movie"],
             getPopularMovie,
             {
-                refetchInterval: 500
+                refetchInterval: 3000
             }
         );
 
@@ -33,7 +33,7 @@ function Home() {
             ["airingToday", "tv"],
             getAiringTodayTv,
             {
-                refetchInterval: 500
+                refetchInterval: 3000
             }
         );
 
@@ -42,7 +42,7 @@ function Home() {
             ["popularTv", "tv"],
             getPopularTv,
             {
-                refetchInterval: 500
+                refetchInterval: 3000
             }
         );
 
@@ -55,7 +55,9 @@ function Home() {
                 <title>Home</title>
             </Helmet >
             {isLoading ? (
-                <S.SliderWrap>Loading...</S.SliderWrap>
+                <S.SearchSliderWrap>
+                    Loading...
+                </S.SearchSliderWrap>
             ) : (
                 <>
                     <Banner
@@ -97,7 +99,7 @@ function Home() {
                             movies={popularTv?.results || []}
                         />
                     </S.SliderWrap>
-                    <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
+                    <S.Doc>© 2022 choi138.tk, All rights reserved.</S.Doc>
                 </>
             )}
         </>

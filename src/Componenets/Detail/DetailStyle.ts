@@ -5,48 +5,64 @@ export const Wrap = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: fit-content;
     align-items: center;
-    position: absolute;
+    position: relative;
 `;
 
 export const WrapImage = styled.div < { bgPhoto: string }> `
-background-image: linear-gradient(
-    rgba(17,17,17, 0.5),
-    rgba(17,17,17, 0.5),
-    #181818
+    background-image: linear-gradient(
+        rgba(17,17,17, 0.5),
+        rgba(17,17,17, 0.5),
+        #181818
     ), url(${(props) => props.bgPhoto});
-background-size: cover;
-background-position: center;
-background-attachment: fixed; 
-width: 100%;
-height: 100%;
-filter: blur(4px);
-position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    width: 100%;
+    height: 100%;
+    filter: blur(4px);
+    position: absolute;
 `;
 
-export const ModalContianerWrap = styled.div`   
+export const ModalContainerWrap = styled.div`   
     display: flex;
     justify-content: space-between;
-    transition: all 0.5s ease-in-out;
     position: relative;
-    top: 100px;
-    width: 100rem;
-    max-width: 75rem;
+    width: 100%;
+    max-width: 75%;
     flex-wrap: wrap;
     height: fit-content;
     align-items: flex-start;
+    margin-top: 5rem;
+    @media screen and (min-width: 1500px) {
+        width: 100%;
+        max-width: 55%;
+    };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 100%;
+        max-width: 85%;
+    };
+`;
+
+export const ModalClips = styled.div < { bgPhoto: string } >`
+    background-image: url(${(props) => props.bgPhoto});
+    background-size: cover;
+    box-shadow: 3px 10px 10px rgba(0,0,0,0.3);
+    width: 100%;
+    height: 28rem;
+    border-radius: 10px;
     margin-bottom: 20px;
 `;
 
-export const ModalContianer = styled.div`   
+export const ModalContainer = styled.div`   
     display: flex;
-    width: fit-content;
+    width: 35rem;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 0;
+    /* border: 1px solid red; */
 `;
 
-export const ModalContainers = styled(ModalContianer)`
+export const ModalContainers = styled(ModalContainer)`
     flex-direction: column; 
 `;
 
@@ -56,21 +72,8 @@ export const CopyContainer = styled.div`
 `;
 
 export const InfoModalContainer = styled.div`
-    /* padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    width: 20vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; // flex-wrap: wrap 해석: flex item이 한 줄에 다 들어가지 않을 때, 다음 줄로 넘어가도록 함
-    white-space: normal; // white-space: normal 해석: 공백을 무시하고, 모든 공백을 하나의 공백으로 처리
-    border: 1px solid red; */
-    /* padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 0px; */
-    width: 450px;
-    padding: 20px;
+    width: 30rem;
+    padding: 20px 0;
     /* border: 1px solid red; */
 `;
 
@@ -130,16 +133,7 @@ export const Genre = styled(Genres)`
     margin-left: 10px;
 `;
 
-export const ModalClips = styled.div < { bgPhoto: string } >`
-    background-image: url(${(props) => props.bgPhoto});
-    background-size: cover;
-    box-shadow: 3px 10px 10px rgba(0,0,0,0.3);
-    width: 100%;
-    height: 400px;
-    margin-left: 10px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-`;
+
 
 export const Video = styled.div`
     overflow: hidden;
