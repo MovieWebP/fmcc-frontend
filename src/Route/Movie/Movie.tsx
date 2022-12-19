@@ -9,13 +9,39 @@ function Home() {
 
     // Movie
     const { data: nowPlaying, isLoading: playingLoading } =
-        useQuery<IGetResults>(["nowPlaying", "movie"], getNowPlayingMovie);
+        useQuery<IGetResults>(
+            ["nowPlaying", "movie"],
+            getNowPlayingMovie,
+            {
+                refetchInterval: 500
+            }
+        );
     const { data: popular, isLoading: popularLoading } =
-        useQuery<IGetResults>(["popular", "movie"], getPopularMovie);
+        useQuery<IGetResults>(
+            ["popular", "movie"],
+            getPopularMovie,
+            {
+                refetchInterval: 500
+            }
+        );
+
     const { data: upComing, isLoading: upComingLoading } =
-        useQuery<IGetResults>(["upComing", "movie"], getUpcomingMovie);
+        useQuery<IGetResults>(
+            ["upComing", "movie"],
+            getUpcomingMovie,
+            {
+                refetchInterval: 500
+            }
+        );
+
     const { data: topRated, isLoading: topRatedLoading } =
-        useQuery<IGetResults>(["topRated", "movie"], getTopRatedMovie);
+        useQuery<IGetResults>(
+            ["topRated", "movie"],
+            getTopRatedMovie,
+            {
+                refetchInterval: 500
+            }
+        );
 
 
     const isLoading = playingLoading || popularLoading || upComingLoading || topRatedLoading || false;

@@ -155,13 +155,15 @@ export const Menu2Wrap = styled(MenuWrap)`
     justify-content: space-between;
     margin: 0px 20px;
     padding: 0;
-    width: fit-content;
+    width: 33vw;
     height: fit-content;
     opacity: 1;
     transition: .2s opacity;
-
+    @media screen and (max-width: 765px) and (min-width: 500px) {
+        width: 38vw;
+    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 50vw;
+        width: 43vw;
     };
 `;
 
@@ -190,11 +192,11 @@ export const Input = styled.input`
     &::placeholder{
         color: #919191;
     }
-    @media screen and (max-width: 1000px) and (min-width: 700px) {  
+    @media screen and (max-width: 1000px) and (min-width: 765px) {  
         width: 30vw;
         font-size: 1.5rem;
     };
-    @media screen and (max-width: 700px) and (min-width: 500px) {
+    @media screen and (max-width: 765px) and (min-width: 500px) {
         width: 35vw;
         font-size: 1.6rem;
     };

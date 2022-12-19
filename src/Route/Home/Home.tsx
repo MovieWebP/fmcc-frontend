@@ -11,22 +11,43 @@ function Home() {
 
     // Movie
     const { data: nowPlaying, isLoading: playingLoading } =
-        useQuery<IGetResults>(["nowPlaying", "movie"], getNowPlayingMovie);
+        useQuery<IGetResults>(
+            ["nowPlaying", "movie"],
+            getNowPlayingMovie,
+            {
+                refetchInterval: 500
+            }
+        );
     const { data: popular, isLoading: popularLoading } =
-        useQuery<IGetResults>(["popular", "movie"], getPopularMovie);
-    const { data: topRated, isLoading: getTopRatedMovie } =
-        useQuery<IGetResults>(["topRated", "movie"], getPopularMovie);
+        useQuery<IGetResults>(
+            ["popular", "movie"],
+            getPopularMovie,
+            {
+                refetchInterval: 500
+            }
+        );
 
     //Tv
     const { data: airingToday, isLoading: AiringTodayLoading } =
-        useQuery<IGetResults>(["airingToday", "tv"], getAiringTodayTv);
-    const { data: onTheAir, isLoading: onTheAirTvLoading } =
-        useQuery<IGetResults>(["onTheAirTv", "tv"], getOnTheAirTv);
+        useQuery<IGetResults>(
+            ["airingToday", "tv"],
+            getAiringTodayTv,
+            {
+                refetchInterval: 500
+            }
+        );
+
     const { data: popularTv, isLoading: popularTvLoading } =
-        useQuery<IGetResults>(["popularTv", "tv"], getPopularTv);
+        useQuery<IGetResults>(
+            ["popularTv", "tv"],
+            getPopularTv,
+            {
+                refetchInterval: 500
+            }
+        );
 
 
-    const isLoading = playingLoading || popularLoading || getTopRatedMovie || AiringTodayLoading || onTheAirTvLoading || popularTvLoading || false;
+    const isLoading = playingLoading || popularLoading || AiringTodayLoading || popularTvLoading || false;
 
     return (
         <>

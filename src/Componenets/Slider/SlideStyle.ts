@@ -22,7 +22,7 @@ export const Wrap = styled.div`
         width: 80%;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        height: 30rem;
+        height: 100%;
     };
 `;
 

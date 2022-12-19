@@ -10,13 +10,37 @@ function TV() {
 
     //Tv
     const { data: airingToday, isLoading: AiringTodayLoading } =
-        useQuery<IGetResults>(["airingToday", "tv"], getAiringTodayTv);
+        useQuery<IGetResults>(
+            ["airingToday", "tv"],
+            getAiringTodayTv,
+            {
+                refetchInterval: 500
+            }
+        );
     const { data: onTheAir, isLoading: onTheAirTvLoading } =
-        useQuery<IGetResults>(["onTheAirTv", "tv"], getOnTheAirTv);
+        useQuery<IGetResults>(
+            ["onTheAirTv", "tv"],
+            getOnTheAirTv,
+            {
+                refetchInterval: 500
+            }
+        );
     const { data: popularTv, isLoading: popularTvLoading } =
-        useQuery<IGetResults>(["popularTv", "tv"], getPopularTv);
+        useQuery<IGetResults>(
+            ["popularTv", "tv"],
+            getPopularTv,
+            {
+                refetchInterval: 500
+            }
+        );
     const { data: topRatedTv, isLoading: topRatedTvLoading } =
-        useQuery<IGetResults>(["topRatedTv", "tv"], getTopRatedTv);
+        useQuery<IGetResults>(
+            ["topRatedTv", "tv"],
+            getTopRatedTv,
+            {
+                refetchInterval: 500
+            }
+        );
 
     const isLoading = AiringTodayLoading || onTheAirTvLoading || popularTvLoading || topRatedTvLoading || false;
 

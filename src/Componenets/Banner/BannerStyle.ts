@@ -198,7 +198,7 @@ export const PlayIcon = styled(BsPlayFill)`
 
 export const ButtonText = styled.h2`
   font-size: 1.1rem;
-  font-weight: 650;
+  font-weight: 500;
   @media screen and (max-width: 700px) and (min-width: 501px) {
     font-size: 1.5rem;
   };
