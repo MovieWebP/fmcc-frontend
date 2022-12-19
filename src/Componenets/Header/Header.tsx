@@ -30,8 +30,18 @@ function Header() {
         <>
             <S.NavBar expand="md" variants="dark">
                 <S.MenuWrap>
-                    <S.Title href="/">FM</S.Title>
                     <S.NavTog ><S.TogIcon /></S.NavTog>
+                    <S.Menu2Wrap className="searchBarWrap">
+                        <S.Search onSubmit={handleSubmit(onSearch)}>
+                            <S.Input
+                                {...register("keyword", { required: true, minLength: 2 })}
+                                placeholder="Search"
+                            />
+                        </S.Search>
+                        <S.LoginWrap>
+                            <S.Login to="/login">Login</S.Login>
+                        </S.LoginWrap>
+                    </S.Menu2Wrap >
                     <S.NavBarCo id="basic-navbar-nav">
                         <S.MenuItems className="me-auto">
                             {homeMatch ? (
@@ -59,18 +69,8 @@ function Header() {
                             )}
                         </S.MenuItems>
                     </S.NavBarCo>
+                    <S.Title href="/">FM</S.Title>
                 </S.MenuWrap>
-                <S.Menu2Wrap>
-                    <S.Search onSubmit={handleSubmit(onSearch)}>
-                        <S.Input
-                            {...register("keyword", { required: true, minLength: 2 })}
-                            placeholder="Search"
-                        />
-                    </S.Search>
-                    <S.LoginWrap>
-                        <S.Login to="/login">Login</S.Login>
-                    </S.LoginWrap>
-                </S.Menu2Wrap >
             </S.NavBar >
         </>
     );

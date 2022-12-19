@@ -20,7 +20,7 @@ export const NavBar = styled(Navbar)`
     width: 100%;
     top: 0;
     height: fit-content;
-`;
+    `;
 
 export const MenuWrap = styled(Container)`
     flex-wrap: nowrap;
@@ -28,8 +28,21 @@ export const MenuWrap = styled(Container)`
     justify-content: center;
     margin: 0px 20px;
     padding: 0;
-    width: fit-content;
+    width: 100%;
+    max-width: 100%;
     height: fit-content;
+    
+    &:has(.show) > .searchBarWrap, 
+    &:has(.collapsing) > .searchBarWrap  {
+        opacity: 0;
+    }
+    @media screen and (min-width: 765px) {
+        direction: rtl;
+
+        & > * {
+            direction: ltr;
+        }
+    };
 `;
 
 export const NavTog = styled(Navbar.Toggle)`
@@ -56,10 +69,7 @@ export const NavBarCo = styled(Navbar.Collapse)`
     align-items: center;
     align-self: center;
     @media screen and (max-width: 765px) and (min-width: 300px) {
-        border-bottom: 1px solid #fafafa;
         padding-bottom: 3px;
-        margin-top: 10px;
-        margin-bottom: 10px;
         width: 90vw;
         justify-content: flex-start;
         align-self: center;
@@ -100,6 +110,7 @@ export const MenuItems = styled(Nav)`
     @media screen and (max-width: 765px) and (min-width: 300px) {
         align-items: flex-start;
         justify-content: flex-start;
+        padding: 10px 0;
     };
 `;
 
@@ -138,19 +149,20 @@ export const Menu2Wrap = styled(MenuWrap)`
     margin: 0;
     padding: 0;
     flex-wrap: nowrap;
+    flex-direction: row;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0px 20px;
     padding: 0;
     width: fit-content;
     height: fit-content;
+    opacity: 1;
+    transition: .2s opacity;
+
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 50vw;
     };
-`;
-
-export const FalMenu2Wrap = styled.div`
-    display: none;
 `;
 
 export const Search = styled.form`
