@@ -14,7 +14,7 @@ function TV() {
             ["airingToday", "tv"],
             getAiringTodayTv,
             {
-                refetchInterval: 30000
+                refetchInterval: 500
             }
         );
     const { data: onTheAir, isLoading: onTheAirTvLoading } =
@@ -22,7 +22,7 @@ function TV() {
             ["onTheAirTv", "tv"],
             getOnTheAirTv,
             {
-                refetchInterval: 30000
+                refetchInterval: 500
             }
         );
     const { data: popularTv, isLoading: popularTvLoading } =
@@ -30,7 +30,7 @@ function TV() {
             ["popularTv", "tv"],
             getPopularTv,
             {
-                refetchInterval: 30000
+                refetchInterval: 500
             }
         );
     const { data: topRatedTv, isLoading: topRatedTvLoading } =
@@ -38,7 +38,7 @@ function TV() {
             ["topRatedTv", "tv"],
             getTopRatedTv,
             {
-                refetchInterval: 30000
+                refetchInterval: 500
             }
         );
 
@@ -50,9 +50,7 @@ function TV() {
                 <title>Tv Shows</title>
             </Helmet >
             {isLoading ? (
-                <S.SliderWrap>
-                    <S.Loading>Loading...</S.Loading>
-                </S.SliderWrap>
+                <S.SliderWrap>Loading...</S.SliderWrap>
             ) : (
                 <>
                     <Banner

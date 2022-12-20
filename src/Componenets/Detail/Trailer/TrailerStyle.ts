@@ -6,20 +6,18 @@ export const Wrapper = styled.div`
     width: 100%;
     right: 0;
     left: 0;
-    height: 28rem;
-    background-color: transparent;
+    height: 400px;
     top: 0;
     object-fit: contain; 
 `;
 
 export const Player = styled(ReactPlayer)`
-    border-radius: "10px";
 `;
 
-export const VolumeDiv = styled.div`
+export const VolumDiv = styled.div`
     position: absolute;
     left: 0;
-    bottom: 3px;
+    bottom: 0;
     opacity: 0.5;
     z-index: 30;
     margin-left: 10px;
@@ -30,12 +28,12 @@ export const VolumeDiv = styled.div`
         }
         &:hover{
           opacity: 1;
-          transition: opacity 0.3s  ease-in-out ;
+          transition: 0.3s ease-in-out all 0s;
           color: white;
         }
     `;
 
-export const Volume = styled.svg`
+export const Volum = styled.svg`
     position: relative;
     padding: 5px;
     border-radius: 50%;

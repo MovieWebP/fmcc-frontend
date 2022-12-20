@@ -47,132 +47,137 @@ function Detail({ detail, recommend, cast }: IModal) {
             <Helmet>
                 <title>{detail?.title || detail?.name}</title>
             </Helmet>
-            {modalMatch ? (
-                <>
-                    <S.Wrap>
-                        <S.WrapImage bgPhoto={makeImagePath(detail?.backdrop_path)}></S.WrapImage>
-                        <S.ModalContainerWrap>
-                            <S.ModalClips bgPhoto={makeImagePath(
-                                detail?.backdrop_path
-                            )}>
-                                <S.Video>
-                                    <Trailer part={part} id={id} />
-                                </S.Video>
-                            </S.ModalClips>
-                            <S.ModalContainer>
-                                <S.ModalImage src={makeImagePath(detail?.poster_path)} />
-                                <S.ModalInfo>
-                                    <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
+            <AnimatePresence>
+                {modalMatch ? (
+                    <>
+                        <S.Wrap>
+                            <S.WrapImage bgPhoto={makeImagePath(detail?.backdrop_path)}></S.WrapImage>
+                            <S.ModalContianerWrap>
+                                <S.ModalClips bgPhoto={makeImagePath(
+                                    detail?.backdrop_path
+                                )}>
+                                    <S.Video>
+                                        <Trailer part={part} id={id} />
+                                    </S.Video>
+                                </S.ModalClips>
+                                <S.ModalContianer>
+                                    <S.ModalImage src={makeImagePath(detail?.poster_path)} />
+                                    <S.ModalInfo>
+                                        <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
 
-                                    <S.Genres>
-                                        <S.InfoDate>{part === "movie" ? detail?.release_date?.slice(0, 4) : detail?.first_air_date?.slice(0, 4)}</S.InfoDate>
-                                        {detail?.genres?.length ? (
-                                            <S.Genre>
+                                        <S.Genres>
+                                            <S.InfoDate>{part === "movie" ? detail?.release_date?.slice(0, 4) : detail?.first_air_date?.slice(0, 4)}</S.InfoDate>
+                                            {detail?.genres?.length ? (
+                                                <S.Genre>
+                                                    {(detail.genres || []).map
+                                                        ((genre: any) => genre.name).join("/")}
+                                                </S.Genre>
+                                            ) : null}
+                                        </S.Genres>
+                                        <S.DummyDiv></S.DummyDiv>
+                                        <S.SumDiv>
+                                            <S.InfoDate>Summary</S.InfoDate>
+                                            <S.InfoOverview>{detail?.overview}</S.InfoOverview>
+                                        </S.SumDiv>
+                                    </S.ModalInfo>
+                                </S.ModalContianer>
+                                <S.InfoModalContainer>
+                                    <S.OverviewTitle>Info</S.OverviewTitle>
+                                    <S.Overview>
+                                        <S.InfoName>Title: </S.InfoName>
+                                        <S.InfoMovieName>{part === "movie" ? detail?.title : detail?.name}</S.InfoMovieName>
+                                    </S.Overview>
+                                    <S.Overview>
+                                        <S.InfoName>Cast: </S.InfoName>
+                                        <S.InfoMovieName>{cast.slice(0, 4).map
+                                            ((casts: any) => casts.name).join(", ")}</S.InfoMovieName>
+                                    </S.Overview>
+                                    <S.Overview>
+                                        <S.InfoName>Genres: </S.InfoName>
+                                        <S.InfoMovieName>{detail?.genres?.length ? (
+                                            <S.InfoMovieName>
                                                 {(detail.genres || []).map
-                                                    ((genre: any) => genre.name).join("/")}
-                                            </S.Genre>
-                                        ) : null}
-                                    </S.Genres>
-                                    <S.DummyDiv></S.DummyDiv>
-                                    <S.SumDiv>
-                                        <S.InfoDate>Summary</S.InfoDate>
-                                        <S.InfoOverview>{detail?.overview}</S.InfoOverview>
-                                    </S.SumDiv>
-                                </S.ModalInfo>
-                            </S.ModalContainer>
-                            <S.InfoModalContainer>
-                                <S.OverviewTitle>Info</S.OverviewTitle>
-                                <S.Overview>
-                                    <S.InfoName>Title: </S.InfoName>
-                                    <S.InfoMovieName>{part === "movie" ? detail?.title : detail?.name}</S.InfoMovieName>
-                                </S.Overview>
-                                <S.Overview>
-                                    <S.InfoName>Cast: </S.InfoName>
-                                    <S.InfoMovieName>{cast.slice(0, 4).map
-                                        ((casts: any) => casts.name).join(", ")}</S.InfoMovieName>
-                                </S.Overview>
-                                <S.Overview>
-                                    <S.InfoName>Genres: </S.InfoName>
-                                    <S.InfoMovieName>{detail?.genres?.length ? (
+                                                    ((genre: any) => genre.name).join(", ")}
+                                            </S.InfoMovieName>
+                                        ) : null}</S.InfoMovieName>
+                                    </S.Overview>
+                                    <S.Overview>
+                                        <S.InfoName>Rating: </S.InfoName>
                                         <S.InfoMovieName>
-                                            {(detail.genres || []).map
-                                                ((genre: any) => genre.name).join(", ")}
+                                            <Rating
+                                                readonly
+                                                initialValue={detail?.vote_average / 2}
+                                                size={20}
+                                                transition
+                                                emptyColor="gray"
+                                            />
+                                            {Math.round(detail?.vote_average * 10) / 10}
                                         </S.InfoMovieName>
-                                    ) : null}</S.InfoMovieName>
-                                </S.Overview>
-                                <S.Overview>
-                                    <S.InfoName>Rating: </S.InfoName>
-                                    <S.InfoMovieName>
-                                        <Rating
-                                            readonly
-                                            initialValue={detail?.vote_average / 2}
-                                            size={20}
-                                            transition
-                                            emptyColor="gray"
-                                        />
-                                        {Math.round(detail?.vote_average * 10) / 10}
-                                    </S.InfoMovieName>
-                                </S.Overview>
-                            </S.InfoModalContainer>
-                        </S.ModalContainerWrap>
-                        <S.ModalContainerWrap>
-                            <S.ModalContainers>
-                                {recommends ? (
-                                    <>
-                                        <S.OverviewTitle>Recommends</S.OverviewTitle>
-                                        <div>
-                                            <S.RecommendWrap>
-                                                {recommends?.map((recommend: any) => (
-                                                    <S.RecommendSlider>
-                                                        <S.RecommendImg
-                                                            src={makeImagePath(
-                                                                recommend.poster_path
-                                                            )}
-                                                        />
-                                                        <S.RecommendTitle
-                                                            key={recommend.id}
-                                                            onClick={() =>
-                                                                modalOpen(part, recommend.id, id)
-                                                            }
-                                                        >{part === "movie" ? recommend?.title : recommend?.name}
-                                                        </S.RecommendTitle>
-                                                    </S.RecommendSlider>
-                                                ))}
-                                            </S.RecommendWrap>
-                                        </div>
-                                    </>
-                                ) : (
-                                    <>
-                                        <S.OverviewTitle>No Recommends</S.OverviewTitle>
-                                    </>
-                                )}
-                            </S.ModalContainers>
-                            <S.CopyContainer>
-                                {cast ? (
-                                    <>
-                                        <S.OverviewTitle>Cast</S.OverviewTitle>
-                                        <div>
-                                            <S.RecommendWrap>
-                                                {cast.slice(0, 4).map((casts: any) => (
-                                                    <S.RecommendSlider>
-                                                        <S.RecommendImg
-                                                            src={makeImagePath(
-                                                                casts?.profile_path,
-                                                                "w500"
-                                                            )}
-                                                        />
-                                                        <S.RecommendTitle>{casts?.name}</S.RecommendTitle>
-                                                    </S.RecommendSlider>
-                                                ))}
-                                            </S.RecommendWrap>
-                                        </div>
-                                    </>
-                                ) : null}
-                            </S.CopyContainer>
-                        </S.ModalContainerWrap>
-                    </S.Wrap>
-                </>
-            ) : null}
+                                    </S.Overview>
+                                </S.InfoModalContainer>
+                            </S.ModalContianerWrap>
+                            <S.ModalContianerWrap>
+
+                            </S.ModalContianerWrap>
+                            <S.ModalContianerWrap>
+                                <S.ModalContainers>
+                                    {recommends ? (
+                                        <>
+                                            <S.OverviewTitle>Recommends</S.OverviewTitle>
+                                            <div>
+                                                <S.RecommendWrap>
+                                                    {recommends?.map((recommend: any) => (
+                                                        <S.RecommendSlider>
+                                                            <S.RecommendImg
+                                                                src={makeImagePath(
+                                                                    recommend.poster_path
+                                                                )}
+                                                            />
+                                                            <S.RecommendTitle
+                                                                key={recommend.id}
+                                                                onClick={() =>
+                                                                    modalOpen(part, recommend.id, id)
+                                                                }
+                                                            >{part === "movie" ? recommend?.title : recommend?.name}
+                                                            </S.RecommendTitle>
+                                                        </S.RecommendSlider>
+                                                    ))}
+                                                </S.RecommendWrap>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <S.OverviewTitle>No Recommends</S.OverviewTitle>
+                                        </>
+                                    )}
+                                </S.ModalContainers>
+                                <S.CopyContainer>
+                                    {cast ? (
+                                        <>
+                                            <S.OverviewTitle>Cast</S.OverviewTitle>
+                                            <div>
+                                                <S.RecommendWrap>
+                                                    {cast.slice(0, 4).map((casts: any) => (
+                                                        <S.RecommendSlider>
+                                                            <S.RecommendImg
+                                                                src={makeImagePath(
+                                                                    casts?.profile_path,
+                                                                    "w500"
+                                                                )}
+                                                            />
+                                                            <S.RecommendTitle>{casts?.name}</S.RecommendTitle>
+                                                        </S.RecommendSlider>
+                                                    ))}
+                                                </S.RecommendWrap>
+                                            </div>
+                                        </>
+                                    ) : null}
+                                </S.CopyContainer>
+                            </S.ModalContianerWrap>
+                        </S.Wrap>
+                    </>
+                ) : null}
+            </AnimatePresence>
         </>
     )
 };
