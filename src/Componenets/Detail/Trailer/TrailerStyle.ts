@@ -19,7 +19,7 @@ export const Player = styled(ReactPlayer)`
 
 export const VolumeDiv = styled.div`
     position: relative;
-    bottom: 50px;
+    bottom: 38px;
     z-index: 30;
     opacity: 0.5;
     margin-left: 10px;
