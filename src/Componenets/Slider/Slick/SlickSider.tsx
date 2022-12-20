@@ -29,7 +29,7 @@ function SlickSlider({ settings, movies, part, id }: IProp) {
             {movies
                 ?.map((movie) => (
                     <S.Movie key={movie.id}>
-                        <S.MovieImage src={makeImagePath(movie.poster_path)} />
+                        <S.MovieImage src={makeImagePath(movie.poster_path)} onClick={() => boxClick(part, movie.id, id)} />
                         <S.MovieTitleWrap>
                             <S.MovieTitle
                                 onClick={() => boxClick(part, movie.id, id)}

@@ -63,7 +63,6 @@ function Detail({ detail, recommend, cast }: IModal) {
                                 <S.ModalImage src={makeImagePath(detail?.poster_path)} />
                                 <S.ModalInfo>
                                     <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
-
                                     <S.Genres>
                                         <S.InfoDate>{part === "movie" ? detail?.release_date?.slice(0, 4) : detail?.first_air_date?.slice(0, 4)}</S.InfoDate>
                                         {detail?.genres?.length ? (
@@ -105,6 +104,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                                     <S.InfoMovieName>
                                         <Rating
                                             readonly
+                                            style={{ "marginBottom": "3px" }}
                                             initialValue={detail?.vote_average / 2}
                                             size={20}
                                             transition

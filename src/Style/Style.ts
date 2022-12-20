@@ -56,7 +56,7 @@ table {
   caret-color: transparent;
 }
 body {
-  font-weight: 300;
+  font-weight: 400;
   font-family: 'Source Sans Pro', sans-serif;
   color: #fafafa;
   background-color: #181818;

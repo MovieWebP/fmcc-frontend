@@ -36,16 +36,19 @@ export const ModalContainerWrap = styled.div`
     height: fit-content;
     align-items: flex-start;
     margin-top: 5rem;
-    @media screen and (max-width: 2600px) and (min-width: 2000px) {
+    /* @media screen and (max-width: 2000px) and (min-width: 1500px) {
+        max-width: 65%;
+    }; */
+    @media screen and (max-width: 2600px) and (min-width: 2001px) {
         max-width: 55%;
     };
 `;
 
 export const ModalContainer = styled.div`   
     display: flex;
-    width: fit-content;
+    width: 40rem;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 0;
 `;
 
 export const ModalContainers = styled(ModalContainer)`
@@ -55,17 +58,21 @@ export const ModalContainers = styled(ModalContainer)`
 export const CopyContainer = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
+    /* border: 1px solid red; */
 `;
 
 export const InfoModalContainer = styled.div`
-    width: 450px;
-    padding: 20px;
+    width: 28rem;
+    padding: 20px 0;
+    /* border: 1px solid red; */
 `;
 
 export const ModalImage = styled.img`
-    width: 200px;
-    height: 280px;
+    width: 11rem;
     border-radius: 10px;
+    @media screen and (max-width: 2600px) and (min-width: 2000px) {
+        width: 13rem;
+    };
 `
 
 export const ModalInfo = styled.div`
@@ -73,7 +80,6 @@ export const ModalInfo = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 18vw;
     overflow: scroll;
 `;
 
@@ -81,7 +87,7 @@ export const InfoTitle = styled.span`
     width: fit-content;
     height: fit-content;
     color: ${(props) => props.theme.white};
-    font-size: 28px;
+    font-size: 2.3rem;
     font-weight: 700;
     margin-bottom: 20px;
     text-shadow: rgba(0, 0, 0, 0.35) 5px 5px 5px;
@@ -90,8 +96,7 @@ export const InfoTitle = styled.span`
 export const InfoDate = styled.span`
     width: fit-content;
     height: fit-content;
-    font-size: 16px;
-    font-weight: 350;
+    font-size: 1.1rem;
     color: ${(props) => props.theme.lightPurple};
 `;
 
@@ -100,8 +105,7 @@ export const Genres = styled.span`
     height: fit-content;
     margin-top: 5px;
     margin-bottom: 5px;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: .85rem;
     color: ${(props) => props.theme.white};
 `;
 
@@ -140,7 +144,7 @@ export const Video = styled.div`
 
 export const OverviewTitle = styled.h1`
     color: ${(props) => props.theme.lightPurple};
-    font-size: 28px;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 20px;
 `;
@@ -153,15 +157,22 @@ export const InfoOverview = styled.div`
 `;
 
 export const Overview = styled.div`
+    display: flex;
+    align-items: flex-start;
     margin-bottom: 10px;
 `;
 
-export const InfoName = styled.span`
+export const InfoName = styled.h3`
+    margin-right: 5px;
+    font-size: .85rem;
     opacity: 0.7;
 `;
 
-export const InfoMovieName = styled.span`
-    font-weight: 400;
+
+export const InfoMovieName = styled.div`
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
     color: ${(props) => props.theme.white};
 `;
 
