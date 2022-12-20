@@ -56,9 +56,9 @@ function Trailer({ id, part }: ITrailer) {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     />
                     {volume ? (
-                        <S.VolumDiv><S.Volum as={VolumeOff} onClick={handleVolume} /></S.VolumDiv>
+                        <S.VolumeDiv><S.Volume as={VolumeOff} onClick={handleVolume} /></S.VolumeDiv>
                     ) : (
-                        <S.VolumDiv><S.Volum as={VolumeUp} onClick={handleVolume} /></S.VolumDiv>
+                        <S.VolumeDiv><S.Volume as={VolumeUp} onClick={handleVolume} /></S.VolumeDiv>
                     )}
                 </S.Wrapper>
             ) : null}

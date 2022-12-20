@@ -3,7 +3,7 @@ import * as S from "./SlideStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
-import SlickSider from "./Slick/SlickSider";
+import SlickSlider from "./Slick/SlickSider";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
@@ -69,44 +69,38 @@ function Slide({ id, part, title, movies }: IProps) {
         draggable: true,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
-        // onSwipe: ,
-        responsive: [ // 반응형 웹 구현 옵션
+        responsive: [
             {
-                breakpoint: 2330, //화면 사이즈 960px일 때
+                breakpoint: 2570,
                 settings: {
-                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
                     slidesToShow: 8,
                     slidesToScroll: 8,
                 }
             },
             {
-                breakpoint: 2000, //화면 사이즈 960px일 때
+                breakpoint: 2000,
                 settings: {
-                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
                     slidesToShow: 7,
                     slidesToScroll: 7,
                 }
             },
             {
-                breakpoint: 1800, //화면 사이즈 960px일 때
+                breakpoint: 1800,
                 settings: {
-                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
                     slidesToShow: 5.5,
                     slidesToScroll: 5,
                 }
             },
             {
-                breakpoint: 1300, //화면 사이즈 960px일 때
+                breakpoint: 1300,
                 settings: {
-                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
                     slidesToShow: 4.5,
                     slidesToScroll: 4,
                 }
             },
             {
-                breakpoint: 800, //화면 사이즈 960px일 때
+                breakpoint: 800,
                 settings: {
-                    //위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
                     slidesToShow: 3.5,
                     slidesToScroll: 3,
                 }
@@ -162,7 +156,7 @@ function Slide({ id, part, title, movies }: IProps) {
                                 ))}
                         </>
                     ) : (
-                        <SlickSider
+                        <SlickSlider
                             settings={{ ...settings }}
                             id={id}
                             part={part}

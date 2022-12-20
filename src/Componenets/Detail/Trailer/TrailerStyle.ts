@@ -9,17 +9,18 @@ export const Wrapper = styled.div`
     height: 28rem;
     top: 0;
     object-fit: contain; 
+    @media screen and (max-width: 2600px) and (min-width: 2000px) {
+        height: 33rem;
+    };
 `;
 
 export const Player = styled(ReactPlayer)`
 `;
 
-export const VolumDiv = styled.div`
+export const VolumeDiv = styled.div`
     position: relative;
-    /* left: 0; */
     bottom: 50px;
     z-index: 30;
-    border: 1px solid red;
     opacity: 0.5;
     margin-left: 10px;
         width: fit-content;
@@ -34,7 +35,7 @@ export const VolumDiv = styled.div`
         }
     `;
 
-export const Volum = styled.svg`
+export const Volume = styled.svg`
     position: relative;
     z-index: 30;
     padding: 5px;

@@ -16,7 +16,7 @@ interface IProp {
     id: string
 }
 
-function SlickSider({ settings, movies, part, id }: IProp) {
+function SlickSlider({ settings, movies, part, id }: IProp) {
     const [modalActive, setModalActive] = useRecoilState(modalState);
     const navigate = useNavigate();
     const boxClick = (part: string, id: number, sliderId: string) => {
@@ -44,4 +44,4 @@ function SlickSider({ settings, movies, part, id }: IProp) {
     )
 }
 
-export default SlickSider
+export default SlickSlider;

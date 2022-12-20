@@ -34,7 +34,6 @@ function Movies() {
                         recommend={recommend ?? []}
                         cast={cast?.cast ?? []}
                     />
-                    <S.Doc>2023 choi138.tk, All rights reserved.</S.Doc>
                 </>
             )}
         </>

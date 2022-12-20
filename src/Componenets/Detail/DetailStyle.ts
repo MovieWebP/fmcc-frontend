@@ -7,22 +7,22 @@ export const Wrap = styled.div`
     width: 100%;
     height: fit-content;
     align-items: center;
-    position: relative;
+    position: absolute;
 `;
 
 export const WrapImage = styled.div < { bgPhoto: string }> `
-background-image: linear-gradient(
-    rgba(17,17,17, 0.5),
-    rgba(17,17,17, 0.5),
-    #181818
-    ), url(${(props) => props.bgPhoto});
-background-size: cover;
-background-position: center;
-background-attachment: fixed; 
-width: 100%;
-height: 100%;
-filter: blur(4px);
-position: absolute;
+    background-image: linear-gradient(
+        rgba(17,17,17, 0.5),
+        rgba(17,17,17, 0.5),
+        #181818
+        ), url(${(props) => props.bgPhoto});
+    background-position: center;
+    background-attachment: fixed; 
+    height: 100%;
+    filter: blur(4px);
+    position: absolute;
+    background-size: cover;
+    width: 100%;
 `;
 
 export const ModalContainerWrap = styled.div`   
@@ -36,6 +36,9 @@ export const ModalContainerWrap = styled.div`
     height: fit-content;
     align-items: flex-start;
     margin-top: 5rem;
+    @media screen and (max-width: 2600px) and (min-width: 2000px) {
+        max-width: 55%;
+    };
 `;
 
 export const ModalContainer = styled.div`   
@@ -55,22 +58,8 @@ export const CopyContainer = styled.div`
 `;
 
 export const InfoModalContainer = styled.div`
-    /* padding-top: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    width: 20vw;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; // flex-wrap: wrap 해석: flex item이 한 줄에 다 들어가지 않을 때, 다음 줄로 넘어가도록 함
-    white-space: normal; // white-space: normal 해석: 공백을 무시하고, 모든 공백을 하나의 공백으로 처리
-    border: 1px solid red; */
-    /* padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 0px; */
     width: 450px;
     padding: 20px;
-    /* border: 1px solid red; */
 `;
 
 export const ModalImage = styled.img`
@@ -138,6 +127,9 @@ export const ModalClips = styled.div < { bgPhoto: string } >`
     margin-left: 10px;
     border-radius: 10px;
     margin-bottom: 20px;
+    @media screen and (max-width: 2600px) and (min-width: 2000px) {
+        height: 33rem;
+    };
 `;
 
 export const Video = styled.div`
@@ -224,3 +216,12 @@ export const RecommendTitle = styled.span`
         cursor: default;
     }
 `;
+
+export const Doc = styled.div`
+    position: relative;
+    bottom: 0;
+    font-weight: 400;
+    font-size: .8rem;
+    text-align: center;
+    margin-bottom: 10px;
+`

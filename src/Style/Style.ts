@@ -70,7 +70,12 @@ a {
   border: solid 1px #ff0000
 } */
 html,body{
-@media screen and (min-width: 1500px) {
+
+@media screen and (max-width: 2600px) and (min-width: 2000px) {
+    font-size: 18px;
+};
+
+@media screen and (max-width: 2000px) and (min-width: 1500px) {
     font-size: 16px;
 };
 

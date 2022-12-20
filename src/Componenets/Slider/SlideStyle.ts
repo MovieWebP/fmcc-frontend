@@ -48,6 +48,7 @@ export const Title = styled.h3`
 export const Slider = styled(motion.div)`
     width: 100%;
     text-align: center;
+    /* border: 1px solid blue; */
     align-items: center;
     justify-content: center;
     ::-webkit-scrollbar {
@@ -79,7 +80,7 @@ export const MovieTitleWrap = styled.div`
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    @media screen and (max-width: 1500px) and (min-width: 1200px) {
+    @media screen and (min-width: 1800px) {
         display: flex;
         justify-content: center;
     };
@@ -88,8 +89,7 @@ export const MovieTitleWrap = styled.div`
 export const MovieImage = styled.img`
     width: 11rem;
     border-radius: .8rem;
-    @media screen and (max-width: 1500px) and (min-width: 1200px) {
-        width: 10rem;
+    @media screen and (min-width: 1800px) {
         margin-left: auto;
         margin-right: auto;
     };
@@ -116,8 +116,5 @@ export const MovieTitle = styled.p`
     }
     @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 1.5rem;
-    };
-    @media screen and (max-width: 1500px) and (min-width: 1200px) {
-        text-align: center;
     };
 `;

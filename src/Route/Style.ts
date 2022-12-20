@@ -28,10 +28,11 @@ export const SliderTitle = styled(Link)`
 export const Doc = styled.div`
     position: relative;
     bottom: 0;
-    font-weight: 350;
-    font-size: .7rem;
+    font-weight: 400;
+    font-size: .8rem;
     text-align: center;
-`
+    margin-bottom: 10px;
+`;
 
 export const Title = styled.h1`
     font-size: 5rem;
