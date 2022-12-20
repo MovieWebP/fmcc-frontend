@@ -52,7 +52,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                     <>
                         <S.Wrap>
                             <S.WrapImage bgPhoto={makeImagePath(detail?.backdrop_path)}></S.WrapImage>
-                            <S.ModalContianerWrap>
+                            <S.ModalContainerWrap>
                                 <S.ModalClips bgPhoto={makeImagePath(
                                     detail?.backdrop_path
                                 )}>
@@ -60,7 +60,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                                         <Trailer part={part} id={id} />
                                     </S.Video>
                                 </S.ModalClips>
-                                <S.ModalContianer>
+                                <S.ModalContainer>
                                     <S.ModalImage src={makeImagePath(detail?.poster_path)} />
                                     <S.ModalInfo>
                                         <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
@@ -80,7 +80,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                                             <S.InfoOverview>{detail?.overview}</S.InfoOverview>
                                         </S.SumDiv>
                                     </S.ModalInfo>
-                                </S.ModalContianer>
+                                </S.ModalContainer>
                                 <S.InfoModalContainer>
                                     <S.OverviewTitle>Info</S.OverviewTitle>
                                     <S.Overview>
@@ -115,11 +115,8 @@ function Detail({ detail, recommend, cast }: IModal) {
                                         </S.InfoMovieName>
                                     </S.Overview>
                                 </S.InfoModalContainer>
-                            </S.ModalContianerWrap>
-                            <S.ModalContianerWrap>
-
-                            </S.ModalContianerWrap>
-                            <S.ModalContianerWrap>
+                            </S.ModalContainerWrap>
+                            <S.ModalContainerWrap>
                                 <S.ModalContainers>
                                     {recommends ? (
                                         <>
@@ -173,7 +170,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                                         </>
                                     ) : null}
                                 </S.CopyContainer>
-                            </S.ModalContianerWrap>
+                            </S.ModalContainerWrap>
                         </S.Wrap>
                     </>
                 ) : null}

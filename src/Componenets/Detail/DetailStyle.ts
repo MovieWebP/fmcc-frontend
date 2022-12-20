@@ -7,7 +7,7 @@ export const Wrap = styled.div`
     width: 100%;
     height: fit-content;
     align-items: center;
-    position: absolute;
+    position: relative;
 `;
 
 export const WrapImage = styled.div < { bgPhoto: string }> `
@@ -25,28 +25,27 @@ filter: blur(4px);
 position: absolute;
 `;
 
-export const ModalContianerWrap = styled.div`   
+export const ModalContainerWrap = styled.div`   
     display: flex;
     justify-content: space-between;
     transition: all 0.5s ease-in-out;
     position: relative;
-    top: 100px;
-    width: 100rem;
-    max-width: 75rem;
+    width: 100%;
+    max-width: 75%;
     flex-wrap: wrap;
     height: fit-content;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-top: 5rem;
 `;
 
-export const ModalContianer = styled.div`   
+export const ModalContainer = styled.div`   
     display: flex;
     width: fit-content;
     justify-content: space-between;
     padding: 20px;
 `;
 
-export const ModalContainers = styled(ModalContianer)`
+export const ModalContainers = styled(ModalContainer)`
     flex-direction: column; 
 `;
 
@@ -135,7 +134,7 @@ export const ModalClips = styled.div < { bgPhoto: string } >`
     background-size: cover;
     box-shadow: 3px 10px 10px rgba(0,0,0,0.3);
     width: 100%;
-    height: 400px;
+    height: 28rem;
     margin-left: 10px;
     border-radius: 10px;
     margin-bottom: 20px;

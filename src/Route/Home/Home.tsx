@@ -97,7 +97,7 @@ function Home() {
                             movies={popularTv?.results || []}
                         />
                     </S.SliderWrap>
-                    <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
+                    <S.Doc>2022 choi138.tk, All rights reserved.</S.Doc>
                 </>
             )}
         </>

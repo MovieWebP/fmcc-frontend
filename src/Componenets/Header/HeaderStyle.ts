@@ -10,6 +10,7 @@ export const NavBar = styled(Navbar)`
     margin: 0;
     padding: 0;
     padding: 5px;
+    backdrop-filter: blur(5px);
     background-color: rgba(0,0,0,0.5);
     display: flex;
     justify-content: space-between;
@@ -20,7 +21,7 @@ export const NavBar = styled(Navbar)`
     width: 100%;
     top: 0;
     height: fit-content;
-    `;
+`;
 
 export const MenuWrap = styled(Container)`
     flex-wrap: nowrap;

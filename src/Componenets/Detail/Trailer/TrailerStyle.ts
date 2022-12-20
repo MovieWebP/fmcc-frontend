@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     width: 100%;
     right: 0;
     left: 0;
-    height: 400px;
+    height: 28rem;
     top: 0;
     object-fit: contain; 
 `;
@@ -15,11 +15,12 @@ export const Player = styled(ReactPlayer)`
 `;
 
 export const VolumDiv = styled.div`
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    opacity: 0.5;
+    position: relative;
+    /* left: 0; */
+    bottom: 50px;
     z-index: 30;
+    border: 1px solid red;
+    opacity: 0.5;
     margin-left: 10px;
         width: fit-content;
         svg{
@@ -35,15 +36,8 @@ export const VolumDiv = styled.div`
 
 export const Volum = styled.svg`
     position: relative;
+    z-index: 30;
     padding: 5px;
     border-radius: 50%;
     border: 1px solid white;
-`;
-
-export const ModalTitle = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
 `;

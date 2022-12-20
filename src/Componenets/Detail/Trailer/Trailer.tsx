@@ -60,7 +60,6 @@ function Trailer({ id, part }: ITrailer) {
                     ) : (
                         <S.VolumDiv><S.Volum as={VolumeUp} onClick={handleVolume} /></S.VolumDiv>
                     )}
-                    <S.ModalTitle />
                 </S.Wrapper>
             ) : null}
         </>
