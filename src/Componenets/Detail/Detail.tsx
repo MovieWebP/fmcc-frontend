@@ -118,15 +118,14 @@ function Detail({ detail, recommend, cast }: IModal) {
                                                 readonly
                                                 style={{ "marginBottom": "3px" }}
                                                 initialValue={detail?.vote_average / 2}
-                                                size={20}
                                                 transition
+                                                size={13}
                                                 emptyColor="gray"
                                             />
                                             {Math.round(detail?.vote_average * 10) / 10}
                                         </S.InfoMovieName>
                                     </S.Overview>
                                 </S.InfoModalContainer>)}
-
                         </S.ModalContainerWrap>
                         <S.ModalContainerWrapBottom>
                             <S.CopyContainer>

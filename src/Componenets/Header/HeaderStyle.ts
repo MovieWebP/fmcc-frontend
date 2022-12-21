@@ -164,7 +164,8 @@ export const Menu2Wrap = styled(MenuWrap)`
         width: 38vw;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 43vw;
+        width: 50vw;
+        margin: 0;
     };
 `;
 

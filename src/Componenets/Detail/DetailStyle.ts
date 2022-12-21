@@ -38,19 +38,22 @@ export const ModalContainerWrapBottom = styled.div`
     align-items: flex-start;
     margin-top: 5rem;
     @media screen and (max-width: 2600px) and (min-width: 2001px) {
-        border: 1px solid red;
         max-width: 55%;
     };
+    @media screen and (max-width: 700px) and (min-width: 500px) {
+        width: 100%;
+        max-width: 90%;
+    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        /* margin-top: 7rem; */
-        margin-top: 0;
+        justify-content: center;
         max-width: 90%;
     };
 `;
 
 export const ModalContainerWrap = styled(ModalContainerWrapBottom)`  
-    @media screen and (max-width: 500px) and (min-width: 300px) {
+    @media screen and (max-width: 533px) and (min-width: 300px) {
         margin-top: 7rem;
+        /* justify-content: center; */
     };
 `;
 
@@ -59,18 +62,33 @@ export const ModalContainer = styled.div`
     width: 40rem;
     justify-content: space-between;
     padding: 20px 0;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 100%;
+    };
 `;
 
 export const ModalContainers = styled(ModalContainer)`
     width: fit-content;
     flex-direction: column;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
+    @media screen and (max-width: 500px) and (min-width: 401px) {
+        margin-top: 3rem;
+        padding: 4px 3rem;
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0.5);
+    };
+    @media screen and (max-width: 400px) and (min-width: 300px) {
         margin-top: 3rem;
     };
 `;
 
 export const CopyContainer = styled.div`
-    @media screen and (max-width: 500px) and (min-width: 300px) {
+    @media screen and (max-width: 500px) and (min-width: 401px) {
+        margin-top: 5rem;
+        padding: 4px 3rem;
+        border-radius: 10px;
+        background-color: rgba(0,0,0,0.5);
+    };
+    @media screen and (max-width: 400px) and (min-width: 300px) {
         margin-top: 5rem;
     };
 `;
@@ -104,8 +122,11 @@ export const InfoTitle = styled.span`
     color: ${(props) => props.theme.white};
     font-size: 2.3rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 1.3rem; 
     text-shadow: rgba(0, 0, 0, 0.35) 5px 5px 5px;
+    @media screen and (max-width: 400px) and (min-width: 300px) {
+        margin-bottom: 10px; 
+    };
 `;
 
 export const InfoDate = styled.span`
@@ -114,6 +135,7 @@ export const InfoDate = styled.span`
     @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 1.5rem;
     };
+
 `;
 
 export const Genres = styled.span`
@@ -163,13 +185,14 @@ export const Video = styled.div`
 
 
 export const OverviewTitle = styled.h1`
-    color: ${(props) => props.theme.lightPurple};
+    color: ${(props) => props.theme.white};
     font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 1.3rem;
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        font-size: 2.3rem;
+        font-size: 2.5rem;
         text-align: center;
+        margin-bottom: 30px;
     };
 `;
 
@@ -179,7 +202,7 @@ export const InfoOverview = styled.div`
     min-width: 100px;
     margin-top: 5px;
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     };
 `;
 
@@ -207,11 +230,13 @@ export const InfoMovieName = styled.div`
 export const RecommendWrap = styled.div`
     display: flex;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); // grid-template-columns: repeat(2, 1fr) 해석: 2개의 열을 만들고, 각 열의 너비는 1fr
+    grid-template-columns: repeat(2, 1fr); 
     grid-gap: 4rem;
     flex-wrap: wrap;
     align-items: flex-start;
-    margin-bottom: 20px;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        margin-bottom: 20px;
+    };
 `;
 
 export const RecommendSlider = styled.div`
@@ -231,7 +256,7 @@ export const RecommendImg = styled.img`
     width: 10rem;
     border-radius: 10px;
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 13rem;
+        width: 15rem;
     };
 `;
 
@@ -246,6 +271,10 @@ export const CastTitle = styled.span`
     &:hover{
         cursor: default;
     }
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        margin-top: 5px;
+        font-size: 1.3rem;
+    };
 `;
 
 export const RecommendTitle = styled(CastTitle)`
@@ -261,4 +290,7 @@ export const Doc = styled.div`
     font-size: .8rem;
     text-align: center;
     margin-bottom: 10px;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        margin-top: 10px;
+    };
 `
