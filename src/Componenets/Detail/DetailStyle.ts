@@ -11,11 +11,8 @@ export const Wrap = styled.div`
 `;
 
 export const WrapImage = styled.div < { bgPhoto: string }> `
-    background-image: linear-gradient(
-        rgba(17,17,17, 0.5),
-        rgba(17,17,17, 0.5),
-        #181818
-        ), url(${(props) => props.bgPhoto});
+    background-image: url(${(props) => props.bgPhoto});
+    /* opacity: 0.3; */
     background-position: center;
     background-attachment: fixed; 
     align-self: center;
@@ -37,11 +34,13 @@ export const ModalContainerWrapBottom = styled.div`
     height: fit-content;
     align-items: flex-start;
     margin-top: 5rem;
+    margin-bottom: 3rem;
     @media screen and (max-width: 2600px) and (min-width: 2001px) {
         max-width: 55%;
     };
-    @media screen and (max-width: 700px) and (min-width: 500px) {
+    @media screen and (max-width: 835px) and (min-width: 500px) {
         width: 100%;
+        justify-content: center;
         max-width: 90%;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
@@ -51,17 +50,22 @@ export const ModalContainerWrapBottom = styled.div`
 `;
 
 export const ModalContainerWrap = styled(ModalContainerWrapBottom)`  
-    @media screen and (max-width: 533px) and (min-width: 300px) {
+    margin-bottom: 0;
+    @media screen and (max-width: 835px) and (min-width: 300px) {
+        justify-content: space-between;
         margin-top: 7rem;
-        /* justify-content: center; */
     };
 `;
 
 export const ModalContainer = styled.div`   
     display: flex;
     width: 40rem;
-    justify-content: space-between;
+    /* border: 1px solid red; */
     padding: 20px 0;
+    justify-content: space-between;
+    @media screen and (max-width: 1500px) and (min-width: 1100px) {
+        width: 35rem;
+    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 100%;
     };
@@ -70,8 +74,10 @@ export const ModalContainer = styled.div`
 export const ModalContainers = styled(ModalContainer)`
     width: fit-content;
     flex-direction: column;
-    @media screen and (max-width: 500px) and (min-width: 401px) {
-        margin-top: 3rem;
+    padding: 0;
+    /* border: 1px solid red; */
+    margin-top: 3rem;
+    @media screen and (max-width: 835px) and (min-width: 401px) {
         padding: 4px 3rem;
         border-radius: 10px;
         background-color: rgba(0,0,0,0.5);
@@ -79,10 +85,14 @@ export const ModalContainers = styled(ModalContainer)`
     @media screen and (max-width: 400px) and (min-width: 300px) {
         margin-top: 3rem;
     };
+    /* 835 */
 `;
 
 export const CopyContainer = styled.div`
-    @media screen and (max-width: 500px) and (min-width: 401px) {
+    padding: 4px 0;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.3);
+    @media screen and (max-width: 835px) and (min-width: 401px) {
         margin-top: 5rem;
         padding: 4px 3rem;
         border-radius: 10px;
@@ -94,8 +104,9 @@ export const CopyContainer = styled.div`
 `;
 
 export const InfoModalContainer = styled.div`
-    width: 28rem;
+    width: 24rem;
     padding: 20px 0;
+    /* border: 1px solid red; */
 `;
 
 export const ModalImage = styled.img`
@@ -189,6 +200,7 @@ export const OverviewTitle = styled.h1`
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 1.3rem;
+    margin-left: 20px;
     @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 2.5rem;
         text-align: center;
@@ -228,9 +240,9 @@ export const InfoMovieName = styled.div`
 
 
 export const RecommendWrap = styled.div`
-    display: flex;
+    margin: 0 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(6, 1fr); 
     grid-gap: 4rem;
     flex-wrap: wrap;
     align-items: flex-start;

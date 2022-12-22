@@ -35,7 +35,8 @@ function Detail({ detail, recommend, cast }: IModal) {
         navigate(`/${part}/${sliderId}/${id}`);
     };
 
-    const recommends = recommend?.results?.slice(0, 4);
+    const recommends = recommend?.results?.slice(0, 6);
+    const cates = cast.slice(0, 6);
 
     const [windowDimension, detectHW] = useState({ winWidth: window.innerWidth })
 
@@ -134,7 +135,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                                         <S.OverviewTitle>Cast</S.OverviewTitle>
                                         <div>
                                             <S.RecommendWrap>
-                                                {cast.slice(0, 4).map((casts: any) => (
+                                                {cates.map((casts: any) => (
                                                     <S.RecommendSlider>
                                                         <S.RecommendImg
                                                             src={makeImagePath(
