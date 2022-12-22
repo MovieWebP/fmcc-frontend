@@ -7,6 +7,7 @@ export const Wrap = styled.div`
     width: 100%;
     height: fit-content;
     align-items: center;
+    justify-content: center;
     position: absolute;
 `;
 
@@ -35,15 +36,19 @@ export const ModalContainerWrapBottom = styled.div`
     align-items: flex-start;
     margin-top: 5rem;
     margin-bottom: 3rem;
-    @media screen and (max-width: 2600px) and (min-width: 2001px) {
+    @media screen and (max-width: 2600px) and (min-width: 2350px) {
         max-width: 55%;
     };
+    @media screen and (max-width: 2350px) and (min-width: 2000px) {
+        max-width: 62%;
+    };
+    @media screen and  (max-width: 1410px) and (min-width: 1256px) {
+        max-width: 70%;
+    };
     @media screen and (max-width: 835px) and (min-width: 500px) {
-        width: 100%;
-        justify-content: center;
         max-width: 90%;
     };
-    @media screen and (max-width: 500px) and (min-width: 300px) {
+    @media screen and (max-width: 587px) and (min-width: 300px) {
         justify-content: center;
         max-width: 90%;
     };
@@ -51,7 +56,8 @@ export const ModalContainerWrapBottom = styled.div`
 
 export const ModalContainerWrap = styled(ModalContainerWrapBottom)`  
     margin-bottom: 0;
-    @media screen and (max-width: 835px) and (min-width: 300px) {
+    
+    @media screen and (min-width: 300px) {
         justify-content: space-between;
         margin-top: 7rem;
     };
@@ -62,8 +68,8 @@ export const ModalContainer = styled.div`
     width: 40rem;
     padding: 20px 0;
     justify-content: space-between;
-    @media screen and (max-width: 1500px) and (min-width: 1100px) {
-        width: 35rem;
+    @media screen and (max-width: 1410px) and (min-width: 1100px) {
+        width: 32rem;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 100%;
@@ -74,29 +80,25 @@ export const ModalContainers = styled(ModalContainer)`
     width: fit-content;
     flex-direction: column;
     padding: 0;
-    margin-top: 3rem;
-    @media screen and (max-width: 835px) and (min-width: 401px) {
-        padding: 4px 3rem;
-        border-radius: 10px;
-        background-color: rgba(0,0,0,0.5);
+    margin: 0;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        margin-top: 30px;
     };
-    @media screen and (max-width: 400px) and (min-width: 300px) {
-        margin-top: 3rem;
-    };
-    /* 835 */
 `;
 
 export const CopyContainer = styled.div`
     padding: 4px 0;
     border-radius: 10px;
-    @media screen and (max-width: 835px) and (min-width: 401px) {
-        margin-top: 5rem;
-        padding: 4px 3rem;
-        border-radius: 10px;
-        background-color: rgba(0,0,0,0.5);
+    @media screen and  (min-width: 1256px) {
+        margin-right: 3rem;
+        margin-bottom: 5rem;
     };
-    @media screen and (max-width: 400px) and (min-width: 300px) {
-        margin-top: 5rem;
+    @media screen and (max-width: 600px)and (min-width: 555px) {
+        margin-right: 2rem;
+        margin-bottom: 5rem;
+    };
+    @media screen and (max-width: 587px) and (min-width: 300px) {
+        margin-bottom: 5rem;
     };
 `;
 
@@ -243,8 +245,14 @@ export const RecommendWrap = styled.div`
     grid-gap: 4rem;
     flex-wrap: wrap;
     align-items: flex-start;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        margin-bottom: 20px;
+    @media screen and  (max-width: 1410px) and (min-width: 1256px) {
+        grid-template-columns: repeat(2, 1fr); 
+    };
+    @media screen and (max-width: 1255px) {
+        grid-template-columns: repeat(2, 1fr); 
+    };
+    @media screen and (max-width: 587px) and (min-width: 300px) {
+        grid-template-columns: repeat(2, 1fr); 
     };
 `;
 
@@ -255,8 +263,10 @@ export const RecommendSlider = styled.div`
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: baseline;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
+    @media screen and (max-width: 555px) and (min-width: 300px) {
         width: 18rem;
+        align-items: center;
+        justify-content: center;
     };
 `;
 
@@ -276,10 +286,16 @@ export const CastImageWrap = styled.div`
     overflow: hidden;
     display: flex;
     justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 15rem;
+        height: 15rem;
+    };
 `;
 
 export const CastImg = styled(RecommendImg)`
     width: 100%;
+    align-self: center;
 `;
 
 export const CastTitle = styled.span`   
