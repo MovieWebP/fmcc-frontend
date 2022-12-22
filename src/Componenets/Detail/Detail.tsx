@@ -137,12 +137,13 @@ function Detail({ detail, recommend, cast }: IModal) {
                                             <S.RecommendWrap>
                                                 {cates.map((casts: any) => (
                                                     <S.RecommendSlider>
-                                                        <S.RecommendImg
-                                                            src={makeImagePath(
-                                                                casts?.profile_path,
-                                                                "w500"
-                                                            )}
-                                                        />
+                                                        <S.CastImageWrap>
+                                                            <S.CastImg
+                                                                src={makeImagePath(
+                                                                    casts?.profile_path,
+                                                                )}
+                                                            />
+                                                        </S.CastImageWrap>
                                                         <S.CastTitle>{casts?.name}</S.CastTitle>
                                                     </S.RecommendSlider>
                                                 ))}

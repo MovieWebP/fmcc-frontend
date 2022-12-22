@@ -29,7 +29,7 @@ function Search() {
                 ) : (
                     <>
                         <S.SearchSliderWrap>
-                            <S.SliderTitle to="/movie">Movie</S.SliderTitle>
+                            <S.SliderTitle>Movie</S.SliderTitle>
                             <Slider
                                 id="searchMovie"
                                 movies={movies?.results ?? []}
@@ -37,7 +37,7 @@ function Search() {
                                 query="searchMovie"
                                 part="movie"
                             ></Slider>
-                            <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
+                            <S.SliderTitle>TV Shows</S.SliderTitle>
                             <Slider
                                 id="searchTv"
                                 movies={tv?.results ?? []}

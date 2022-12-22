@@ -20,12 +20,6 @@ function Header() {
         navigate(`/search?keyword=${data.keyword}`);
     }
 
-    // const [show, setShow] = useState(true);
-
-    // const onClick = () => {
-    //     setShow(!show)
-    // }
-
     return (
         <>
             <S.NavBar expand="md" variants="dark">

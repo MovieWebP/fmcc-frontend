@@ -55,7 +55,7 @@ function Home() {
                 <title>Home</title>
             </Helmet >
             {isLoading ? (
-                <S.SliderWrap>Loading...</S.SliderWrap>
+                <><S.SliderWrap>Loading...</S.SliderWrap></>
             ) : (
                 <>
                     <Banner
@@ -64,7 +64,7 @@ function Home() {
                         movies={nowPlaying?.results || []}
                     />
                     <S.SliderWrap>
-                        <S.SliderTitle to="/movie">Movie</S.SliderTitle>
+                        <S.SliderTitle>Movie</S.SliderTitle>
                         <Slide
                             id="nowPlaying"
                             part="movie"
@@ -81,7 +81,7 @@ function Home() {
                         />
                     </S.SliderWrap>
                     <S.SliderWrap>
-                        <S.SliderTitle to="/tv">TV Shows</S.SliderTitle>
+                        <S.SliderTitle>TV Shows</S.SliderTitle>
                         <Slide
                             id="airingToday"
                             part="tv"

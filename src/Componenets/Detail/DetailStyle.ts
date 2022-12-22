@@ -12,7 +12,7 @@ export const Wrap = styled.div`
 
 export const WrapImage = styled.div < { bgPhoto: string }> `
     background-image: url(${(props) => props.bgPhoto});
-    /* opacity: 0.3; */
+    opacity: 0.3;
     background-position: center;
     background-attachment: fixed; 
     align-self: center;
@@ -60,7 +60,6 @@ export const ModalContainerWrap = styled(ModalContainerWrapBottom)`
 export const ModalContainer = styled.div`   
     display: flex;
     width: 40rem;
-    /* border: 1px solid red; */
     padding: 20px 0;
     justify-content: space-between;
     @media screen and (max-width: 1500px) and (min-width: 1100px) {
@@ -75,7 +74,6 @@ export const ModalContainers = styled(ModalContainer)`
     width: fit-content;
     flex-direction: column;
     padding: 0;
-    /* border: 1px solid red; */
     margin-top: 3rem;
     @media screen and (max-width: 835px) and (min-width: 401px) {
         padding: 4px 3rem;
@@ -91,7 +89,6 @@ export const ModalContainers = styled(ModalContainer)`
 export const CopyContainer = styled.div`
     padding: 4px 0;
     border-radius: 10px;
-    background-color: rgba(0,0,0,0.3);
     @media screen and (max-width: 835px) and (min-width: 401px) {
         margin-top: 5rem;
         padding: 4px 3rem;
@@ -200,7 +197,7 @@ export const OverviewTitle = styled.h1`
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 1.3rem;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 2.5rem;
         text-align: center;
@@ -240,7 +237,7 @@ export const InfoMovieName = styled.div`
 
 
 export const RecommendWrap = styled.div`
-    margin: 0 20px;
+    /* margin: 0 20px; */
     display: grid;
     grid-template-columns: repeat(6, 1fr); 
     grid-gap: 4rem;
@@ -270,6 +267,19 @@ export const RecommendImg = styled.img`
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 15rem;
     };
+`;
+
+export const CastImageWrap = styled.div`
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+`;
+
+export const CastImg = styled(RecommendImg)`
+    width: 100%;
 `;
 
 export const CastTitle = styled.span`   

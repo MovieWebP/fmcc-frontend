@@ -38,10 +38,14 @@ export const TitleWrap = styled.div`
 export const Title = styled.h3`
     display: flex;
     justify-content: flex-start;
-    font-size: 1.4rem;
-    border-bottom: 1px solid  ${props => props.theme.lightPurple};
-    font-weight: 450;
+    font-size: 1.5rem;
+    /* border-bottom: 1px solid  ${props => props.theme.white}; */
+    font-weight: 600;
     color: ${props => props.theme.lightPurple};
+    margin-top: 10px;
+    @media screen and (max-width: 500px) and (min-width: 800px) {
+        font-size: 1.8rem;
+    };
 `;
 
 

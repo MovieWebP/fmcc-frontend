@@ -2,9 +2,6 @@ import Slider from "react-slick";
 import styled from "styled-components";
 
 export const StyledSlider = styled(Slider)`
-  .slick-slide{
-    border: none !important;
-  }
   .slick-prev {
     left: 0;
     z-index: 1;
@@ -33,12 +30,12 @@ export const StyledSlider = styled(Slider)`
     color: #fafafa;
     padding: 0;
     outline: none;
-    transition: .3s ease-in-out;
-    &:hover {
+    transition: opacity 0.3s;
+    /* &:hover {
       outline: none;
       background: transparent;
       opacity: 0.7;
-    }
+    } */
     @media screen and (max-width: 1500px) and (min-width: 1000px) {
       position: absolute;
       top: -50px;

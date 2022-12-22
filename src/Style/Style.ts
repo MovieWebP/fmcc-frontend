@@ -57,7 +57,7 @@ table {
 }
 body {
   font-weight: 400;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: Roboto,Helvetica,Arial,sans-serif;
   color: #fafafa;
   background-color: #181818;
   line-height: 1.2;

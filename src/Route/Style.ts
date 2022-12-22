@@ -16,12 +16,13 @@ export const SearchSliderWrap = styled(SliderWrap)`
     top: 10rem;
 `;
 
-export const SliderTitle = styled(Link)`
+export const SliderTitle = styled.h1`
     color: ${(props) => props.theme.white};
     width: fit-content;
     font-size: 2rem;
     font-weight: 600;
-    padding: 5px 20px;
+    /* padding: 5px 20px; */
+    margin: 20px 0;
     border-radius: 5px;
 `;
 
