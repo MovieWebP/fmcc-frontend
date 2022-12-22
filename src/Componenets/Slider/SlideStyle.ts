@@ -9,7 +9,7 @@ export const SliderWrap = styled.div`
     align-items: center;
     height: 30rem;
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        height: 35rem;
+        height: 38rem;
     };
 `;
 export const Wrap = styled.div`
@@ -29,9 +29,11 @@ export const Wrap = styled.div`
 export const TitleWrap = styled.div`
     align-items: flex-end;
     width: 90%;
-    margin-bottom: 10px;
     @media screen and (max-width: 1500px) and (min-width: 1200px) {
         width: 80%;
+    };
+    @media screen and (max-width: 500px) and (min-width: 800px) {
+        /* margin-bottom: 1.5rem; */
     };
 `;
 
@@ -42,7 +44,7 @@ export const Title = styled.h3`
     /* border-bottom: 1px solid  ${props => props.theme.white}; */
     font-weight: 600;
     color: ${props => props.theme.lightPurple};
-    margin-top: 10px;
+    margin-top: 1.1rem;
     @media screen and (max-width: 500px) and (min-width: 800px) {
         font-size: 1.8rem;
     };
@@ -119,6 +121,6 @@ export const MovieTitle = styled.p`
         text-decoration: underline ${(props) => props.theme.white};
     }
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     };
 `;
