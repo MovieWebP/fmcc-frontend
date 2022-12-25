@@ -26,7 +26,7 @@ function Movies() {
     return (
         <>
             {isLoading ? (
-                <S.SliderWrap>Loading...</S.SliderWrap>
+                <><S.Loading>Loading...</S.Loading></>
             ) : (
                 <>
                     <Detail

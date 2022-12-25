@@ -161,10 +161,12 @@ export const Menu2Wrap = styled(MenuWrap)`
     opacity: 1;
     transition: .2s opacity;
     @media screen and (max-width: 765px) and (min-width: 500px) {
-        width: 38vw;
+        justify-content: flex-end;
+        width: 35vw;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 50vw;
+        justify-content: flex-end;
+        width: 30vw;
         margin: 0;
     };
 `;

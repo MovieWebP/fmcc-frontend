@@ -25,7 +25,7 @@ function Search() {
             </Helmet >
             {
                 isLoading ? (
-                    <S.SliderWrap>Searching...</S.SliderWrap>
+                    <><S.Loading>Loading...</S.Loading></>
                 ) : (
                     <>
                         <S.SearchSliderWrap>

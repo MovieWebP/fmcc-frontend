@@ -13,7 +13,7 @@ export interface IMovie {
     vote_average: number; // 평점
     is_tv?: boolean; // TV 프로그램인지 여부
     first_air_date?: string; // 첫 방영일
-    name?: string; // tv 제목
+    name: string; // tv 제목
 }
 
 export interface IGetResults {

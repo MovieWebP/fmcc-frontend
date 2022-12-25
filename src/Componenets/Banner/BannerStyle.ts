@@ -203,7 +203,7 @@ export const ButtonText = styled.h2`
     font-size: 1.5rem;
   };
   @media screen and (max-width: 500px) and (min-width: 300px) {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   };
 `;
 

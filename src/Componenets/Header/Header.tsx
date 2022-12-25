@@ -32,9 +32,9 @@ function Header() {
                                 placeholder="Search"
                             />
                         </S.Search>
-                        <S.LoginWrap>
+                        {/* <S.LoginWrap>
                             <S.Login to="/login">Login</S.Login>
-                        </S.LoginWrap>
+                        </S.LoginWrap> */}
                     </S.Menu2Wrap >
                     <S.NavBarCo id="basic-navbar-nav">
                         <S.MenuItems className="me-auto">

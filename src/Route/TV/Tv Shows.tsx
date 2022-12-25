@@ -50,7 +50,7 @@ function TV() {
                 <title>Tv Shows</title>
             </Helmet >
             {isLoading ? (
-                <S.SliderWrap>Loading...</S.SliderWrap>
+                <><S.Loading>Loading...</S.Loading></>
             ) : (
                 <>
                     <Banner

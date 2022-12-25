@@ -55,7 +55,7 @@ function Home() {
                 <title>Home</title>
             </Helmet >
             {isLoading ? (
-                <><S.SliderWrap>Loading...</S.SliderWrap></>
+                <><S.Loading>Loading...</S.Loading></>
             ) : (
                 <>
                     <Banner

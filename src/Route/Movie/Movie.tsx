@@ -52,7 +52,7 @@ function Home() {
                 <title>Movie</title>
             </Helmet >
             {isLoading ? (
-                <S.SliderWrap>Loading...</S.SliderWrap>
+                <><S.Loading>Loading...</S.Loading></>
             ) : (
                 <>
                     <Banner

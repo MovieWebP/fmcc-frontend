@@ -41,3 +41,8 @@ export const Title = styled.h1`
     text-align: center;
     justify-content: center;
 `;
+
+export const Loading = styled(Title)`
+    font-size: 2rem;
+    margin-top: 5rem;
+`;
