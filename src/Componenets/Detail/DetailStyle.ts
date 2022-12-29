@@ -311,7 +311,17 @@ export const CastTitle = styled.span`
     }
     @media screen and (max-width: 500px) and (min-width: 300px) {
         margin-top: 5px;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+    };
+`;
+
+export const Character = styled(CastTitle)`
+    margin-top: 3px;
+    color: #B2B2B2;
+    font-size: .9rem;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        /* margin-top: 3px; */
+        font-size: 1.4rem;
     };
 `;
 

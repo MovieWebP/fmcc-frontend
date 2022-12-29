@@ -101,7 +101,8 @@ function Detail({ detail, recommend, cast }: IModal) {
                                     <S.Overview>
                                         <S.InfoName>Cast: </S.InfoName>
                                         <S.InfoMovieName>{cast.slice(0, 4).map
-                                            ((casts: any) => casts.name).join(", ")}</S.InfoMovieName>
+                                            ((casts: any) => casts.name).join(", ")}
+                                        </S.InfoMovieName>
                                     </S.Overview>
                                     <S.Overview>
                                         <S.InfoName>Genres: </S.InfoName>
@@ -145,6 +146,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                                                             />
                                                         </S.CastImageWrap>
                                                         <S.CastTitle>{casts?.name}</S.CastTitle>
+                                                        <S.Character>{casts?.character}</S.Character>
                                                     </S.RecommendSlider>
                                                 ))}
                                             </S.RecommendWrap>

@@ -57,6 +57,7 @@ export interface IGetRecommends {
 export interface ICast {
     name: string;
     profile_path: string; // 배우 이미지
+    character: string;
 }
 
 export interface IGetCredits {
