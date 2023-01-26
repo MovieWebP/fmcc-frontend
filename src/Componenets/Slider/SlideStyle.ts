@@ -9,7 +9,8 @@ export const SliderWrap = styled.div`
     align-items: center;
     height: 30rem;
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        height: 38rem;
+        height: 33rem;
+        margin: 3rem 0;
     };
 `;
 export const Wrap = styled.div`
@@ -41,7 +42,6 @@ export const Title = styled.h3`
     display: flex;
     justify-content: flex-start;
     font-size: 1.5rem;
-    /* border-bottom: 1px solid  ${props => props.theme.white}; */
     font-weight: 600;
     color: ${props => props.theme.lightPurple};
     margin-top: 1.1rem;
@@ -54,7 +54,6 @@ export const Title = styled.h3`
 export const Slider = styled(motion.div)`
     width: 100%;
     text-align: center;
-    /* border: 1px solid blue; */
     align-items: center;
     justify-content: center;
     ::-webkit-scrollbar {
@@ -117,7 +116,6 @@ export const MovieTitle = styled.p`
     overflow: hidden;  		// 을 사용해 영역을 감출 것
     text-overflow: ellipsis;  	// 로 ... 을 만들기 
     white-space: nowrap; 
-    border: 1px solid red;
     transition: all .3s ease;
     width: 11rem;
     &:hover{

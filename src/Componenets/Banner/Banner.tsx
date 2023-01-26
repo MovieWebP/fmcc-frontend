@@ -88,7 +88,10 @@ function Banner({ part, id, movies }: IBanner) {
                                     <S.BannerImage bgphoto={makeImagePath(movie?.backdrop_path)}>
                                         <S.BannerWrap>
                                             <S.TitleDiv>
-                                                <S.Title>{part === "movie" ? movie?.title : movie?.name}</S.Title>
+                                                {/* {part === "movie" ? movie.title.slice(0, 25) : movie.name.slice(0, 25)}... */}
+                                                <S.Title>
+                                                    {movie.title?.length < 23 ? movie.title : movie.title.slice(0, 23) + "..."}
+                                                </S.Title>
                                                 <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
                                             </S.TitleDiv>
                                             <S.Overview>{movie?.overview.slice(0, 120)}...</S.Overview>

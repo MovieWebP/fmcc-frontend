@@ -161,19 +161,11 @@ function Slide({ id, part, title, movies }: IProps) {
                                     <S.Movie key={movie.id}>
                                         <S.MovieImage src={makeImagePath(movie.poster_path)} onClick={() => boxClick(part, movie.id, id)} />
                                         <S.MovieTitleWrap>
-                                            {movie.title?.length || movie.name?.length < 25 ? (
-                                                <S.MovieTitle
-                                                    onClick={() => boxClick(part, movie.id, id)}
-                                                    key={movie.id}
-                                                >{part === "movie" ? movie.title : movie.name}
-                                                </S.MovieTitle>
-                                            ) : (
-                                                <S.MovieTitle
-                                                    onClick={() => boxClick(part, movie.id, id)}
-                                                    key={movie.id}
-                                                >{part === "movie" ? movie.title.slice(0, 25) : movie.name.slice(0, 25)}...
-                                                </S.MovieTitle>
-                                            )}
+                                            <S.MovieTitle
+                                                onClick={() => boxClick(part, movie.id, id)}
+                                                key={movie.id}
+                                            >{part === "movie" ? movie.title : movie.name}
+                                            </S.MovieTitle>
                                         </S.MovieTitleWrap>
                                     </S.Movie>
                                 ))}
