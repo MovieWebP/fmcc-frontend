@@ -68,22 +68,22 @@ export interface IGetCredits {
 
 //Movie
 export function getNowPlayingMovie() {
-    return fetch(`${BASE_PATH}/movie/now_playing?api_key=${Api_KEY}`)
+    return fetch(`${BASE_PATH}/movie/now_playing?api_key=${Api_KEY}&language=ko-KR`)
         .then(res => res.json())
 }
 
 export function getPopularMovie() {
-    return fetch(`${BASE_PATH}/movie/popular?api_key=${Api_KEY}&page=2`)
+    return fetch(`${BASE_PATH}/movie/popular?api_key=${Api_KEY}&page=2&language=ko-KR`)
         .then(res => res.json())
 }
 
 export function getUpcomingMovie() {
-    return fetch(`${BASE_PATH}/movie/upcoming?api_key=${Api_KEY}&page=1`)
+    return fetch(`${BASE_PATH}/movie/upcoming?api_key=${Api_KEY}&page=1&language=ko-KR`)
         .then(res => res.json())
 }
 
 export function getTopRatedMovie() {
-    return fetch(`${BASE_PATH}/movie/top_rated?api_key=${Api_KEY}`)
+    return fetch(`${BASE_PATH}/movie/top_rated?api_key=${Api_KEY}&language=ko-KR`)
         .then(res => res.json())
 }
 
@@ -92,48 +92,48 @@ export function getTopRatedMovie() {
 //TV
 
 export function getAiringTodayTv() {
-    return fetch(`${BASE_PATH}/tv/airing_today?api_key=${Api_KEY}`)
+    return fetch(`${BASE_PATH}/tv/airing_today?api_key=${Api_KEY}&language=ko-KR`)
         .then(res => res.json())
 }
 
 export function getOnTheAirTv() {
-    return fetch(`${BASE_PATH}/tv/on_the_air?api_key=${Api_KEY}`)
+    return fetch(`${BASE_PATH}/tv/on_the_air?api_key=${Api_KEY}&language=ko-KR`)
         .then(res => res.json())
 }
 
 export function getPopularTv() {
-    return fetch(`${BASE_PATH}/tv/popular?api_key=${Api_KEY}&page=2`)
+    return fetch(`${BASE_PATH}/tv/popular?api_key=${Api_KEY}&page=2&language=ko-KR`)
         .then(res => res.json())
 }
 
 export function getTopRatedTv() {
-    return fetch(`${BASE_PATH}/tv/top_rated?api_key=${Api_KEY}`)
+    return fetch(`${BASE_PATH}/tv/top_rated?api_key=${Api_KEY}&language=ko-KR`)
         .then(res => res.json())
 }
 
 //Search Movie Api
 export function getFindMovie(keyword: string | null) {
-    return fetch(`${BASE_PATH}/search/movie?api_key=${Api_KEY}&query=${keyword}`)
+    return fetch(`${BASE_PATH}/search/movie?api_key=${Api_KEY}&query=${keyword}&language=ko-KR`)
         .then((res) => res.json())
 }
 
 //Search TV Api
 export function getFindTv(keyword: string | null) {
-    return fetch(`${BASE_PATH}/search/tv?api_key=${Api_KEY}&query=${keyword}`)
+    return fetch(`${BASE_PATH}/search/tv?api_key=${Api_KEY}&query=${keyword}&language=ko-KR`)
         .then((res) => res.json())
 }
 
 // Movie + Tv Detail Api
 export async function getDetail(part?: string, id?: string) {
     return await fetch(
-        `${BASE_PATH}/${part}/${id}?api_key=${Api_KEY}`
+        `${BASE_PATH}/${part}/${id}?api_key=${Api_KEY}&language=ko-KR`
     ).then((res) => res.json());
 }
 
 // Movie + Tv Clips Api
 export async function getClips(part?: string, id?: string) {
     return await fetch(
-        `${BASE_PATH}/${part}/${id}/videos?api_key=${Api_KEY}`
+        `${BASE_PATH}/${part}/${id}/videos?api_key=${Api_KEY}&language=ko-KR`
     ).then((res) => res.json());
 }
 
@@ -141,7 +141,7 @@ export async function getClips(part?: string, id?: string) {
 export async function getTrailer(part?: string, id?: string) {
     return await (
         await fetch(
-            `${BASE_PATH}/${part}/${id}/videos?api_key=${Api_KEY}`
+            `${BASE_PATH}/${part}/${id}/videos?api_key=${Api_KEY}&language=ko-KR`
         )
     ).json();
 }
@@ -149,13 +149,13 @@ export async function getTrailer(part?: string, id?: string) {
 // Movie + Tv Recommend Api
 export async function getRecommend(part?: string, id?: string) {
     return await fetch(
-        `${BASE_PATH}/${part}/${id}/recommendations?api_key=${Api_KEY}`
+        `${BASE_PATH}/${part}/${id}/recommendations?api_key=${Api_KEY}&language=ko-KR`
     ).then((res) => res.json());
 }
 
 // Movie + Tv cast Api
 export async function getCast(part?: string, id?: string) {
     return await fetch(
-        `${BASE_PATH}/${part}/${id}/credits?api_key=${Api_KEY}`
+        `${BASE_PATH}/${part}/${id}/credits?api_key=${Api_KEY}&language=ko-KR`
     ).then((res) => res.json());
 }

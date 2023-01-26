@@ -21,6 +21,7 @@
     "@types/react-dom": "^18.0.6",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.3",
+    "clappr": "^0.3.13",
     "framer-motion": "^7.3.6",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
