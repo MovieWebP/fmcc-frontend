@@ -81,46 +81,50 @@ export const Movie = styled.div`
     margin-right: 23px;
 `;
 
+export const MovieImage = styled.img`
+width: 11rem;
+border-radius: .8rem;
+@media screen and (min-width: 1800px) {
+    margin-left: auto;
+    margin-right: auto;
+};
+@media screen and (max-width: 700px) and (min-width: 500px) {
+    width: 12rem;
+};
+@media screen and (max-width: 500px) and (min-width: 300px) {
+    width: 15rem;
+};
+&:focus{
+    outline: 0; 
+}
+`;
 
 export const MovieTitleWrap = styled.div`
-    display: flex;
     justify-content: flex-start;
-    width: 100%;
+    margin-top: 10px;
     @media screen and (min-width: 1800px) {
         display: flex;
         justify-content: center;
     };
 `;
 
-export const MovieImage = styled.img`
-    width: 11rem;
-    border-radius: .8rem;
-    @media screen and (min-width: 1800px) {
-        margin-left: auto;
-        margin-right: auto;
-    };
-    @media screen and (max-width: 700px) and (min-width: 500px) {
-        width: 12rem;
-    };
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 15rem;
-    };
-    &:focus{
-        outline: 0; 
-    }
-`;
-
 export const MovieTitle = styled.p`
-    width: 60%;
     font-size: 1.1rem;
     font-weight: 500;
     text-align: left;
+    display: block;
+    word-break:break-all;
+    overflow: hidden;  		// 을 사용해 영역을 감출 것
+    text-overflow: ellipsis;  	// 로 ... 을 만들기 
+    white-space: nowrap; 
+    border: 1px solid red;
     transition: all .3s ease;
-    margin-top: 10px;
+    width: 11rem;
     &:hover{
         text-decoration: underline ${(props) => props.theme.white};
     }
     @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 1.7rem;
+        width: 14.5rem;
     };
 `;
