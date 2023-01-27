@@ -7,6 +7,9 @@ import { makeImagePath } from "../../Api/utils";
 import { modalState } from "../../atom";
 import * as S from "./BannerStyle";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { Title } from "./title";
+import { Overview } from "./overview";
+import { Button } from "./buttton";
 
 interface IBanner {
     id: string;
@@ -54,22 +57,6 @@ function Banner({ part, id, movies }: IBanner) {
         setSliderMovingPrev(false);
     }
 
-    const [windowDimension, detectHW] = useState({ winWidth: window.innerWidth })
-
-    const detectSize = () => {
-        detectHW({
-            winWidth: window.innerWidth
-        })
-    }
-
-    useEffect(() => {
-        window.addEventListener('resize', detectSize)
-
-        return () => {
-            window.removeEventListener('resize', detectSize)
-        }
-    }, [windowDimension]);
-
     return (
         <S.Wrap>
             <AnimatePresence
@@ -93,9 +80,9 @@ function Banner({ part, id, movies }: IBanner) {
                                 ></S.MainImage>
                                 <S.ImageWrap key={movie.id}>
                                     {index === 0 ? (
-                                        <S.HiddenBox onClick={moveSliderPrev}>
+                                        <S.ArrowBox onClick={moveSliderPrev} style={{ "visibility": "hidden" }}>
                                             <MdKeyboardArrowLeft size="5rem" />
-                                        </S.HiddenBox>
+                                        </S.ArrowBox>
                                     ) : (
                                         <S.ArrowBox onClick={moveSliderPrev}>
                                             <MdKeyboardArrowLeft size="5rem" />
@@ -103,44 +90,29 @@ function Banner({ part, id, movies }: IBanner) {
                                     )}
                                     <S.BannerImage bgphoto={makeImagePath(movie?.backdrop_path)}>
                                         <S.BannerWrap>
-                                            <S.TitleDiv>
-                                                {
-                                                    windowDimension.winWidth <= 500 ? (
-                                                        movie.title?.length < 15 || movie.name?.length < 15 ? (
-                                                            <S.Title>
-                                                                {part === "movie" ? movie.title : movie.name}
-                                                            </S.Title>
-                                                        ) : (
-                                                            <S.Title>
-                                                                {part === "movie" ? movie.title?.slice(0, 15) : movie.name?.slice(0, 15)}...
-                                                            </S.Title>
-                                                        )
-                                                    ) : (
-                                                        <S.Title>
-                                                            {part === "movie" ? (movie.title) : (movie.name)}
-                                                        </S.Title>
-                                                    )
-                                                }
-                                                <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
-                                            </S.TitleDiv>
-                                            {windowDimension.winWidth <= 700 && windowDimension.winWidth > 500 ? (
-                                                <S.Overview>
-                                                    {movie?.overview ? movie?.overview.slice(0, 85) + "..." : null}
-                                                </S.Overview>
-                                            ) : (
-                                                <S.Overview>
-                                                    {movie?.overview ? movie?.overview.slice(0, 110) + "..." : null}
-                                                </S.Overview>
-                                            )}
-                                            <S.Button onClick={() => boxClick(part, movie.id, id)}>
-                                                <S.PlayIcon />
-                                                <S.ButtonText>Watch Now</S.ButtonText>
-                                            </S.Button>
+                                            <Title
+                                                movie={movie}
+                                                part={part}
+                                            />
+                                            <Overview
+                                                movie={movie}
+                                            />
+                                            <Button
+                                                movie={movie}
+                                                id={id}
+                                                part={part}
+                                            />
                                         </S.BannerWrap>
                                     </S.BannerImage>
-                                    <S.RightArrow onClick={moveSlider} >
-                                        <MdKeyboardArrowRight size="5rem" />
-                                    </S.RightArrow>
+                                    {index === 4 ? (
+                                        <S.RightArrow onClick={moveSlider} style={{ "visibility": "hidden" }} >
+                                            <MdKeyboardArrowRight size="5rem" />
+                                        </S.RightArrow>
+                                    ) : (
+                                        <S.RightArrow onClick={moveSlider} >
+                                            <MdKeyboardArrowRight size="5rem" />
+                                        </S.RightArrow>
+                                    )}
                                 </S.ImageWrap>
                             </>
                         ))}
