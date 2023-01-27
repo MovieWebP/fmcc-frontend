@@ -1,15 +1,13 @@
-import { AnimatePresence, transform } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useRecoilState } from "recoil";
+import { AnimatePresence } from "framer-motion";
 import { IMovie } from "../../Api/api";
 import { makeImagePath } from "../../Api/utils";
-import { modalState } from "../../atom";
 import * as S from "./BannerStyle";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { Title } from "./title";
 import { Overview } from "./overview";
 import { Button } from "./buttton";
+import { LeftArrow } from "./arrow/left-arrow";
+import { RightArrow } from "./arrow/right-arrow";
+import { useState } from "react";
 
 interface IBanner {
     id: string;
@@ -23,12 +21,6 @@ function Banner({ part, id, movies }: IBanner) {
     const [index, setIndex] = useState(0);
     const [sliderMoving, setSliderMoving] = useState(false);
     const [sliderMovingPrev, setSliderMovingPrev] = useState(false);
-    const [modalActive, SetModalActive] = useRecoilState(modalState);
-    const navigate = useNavigate();
-    const boxClick = (part: string, id: number, sliderId: string) => {
-        navigate(`/${part}/${sliderId}/${id}`);
-        SetModalActive(true);
-    }
 
     const totlaLength = movies.length - 16;
     const maxIndex = Math.floor(totlaLength / offset);
@@ -79,15 +71,10 @@ function Banner({ part, id, movies }: IBanner) {
                                     bgphoto={makeImagePath(movie?.backdrop_path)}
                                 ></S.MainImage>
                                 <S.ImageWrap key={movie.id}>
-                                    {index === 0 ? (
-                                        <S.ArrowBox onClick={moveSliderPrev} style={{ "visibility": "hidden" }}>
-                                            <MdKeyboardArrowLeft size="5rem" />
-                                        </S.ArrowBox>
-                                    ) : (
-                                        <S.ArrowBox onClick={moveSliderPrev}>
-                                            <MdKeyboardArrowLeft size="5rem" />
-                                        </S.ArrowBox>
-                                    )}
+                                    <LeftArrow
+                                        index={index}
+                                        moveSliderPrev={moveSliderPrev}
+                                    />
                                     <S.BannerImage bgphoto={makeImagePath(movie?.backdrop_path)}>
                                         <S.BannerWrap>
                                             <Title
@@ -104,15 +91,10 @@ function Banner({ part, id, movies }: IBanner) {
                                             />
                                         </S.BannerWrap>
                                     </S.BannerImage>
-                                    {index === 4 ? (
-                                        <S.RightArrow onClick={moveSlider} style={{ "visibility": "hidden" }} >
-                                            <MdKeyboardArrowRight size="5rem" />
-                                        </S.RightArrow>
-                                    ) : (
-                                        <S.RightArrow onClick={moveSlider} >
-                                            <MdKeyboardArrowRight size="5rem" />
-                                        </S.RightArrow>
-                                    )}
+                                    <RightArrow
+                                        index={index}
+                                        moveSlider={moveSlider}
+                                    />
                                 </S.ImageWrap>
                             </>
                         ))}
