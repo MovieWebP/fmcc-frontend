@@ -54,6 +54,22 @@ function Banner({ part, id, movies }: IBanner) {
         setSliderMovingPrev(false);
     }
 
+    const [windowDimension, detectHW] = useState({ winWidth: window.innerWidth })
+
+    const detectSize = () => {
+        detectHW({
+            winWidth: window.innerWidth
+        })
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', detectSize)
+
+        return () => {
+            window.removeEventListener('resize', detectSize)
+        }
+    }, [windowDimension]);
+
     return (
         <S.Wrap>
             <AnimatePresence
@@ -88,13 +104,36 @@ function Banner({ part, id, movies }: IBanner) {
                                     <S.BannerImage bgphoto={makeImagePath(movie?.backdrop_path)}>
                                         <S.BannerWrap>
                                             <S.TitleDiv>
-                                                {/* {part === "movie" ? movie.title.slice(0, 25) : movie.name.slice(0, 25)}... */}
-                                                <S.Title>
-                                                    {movie.title?.length < 23 ? movie.title : movie.title.slice(0, 23) + "..."}
-                                                </S.Title>
+                                                {windowDimension.winWidth <= 500 ? (
+                                                    <S.Title>
+                                                        {part === "movie" && movie.title.length < 15 ? (
+                                                            movie.title
+                                                        ) : (
+                                                            movie.title.slice(0, 15) + "..."
+                                                        ) && part !== "movie" && movie.name.length < 15 ? (
+                                                            movie.name
+                                                        ) : (
+                                                            movie.name?.slice(0, 15) + "..."
+                                                            // movie.name
+                                                        )
+                                                        }
+                                                    </S.Title>
+                                                ) : (
+                                                    <S.Title>
+                                                        {part === "movie" ? (movie.title) : (movie.name)}
+                                                    </S.Title>
+                                                )}
                                                 <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
                                             </S.TitleDiv>
-                                            <S.Overview>{movie?.overview.slice(0, 120)}...</S.Overview>
+                                            {windowDimension.winWidth <= 700 && windowDimension.winWidth > 500 ? (
+                                                <S.Overview>
+                                                    {movie?.overview ? movie?.overview.slice(0, 85) + "..." : null}
+                                                </S.Overview>
+                                            ) : (
+                                                <S.Overview>
+                                                    {movie?.overview ? movie?.overview.slice(0, 110) + "..." : null}
+                                                </S.Overview>
+                                            )}
                                             <S.Button onClick={() => boxClick(part, movie.id, id)}>
                                                 <S.PlayIcon />
                                                 <S.ButtonText>Watch Now</S.ButtonText>

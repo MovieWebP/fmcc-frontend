@@ -56,7 +56,7 @@ function TV() {
                     <Banner
                         id="banner"
                         part="tv"
-                        movies={airingToday?.results || []}
+                        movies={popularTv?.results || []}
                     />
                     <S.SliderWrap>
                         <S.SliderTitle>TV Shows</S.SliderTitle>
