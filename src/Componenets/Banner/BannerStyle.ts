@@ -125,6 +125,8 @@ export const Title = styled.h3`
   font-weight: 500;
   @media screen and (max-width: 500px) and (min-width: 300px) {
     font-size: 2.5rem;
+    /* border: 1px solid red; */
+    /* width: 240px; */
   };
 `;
 

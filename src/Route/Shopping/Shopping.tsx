@@ -16,7 +16,8 @@ function Shopping() {
             /> */}
             <ReactPlayer
                 // url="/Users/apple/Desktop/crawling/videos/qwer.m3u8"
-                url="http://127.0.0.1:5500/videos/qwer.m3u8"
+                url="http://127.0.0.1:5500/Volumes/choi_hard/videos/movie/jeungei/jeungei.m3u8"
+                // url="http://127.0.0.1:5500/videos/qwer.m3u8"
                 // url="http://127.0.0.1:5500/b3caff63-68e0-4a3c-b2cd-244d3d5341f7"
                 playing={true}
                 controls

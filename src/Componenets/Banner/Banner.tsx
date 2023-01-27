@@ -104,25 +104,23 @@ function Banner({ part, id, movies }: IBanner) {
                                     <S.BannerImage bgphoto={makeImagePath(movie?.backdrop_path)}>
                                         <S.BannerWrap>
                                             <S.TitleDiv>
-                                                {windowDimension.winWidth <= 500 ? (
-                                                    <S.Title>
-                                                        {part === "movie" && movie.title.length < 15 ? (
-                                                            movie.title
+                                                {
+                                                    windowDimension.winWidth <= 500 ? (
+                                                        movie.title?.length < 15 || movie.name?.length < 15 ? (
+                                                            <S.Title>
+                                                                {part === "movie" ? movie.title : movie.name}
+                                                            </S.Title>
                                                         ) : (
-                                                            movie.title.slice(0, 15) + "..."
-                                                        ) && part !== "movie" && movie.name.length < 15 ? (
-                                                            movie.name
-                                                        ) : (
-                                                            movie.name?.slice(0, 15) + "..."
-                                                            // movie.name
+                                                            <S.Title>
+                                                                {part === "movie" ? movie.title?.slice(0, 15) : movie.name?.slice(0, 15)}...
+                                                            </S.Title>
                                                         )
-                                                        }
-                                                    </S.Title>
-                                                ) : (
-                                                    <S.Title>
-                                                        {part === "movie" ? (movie.title) : (movie.name)}
-                                                    </S.Title>
-                                                )}
+                                                    ) : (
+                                                        <S.Title>
+                                                            {part === "movie" ? (movie.title) : (movie.name)}
+                                                        </S.Title>
+                                                    )
+                                                }
                                                 <S.Date>({part === "movie" ? movie?.release_date.slice(0, 4) : movie?.first_air_date?.slice(0, 4)})</S.Date>
                                             </S.TitleDiv>
                                             {windowDimension.winWidth <= 700 && windowDimension.winWidth > 500 ? (
