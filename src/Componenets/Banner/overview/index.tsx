@@ -31,7 +31,7 @@ export const Overview: React.FC<OverviewProps> = ({ movie }) => {
                     </S.Overview>
                 ) : (
                     <S.Overview>
-                        {movie?.overview ? movie?.overview.slice(0, 107) + "..." : null}
+                        {movie?.overview ? movie?.overview.slice(0, 103) + "..." : null}
                     </S.Overview>
                 )
             }

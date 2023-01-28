@@ -146,7 +146,6 @@ function Slide({ id, part, title, movies }: IProps) {
         slidesToShow = 8;
     }
 
-    // console.log(windowDimension.winWidth)
     return (
         <S.SliderWrap>
             <S.TitleWrap>
