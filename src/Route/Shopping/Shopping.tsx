@@ -30,17 +30,17 @@ function Shopping() {
     return (
         <S.SearchSliderWrap>
             <S.Title>See you soon! </S.Title>
-            {movies.map((movie) => (
-                <ReactPlayer
-                    // url={`${movie?.url}`}
-                    url="./videos/jeungei/jeungei.m3u8" 
-                    // to fix this 431 error is to add a cors proxy to the url or to use a different url 
-                    playing={false}
-                    controls
-                    width="60rem"
-                    height="40rem"
-                />
-            ))}
+            {/* {movies.map((movie) => (
+                ))} */}
+            <ReactPlayer
+                // url={`${movie?.url}`}
+                url="http://localhost:3005/video/movie/jeungei/jeungei.m3u8"
+                // to fix this 431 error is to add a cors proxy to the url or to use a different url 
+                playing={false}
+                controls
+                width="60rem"
+                height="40rem"
+            />
         </S.SearchSliderWrap>
     )
 }
