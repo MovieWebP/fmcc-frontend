@@ -61,21 +61,20 @@ function Dashboard() {
             await instance.post('', {
                 "url": `${Object(e.target)[0].value}`,
                 "title": `${Object(e.target)[1].value}`,
-                "movieId": Object(e.target)[2].value,
+                "movieId": +Object(e.target)[2].value,
             })
                 .then((res) => {
-                    console.log(res.data);
-                    setApiData(res.data);
+                    console.log(res.data.video);
+                    setApiData(res.data.video);
                 })
         } catch (err) {
-            console.log(Object(e.target)[0].value, 'e.target.[0].value');
             console.log(err)
         }
     };
 
     return (
         <>
-            {/* <S.Wrap>
+            <S.Wrap>
                 <S.LoginFrom onSubmit={onSubmit}>
                     <S.UserDiv>
                         <S.InputDiv>
@@ -103,27 +102,17 @@ function Dashboard() {
                                 })} placeholder="movieId" />
                             </div>
                         </S.InputDiv>
+                        {/* {apiData ? <p>{apiData.movieId || apiData.error}</p>: null} */}
                     </S.PasswordDiv>
                     <S.LoginButton type="submit">Submit</S.LoginButton>
                 </S.LoginFrom>
                 <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
-            </S.Wrap> */}
 
-            <S.Wrap>
-                <form onSubmit={onSubmit}>
-                    <input type="text" name="url" placeholder="url" value={message}
-          onChange={event => setMessage(event.target.value)}/>
-                    <input type="text" name="title" placeholder="title" />
-                    <input type="number" min="0" step="1" name="movieId" placeholder="movieId" />
-                    <button type="submit">Register</button>
-                </form>
-                {apiData ?
-                    <div>
-                        <p>{apiData.ok}</p>
-                        <p>{apiData.video.url}</p>
-                        <p>{apiData.video.movieId}</p>
-                    </div>
-                    : <div>not thing</div>}
+                <S.ApiForm>
+                    <h3>url: {apiData ? <p>{apiData.url}</p> : <p>null</p>}</h3>
+                    <h3>title: {apiData ? <p>{apiData.title}</p> : <p>null</p>}</h3>
+                    <h3>movieId: {apiData ? <p>{apiData.movieId}</p> : <p>null</p>}</h3>
+                </S.ApiForm>
             </S.Wrap>
         </>
     )

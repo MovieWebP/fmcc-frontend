@@ -8,7 +8,7 @@ export const Wrap = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     position: absolute;
     bottom: 0;
     right: 0;
@@ -46,10 +46,25 @@ export const LoginFrom = styled.form`
     border-radius: 1rem;
     background-color: #171717;
     border: 1px solid #323232;
+    margin-left: 3rem;
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 350px;
         height: 280px;
     };
+`;
+
+export const ApiForm = styled(LoginFrom)`
+    background-color: rgba(0,0,0,0.5);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 10px;
+    padding-left: 10px;
+    // child
+    & > h3 {
+        margin-top: 10px;
+        font-size: 1.3rem;
+    }
 `;
 
 export const SignUpFrom = styled(LoginFrom)`
@@ -69,6 +84,24 @@ export const InputDiv = styled.div`
 `;
 
 export const Username = styled.input`
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid #323232;
+    border-radius: 10px;
+    height: 50px;
+    padding-left: 10px;
+    z-index: 7;
+    width: 100%;
+    caret-color: auto; 
+    color: ${(props) => props.theme.white};
+    &:focus{
+        outline: none;
+    }
+    &::placeholder{
+        color: #d1cccc;
+    }
+`;
+
+export const ApiMessage = styled.p`
     background-color: rgba(0,0,0,0.5);
     border: 1px solid #323232;
     border-radius: 10px;
