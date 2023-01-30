@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
@@ -18,39 +18,64 @@ function Dashboard() {
         }
     });
     const navigate = useNavigate();
+    const [message, setMessage] = useState('');
 
     const [movieId, setMovieId] = useState<number>(0);
     const [apiData, setApiData] = useState<any>();
+    // try {
+    //     let res = await axios(
+    //         {
+    //             method: 'post',
+    //             url: 'http://127.0.0.1:3005/videos/creat',
+    //             // data를 숫자형식으로 변환
+    //             data: JSON.stringify(Object.fromEntries(new FormData((e.target as HTMLFormElement)))),
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'dataType': 'json'
+    //             }
+    //         }
+    //     );
+    //     let data = res.data;
+    //     setApiData(data);
+    //     console.log(data);
+    // } catch (err) {
+    //     const data = Object.fromEntries(new FormData((e.target as HTMLFormElement)));
+    //     console.log(data, 'data');
+    //     console.log(e, 'e');
+    //     console.log(e.target, 'e.target');
+    //     console.log(err);
+    // }
 
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        const instance = axios.create({
+            baseURL: 'http://127.0.0.1:3005/videos/create',
+            headers: {
+                'Content-Type': 'application/json',
+                'dataType': 'json'
+            }
+        });
+
         try {
-            let res = await axios(
-                {
-                    method: 'post',
-                    url: 'http://127.0.0.1:3005/videos/create',
-                    // data를 숫자형식으로 변환
-                    data: JSON.stringify(Object.fromEntries(new FormData((e.target as HTMLFormElement)))),
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'dataType': 'json'
-                    }
-                }
-            );
-            let data = res.data;
-            setApiData(data);
-            console.log(data);
+            await instance.post('', {
+                "url": `${Object(e.target)[0].value}`,
+                "title": `${Object(e.target)[1].value}`,
+                "movieId": Object(e.target)[2].value,
+            })
+                .then((res) => {
+                    console.log(res.data);
+                    setApiData(res.data);
+                })
         } catch (err) {
-            const data = JSON.stringify(Object.fromEntries(new FormData((e.target as HTMLFormElement))));
-            console.log(data);
-            console.log(e.target)
-            console.log(err);
+            console.log(Object(e.target)[0].value, 'e.target.[0].value');
+            console.log(err)
         }
     };
 
     return (
         <>
-            <S.Wrap>
+            {/* <S.Wrap>
                 <S.LoginFrom onSubmit={onSubmit}>
                     <S.UserDiv>
                         <S.InputDiv>
@@ -82,13 +107,14 @@ function Dashboard() {
                     <S.LoginButton type="submit">Submit</S.LoginButton>
                 </S.LoginFrom>
                 <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
-            </S.Wrap>
+            </S.Wrap> */}
 
-            {/* <S.Wrap>
+            <S.Wrap>
                 <form onSubmit={onSubmit}>
-                    <input type="text" name="url" placeholder="url" />
+                    <input type="text" name="url" placeholder="url" value={message}
+          onChange={event => setMessage(event.target.value)}/>
                     <input type="text" name="title" placeholder="title" />
-                    <input type="number"  min="0" step="1" name="movieId" placeholder="movieId" />
+                    <input type="number" min="0" step="1" name="movieId" placeholder="movieId" />
                     <button type="submit">Register</button>
                 </form>
                 {apiData ?
@@ -98,7 +124,7 @@ function Dashboard() {
                         <p>{apiData.video.movieId}</p>
                     </div>
                     : <div>not thing</div>}
-            </S.Wrap> */}
+            </S.Wrap>
         </>
     )
 };
