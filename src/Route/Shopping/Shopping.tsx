@@ -16,31 +16,31 @@ interface GetMoviesProps {
 }
 
 function Shopping() {
-    // const [movies, setMovies] = useState<GetMovieProps[]>([])
-    // const getMovies = async () => {
-    //     const json = await (await fetch(`http://localhost:3003/movies/all`
-    //     )).json();
-    //     // console.log(json.movies)
-    //     setMovies(json.movies)
-    // }
-    // useEffect(() => {
-    //     getMovies()
-    // }, [])
+    const [videos, setVideos] = useState<GetMovieProps[]>([])
+    const getMovies = async () => {
+        const json = await (await fetch(`http://localhost:3005/videos`
+        )).json();
+        console.log(json.videos)
+        setVideos(json.videos)
+    }
+    useEffect(() => {
+        getMovies()
+    }, [])
     // ./src/Route/Shopping/videos
     return (
         <S.SearchSliderWrap>
             <S.Title>See you soon! </S.Title>
-            {/* {movies.map((movie) => (
-                ))} */}
+            {videos.filter((video) => video.title === "jeungei").map((video) => (
             <ReactPlayer
-                // url={`${movie?.url}`}
-                url="http://localhost:3005/video/movie/jeungei/jeungei.m3u8"
-                // to fix this 431 error is to add a cors proxy to the url or to use a different url 
+                url={`${video?.url}`}
+                // url="http://localhost:3005/video/movie/intern/intern.m3u8"
                 playing={false}
                 controls
                 width="60rem"
                 height="40rem"
             />
+                ))}
+            
         </S.SearchSliderWrap>
     )
 }
