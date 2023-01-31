@@ -4,11 +4,13 @@ import ReactHlsPlayer from 'react-hls-player';
 import ReactPlayer from "react-player";
 import axios from "axios";
 import { useQuery } from "react-query";
+import { Link, useParams } from 'react-router-dom';
 // import {form} from "../../../videos/movie/jeungei/jeungei.m3u8"
 
 interface GetMovieProps {
     url: string
     title: string
+    movieId: number
 }
 
 interface GetMoviesProps {
@@ -17,8 +19,9 @@ interface GetMoviesProps {
 
 function Shopping() {
     const [videos, setVideos] = useState<GetMovieProps[]>([])
+    // console.log(coinId)
     const getMovies = async () => {
-        const json = await (await fetch(`http://localhost:3005/videos`
+        const json = await (await fetch(`http://localhost:3005/video/all`
         )).json();
         console.log(json.videos)
         setVideos(json.videos)
@@ -30,18 +33,19 @@ function Shopping() {
     return (
         <S.SearchSliderWrap>
             <S.Title>See you soon! </S.Title>
-            {videos.filter((video) => video.title === "jeungei").map((video) => (
+            {/* {videos.filter((video) => video.title === "jeungei").map((video) => (
+                ))} */}
             <ReactPlayer
-                url={`${video?.url}`}
-                // url="http://localhost:3005/video/movie/intern/intern.m3u8"
+                // url={`${video?.url}`}
+                url="http://localhost:3005/video/movie/intern/intern.m3u8"
                 playing={false}
                 controls
                 width="60rem"
                 height="40rem"
             />
-                ))}
-            
-        </S.SearchSliderWrap>
+            {videos.map((video) => <Link to={`/shopping/${video.movieId}`} > { video.movieId }</Link>)
+}
+        </S.SearchSliderWrap >
     )
 }
 
