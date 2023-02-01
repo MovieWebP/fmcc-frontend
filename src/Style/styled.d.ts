@@ -5,5 +5,6 @@ declare module "styled-components" {
         lightPurple: string;
         purple: string;
         white: string;
+        navbar: string;
     }
 } 

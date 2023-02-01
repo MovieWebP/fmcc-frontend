@@ -39,9 +39,6 @@ function Header() {
                                 placeholder="Search"
                             />
                         </S.Search>
-                        {/* <S.LoginWrap>
-                            <S.Login to="/login">Login</S.Login>
-                        </S.LoginWrap> */}
                     </S.Menu2Wrap >
                     <S.NavBarCo id="basic-navbar-nav">
                         <S.MenuItems className="me-auto">
@@ -51,17 +48,17 @@ function Header() {
                                 <S.ItemStyle href="/">Home</S.ItemStyle>
                             )}
 
-                            <S.NavDrop title="Movie" id="basic-nav-dropdown">
-                                {/* <S.Filter></S.Filter> */}
+                            {movieMatch ? (
+                                <S.NavDrop title="Movie" id="basic-nav-dropdown">
                                     <S.NavItem href="/movie">Movie</S.NavItem>
-                                    <S.NavItem href="/watch-now">
-                                        Watch Now
-                                    </S.NavItem>
-                                {/* <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">
-                                    Separated link
-                                </NavDropdown.Item> */}
-                            </S.NavDrop>
+                                    <S.NavItem href="/watch-now"> Watch Now </S.NavItem>
+                                </S.NavDrop>
+                            ) : (
+                                <S.MatchNavDrop title="Movie" id="basic-nav-dropdown">
+                                    <S.NavItem href="/movie">Movie</S.NavItem>
+                                    <S.NavItem href="/watch-now"> Watch Now </S.NavItem>
+                                </S.MatchNavDrop>
+                            )}
 
                             {tvMatch ? (
                                 <S.MatchItemStyle href="/tv">TV Shows</S.MatchItemStyle>

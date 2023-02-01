@@ -141,7 +141,7 @@ export const MatchItemStyle = styled(Nav.Link)`
 `;
 
 export const ItemStyle = styled(MatchItemStyle)`
-    color: #919191;
+    color: ${(props) => props.theme.navbar};
     margin: 0;
     padding: 0;
 
@@ -160,39 +160,6 @@ export const MovieItemDiv = styled.div`
 export const MovieItemStyle = styled(ItemStyle)`
     padding:0;
     /* border: 1px solid red; */
-`;
-
-export const DropIcon = styled(MdExpandMore)`
-    /* border: 1px solid blue; */
-    position: relative;
-    right: 10px;
-    width: 1.8rem;
-    height: 1.8rem;
-`;
-
-export const DropDownListContainer = styled.div`
-    position: absolute;
-    top: 3.5rem;
-`;
-
-export const DropDownList = styled.ul`
-  padding: 0;
-  margin: 0;
-  padding-left: 1em;
-  background: #ffffff;
-  border: 2px solid #e5e5e5;
-  box-sizing: border-box;
-  color: #3faffa;
-  font-size: 1.3rem;
-  font-weight: 500;
-  &:first-child {
-    padding-top: 0.8em;
-  }
-`;
-
-export const ListItem = styled.li`
-  list-style: none;
-  margin-bottom: 0.8em;
 `;
 
 
@@ -237,7 +204,7 @@ export const Search = styled.form`
 export const Input = styled.input`
     margin: 0;
     padding: 0;
-    border: 1px solid #919191;
+    border: 1px solid ${(props) => props.theme.navbar};
     outline: 0; 
     width: 28vw;
     font-family: Arial, Helvetica, sans-serif, "FontAwesome";
@@ -250,7 +217,7 @@ export const Input = styled.input`
     padding: .35rem;
     padding-left: 1rem;
     &::placeholder{
-        color: #919191;
+        color: ${(props) => props.theme.navbar};
     }
     /* @media screen and (max-width: 1000px) and (min-width: 765px) {  
         width: 30vw;
@@ -288,7 +255,7 @@ export const Login = styled(Link)`
     font-weight: 500;
     &:hover{
         background-color: #686464;
-        color: #fafafa;
+        color: ${(props) => props.theme.white};
     }
     margin-left: 5px;
     @media screen and (max-width: 500px) and (min-width: 300px) {
@@ -301,7 +268,7 @@ export const TogIcon = styled(MdDehaze)`
     padding: 0;
     width: 30px;
     height: 30px;
-    color: #fafafa;
+    color: ${(props) => props.theme.white};
 `;
 
 export const NavDrop = styled(NavDropdown)`
@@ -314,9 +281,9 @@ export const NavDrop = styled(NavDropdown)`
         font-size: 1.5rem;
     }
     #basic-nav-dropdown{
-        color: #919191;
+        color: ${(props) => props.theme.white};
         &:hover{
-            color: #fafafa;
+            color: ${(props) => props.theme.white};
         }
     }
 
@@ -328,12 +295,21 @@ export const NavDrop = styled(NavDropdown)`
     }
 `;
 
+export const MatchNavDrop = styled(NavDrop)`
+    #basic-nav-dropdown{
+        color:${(props) => props.theme.navbar};
+        &:hover{
+            color: ${(props) => props.theme.white};
+        }
+    }
+`;
+
 export const NavItem = styled(NavDropdown.Item)`
     font-size: 1.3rem;
-    color: #919191;
+    color: ${(props) => props.theme.navbar};
         z-index: 39;
     &:hover{
-        color: #fafafa;
+        color: ${(props) => props.theme.white};
         background-color: transparent;
     }
 `;
