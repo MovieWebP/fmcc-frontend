@@ -1,6 +1,7 @@
 import { useMatch, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as S from "./HeaderStyle";
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useState } from "react";
 
 
@@ -43,22 +44,26 @@ function Header() {
                             ) : (
                                 <S.ItemStyle href="/">Home</S.ItemStyle>
                             )}
-
-                            {movieMatch ? (
-                                <S.MatchItemStyle href="/movie">Movie</S.MatchItemStyle>
-                            ) : (
-                                <S.ItemStyle href="/movie">Movie</S.ItemStyle>
-                            )}
-                            {/* <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Dropdown link
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li> */}
+                            <NavDropdown
+                                style={{ "border": "3px solid blue", "margin": "0px", "padding":"0px" }}
+                                title=
+                                {movieMatch ? (
+                                    <S.MatchItemStyle>Movie</S.MatchItemStyle>
+                                ) : (
+                                    <S.ItemStyle style={{ "border": "1px solid red", "margin":"0px" }} >Movie</S.ItemStyle>
+                                )}
+                                id="basic-nav-dropdown"
+                            >
+                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">
+                                    Another action
+                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item href="#action/3.4">
+                                    Separated link
+                                </NavDropdown.Item>
+                            </NavDropdown>
 
                             {tvMatch ? (
                                 <S.MatchItemStyle href="/tv">TV Shows</S.MatchItemStyle>
