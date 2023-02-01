@@ -22,6 +22,9 @@ export const Search = () => {
                     placeholder="Search"
                 />
             </S.Search>
+        {/* <S.LoginWrap>
+                    <S.Login to="/login">Login</S.Login>
+            </S.LoginWrap> */}
         </S.Menu2Wrap >
     )
 }

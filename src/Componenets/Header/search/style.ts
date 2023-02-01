@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Container from 'react-bootstrap/Container';
+import { Link } from "react-router-dom";
 
 export const Menu2Wrap = styled(Container)`
     margin: 0;
@@ -63,6 +64,35 @@ export const Input = styled.input`
     }
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 38vw;
+        font-size: 1.8rem;
+    };
+`;
+
+export const LoginWrap = styled.div`
+    width: 10vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
+`;
+
+export const Login = styled(Link)`
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+    padding: .5rem .9rem;
+    color: ${(props) => props.theme.white};
+    border-radius: .5rem;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+    &:hover{
+        background-color: #686464;
+        color: ${(props) => props.theme.white};
+    }
+    margin-left: 5px;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 1.8rem;
     };
 `;
