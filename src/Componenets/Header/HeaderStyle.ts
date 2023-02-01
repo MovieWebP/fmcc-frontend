@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { MdDehaze } from "react-icons/md";
-import { MdExpandMore } from "react-icons/md"
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -50,7 +49,6 @@ export const MenuWrap = styled(Container)`
 
 export const NavTog = styled(Navbar.Toggle)`
     margin: 0;
-    /* margin-bottom: 10px; */
     padding: 0;
     border: none;
     color: none;
@@ -151,7 +149,6 @@ export const ItemStyle = styled(MatchItemStyle)`
 `;
 
 export const MovieItemDiv = styled.div`
-    /* border: 1px solid white; */
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -159,7 +156,6 @@ export const MovieItemDiv = styled.div`
 
 export const MovieItemStyle = styled(ItemStyle)`
     padding:0;
-    /* border: 1px solid red; */
 `;
 
 
@@ -177,15 +173,6 @@ export const Menu2Wrap = styled(MenuWrap)`
     height: fit-content;
     opacity: 1;
     transition: .2s opacity;
-    /* @media screen and (max-width: 765px) and (min-width: 500px) {
-        justify-content: flex-end;
-        width: 35vw;
-    };
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        justify-content: flex-end;
-        width: 30vw;
-        margin: 0;
-    }; */
     @media screen and (max-width: 500px) and (min-width: 300px) {
         justify-content: flex-end;
         width: 30vw;
@@ -219,15 +206,6 @@ export const Input = styled.input`
     &::placeholder{
         color: ${(props) => props.theme.navbar};
     }
-    /* @media screen and (max-width: 1000px) and (min-width: 765px) {  
-        width: 30vw;
-        font-size: 1.5rem;
-    };
-    @media screen and (max-width: 765px) and (min-width: 500px) {
-        width: 35vw;
-        font-size: 1.6rem;
-    };
-     */
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 38vw;
         font-size: 1.8rem;

@@ -4,42 +4,26 @@ import * as S from "./HeaderStyle";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useState } from "react";
 import { MdExpandMore } from "react-icons/md"
+import { Search } from "./search";
 
-
-interface IForm {
-    keyword: string;
+interface OptionProps {
+    title: string;
 }
 
 function Header() {
     const homeMatch = useMatch("");
     const movieMatch = useMatch("/movie");
     const tvMatch = useMatch("/tv");
-    const shoppingMatch = useMatch("/shopping")
+    const shoppingMatch = useMatch("/shopping");
 
-    const navigate = useNavigate();
-    const { register, handleSubmit } = useForm<IForm>();
-    const onSearch = (data: IForm) => {
-        navigate(`/search?keyword=${data.keyword}`);
-    }
-
-    const [IsOpen, setIsOpen] = useState(true);
-    const toggle = () => setIsOpen(!IsOpen);
-
-    const options = ["Movie", "Watch Now"];
+    const options: OptionProps[] = [{ title: "Movie" }, { title: "Watchlist" }];
 
     return (
         <>
             <S.NavBar expand="md" variants="dark">
                 <S.MenuWrap>
                     <S.NavTog ><S.TogIcon /></S.NavTog>
-                    <S.Menu2Wrap className="searchBarWrap">
-                        <S.Search onSubmit={handleSubmit(onSearch)}>
-                            <S.Input
-                                {...register("keyword", { required: true, minLength: 2 })}
-                                placeholder="Search"
-                            />
-                        </S.Search>
-                    </S.Menu2Wrap >
+                    <Search />
                     <S.NavBarCo id="basic-navbar-nav">
                         <S.MenuItems className="me-auto">
                             {homeMatch ? (
@@ -50,13 +34,19 @@ function Header() {
 
                             {movieMatch ? (
                                 <S.NavDrop title="Movie" id="basic-nav-dropdown">
-                                    <S.NavItem href="/movie">Movie</S.NavItem>
-                                    <S.NavItem href="/watch-now"> Watch Now </S.NavItem>
+                                    {options.map((option) =>
+                                        <>
+                                            <S.NavItem href="/movie">{option.title}</S.NavItem>
+                                        </>
+                                    )}
                                 </S.NavDrop>
                             ) : (
                                 <S.MatchNavDrop title="Movie" id="basic-nav-dropdown">
-                                    <S.NavItem href="/movie">Movie</S.NavItem>
-                                    <S.NavItem href="/watch-now"> Watch Now </S.NavItem>
+                                    {options.map((option) =>
+                                        <>
+                                            <S.NavItem href="/movie">{option.title}</S.NavItem>
+                                        </>
+                                    )}
                                 </S.MatchNavDrop>
                             )}
 
