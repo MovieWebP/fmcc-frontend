@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { MdDehaze } from "react-icons/md";
-
+import { MdExpandMore } from "react-icons/md"
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,8 +10,8 @@ import Navbar from 'react-bootstrap/Navbar';
 export const NavBar = styled(Navbar)`
     margin: 0;
     padding: 0;
-    padding: 5px;
-    backdrop-filter: blur(5px);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
     background-color: rgba(0,0,0,0.5);
     display: flex;
     justify-content: space-between;
@@ -32,11 +33,12 @@ export const MenuWrap = styled(Container)`
     width: 100%;
     max-width: 100%;
     height: fit-content;
-    
-    &:has(.show) > .searchBarWrap, 
-    &:has(.collapsing) > .searchBarWrap  {
+    @media screen and (max-width: 765px){
+        &:has(.show) > .searchBarWrap, 
+        &:has(.collapsing) > .searchBarWrap  {
         opacity: 0;
-    }
+        }
+    }       
     @media screen and (min-width: 765px) {
         direction: rtl;
 
@@ -140,9 +142,57 @@ export const MatchItemStyle = styled(Nav.Link)`
 
 export const ItemStyle = styled(MatchItemStyle)`
     color: #919191;
+    margin: 0;
+    padding: 0;
+
     &:hover{
         color: ${(props) => props.theme.white};
     }
+`;
+
+export const MovieItemDiv = styled.div`
+    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+`;
+
+export const MovieItemStyle = styled(ItemStyle)`
+    padding:0;
+    /* border: 1px solid red; */
+`;
+
+export const DropIcon = styled(MdExpandMore)`
+    /* border: 1px solid blue; */
+    position: relative;
+    right: 10px;
+    width: 1.8rem;
+    height: 1.8rem;
+`;
+
+export const DropDownListContainer = styled.div`
+    position: absolute;
+    top: 3.5rem;
+`;
+
+export const DropDownList = styled.ul`
+  padding: 0;
+  margin: 0;
+  padding-left: 1em;
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+  box-sizing: border-box;
+  color: #3faffa;
+  font-size: 1.3rem;
+  font-weight: 500;
+  &:first-child {
+    padding-top: 0.8em;
+  }
+`;
+
+export const ListItem = styled.li`
+  list-style: none;
+  margin-bottom: 0.8em;
 `;
 
 
@@ -245,4 +295,38 @@ export const TogIcon = styled(MdDehaze)`
     width: 30px;
     height: 30px;
     color: #fafafa;
+`;
+
+export const NavDrop = styled(NavDropdown)`
+    color: white;
+    margin: 0;
+    padding: 0;
+    & > a {
+        margin: 0;
+        padding: 0;
+        font-size: 1.5rem;
+    }
+    #basic-nav-dropdown{
+        color: #919191;
+        &:hover{
+            color: #fafafa;
+        }
+    }
+
+    & > div {
+    }
+    .dropdown-menu{
+    backdrop-filter: blur(10px);
+        background-color: rgba(0,0,0,0.5);
+    }
+`;
+
+export const NavItem = styled(NavDropdown.Item)`
+    font-size: 1.3rem;
+    color: #919191;
+        z-index: 39;
+    &:hover{
+        color: #fafafa;
+        background-color: transparent;
+    }
 `;

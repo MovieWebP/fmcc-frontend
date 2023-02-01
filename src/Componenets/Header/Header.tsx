@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import * as S from "./HeaderStyle";
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useState } from "react";
+import { MdExpandMore } from "react-icons/md"
 
 
 interface IForm {
@@ -20,6 +21,11 @@ function Header() {
     const onSearch = (data: IForm) => {
         navigate(`/search?keyword=${data.keyword}`);
     }
+
+    const [IsOpen, setIsOpen] = useState(true);
+    const toggle = () => setIsOpen(!IsOpen);
+
+    const options = ["Movie", "Watch Now"];
 
     return (
         <>
@@ -44,26 +50,18 @@ function Header() {
                             ) : (
                                 <S.ItemStyle href="/">Home</S.ItemStyle>
                             )}
-                            <NavDropdown
-                                style={{ "border": "3px solid blue", "margin": "0px", "padding":"0px" }}
-                                title=
-                                {movieMatch ? (
-                                    <S.MatchItemStyle>Movie</S.MatchItemStyle>
-                                ) : (
-                                    <S.ItemStyle style={{ "border": "1px solid red", "margin":"0px" }} >Movie</S.ItemStyle>
-                                )}
-                                id="basic-nav-dropdown"
-                            >
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
+
+                            <S.NavDrop title="Movie" id="basic-nav-dropdown">
+                                {/* <S.Filter></S.Filter> */}
+                                    <S.NavItem href="/movie">Movie</S.NavItem>
+                                    <S.NavItem href="/watch-now">
+                                        Watch Now
+                                    </S.NavItem>
+                                {/* <NavDropdown.Divider />
                                 <NavDropdown.Item href="#action/3.4">
                                     Separated link
-                                </NavDropdown.Item>
-                            </NavDropdown>
+                                </NavDropdown.Item> */}
+                            </S.NavDrop>
 
                             {tvMatch ? (
                                 <S.MatchItemStyle href="/tv">TV Shows</S.MatchItemStyle>
