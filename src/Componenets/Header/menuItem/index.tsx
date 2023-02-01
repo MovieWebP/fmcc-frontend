@@ -12,8 +12,6 @@ export const MenuItems = () => {
     const tvMatch = useMatch("/tv");
     const shoppingMatch = useMatch("/shopping");
 
-    const options: OptionProps[] = [{ title: "Movie" }, { title: "Watchlist" }];
-
     return (
         <S.MenuItems className="me-auto">
             {homeMatch ? (
@@ -24,19 +22,13 @@ export const MenuItems = () => {
 
             {movieMatch ? (
                 <S.NavDrop title="Movie" id="basic-nav-dropdown">
-                    {options.map((option) =>
-                        <>
-                            <S.DropItem href="/movie">{option.title}</S.DropItem>
-                        </>
-                    )}
+                    <S.DropItem href="/movie">Movie</S.DropItem>
+                    <S.DropItem href="/movie/watch-now">Watch now</S.DropItem>
                 </S.NavDrop>
             ) : (
                 <S.MatchNavDrop title="Movie" id="basic-nav-dropdown">
-                    {options.map((option) =>
-                        <>
-                            <S.DropItem href="/movie">{option.title}</S.DropItem>
-                        </>
-                    )}
+                    <S.DropItem href="/movie">Movie</S.DropItem>
+                    <S.DropItem href="/movie/watch-now">Watch now</S.DropItem>
                 </S.MatchNavDrop>
             )}
 

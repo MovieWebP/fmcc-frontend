@@ -9,6 +9,7 @@ import Movies from "./Route/Detail/Detail";
 import Search from "./Route/Search/Search";
 import Shopping from "./Route/Shopping/Shopping";
 import Dashboard from "./Route/Dashboard/Dashboard";
+import WatchNow from "./Route/Movie/watchNow/watchNow";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/movie" element={<Movie />} />
+          <Route path="/movie/watch-now" element={<WatchNow />} />
           <Route path="/:part/:sliderPart/:id" element={<Movies />} />
           <Route path="/tv" element={<TV />} />
           <Route path="/search" element={<Search />} />
