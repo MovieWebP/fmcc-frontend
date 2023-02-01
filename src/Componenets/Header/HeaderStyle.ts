@@ -11,7 +11,7 @@ export const NavBar = styled(Navbar)`
     margin: 0;
     padding: 0;
     padding: 15px 0;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(30px);
     background-color: rgba(0,0,0,0.5);
     display: flex;
     justify-content: space-between;
@@ -206,14 +206,19 @@ export const Menu2Wrap = styled(MenuWrap)`
     justify-content: space-between;
     margin: 0px 20px;
     padding: 0;
-    width: 33vw;
+    width: 28vw;
     height: fit-content;
     opacity: 1;
     transition: .2s opacity;
-    @media screen and (max-width: 765px) and (min-width: 500px) {
+    /* @media screen and (max-width: 765px) and (min-width: 500px) {
         justify-content: flex-end;
         width: 35vw;
     };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        justify-content: flex-end;
+        width: 30vw;
+        margin: 0;
+    }; */
     @media screen and (max-width: 500px) and (min-width: 300px) {
         justify-content: flex-end;
         width: 30vw;
@@ -242,11 +247,12 @@ export const Input = styled.input`
     background-color: transparent;
     caret-color: auto; 
     border-radius: 3px;
-    padding-left: .5rem;
+    padding: .35rem;
+    padding-left: 1rem;
     &::placeholder{
         color: #919191;
     }
-    @media screen and (max-width: 1000px) and (min-width: 765px) {  
+    /* @media screen and (max-width: 1000px) and (min-width: 765px) {  
         width: 30vw;
         font-size: 1.5rem;
     };
@@ -254,6 +260,7 @@ export const Input = styled.input`
         width: 35vw;
         font-size: 1.6rem;
     };
+     */
     @media screen and (max-width: 500px) and (min-width: 300px) {
         width: 38vw;
         font-size: 1.8rem;
