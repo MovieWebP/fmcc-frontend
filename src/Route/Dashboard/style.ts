@@ -4,78 +4,11 @@ import { MdPerson } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 
 export const Wrap = styled.div`
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-direction: column; */
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    @media screen and (max-width: 1500px) and (min-width: 300px) {
-        height: 98%;
-    };
-`;
-
-export const TopIcon = styled(MdPerson)`
-    color: rgba(0,0,0,0.5);
-    width: 4rem;
-    height: 4rem;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 5rem;
-        height: 5rem;
-    };
-`;
-
-export const FormIConDiv = styled.div`
-    background-color: #323232;
-    padding: 1.5rem;
-    border-radius: 50%;
-    margin-bottom: 2.5rem;
-`;
-
-export const LoginFrom = styled.form`
-    display: flex;
-    width: 400px;
-    height: 330px;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1rem;
-    background-color: #171717;
-    border: 1px solid #323232;
-    margin-left: 3rem;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 350px;
-        height: 280px;
-    };
-`;
-
-export const ApiForm = styled(LoginFrom)`
-    background-color: rgba(0,0,0,0.5);
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding-top: 10px;
-    padding-left: 10px;
-    // child
-    & > h3 {
-        margin-top: 10px;
-        font-size: 1.3rem;
-    }
-`;
-
-export const SignUpFrom = styled(LoginFrom)`
-    height: 400px;
-`;
-
-export const UserDiv = styled.div`
-    text-align: right;
-    margin-bottom: 30px;
-    height: 50px;
-    width: 80%;
+    margin-top: 4.5rem;
 `;
 
 export const InputDiv = styled.div`
@@ -119,45 +52,6 @@ export const ApiMessage = styled.p`
     }
 `;
 
-export const UserIcon = styled(MdPerson)`
-    position: relative;
-    margin-right: 3px;
-    bottom: 40px;
-    z-index: 10;
-    color: #fafafa;
-    width: 30px;
-    height: 30px;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 25px;
-        height: 25px;
-        position: relative;
-        bottom: 38px;
-    };
-`;
-
-export const Message = styled.p`
-    color: red;
-    font-size: 12px;
-    position: relative;
-    bottom: 25px;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        position: relative;
-        bottom: 20px;
-    };
-`;
-
-export const UserMessage = styled(Message)`
-    bottom: 33px;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        position: relative;
-        bottom: 25px;
-    };
-`;
-
-export const PasswordDiv = styled(UserDiv)`
-    margin-bottom: 0;
-`;
-
 export const LockIcon = styled(FaLock)`
     position: relative;
     z-index: 10;
@@ -171,34 +65,6 @@ export const LockIcon = styled(FaLock)`
         height: 18px;
         position: relative;
         bottom: 33px;
-    };
-`;
-
-
-export const Password = styled(Username)`
-`;
-
-export const CheckPassword = styled(Username)``;
-
-export const LoginButton = styled.button`
-    margin-top: 30px;
-    text-align: center;
-    width: 80%;
-    border-radius: .3rem;
-    border: none;
-    padding: 10px;
-    font-size: 1rem;
-    font-weight: 550;
-    color: ${props => props.theme.white};
-    background-color: #323232;
-    transition: all 0.2s ease-in-out;
-    &:hover{
-        cursor: pointer;
-        color: #fafafa;
-        background-color: #797474;
-    }
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        font-size: 1.5rem;
     };
 `;
 
@@ -220,7 +86,8 @@ export const LinkStyle = styled(Link)`
 export const Doc = styled.p`
     font-weight: 350;
     font-size: .7rem;
+    margin-top: 1rem;
     text-align: center;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
 `
