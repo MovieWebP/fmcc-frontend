@@ -2,24 +2,13 @@ import axios from "axios";
 import { useState } from "react";
 import * as S from "./style"
 import { InputDiv } from "../../inputdiv"
+import { IForm } from "..";
 
 interface InputFormProps {
     title: string;
     baseUrl: string;
-    // get useState function
     setApiData: React.Dispatch<React.SetStateAction<IForm | undefined>>;
 }
-
-interface IForm {
-    video: {
-        id: number;
-        url: string;
-        title: string;
-        movieId: number;
-    };
-    ok: boolean;
-    error?: string;
-};
 
 export const InputForm: React.FC<InputFormProps> = ({ title, baseUrl, setApiData }) => {
 
