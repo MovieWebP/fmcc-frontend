@@ -3,7 +3,7 @@ import * as S from "./SlideStyle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
-import SlickSlider from "./Slick/SlickSider";
+import SlickSlider from "./Slick";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
@@ -11,6 +11,8 @@ import { modalState } from "../../atom";
 import { makeImagePath } from "../../Api/utils";
 import { useEffect, useState } from "react";
 import { FaChevronLeft } from "react-icons/fa";
+import { PrevArrow } from "./Slick/PrevArrow";
+import { NextArrow } from "./Slick/NextArrow";
 
 interface IProps {
     id: string;
@@ -24,44 +26,6 @@ let slidesToShow = 6;
 
 function Slide({ id, part, title, movies }: IProps) {
 
-    const NextArrow = (props: any) => {
-        const { className, onClick, slideCount, currentSlide, style } = props;
-        // console.log(props);
-        return (
-            <>
-                {currentSlide !== slideCount - slidesToShow && (
-                    <div
-                        className={className}
-                        style={{ ...style, display: "block" }}
-                        onClick={onClick}
-                    >
-                        {/* <MdKeyboardArrowRight size="3rem" className="slick-arrow-icon-right" /> */}
-                        <FontAwesomeIcon icon={faChevronRight} size="3x" className="slick-arrow-icon-right" />
-                    </div>
-                )
-                }
-            </>
-        );
-    }
-
-    const PrevArrow = (props: any) => {
-        const { className, style, onClick, currentSlide } = props;
-        return (
-            <>
-                {currentSlide !== 0 && (
-                    <div
-                        className={className}
-                        onClick={onClick}
-                        style={{ ...style, display: "block" }}
-                    >
-                        {/* <MdKeyboardArrowLeft size="3rem" className="slick-arrow-icon-left" /> */}
-                        <FontAwesomeIcon icon={faChevronLeft} size="3x" className="slick-arrow-icon-left" />
-                    </div>
-                )}
-            </>
-        );
-    }
-
     const settings = {
         infinite: false,
         slidesToShow: 6,
@@ -69,7 +33,7 @@ function Slide({ id, part, title, movies }: IProps) {
         speed: 1000,
         pauseOnHover: true,
         draggable: true,
-        nextArrow: <NextArrow />,
+        nextArrow: <NextArrow slidesToShow={slidesToShow} />,
         prevArrow: <PrevArrow />,
         responsive: [
             {

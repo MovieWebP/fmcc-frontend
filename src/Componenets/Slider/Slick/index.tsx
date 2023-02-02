@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useRecoilState } from "recoil";
 import { modalState } from "../../../atom";
 import { useNavigate } from "react-router-dom";
-import { StyledSlider } from "./SlickStyle"
+import { StyledSlider } from "./style"
 
 interface IProp {
     settings: object,
