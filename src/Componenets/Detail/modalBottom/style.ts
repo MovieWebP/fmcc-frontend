@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-
-export const ModalTop = styled.div`  
+export const ModalBottom = styled.div`
     display: flex;
     justify-content: space-between;
     transition: all 0.5s ease-in-out;
@@ -12,7 +11,7 @@ export const ModalTop = styled.div`
     height: fit-content;
     align-items: flex-start;
     margin-top: 5rem;
-    margin-bottom: 0;
+    margin-bottom: 3rem;
     @media screen and (max-width: 2600px) and (min-width: 2350px) {
         max-width: 55%;
     };
@@ -22,11 +21,11 @@ export const ModalTop = styled.div`
     @media screen and  (max-width: 1410px) and (min-width: 1256px) {
         max-width: 70%;
     };
-    @media screen and (max-width: 835px) and (min-width: 300px) {
+    @media screen and (max-width: 835px) and (min-width: 500px) {
         max-width: 90%;
     };
-    @media screen and (min-width: 300px) {
-        justify-content: space-between;
-        margin-top: 7rem;
+    @media screen and (max-width: 587px) and (min-width: 300px) {
+        justify-content: center;
+        max-width: 90%;
     };
 `;
