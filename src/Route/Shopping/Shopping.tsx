@@ -39,7 +39,7 @@ function Shopping() {
             ))} */}
             <ReactPlayer
                 // url={`${video?.url}`}
-                url='http://localhost:3005/video/movie/cooperate-2/736820.m3u8'
+                url='http://localhost:3005/video/movie/crime-city-2/619803.m3u8'
                 playing={false}
                 controls
                 width="60rem"

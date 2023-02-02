@@ -15,7 +15,7 @@ export interface VideoProps {
 export const InputDiv: React.FC<InputDivProps> = ({ name }) => {
     const { register } = useForm<any>({
         defaultValues: {
-            url: "http://localhost:3005/video/movie",
+            url: "http://localhost:3005/video/movie/.m3u8",
         }
     });
 
