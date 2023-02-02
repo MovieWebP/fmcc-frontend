@@ -11,11 +11,11 @@ export const ApiWrap = styled.div`
 export const LoginFrom = styled.form`
     display: flex;
     width: 400px;
-    height: 330px;
+    height: 27rem;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
     border-radius: 1rem;
     background-color: #171717;
     border: 1px solid #323232;

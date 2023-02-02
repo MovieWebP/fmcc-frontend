@@ -52,17 +52,26 @@ export const Form: React.FC<FormProps> = ({ title }) => {
             <S.SliderTitle>{title}</S.SliderTitle>
             <S.ApiWrap>
                 <S.LoginFrom onSubmit={onSubmit}>
-                    {title === "Create" ? (
+                    {title === "Create" && (
                         <>
                             <InputDiv name="url" />
                             <InputDiv name="title" />
                             <InputDiv name="movieId" />
                         </>
-                    ) : (
+                    )}
+                    {title === "Update" && (
                         <>
+                            <InputDiv name="video id" />
+                            <InputDiv name="url" />
+                            <InputDiv name="title" />
                             <InputDiv name="movieId" />
                         </>
                     )}
+                    {title === "Delete" || title === "Get" ? (
+                        <>
+                            <InputDiv name="video id" />
+                        </>
+                    ) : (null)}
                     <S.LoginButton type="submit">{title}</S.LoginButton>
                 </S.LoginFrom>
                 <S.ApiForm>

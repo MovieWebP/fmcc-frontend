@@ -5,6 +5,7 @@ export const UserDiv = styled.div`
     margin-bottom: 30px;
     height: 50px;
     width: 80%;
+    overflow: scroll;
 `;
 
 export const InputDiv = styled.div`
