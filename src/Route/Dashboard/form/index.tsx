@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { InputDiv } from "../inputdiv";
 import * as S from "./style"
 
-interface ApiFormProps {
+interface FormProps {
     title: string;
 }
 
@@ -12,18 +13,12 @@ interface VideoProps {
     title: string;
     movieId: number;
 }
-
 interface IForm {
     video: VideoProps[];
     error?: string;
 };
 
-export const ApiForm: React.FC<ApiFormProps> = ({ title }) => {
-    const { register } = useForm<VideoProps>({
-        defaultValues: {
-            url: "http://localhost:3005/video/movie",
-        }
-    });
+export const Form: React.FC<FormProps> = ({ title }) => {
 
     const [apiData, setApiData] = useState<IForm>();
 
@@ -57,33 +52,17 @@ export const ApiForm: React.FC<ApiFormProps> = ({ title }) => {
             <S.SliderTitle>{title}</S.SliderTitle>
             <S.ApiWrap>
                 <S.LoginFrom onSubmit={onSubmit}>
-                    <S.UserDiv>
-                        <S.InputDiv>
-                            <div>
-                                <S.Username {...register("url", {
-                                    required: "url is required",
-                                })} placeholder="url" />
-                            </div>
-                        </S.InputDiv>
-                    </S.UserDiv>
-                    <S.UserDiv>
-                        <S.InputDiv>
-                            <div>
-                                <S.Username {...register("title", {
-                                    required: "title is required",
-                                })} placeholder="title" />
-                            </div>
-                        </S.InputDiv>
-                    </S.UserDiv>
-                    <S.UserDiv>
-                        <S.InputDiv>
-                            <div>
-                                <S.Username {...register("movieId", {
-                                    required: "movieId is required",
-                                })} placeholder="movieId" />
-                            </div>
-                        </S.InputDiv>
-                    </S.UserDiv>
+                    {title === "Create" ? (
+                        <>
+                            <InputDiv name="url" />
+                            <InputDiv name="title" />
+                            <InputDiv name="movieId" />
+                        </>
+                    ) : (
+                        <>
+                            <InputDiv name="movieId" />
+                        </>
+                    )}
                     <S.LoginButton type="submit">{title}</S.LoginButton>
                 </S.LoginFrom>
                 <S.ApiForm>

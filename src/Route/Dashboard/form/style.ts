@@ -26,36 +26,6 @@ export const LoginFrom = styled.form`
     };
 `;
 
-export const UserDiv = styled.div`
-    text-align: right;
-    margin-bottom: 30px;
-    height: 50px;
-    width: 80%;
-`;
-
-export const InputDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-export const Username = styled.input`
-    background-color: rgba(0,0,0,0.5);
-    border: 1px solid #323232;
-    border-radius: 10px;
-    height: 50px;
-    padding-left: 10px;
-    z-index: 7;
-    width: 100%;
-    caret-color: auto; 
-    color: ${(props) => props.theme.white};
-    &:focus{
-        outline: none;
-    }
-    &::placeholder{
-        color: #d1cccc;
-    }
-`;
-
 export const LoginButton = styled.button`
     text-align: center;
     width: 80%;
@@ -97,6 +67,7 @@ export const SliderTitle = styled.h1`
     width: fit-content;
     font-size: 2rem;
     font-weight: 600;
-    margin: 20px 0;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
     border-radius: 5px;
 `;

@@ -1,9 +1,4 @@
-import axios from "axios";
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-import { ApiForm } from "./form";
+import { Form } from "./form";
 import * as S from "./style";
 
 
@@ -35,7 +30,10 @@ function Dashboard() {
     return (
         <>
             <S.Wrap>
-                <ApiForm title="Create" />
+                <Form title="Create" />
+                <Form title="Update" />
+                <Form title="Delete" />
+                <Form title="Get" />
                 <S.Doc>© 2022-2023 by choi138.tk, Inc.</S.Doc>
             </S.Wrap>
 
