@@ -7,6 +7,7 @@ export const GetAllOutputForm = styled.div`
     justify-content: flex-start;
     padding-top: 10px;
     padding-left: 10px;
+    border-radius: 1rem;
     margin: 0;
     overflow: scroll;
     & > h3 {

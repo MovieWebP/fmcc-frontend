@@ -1,7 +1,4 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-import { InputDiv } from "../inputdiv";
+import { useState } from "react";
 import { AllOutputForm } from "./allOutputForm";
 import { InputForm } from "./inputForm";
 import { OutputForm } from "./outputForm";

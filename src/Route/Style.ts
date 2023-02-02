@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const SliderWrap = styled.div`
-    width: 100vw;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* overflow: hidden; */
+    overflow: hidden;
 `;
 
 export const SearchSliderWrap = styled(SliderWrap)`
@@ -21,7 +21,6 @@ export const SliderTitle = styled.h1`
     width: fit-content;
     font-size: 2rem;
     font-weight: 600;
-    /* padding: 5px 20px; */
     margin: 20px 0;
     border-radius: 5px;
 `;
