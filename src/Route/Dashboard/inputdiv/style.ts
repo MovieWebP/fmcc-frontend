@@ -19,6 +19,7 @@ export const Username = styled.input`
     border-radius: 10px;
     height: 50px;
     padding-left: 10px;
+    padding-right: 10px;
     z-index: 7;
     width: 100%;
     caret-color: auto; 
