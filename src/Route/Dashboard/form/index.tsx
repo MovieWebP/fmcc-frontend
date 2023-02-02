@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { InputDiv } from "../inputdiv";
+import { AllOutputForm } from "./allOutputForm";
 import * as S from "./style"
 
 interface FormProps {
@@ -19,13 +20,6 @@ interface IForm {
     ok: boolean;
     error?: string;
 };
-
-interface GetMovieProps {
-    url: string
-    title: string
-    movieId: number
-    id: number
-}
 
 export const Form: React.FC<FormProps> = ({ title, baseUrl }) => {
 
@@ -77,18 +71,6 @@ export const Form: React.FC<FormProps> = ({ title, baseUrl }) => {
         }
     };
 
-    const [videos, setVideos] = useState<any>()
-    // console.log(coinId)
-    const getMovies = async () => {
-        const json = await (await fetch(`http://localhost:3005/video/all/1`
-        )).json();
-        console.log(json)
-        setVideos(json)
-    }
-    useEffect(() => {
-        getMovies()
-    }, [])
-
     return (
         <>
             <S.SliderTitle>{title}</S.SliderTitle>
@@ -118,6 +100,7 @@ export const Form: React.FC<FormProps> = ({ title, baseUrl }) => {
                             ) : (null)}
                             <S.LoginButton type="submit">{title}</S.LoginButton>
                         </S.InputFrom>
+
                         <S.OutputForm>
 
                             {/* create */}
@@ -139,29 +122,7 @@ export const Form: React.FC<FormProps> = ({ title, baseUrl }) => {
                     </>
                 ) : (
                     <>
-                        <S.GetAllOutputForm>
-                            {"{"}
-                            <br />
-                            <h3 style={{ marginLeft: "1rem" }}>ok: {videos?.ok.toString()}</h3>
-                            <h3 style={{ marginLeft: "1rem" }}>results: [
-                                {videos?.results?.map((video: GetMovieProps) => (
-                                    <>
-                                        <div key={video.movieId}>
-                                            <h3 style={{ marginLeft: "2rem" }}>{"-{"}</h3>
-                                            <S.GetAllOutputItem>id: {video.id}</S.GetAllOutputItem>
-                                            <S.GetAllOutputItem>url: {video.url}</S.GetAllOutputItem>
-                                            <S.GetAllOutputItem>title: {video.title}</S.GetAllOutputItem>
-                                            <S.GetAllOutputItem>movieId: {video.movieId}</S.GetAllOutputItem>
-                                            <h3 style={{ marginLeft: "2rem" }}>{"},"}</h3>
-                                        </div>
-                                    </>
-                                ))}
-                                ],
-                            </h3>
-                            <h3 style={{ marginLeft: "1rem" }}>totalResults: {videos?.totalResults}</h3>
-                            <h3 style={{ marginLeft: "1rem" }}>totalPage: {videos?.totalPage}</h3>
-                            <h3 style={{marginBottom:"1rem"}}>{"}"}</h3>
-                        </S.GetAllOutputForm>
+                        <AllOutputForm />
                     </>
                 )}
             </S.ApiWrap >

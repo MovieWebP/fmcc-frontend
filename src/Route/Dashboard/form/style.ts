@@ -62,10 +62,6 @@ export const OutputForm = styled(InputFrom)`
     }
 `;
 
-export const GetAllOutputForm = styled(OutputForm)`
-    width: 50rem;
-    height: 30rem;
-`;
 
 export const SliderTitle = styled.h1`
     color: ${(props) => props.theme.white};
@@ -75,8 +71,4 @@ export const SliderTitle = styled.h1`
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     border-radius: 5px;
-`;
-
-export const GetAllOutputItem = styled.h3`
-    margin-left: 4rem;
 `;
