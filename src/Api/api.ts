@@ -66,6 +66,16 @@ export interface IGetCredits {
     crew: ICast[]; // 제작진 목록
 }
 
+export interface MovieVideoProps {
+    url: string
+    title: string
+    movieId: number
+}
+
+export interface MovieVideosProps {
+    videos: MovieVideoProps[];
+}
+
 //Movie
 export function getNowPlayingMovie() {
     return fetch(`${BASE_PATH}/movie/now_playing?api_key=${Api_KEY}&language=ko-KR`)
@@ -157,5 +167,11 @@ export async function getRecommend(part?: string, id?: string) {
 export async function getCast(part?: string, id?: string) {
     return await fetch(
         `${BASE_PATH}/${part}/${id}/credits?api_key=${Api_KEY}&language=ko-KR`
+    ).then((res) => res.json());
+}
+
+export async function getMovie() {
+    return await fetch(
+        'http://127.0.0.1:3005/video/all'
     ).then((res) => res.json());
 }
