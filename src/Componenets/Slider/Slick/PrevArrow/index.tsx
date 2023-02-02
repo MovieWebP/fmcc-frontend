@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
 
 export const PrevArrow = (props: any) => {
+    console.log(props)
     const { className, style, onClick, currentSlide } = props;
     return (
         <>

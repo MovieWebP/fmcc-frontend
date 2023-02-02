@@ -5,10 +5,11 @@ import { modalState } from "../../atom";
 import { useRecoilState } from "recoil";
 import { AnimatePresence } from "framer-motion";
 import { makeImagePath } from "../../Api/utils";
-import Trailer from "./Trailer/Trailer";
+import Trailer from "./Trailer";
 import { Helmet } from "react-helmet";
 import { Rating } from "react-simple-star-rating";
 import { useEffect, useState } from "react";
+import { Clip } from "./modalTop/clip";
 
 interface IModal {
     detail: IGetDetail;
@@ -63,33 +64,11 @@ function Detail({ detail, recommend, cast }: IModal) {
                 <>
                     <S.Wrap>
                         <S.WrapImage bgPhoto={makeImagePath(detail?.backdrop_path)}></S.WrapImage>
-                        <S.ModalContainerWrap>
-                            <S.ModalClips bgPhoto={makeImagePath(
-                                detail?.backdrop_path
-                            )}>
-                                <S.Video>
-                                    <Trailer part={part} id={id} />
-                                </S.Video>
-                            </S.ModalClips>
+                        <S.ModalTop>
+                            <Clip detail={detail} part={part} id={id} />
                             <S.ModalContainer>
                                 <S.ModalImage src={makeImagePath(detail?.poster_path)} />
-                                <S.ModalInfo>
-                                    <S.InfoTitle>{part === "movie" ? detail?.title : detail?.name}</S.InfoTitle>
-                                    <S.Genres>
-                                        <S.InfoDate>{part === "movie" ? detail?.release_date?.slice(0, 4) : detail?.first_air_date?.slice(0, 4)}</S.InfoDate>
-                                        {detail?.genres?.length ? (
-                                            <S.Genre>
-                                                {(detail.genres || []).map
-                                                    ((genre: any) => genre.name).join("/")}
-                                            </S.Genre>
-                                        ) : null}
-                                    </S.Genres>
-                                    <S.DummyDiv></S.DummyDiv>
-                                    <S.SumDiv>
-                                        <S.InfoDate>Summary</S.InfoDate>
-                                        <S.InfoOverview>{detail?.overview}</S.InfoOverview>
-                                    </S.SumDiv>
-                                </S.ModalInfo>
+                                {/*  */}
                             </S.ModalContainer>
                             {windowDimension.winWidth <= 500 ? (null) : (
                                 <S.InfoModalContainer>
@@ -128,8 +107,8 @@ function Detail({ detail, recommend, cast }: IModal) {
                                         </S.InfoMovieName>
                                     </S.Overview>
                                 </S.InfoModalContainer>)}
-                        </S.ModalContainerWrap>
-                        <S.ModalContainerWrapBottom>
+                        </S.ModalTop>
+                        <S.ModalBottom>
                             <S.CopyContainer>
                                 {cast ? (
                                     <>
@@ -189,7 +168,7 @@ function Detail({ detail, recommend, cast }: IModal) {
                                     </>
                                 )}
                             </S.ModalContainers>
-                        </S.ModalContainerWrapBottom>
+                        </S.ModalBottom>
                         <S.Doc>2023 choi138.tk, All rights reserved.</S.Doc>
                     </S.Wrap>
                 </>

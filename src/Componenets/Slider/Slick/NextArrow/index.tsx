@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
 
 export const NextArrow = (props: any, slidesToShow: number) => {
+    console.log(props)
     const { className, onClick, slideCount, currentSlide, style } = props;
     return (
         <>

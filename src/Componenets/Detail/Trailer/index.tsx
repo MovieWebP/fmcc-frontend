@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getTrailer } from "../../../Api/api";
 import { VolumeOff, VolumeUp } from "@mui/icons-material";
-import * as S from "./TrailerStyle";
+import * as S from "./style";
 
 interface ITrailer {
     id?: string;
