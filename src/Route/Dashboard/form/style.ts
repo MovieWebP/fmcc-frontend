@@ -8,7 +8,7 @@ export const ApiWrap = styled.div`
     margin-bottom: 2rem;
 `;
 
-export const LoginFrom = styled.form`
+export const InputFrom = styled.form`
     display: flex;
     width: 400px;
     height: 27rem;
@@ -47,7 +47,7 @@ export const LoginButton = styled.button`
     };
 `;
 
-export const ApiForm = styled(LoginFrom)`
+export const OutputForm = styled(InputFrom)`
     background-color: rgba(0,0,0,0.5);
     flex-direction: column;
     align-items: flex-start;
@@ -62,6 +62,11 @@ export const ApiForm = styled(LoginFrom)`
     }
 `;
 
+export const GetAllOutputForm = styled(OutputForm)`
+    width: 50rem;
+    height: 30rem;
+`;
+
 export const SliderTitle = styled.h1`
     color: ${(props) => props.theme.white};
     width: fit-content;
@@ -70,4 +75,8 @@ export const SliderTitle = styled.h1`
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     border-radius: 5px;
+`;
+
+export const GetAllOutputItem = styled.h3`
+    margin-left: 4rem;
 `;

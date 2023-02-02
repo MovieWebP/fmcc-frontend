@@ -13,15 +13,11 @@ interface GetMovieProps {
     movieId: number
 }
 
-interface GetMoviesProps {
-    videos: GetMovieProps[]
-}
-
 function Shopping() {
     const [videos, setVideos] = useState<GetMovieProps[]>([])
     // console.log(coinId)
     const getMovies = async () => {
-        const json = await (await fetch(`http://localhost:3005/video/all`
+        const json = await (await fetch(`http://localhost:3005/video/all/1`
         )).json();
         console.log(json.videos)
         setVideos(json.videos)

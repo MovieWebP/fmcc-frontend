@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { InputDiv } from "../inputdiv";
 import * as S from "./style"
@@ -9,12 +9,6 @@ interface FormProps {
     baseUrl: string;
 }
 
-interface VideoProps {
-    id: number;
-    url: string;
-    title: string;
-    movieId: number;
-}
 interface IForm {
     video: {
         id: number;
@@ -25,6 +19,13 @@ interface IForm {
     ok: boolean;
     error?: string;
 };
+
+interface GetMovieProps {
+    url: string
+    title: string
+    movieId: number
+    id: number
+}
 
 export const Form: React.FC<FormProps> = ({ title, baseUrl }) => {
 
@@ -75,51 +76,94 @@ export const Form: React.FC<FormProps> = ({ title, baseUrl }) => {
             console.log(err)
         }
     };
+
+    const [videos, setVideos] = useState<any>()
+    // console.log(coinId)
+    const getMovies = async () => {
+        const json = await (await fetch(`http://localhost:3005/video/all/1`
+        )).json();
+        console.log(json)
+        setVideos(json)
+    }
+    useEffect(() => {
+        getMovies()
+    }, [])
+
     return (
         <>
             <S.SliderTitle>{title}</S.SliderTitle>
             <S.ApiWrap>
-                <S.LoginFrom onSubmit={onSubmit}>
-                    {title === "Create" && (
-                        <>
-                            <InputDiv name="url" />
-                            <InputDiv name="title" />
-                            <InputDiv name="movieId" />
-                        </>
-                    )}
-                    {title === "Update" && (
-                        <>
-                            <InputDiv name="videoId" />
-                            <InputDiv name="url" />
-                            <InputDiv name="title" />
-                            <InputDiv name="movieId" />
-                        </>
-                    )}
-                    {title === "Delete" || title === "Get" ? (
-                        <>
-                            <InputDiv name="videoId" />
-                        </>
-                    ) : (null)}
-                    <S.LoginButton type="submit">{title}</S.LoginButton>
-                </S.LoginFrom>
-                <S.ApiForm>
+                {title !== "GetAll" ? (
+                    <>
+                        <S.InputFrom onSubmit={onSubmit}>
+                            {title === "Create" && (
+                                <>
+                                    <InputDiv name="url" />
+                                    <InputDiv name="title" />
+                                    <InputDiv name="movieId" />
+                                </>
+                            )}
+                            {title === "Update" && (
+                                <>
+                                    <InputDiv name="videoId" />
+                                    <InputDiv name="url" />
+                                    <InputDiv name="title" />
+                                    <InputDiv name="movieId" />
+                                </>
+                            )}
+                            {title === "Delete" || title === "Get" ? (
+                                <>
+                                    <InputDiv name="videoId" />
+                                </>
+                            ) : (null)}
+                            <S.LoginButton type="submit">{title}</S.LoginButton>
+                        </S.InputFrom>
+                        <S.OutputForm>
 
-                    {/* create */}
-                    {apiData && (
-                        <>
-                            <h3>ok: {apiData?.ok?.toString()} </h3>
-                            {apiData?.error && <h3>error: {apiData?.error} </h3>}
-                        </>
-                    )}
-                    {apiData?.video && (
-                        <>
-                            <h3>id: {apiData.video.id}</h3>
-                            <h3>url: {apiData.video.url}</h3>
-                            <h3>title: {apiData.video.title}</h3>
-                            <h3>movieId: {apiData.video.movieId}</h3>
-                        </>
-                    )}
-                </S.ApiForm>
+                            {/* create */}
+                            {apiData && (
+                                <>
+                                    <h3>ok: {apiData?.ok?.toString()} </h3>
+                                    {apiData?.error && <h3>error: {apiData?.error} </h3>}
+                                </>
+                            )}
+                            {apiData?.video && (
+                                <>
+                                    <h3>id: {apiData.video.id}</h3>
+                                    <h3>url: {apiData.video.url}</h3>
+                                    <h3>title: {apiData.video.title}</h3>
+                                    <h3>movieId: {apiData.video.movieId}</h3>
+                                </>
+                            )}
+                        </S.OutputForm>
+                    </>
+                ) : (
+                    <>
+                        <S.GetAllOutputForm>
+                            {"{"}
+                            <br />
+                            <h3 style={{ marginLeft: "1rem" }}>ok: {videos?.ok.toString()}</h3>
+                            <h3 style={{ marginLeft: "1rem" }}>results: [
+                                {videos?.results?.map((video: GetMovieProps) => (
+                                    <>
+                                        <div key={video.movieId}>
+                                            <h3 style={{ marginLeft: "2rem" }}>{"-{"}</h3>
+                                            <S.GetAllOutputItem>id: {video.id}</S.GetAllOutputItem>
+                                            <S.GetAllOutputItem>url: {video.url}</S.GetAllOutputItem>
+                                            <S.GetAllOutputItem>title: {video.title}</S.GetAllOutputItem>
+                                            <S.GetAllOutputItem>movieId: {video.movieId}</S.GetAllOutputItem>
+                                            <h3 style={{ marginLeft: "2rem" }}>{"},"}</h3>
+                                        </div>
+                                    </>
+                                ))}
+                                ],
+                            </h3>
+                            <h3 style={{ marginLeft: "1rem" }}>totalResults: {videos?.totalResults}</h3>
+                            <h3 style={{ marginLeft: "1rem" }}>totalPage: {videos?.totalPage}</h3>
+                            <h3 style={{marginBottom:"1rem"}}>{"}"}</h3>
+                        </S.GetAllOutputForm>
+                    </>
+                )}
             </S.ApiWrap >
         </>
     )
