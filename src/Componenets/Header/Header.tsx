@@ -1,9 +1,4 @@
-import { useMatch, useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import * as S from "./HeaderStyle";
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import { useState } from "react";
-import { MdExpandMore } from "react-icons/md"
 import { Search } from "./search";
 import { MenuItems } from "./menuItem";
 

@@ -1,15 +1,10 @@
 import { IMovie } from "../../Api/api";
 import * as S from "./SlideStyle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { useRecoilState } from "recoil";
 import { useNavigate } from "react-router-dom";
 import { modalState } from "../../atom";
 import { makeImagePath } from "../../Api/utils";
 import { useEffect, useState } from "react";
-import { FaChevronLeft } from "react-icons/fa";
 import { NextArrow } from "./Slick/NextArrow";
 import { PrevArrow } from "./Slick/PrevArrow";
 import SlickSlider from "./Slick";
