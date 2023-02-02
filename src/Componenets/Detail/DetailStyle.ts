@@ -63,24 +63,16 @@ export const ModalTop = styled(ModalBottom)`
     };
 `;
 
-export const ModalContainer = styled.div`   
+export const ModalContainers = styled.div`
     display: flex;
-    width: 40rem;
-    padding: 20px 0;
     justify-content: space-between;
-    @media screen and (max-width: 1410px) and (min-width: 1100px) {
-        width: 32rem;
-    };
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 100%;
-    };
-`;
-
-export const ModalContainers = styled(ModalContainer)`
     width: fit-content;
     flex-direction: column;
     padding: 0;
     margin: 0;
+    @media screen and (max-width: 1410px) and (min-width: 1100px) {
+        width: 32rem;
+    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         margin-top: 30px;
     };
@@ -102,23 +94,6 @@ export const CopyContainer = styled.div`
     };
 `;
 
-export const InfoModalContainer = styled.div`
-    width: 24rem;
-    padding: 20px 0;
-    /* border: 1px solid red; */
-`;
-
-export const ModalImage = styled.img`
-    width: 11rem;
-    border-radius: 10px;
-    @media screen and (max-width: 2600px) and (min-width: 2000px) {
-        width: 13rem;
-    };
-    @media screen and (max-width: 500px) and (min-width: 300px) {
-        width: 13rem;
-    };
-`
-
 export const OverviewTitle = styled.h1`
     color: ${(props) => props.theme.white};
     font-size: 1.8rem;
@@ -130,26 +105,6 @@ export const OverviewTitle = styled.h1`
         text-align: center;
         margin-bottom: 30px;
     };
-`;
-
-export const Overview = styled.div`
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 10px;
-`;
-
-export const InfoName = styled.h3`
-    margin-right: 5px;
-    font-size: .85rem;
-    opacity: 0.7;
-`;
-
-
-export const InfoMovieName = styled.div`
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    color: ${(props) => props.theme.white};
 `;
 
 

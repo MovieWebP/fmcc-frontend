@@ -10,6 +10,8 @@ import { Helmet } from "react-helmet";
 import { Rating } from "react-simple-star-rating";
 import { useEffect, useState } from "react";
 import { Clip } from "./modalTop/clip";
+import { LeftContainer } from "./modalTop/leftContainter";
+import { RightContainer } from "./modalTop/rightConatiner";
 
 interface IModal {
     detail: IGetDetail;
@@ -66,47 +68,10 @@ function Detail({ detail, recommend, cast }: IModal) {
                         <S.WrapImage bgPhoto={makeImagePath(detail?.backdrop_path)}></S.WrapImage>
                         <S.ModalTop>
                             <Clip detail={detail} part={part} id={id} />
-                            <S.ModalContainer>
-                                <S.ModalImage src={makeImagePath(detail?.poster_path)} />
-                                {/*  */}
-                            </S.ModalContainer>
-                            {windowDimension.winWidth <= 500 ? (null) : (
-                                <S.InfoModalContainer>
-                                    <S.OverviewTitle>Info</S.OverviewTitle>
-                                    <S.Overview>
-                                        <S.InfoName>Title: </S.InfoName>
-                                        <S.InfoMovieName>{part === "movie" ? detail?.title : detail?.name}</S.InfoMovieName>
-                                    </S.Overview>
-                                    <S.Overview>
-                                        <S.InfoName>Cast: </S.InfoName>
-                                        <S.InfoMovieName>{cast.slice(0, 4).map
-                                            ((casts: any) => casts.name).join(", ")}
-                                        </S.InfoMovieName>
-                                    </S.Overview>
-                                    <S.Overview>
-                                        <S.InfoName>Genres: </S.InfoName>
-                                        <S.InfoMovieName>{detail?.genres?.length ? (
-                                            <S.InfoMovieName>
-                                                {(detail.genres || []).map
-                                                    ((genre: any) => genre.name).join(", ")}
-                                            </S.InfoMovieName>
-                                        ) : null}</S.InfoMovieName>
-                                    </S.Overview>
-                                    <S.Overview>
-                                        <S.InfoName>Rating: </S.InfoName>
-                                        <S.InfoMovieName>
-                                            <Rating
-                                                readonly
-                                                style={{ "marginBottom": "3px" }}
-                                                initialValue={detail?.vote_average / 2}
-                                                transition
-                                                size={13}
-                                                emptyColor="gray"
-                                            />
-                                            {Math.round(detail?.vote_average * 10) / 10}
-                                        </S.InfoMovieName>
-                                    </S.Overview>
-                                </S.InfoModalContainer>)}
+                            <LeftContainer detail={detail} part={part} />
+                            {windowDimension.winWidth >= 500 && (
+                                <RightContainer detail={detail} cast={cast} part={part} />
+                            )}
                         </S.ModalTop>
                         <S.ModalBottom>
                             <S.CopyContainer>
