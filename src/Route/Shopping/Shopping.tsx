@@ -33,18 +33,20 @@ function Shopping() {
     return (
         <S.SearchSliderWrap>
             <S.Title>See you soon! </S.Title>
-            {/* {videos.filter((video) => video.title === "jeungei").map((video) => (
-                ))} */}
+            {/* {videos.filter((video) => video.movieId === 851644).map((video) => (
+                <>
+                </>
+            ))} */}
             <ReactPlayer
                 // url={`${video?.url}`}
-                url="http://localhost:3005/video/movie/intern/intern.m3u8"
+                url='http://localhost:3005/video/movie/cooperate-2/736820.m3u8'
                 playing={false}
                 controls
                 width="60rem"
                 height="40rem"
             />
-            {videos.map((video) => <Link to={`/${video.movieId}`} > { video.movieId }</Link>)
-}
+            {videos.map((video) => <Link to={`/${video.movieId}`} > {video.movieId}</Link>)
+            }
         </S.SearchSliderWrap >
     )
 }
