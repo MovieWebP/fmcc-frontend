@@ -16,6 +16,7 @@ function Detail({ detail, recommend, cast }: IModal) {
     const modalMatch: PathMatch<string> | null = useMatch("/:part/:sliderPart/:id");
     const part = modalMatch?.params.part;
     const id = modalMatch?.params.id;
+    console.log(part, id);
 
     return (
         <>

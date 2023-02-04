@@ -174,7 +174,7 @@ export async function getCast(part?: string, id?: string) {
     ).then((res) => res.json());
 }
 
-export async function getMovie() {
+export async function getVideo() {
     return await fetch(
         'http://127.0.0.1:3005/video/all/1'
     ).then((res) => res.json());
