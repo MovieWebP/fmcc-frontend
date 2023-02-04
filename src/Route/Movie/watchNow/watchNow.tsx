@@ -1,7 +1,9 @@
 import { useQuery } from "react-query";
-import { getDetail, getMovie, IGetResults, MovieVideoProps, MovieVideosProps } from "../../../Api/api";
+import { useNavigate } from "react-router-dom";
+import { getMovie, MovieVideoProps, MovieVideosProps } from "../../../Api/api";
 import { makeImagePath } from "../../../Api/utils";
-import * as S from "./style";
+import * as S from "./styled";
+import { MdPlayArrow } from "react-icons/md";
 
 function WatchNow() {
     const { data: video, isLoading: videoLoading } =
@@ -12,9 +14,12 @@ function WatchNow() {
                 refetchInterval: 50000
             }
         );
-    const id = video?.results.map((video: MovieVideoProps)  => (
-        video.movieId.toString()
-    ))
+
+    const navigate = useNavigate();
+
+    const boxClick = () => {
+        navigate(`/shopping`);
+    };
 
     return (
         <S.SearchSliderWrap>
@@ -23,8 +28,11 @@ function WatchNow() {
                 {video?.results.map((video: MovieVideoProps) => (
                     <>
                         <S.BoxWrap>
-                            {/* <S.Image src={makeImagePath(video.backdrop_path)}/> */}
-                            <h3>{video.title}</h3>
+                                <S.PlayIcon />
+                            <S.VideoWrap>
+                                <S.Image src={makeImagePath(video.backdrop_path)} onClick={boxClick} />
+                                <S.MovieTitle>{video.title}</S.MovieTitle>
+                            </S.VideoWrap>
                         </S.BoxWrap>
                     </>
                 ))}

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MdPlayArrow } from "react-icons/md";
 
 export const SearchSliderWrap = styled.div`
     display: flex;
@@ -23,9 +24,7 @@ export const Wrap = styled.div`
     width: 90%;
     display: grid;
     
-    @media screen and (max-width: 1500px) and (min-width: 1000px) {
-        grid-template-columns: repeat(6, 1fr);
-    };
+    grid-template-columns: repeat(3, 10fr); 
 
     /* @media screen and (max-width: 1000px) and (min-width: 700px) {
     };
@@ -35,23 +34,44 @@ export const Wrap = styled.div`
 
     @media screen and (max-width: 500px) and (min-width: 300px) {    
     }; */
-
-    border: 1px solid red;
 `
 
 export const BoxWrap = styled.div`
-    height: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 1px solid blue;
+`;
+
+export const VideoWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1rem 5px;
+    background-color: #252525;
+    border: 1px solid #6A6A6A;
 `;
 
 export const Image = styled.img`
-    width: 11rem;
-border-radius: .8rem;
-&:focus{
-    outline: 0; 
-}
+    width: 25rem;
+    filter: brightness(60%);
+    border-radius: .5rem;
+    &:focus{
+        outline: 0; 
+    }
+`;
+
+export const MovieTitle = styled.h3`
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    /* border: 1px solid red; */
+`;
+
+export const PlayIcon = styled(MdPlayArrow)`
+    z-index: 30;
+    position: relative;
+    top: 45%;
+    width: 3.5rem;
+    height: 3.5rem;
 `;
