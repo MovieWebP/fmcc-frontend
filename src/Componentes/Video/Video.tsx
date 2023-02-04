@@ -1,14 +1,14 @@
 import ReactPlayer from "react-player";
 import { useQuery } from "react-query";
 import { PathMatch, useMatch, useParams } from "react-router-dom";
-import { getVideo, MovieVideoProps, MovieVideosProps } from "../../Api/api";
+import { getVideo, VideoProps, VideosProps } from "../../Api/api";
 import * as S from "./VideoStyle";
 
 function Video() {
     const modalMatch: PathMatch<string> | null = useMatch("/watch-now/:part/:id");
     const id = modalMatch?.params.id;
     const { data: video, isLoading: videoLoading } =
-        useQuery<MovieVideosProps>(
+        useQuery<VideosProps>(
             ["video", "movie"],
             getVideo,
             {
@@ -16,14 +16,13 @@ function Video() {
             }
         );
 
-    console.log(id);
     return (
         <>
             <S.Wrap>
 
                 {video?.results.filter(
-                    (video: MovieVideoProps) => video.movieId.toString() === id
-                ).map((video: MovieVideoProps) => (
+                    (video: VideoProps) => video.movieId.toString() === id
+                ).map((video: VideoProps) => (
                     <>
                         <S.Title>{video.title}</S.Title>
                         <ReactPlayer

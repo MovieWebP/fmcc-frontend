@@ -66,16 +66,16 @@ export interface IGetCredits {
     crew: ICast[]; // 제작진 목록
 }
 
-export interface MovieVideoProps {
+export interface VideoProps {
     url: string
     title: string
     movieId: number
     backdrop_path: string
 }
 
-export interface MovieVideosProps {
+export interface VideosProps {
     ok: boolean;
-    results: MovieVideoProps[];
+    results: VideoProps[];
     totalPages: number;
     totalResults: number;
 }
