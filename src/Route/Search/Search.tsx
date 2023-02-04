@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { PathMatch, useLocation, useMatch } from "react-router-dom";
 import { getFindMovie, IGetResults, getFindTv, getDetail, getRecommend, getCast, IGetCredits } from "../../Api/api";
-import Slider from "../../Componenets/Slider/Slide";
+import Slider from "../../Componentes/Slider/Slide";
 import * as S from "../Style";
 
 function Search() {

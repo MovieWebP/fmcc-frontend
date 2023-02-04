@@ -23,12 +23,12 @@ export const MenuItems = () => {
             {movieMatch ? (
                 <S.NavDrop title="Movie" id="basic-nav-dropdown">
                     <S.DropItem href="/movie">Movie</S.DropItem>
-                    <S.DropItem href="/movie/watch-now">Watch now</S.DropItem>
+                    <S.DropItem href="/watch-now/movie">Watch now</S.DropItem>
                 </S.NavDrop>
             ) : (
                 <S.MatchNavDrop title="Movie" id="basic-nav-dropdown">
                     <S.DropItem href="/movie">Movie</S.DropItem>
-                    <S.DropItem href="/movie/watch-now">Watch now</S.DropItem>
+                    <S.DropItem href="/watch-now/movie">Watch now</S.DropItem>
                 </S.MatchNavDrop>
             )}
 

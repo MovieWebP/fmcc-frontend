@@ -1,9 +1,9 @@
 
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
-import Slide from "../../Componenets/Slider/Slide";
+import Slide from "../../Componentes/Slider/Slide";
 import { getAiringTodayTv, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, getPopularTv, getUpcomingMovie, IGetResults } from "../../Api/api";
-import Banner from "../../Componenets/Banner/Banner";
+import Banner from "../../Componentes/Banner/Banner";
 import * as S from "../Style";
 import { useRecoilValue } from "recoil";
 

@@ -1,11 +1,12 @@
 import { useQuery } from "react-query";
-import { useNavigate } from "react-router-dom";
-import { getMovie, MovieVideoProps, MovieVideosProps } from "../../../Api/api";
-import { makeImagePath } from "../../../Api/utils";
+import { useNavigate, useParams } from "react-router-dom";
+import { getMovie, MovieVideoProps, MovieVideosProps } from "../../Api/api";
+import { makeImagePath } from "../../Api/utils";
 import * as S from "./styled";
 import { MdPlayArrow } from "react-icons/md";
 
 function WatchNow() {
+    const { part } = useParams();
     const { data: video, isLoading: videoLoading } =
         useQuery<MovieVideosProps>(
             ["video", "movie"],
@@ -17,9 +18,14 @@ function WatchNow() {
 
     const navigate = useNavigate();
 
-    const boxClick = () => {
-        navigate(`/shopping`);
+    const boxClick = (
+        id: number) => {
+        navigate(`/watch-now/${part}/${id}`);
     };
+    // const boxClick = (part: string, id: number, sliderId: string) => {
+    //     navigate(`/${part}/${sliderId}/${id}`);
+    //     setModalActive(true);
+    // };
 
     return (
         <S.SearchSliderWrap>
@@ -28,9 +34,9 @@ function WatchNow() {
                 {video?.results.map((video: MovieVideoProps) => (
                     <>
                         <S.BoxWrap>
-                                <S.PlayIcon />
+                            <S.PlayIcon />
                             <S.VideoWrap>
-                                <S.Image src={makeImagePath(video.backdrop_path)} onClick={boxClick} />
+                                <S.Image src={makeImagePath(video.backdrop_path)} onClick={() => boxClick(video.movieId)} />
                                 <S.MovieTitle>{video.title}</S.MovieTitle>
                             </S.VideoWrap>
                         </S.BoxWrap>

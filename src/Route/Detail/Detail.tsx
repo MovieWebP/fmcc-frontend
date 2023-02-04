@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
 import { getDetail, getRecommend, getCast, IGetCredits } from "../../Api/api";
-import Detail from "../../Componenets/Detail/Detail";
+import Detail from "../../Componentes/Detail/Detail";
 import * as S from "../Style";
 
 

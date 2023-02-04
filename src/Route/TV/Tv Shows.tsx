@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
 import { useQuery } from "react-query";
 import { PathMatch, useMatch } from "react-router-dom";
-import Slider from "../../Componenets/Slider/Slide";
-import Banner from "../../Componenets/Banner/Banner";
+import Slider from "../../Componentes/Slider/Slide";
+import Banner from "../../Componentes/Banner/Banner";
 import { getAiringTodayTv, getOnTheAirTv, getPopularTv, getTopRatedTv, IGetResults } from "../../Api/api";
 import * as S from "../Style";
 
