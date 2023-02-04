@@ -41,8 +41,8 @@ function Shopping() {
                 width="60rem"
                 height="40rem"
             />
-            {videos.map((video) => <Link to={`/${video.movieId}`} > {video.movieId}</Link>)
-            }
+            {/* {videos.map((video) => <Link to={`/${video.movieId}`} > {video.movieId}</Link>)
+            } */}
         </S.SearchSliderWrap >
     )
 }

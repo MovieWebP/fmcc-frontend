@@ -19,9 +19,6 @@ export const Wrap = styled.div`
     align-items: center;
     width: 90%;
     height: 25rem;
-    @media screen and (max-width: 1500px) and (min-width: 1200px) {
-        width: 80%;
-    };
     @media screen and (max-width: 500px) and (min-width: 300px) {
         height: 100%;
     };
@@ -30,12 +27,6 @@ export const Wrap = styled.div`
 export const TitleWrap = styled.div`
     align-items: flex-end;
     width: 90%;
-    @media screen and (max-width: 1500px) and (min-width: 1200px) {
-        width: 80%;
-    };
-    @media screen and (max-width: 500px) and (min-width: 800px) {
-        /* margin-bottom: 1.5rem; */
-    };
 `;
 
 export const Title = styled.h3`

@@ -73,7 +73,10 @@ export interface MovieVideoProps {
 }
 
 export interface MovieVideosProps {
-    videos: MovieVideoProps[];
+    ok: boolean;
+    results: MovieVideoProps[];
+    totalPages: number;
+    totalResults: number;
 }
 
 //Movie
@@ -172,6 +175,6 @@ export async function getCast(part?: string, id?: string) {
 
 export async function getMovie() {
     return await fetch(
-        'http://127.0.0.1:3005/video/all'
+        'http://127.0.0.1:3005/video/all/1'
     ).then((res) => res.json());
 }

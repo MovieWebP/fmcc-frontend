@@ -12,6 +12,13 @@ export const SliderWrap = styled.div`
 `;
 
 export const SearchSliderWrap = styled(SliderWrap)`
+display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 100vw;
     position: relative;
     top: 10rem;
 `;
@@ -35,7 +42,7 @@ export const Doc = styled.div`
 `;
 
 export const Title = styled.h1`
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 600;
     text-align: center;
     justify-content: center;
