@@ -10,7 +10,7 @@ import Search from "./Route/Search/Search";
 import Shopping from "./Route/Shopping/Shopping";
 import Dashboard from "./Route/Dashboard/Dashboard";
 import WatchNow from "./Route/WatchNow/WatchNow";
-import Video from "./Componentes/Video/Video";
+import Video from "./Route/Video/Video";
 
 function App() {
   return (
