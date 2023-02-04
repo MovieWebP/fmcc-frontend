@@ -70,6 +70,7 @@ export interface MovieVideoProps {
     url: string
     title: string
     movieId: number
+    backdrop_path: string
 }
 
 export interface MovieVideosProps {

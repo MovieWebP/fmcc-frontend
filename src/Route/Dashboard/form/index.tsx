@@ -15,6 +15,7 @@ export interface IForm {
         url: string;
         title: string;
         movieId: number;
+        backdrop_path: string;
     };
     ok: boolean;
     error?: string;

@@ -24,10 +24,11 @@ function Detail({ detail, recommend, cast }: IModal) {
             </Helmet>
             {modalMatch ? (
                 <>
+                    {console.log(detail?.title, detail?.id, detail?.backdrop_path)}
                     <S.Wrap>
                         <S.WrapImage bgPhoto={makeImagePath(detail?.backdrop_path)}></S.WrapImage>
                         <ModalTop detail={detail} cast={cast} part={part} id={id} />
-                        <ModalBottom cast={cast} recommend={recommend} part={part} id={id}/>
+                        <ModalBottom cast={cast} recommend={recommend} part={part} id={id} />
                         <S.Doc>2023 choi138.tk, All rights reserved.</S.Doc>
                     </S.Wrap>
                 </>

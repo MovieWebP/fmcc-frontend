@@ -9,10 +9,11 @@ interface AllOutputFormProps {
 }
 
 interface GetMovieProps {
+    id: number
     url: string
     title: string
     movieId: number
-    id: number
+    backdrop_path: string
 }
 
 export const AllOutputForm: React.FC = () => {
@@ -20,7 +21,6 @@ export const AllOutputForm: React.FC = () => {
     const getMovies = async () => {
         const json = await (await fetch(`http://localhost:3005/video/all/1`
         )).json();
-        // console.log(json)
         setVideos(json)
     }
     useEffect(() => {
@@ -39,10 +39,10 @@ export const AllOutputForm: React.FC = () => {
                             <S.GetAllOutputObjectItem>{"-{"}</S.GetAllOutputObjectItem>
 
                             <S.GetAllOutputResultItem>id: {video.id}</S.GetAllOutputResultItem>
-                            <S.GetAllOutputResultItem>url: {video.url}</S.GetAllOutputResultItem>
-                            <S.GetAllOutputResultItem>title: {video.title}</S.GetAllOutputResultItem>
+                            <S.GetAllOutputResultItem>url: "{video.url}"</S.GetAllOutputResultItem>
+                            <S.GetAllOutputResultItem>title: "{video.title}"</S.GetAllOutputResultItem>
                             <S.GetAllOutputResultItem>movieId: {video.movieId}</S.GetAllOutputResultItem>
-
+                            <S.GetAllOutputResultItem>backdrop_path: "{video.backdrop_path}"</S.GetAllOutputResultItem>
                             <S.GetAllOutputObjectItem>{"},"}</S.GetAllOutputObjectItem>
                         </div>
                     </>

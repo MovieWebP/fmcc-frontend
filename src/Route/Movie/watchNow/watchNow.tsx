@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { getMovie, MovieVideoProps, MovieVideosProps } from "../../../Api/api";
+import { getDetail, getMovie, IGetResults, MovieVideoProps, MovieVideosProps } from "../../../Api/api";
 import { makeImagePath } from "../../../Api/utils";
 import * as S from "./style";
 
@@ -12,15 +12,9 @@ function WatchNow() {
                 refetchInterval: 50000
             }
         );
-    // const { data: nowPlaying, isLoading: playingLoading } =
-    //     useQuery<IGetResults>(
-    //         ["nowPlaying", "movie"],
-    //         getNowPlayingMovie,
-    //         {
-    //             refetchInterval: 50000
-    //         }
-    //     );
-    console.log(video?.results);
+    const id = video?.results.map((video: MovieVideoProps)  => (
+        video.movieId.toString()
+    ))
 
     return (
         <S.SearchSliderWrap>

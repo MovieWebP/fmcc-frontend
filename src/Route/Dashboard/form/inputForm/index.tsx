@@ -12,12 +12,14 @@ interface InputFormProps {
 
 export const InputForm: React.FC<InputFormProps> = ({ title, baseUrl, setApiData }) => {
 
+
     const rest = (e: React.FormEvent<HTMLFormElement>, title: string) => {
         if (title === "Create") {
             return {
                 "url": `${Object(e.target)[0].value}`,
                 "title": `${Object(e.target)[1].value}`,
                 "movieId": +Object(e.target)[2].value,
+                "backdrop_path": `${Object(e.target)[3].value}`,
             }
         }
         else if (title === "Update") {
@@ -26,6 +28,7 @@ export const InputForm: React.FC<InputFormProps> = ({ title, baseUrl, setApiData
                 "url": `${Object(e.target)[1].value}`,
                 "title": `${Object(e.target)[2].value}`,
                 "movieId": +Object(e.target)[3].value,
+                "backdrop_path": `${Object(e.target)[4].value}`,
             }
         }
         else if (title === "Delete" || title === "Get") {
@@ -49,7 +52,7 @@ export const InputForm: React.FC<InputFormProps> = ({ title, baseUrl, setApiData
         try {
             await instance.post('', rest(e, title))
                 .then((res) => {
-                    console.log(res.data);
+                    // console.log(res.data);
                     setApiData(res.data);
                 })
         } catch (err) {
@@ -58,22 +61,24 @@ export const InputForm: React.FC<InputFormProps> = ({ title, baseUrl, setApiData
         }
     };
 
+    const baseInfo =
+        <>
+            <InputDiv name="url" />
+            <InputDiv name="title" />
+            <InputDiv name="movieId" />
+            <InputDiv name="backdrop_path" />
+        </>
+
     return (
         <>
             <S.InputFrom onSubmit={onSubmit}>
                 {title === "Create" && (
-                    <>
-                        <InputDiv name="url" />
-                        <InputDiv name="title" />
-                        <InputDiv name="movieId" />
-                    </>
+                    baseInfo
                 )}
                 {title === "Update" && (
                     <>
                         <InputDiv name="videoId" />
-                        <InputDiv name="url" />
-                        <InputDiv name="title" />
-                        <InputDiv name="movieId" />
+                        {baseInfo}
                     </>
                 )}
                 {title === "Delete" || title === "Get" ? (

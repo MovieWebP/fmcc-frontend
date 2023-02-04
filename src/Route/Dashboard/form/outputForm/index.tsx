@@ -23,6 +23,7 @@ export const OutputForm: React.FC<OutputFormProps> = ({ apiData }) => {
                         <h3>url: {apiData.video.url}</h3>
                         <h3>title: {apiData.video.title}</h3>
                         <h3>movieId: {apiData.video.movieId}</h3>
+                        <h3>backdrop_path: {apiData.video.backdrop_path}</h3>
                     </>
                 )}
             </S.OutputForm>

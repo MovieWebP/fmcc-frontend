@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const InputFrom = styled.form`
     display: flex;
     width: 400px;
-    height: 27rem;
+    height: 33rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;

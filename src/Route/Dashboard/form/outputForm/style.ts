@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const OutputForm = styled.div`
     display: flex;
     width: 400px;
-    height: 27rem;
+    height: 33rem;
     flex-direction: column;
     border-radius: 1rem;
     border: 1px solid #323232;
