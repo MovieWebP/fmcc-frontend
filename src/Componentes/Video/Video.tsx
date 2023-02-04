@@ -25,13 +25,15 @@ function Video() {
                 ).map((video: VideoProps) => (
                     <>
                         <S.Title>{video.title}</S.Title>
-                        <ReactPlayer
-                            url={`${video?.url}`}
-                            playing={false}
-                            controls
-                            width="60rem"
-                            height="40rem"
-                        />
+                        <S.VideoWrap>
+                            <ReactPlayer
+                                url={`${video?.url}`}
+                                playing={false}
+                                controls
+                                width="60rem"
+                                height="40rem"
+                            />
+                        </S.VideoWrap>
                     </>
                 ))}
             </S.Wrap>

@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import { getVideo, VideoProps, VideosProps } from "../../Api/api";
-import * as S from "./styled";
+import * as S from "./WatchNowStyled";
 import { Helmet } from "react-helmet";
 import { Loading } from "../Style";
 import { Container } from "./contianer";

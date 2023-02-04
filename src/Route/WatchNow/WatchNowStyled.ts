@@ -22,6 +22,15 @@ export const Title = styled.h1`
 export const Wrap = styled.div`
     width: 90%;
     display: grid;
-    
-    grid-template-columns: repeat(3, 10fr); 
+    grid-template-columns: repeat(3, 1fr); 
+    @media screen and (max-width: 2600px) and (min-width: 2450px) {
+        grid-template-columns: repeat(5, 10fr); 
+    };
+    @media screen and (max-width: 2450px) and (min-width: 1200px) {
+        grid-template-columns: repeat(4, 1fr);  
+
+    };
+    @media screen and (max-width: 850px) and (min-width: 300px) {
+        grid-template-columns: repeat(2, 1fr);  
+    };
 `

@@ -19,18 +19,23 @@ export const VideoWrap = styled.div`
 `;
 
 export const Image = styled.img`
-    width: 25rem;
+    width: 20rem;
     filter: brightness(60%);
     border-radius: .5rem;
     &:focus{
         outline: 0; 
     }
+    @media screen and (max-width: 1850px) and (min-width: 1000px) {
+    width: 18rem;
+    };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+    width: 23rem;
+    };
 `;
 
 export const MovieTitle = styled.h3`
     font-size: 1.1rem;
     margin-top: 1rem;
-    /* border: 1px solid red; */
 `;
 
 export const PlayIcon = styled(MdPlayArrow)`
