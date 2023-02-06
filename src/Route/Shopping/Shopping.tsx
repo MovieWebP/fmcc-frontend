@@ -19,7 +19,7 @@ function Shopping() {
     const getMovies = async () => {
         const json = await (await fetch(`http://localhost:3005/video/all/1`
         )).json();
-        console.log(json.videos)
+        // console.log(json.videos)
         setVideos(json.videos)
     }
     useEffect(() => {
