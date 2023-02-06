@@ -25,7 +25,7 @@ export const AllOutputForm: React.FC = () => {
     }
     useEffect(() => {
         getMovies()
-    }, [videos])
+    }, [])
 
     return (
         <S.GetAllOutputForm>
