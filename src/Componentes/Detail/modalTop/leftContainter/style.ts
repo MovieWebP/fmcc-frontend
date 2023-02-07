@@ -15,7 +15,7 @@ export const LeftContianer = styled.div`
 
 export const ModalImage = styled.img`
     width: 11rem;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     @media screen and (max-width: 2600px) and (min-width: 2000px) {
         width: 13rem;
     };

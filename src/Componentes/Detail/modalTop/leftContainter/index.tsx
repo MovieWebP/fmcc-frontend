@@ -8,7 +8,7 @@ interface ContainerProps {
     part?: string;
 }
 
-export const LeftContainer: React.FC<ContainerProps> = ({detail, part}) => {
+export const LeftContainer: React.FC<ContainerProps> = ({ detail, part }) => {
     return (
         <>
             <S.LeftContianer>

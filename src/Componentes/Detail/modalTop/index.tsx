@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ICast, IGetDetail } from "../../../Api/api";
+import { Title } from "../title";
 import { Clip } from "./clip"
 import { LeftContainer } from "./leftContainter"
 import { RightContainer } from "./rightConatiner";
@@ -12,7 +13,7 @@ interface ModalTopProps {
     id?: string;
 }
 
-export const ModalTop: React.FC<ModalTopProps> = ({detail, cast, part, id}) => {
+export const ModalTop: React.FC<ModalTopProps> = ({ detail, cast, part, id }) => {
 
     const [windowDimension, detectHW] = useState({ winWidth: window.innerWidth })
 
@@ -39,6 +40,10 @@ export const ModalTop: React.FC<ModalTopProps> = ({detail, cast, part, id}) => {
                     <RightContainer detail={detail} cast={cast} part={part} />
                 )}
             </S.ModalTop>
+            <S.SumDiv>
+                <Title title="Summary" />
+                <S.InfoOverview>{detail?.overview}</S.InfoOverview>
+            </S.SumDiv>
         </>
     )
 }
