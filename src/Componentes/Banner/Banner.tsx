@@ -22,10 +22,9 @@ function Banner({ part, id, movies }: IBanner) {
     const [sliderMoving, setSliderMoving] = useState(false);
     const [sliderMovingPrev, setSliderMovingPrev] = useState(false);
 
-    const totlaLength = movies.length - 16;
-    const maxIndex = Math.floor(totlaLength / offset);
+    const totalLength = movies.length - 16;
+    const maxIndex = Math.floor(totalLength / offset);
 
-    // slider + 1
     const moveSlider = () => {
         if (!sliderMoving && movies) {
             setSliderMoving(true);
@@ -34,7 +33,6 @@ function Banner({ part, id, movies }: IBanner) {
         }
     }
 
-    // slider - 1
     const moveSliderPrev = () => {
         if (!sliderMoving && movies) {
             setSliderMoving(false);
@@ -43,7 +41,6 @@ function Banner({ part, id, movies }: IBanner) {
         }
     }
 
-    // slider done
     const ExitMoveSlider = () => {
         setSliderMoving(false);
         setSliderMovingPrev(false);
