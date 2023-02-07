@@ -38,11 +38,11 @@ export const MenuItems = () => {
                 <S.ItemStyle href="/tv">TV Shows</S.ItemStyle>
             )}
 
-            {shoppingMatch ? (
+            {/* {shoppingMatch ? (
                 <S.MatchItemStyle href="/shopping">Shopping</S.MatchItemStyle>
             ) : (
                 <S.ItemStyle href="/shopping">Shopping</S.ItemStyle>
-            )}
+            )} */}
         </S.MenuItems>
     )
 }

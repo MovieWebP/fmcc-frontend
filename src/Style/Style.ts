@@ -59,7 +59,7 @@ body {
   font-weight: 400;
   font-family: Roboto,Helvetica,Arial,sans-serif;
   color: #fafafa;
-  background-color: #181818;
+  background-color: rgba(0, 0, 0, 1);
   line-height: 1.2;
 }
 a {

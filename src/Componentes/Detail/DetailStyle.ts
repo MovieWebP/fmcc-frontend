@@ -13,12 +13,11 @@ export const Wrap = styled.div`
 
 export const WrapImage = styled.div < { bgPhoto: string }> `
     background-image: url(${(props) => props.bgPhoto});
-    opacity: 0.3;
     background-position: center;
     background-attachment: fixed; 
     align-self: center;
     height: 100%;
-    filter: blur(4px);
+    filter: blur(14px) brightness(0.15);
     position: absolute;
     background-size: cover;
     width: 100%;

@@ -27,11 +27,11 @@ export const Overview: React.FC<OverviewProps> = ({ movie }) => {
             {
                 windowDimension.winWidth <= 700 && windowDimension.winWidth > 500 ? (
                     <S.Overview>
-                        {movie?.overview ? movie?.overview.slice(0, 82) + "..." : null}
+                        {movie?.overview ? movie?.overview.slice(0, 75) + "..." : null}
                     </S.Overview>
                 ) : (
                     <S.Overview>
-                        {movie?.overview ? movie?.overview.slice(0, 103) + "..." : null}
+                        {movie?.overview ? movie?.overview.slice(0, 90) + "..." : null}
                     </S.Overview>
                 )
             }

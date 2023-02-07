@@ -46,11 +46,7 @@ export const MainImage = styled(motion.div) < { bgphoto: string }> `
   z-index: -100;
   display: flex;
   background-image: 
-  linear-gradient(
-    rgba(19, 16, 16, 0.3),
-    rgba(19, 16, 16, 0.3),
-    #181818
-    ), 
+  linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%),
     url(${(props) => props.bgphoto});
     filter: blur(4px);
     background-size: cover;
