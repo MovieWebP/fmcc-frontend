@@ -12,7 +12,7 @@ import SlickSlider from "./Slick";
 interface IProps {
     id: string;
     part: string;
-    title: string;
+    title?: string;
     query: string;
     movies: IMovie[];
 }
@@ -23,8 +23,10 @@ function Slide({ id, part, title, movies }: IProps) {
 
     const settings = {
         infinite: false,
-        slidesToShow: 6,
+        slidesToShow: 4.5,
         slidesToScroll: slidesToShow,
+        scroll: false,
+
         speed: 1000,
         pauseOnHover: true,
         draggable: true,
@@ -32,38 +34,31 @@ function Slide({ id, part, title, movies }: IProps) {
         prevArrow: <PrevArrow />,
         responsive: [
             {
-                breakpoint: 2570,
-                settings: {
-                    slidesToShow: 8,
-                    slidesToScroll: 8,
-                }
-            },
-            {
                 breakpoint: 2000,
-                settings: {
-                    slidesToShow: 7,
-                    slidesToScroll: 7,
-                }
-            },
-            {
-                breakpoint: 1800,
-                settings: {
-                    slidesToShow: 5.5,
-                    slidesToScroll: 5,
-                }
-            },
-            {
-                breakpoint: 1300,
                 settings: {
                     slidesToShow: 4.5,
                     slidesToScroll: 4,
                 }
             },
             {
-                breakpoint: 800,
+                breakpoint: 1800,
+                settings: {
+                    slidesToShow: 4.5,
+                    slidesToScroll: 4,
+                }
+            },
+            {
+                breakpoint: 1300,
                 settings: {
                     slidesToShow: 3.5,
                     slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 800,
+                settings: {
+                    slidesToShow: 2.5,
+                    slidesToScroll: 2,
                 }
             },
         ]
@@ -94,22 +89,22 @@ function Slide({ id, part, title, movies }: IProps) {
     }, [windowDimension]);
 
     if (windowDimension.winWidth <= 800) {
-        slidesToShow = 3.5;
+        slidesToShow = 2.5;
     } else if (windowDimension.winWidth > 800 && windowDimension.winWidth <= 1300) {
-        slidesToShow = 4.5;
+        slidesToShow = 3.5;
     } else if (windowDimension.winWidth > 1300 && windowDimension.winWidth <= 1800) {
-        slidesToShow = 5.5;
-    } else if (windowDimension.winWidth > 1800 && windowDimension.winWidth <= 2000) {
-        slidesToShow = 7;
+        slidesToShow = 4.5;
     } else {
-        slidesToShow = 8;
+        slidesToShow = 4.5;
     }
 
     return (
         <S.SliderWrap>
-            <S.TitleWrap>
-                <S.Title>{title}</S.Title>
-            </S.TitleWrap>
+            {title !== undefined && (
+                <S.TitleWrap>
+                    <S.Title>{title}</S.Title>
+                </S.TitleWrap>
+            )}
             <S.Wrap>
                 <S.Slider>
                     {windowDimension.winWidth <= 500 ? (

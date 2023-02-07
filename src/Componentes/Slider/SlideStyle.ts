@@ -7,26 +7,41 @@ export const SliderWrap = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 30rem;
-    @media screen and (max-width: 500px) and (min-width: 300px) {
+    height: 100%;
+    margin-bottom: 5rem;
+    @media screen and (max-width: 1000px) and (min-width: 300px) {
         height: 33rem;
-        margin: 3rem 0;
+    };
+    @media screen and (max-width: 1000px) and (min-width: 500px) {
+        height: 100%;
     };
 `;
 export const Wrap = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    height: 25rem;
+    width: 80%;
+    height: fit-content;
     @media screen and (max-width: 500px) and (min-width: 300px) {
-        height: 100%;
+        width: 100%;
     };
+    @media screen and (min-width: 1800px) {
+        width: 70%;
+    };
+    
 `;
 
 export const TitleWrap = styled.div`
     align-items: flex-end;
-    width: 90%;
+    width: 80%;
+    margin-bottom: 1rem;
+    @media screen and (min-width: 1800px) {
+        width: 70%;
+    };
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 100%;
+        margin-left: 4.5rem;
+    };
 `;
 
 export const Title = styled.h3`
@@ -36,8 +51,9 @@ export const Title = styled.h3`
     font-weight: 600;
     color: ${props => props.theme.lightPurple};
     margin-top: 1.1rem;
-    @media screen and (max-width: 500px) and (min-width: 800px) {
-        font-size: 1.8rem;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-size: 2.3rem;
+        width: 100%;
     };
 `;
 
@@ -68,34 +84,28 @@ export const Movie = styled.div`
     &:focus{
         outline: 0; 
     }
-    margin-right: 23px;
+    padding-right: 1.2rem;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        &:first-child{
+            margin-left: 2.5rem;
+        }
+    };
 `;
 
 export const MovieImage = styled.img`
-width: 11rem;
-border-radius: .8rem;
-@media screen and (min-width: 1800px) {
-    margin-left: auto;
-    margin-right: auto;
-};
-@media screen and (max-width: 700px) and (min-width: 500px) {
-    width: 12rem;
-};
-@media screen and (max-width: 500px) and (min-width: 300px) {
-    width: 15rem;
-};
+width: 100%;
 &:focus{
     outline: 0; 
 }
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        width: 18.8rem;
+    };
 `;
 
 export const MovieTitleWrap = styled.div`
+    display: flex;
     justify-content: flex-start;
     margin-top: 10px;
-    @media screen and (min-width: 1800px) {
-        display: flex;
-        justify-content: center;
-    };
 `;
 
 export const MovieTitle = styled.p`
@@ -108,7 +118,7 @@ export const MovieTitle = styled.p`
     text-overflow: ellipsis;  	// 로 ... 을 만들기 
     white-space: nowrap; 
     transition: all .3s ease;
-    width: 11rem;
+    width: 100%;
     &:hover{
         text-decoration: underline ${(props) => props.theme.white};
     }

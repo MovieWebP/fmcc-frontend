@@ -9,6 +9,7 @@ export const SliderWrap = styled.div`
     align-items: center;
     flex-wrap: wrap;
     overflow: hidden;
+    margin: 2rem 0;
 `;
 
 export const SearchSliderWrap = styled(SliderWrap)`

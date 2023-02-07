@@ -20,7 +20,7 @@ export const VideoWrap = styled.div`
 
 export const Image = styled.img`
     width: 20rem;
-    filter: brightness(60%);
+    filter: brightness(75%);
     border-radius: .5rem;
     &:focus{
         outline: 0; 

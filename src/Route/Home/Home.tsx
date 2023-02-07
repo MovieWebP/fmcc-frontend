@@ -6,6 +6,7 @@ import { getAiringTodayTv, getNowPlayingMovie, getOnTheAirTv, getPopularMovie, g
 import Banner from "../../Componentes/Banner/Banner";
 import * as S from "../Style";
 import { useRecoilValue } from "recoil";
+import { useEffect, useState } from "react";
 
 function Home() {
 
@@ -49,6 +50,23 @@ function Home() {
 
     const isLoading = playingLoading || popularLoading || AiringTodayLoading || popularTvLoading || false;
 
+    const [windowDimension, detectHW] = useState({ winWidth: window.innerWidth })
+
+    const detectSize = () => {
+        detectHW({
+            winWidth: window.innerWidth
+        })
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', detectSize)
+
+        return () => {
+            window.removeEventListener('resize', detectSize)
+        }
+    }, [windowDimension]);
+
+
     return (
         <>
             <Helmet>
@@ -64,37 +82,34 @@ function Home() {
                         movies={nowPlaying?.results || []}
                     />
                     <S.SliderWrap>
-                        <S.SliderTitle>Movie</S.SliderTitle>
                         <Slide
                             id="nowPlaying"
                             part="movie"
-                            title="Now Playing"
+                            title="Movie"
                             query="nowPlaying"
                             movies={nowPlaying?.results || []}
+
                         />
                         <Slide
                             id="popular"
                             part="movie"
-                            title="Popular"
                             query="popular"
                             movies={popular?.results || []}
                         />
                     </S.SliderWrap>
                     <S.SliderWrap>
-                        <S.SliderTitle>TV Shows</S.SliderTitle>
-                        <Slide
-                            id="airingToday"
-                            part="tv"
-                            title="Now Playing"
-                            query="airingToday"
-                            movies={airingToday?.results || []}
-                        />
                         <Slide
                             id="popularTv"
                             part="tv"
-                            title="Popular Tv"
+                            title="TV Shows"
                             query="popularTv"
                             movies={popularTv?.results || []}
+                        />
+                        <Slide
+                            id="airingToday"
+                            part="tv"
+                            query="airingToday"
+                            movies={airingToday?.results || []}
                         />
                     </S.SliderWrap>
                     <S.Doc>2022 choi138.tk, All rights reserved.</S.Doc>
