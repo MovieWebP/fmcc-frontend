@@ -32,6 +32,8 @@ export const ModalTop = styled.div`
 `;
 
 export const SumDiv = styled.div`  
+    width: 100%;
+    max-width: 75%;
 @media screen and (max-width: 2600px) and (min-width: 2350px) {
         max-width: 55%;
     };
