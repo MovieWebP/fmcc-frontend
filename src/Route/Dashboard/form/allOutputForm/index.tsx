@@ -19,7 +19,7 @@ interface GetMovieProps {
 export const AllOutputForm: React.FC = () => {
     const [videos, setVideos] = useState<AllOutputFormProps>()
     const getMovies = async () => {
-        const json = await (await fetch(`http://localhost:3005/video/all/1`
+        const json = await (await fetch(`http://175.193.156.87:3005/video/all/1`
         )).json();
         setVideos(json)
     }

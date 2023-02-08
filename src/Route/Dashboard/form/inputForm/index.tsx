@@ -16,10 +16,10 @@ export const InputForm: React.FC<InputFormProps> = ({ title, baseUrl, setApiData
     const rest = (e: React.FormEvent<HTMLFormElement>, title: string) => {
         if (title === "Create") {
             return {
-                "url": `http://localhost:3005/video/movie/${Object(e.target)[0].value}/${Object(e.target)[1].value}.m3u8`,
-                "title": `${Object(e.target)[0].value}`,
-                "movieId": +Object(e.target)[1].value,
-                "backdrop_path": `${Object(e.target)[2].value}`,
+                "url": `${Object(e.target)[0].value}`,
+                "title": `${Object(e.target)[1].value}`,
+                "movieId": +Object(e.target)[2].value,
+                "backdrop_path": `${Object(e.target)[3].value}`,
             }
         }
         else if (title === "Update") {
@@ -62,6 +62,7 @@ export const InputForm: React.FC<InputFormProps> = ({ title, baseUrl, setApiData
 
     const baseInfo =
         <>
+            <InputDiv name="url" />
             <InputDiv name="title" />
             <InputDiv name="movieId" />
             <InputDiv name="backdrop_path" />

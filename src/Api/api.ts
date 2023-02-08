@@ -176,6 +176,6 @@ export async function getCast(part?: string, id?: string) {
 
 export async function getVideo() {
     return await fetch(
-        'http://127.0.0.1:3005/video/all/1'
+        'http://choi138.site:3005/video/all/1'
     ).then((res) => res.json());
 }
