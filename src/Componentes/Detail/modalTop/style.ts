@@ -34,7 +34,11 @@ export const ModalTop = styled.div`
 export const SumDiv = styled.div`  
     width: 100%;
     max-width: 75%;
-@media screen and (max-width: 2600px) and (min-width: 2350px) {
+    color: ${(props) => props.theme.white};
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+    @media screen and (max-width: 2600px) and (min-width: 2350px) {
         max-width: 55%;
     };
     @media screen and (max-width: 2350px) and (min-width: 2000px) {
@@ -50,10 +54,21 @@ export const SumDiv = styled.div`
     z-index: 100;
 `;
 
+export const SumTitle = styled.h1`
+    color: ${(props) => props.theme.white};
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+    @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-size: 2.5rem;
+    };
+`;
+
 export const InfoDate = styled.span`
     font-size: 1.1rem;
     color: ${(props) => props.theme.lightPurple};
     @media screen and (max-width: 500px) and (min-width: 300px) {
+        font-weight: 500;
         font-size: 1.5rem;
     };
 

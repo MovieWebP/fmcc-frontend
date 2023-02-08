@@ -41,7 +41,7 @@ export const ModalTop: React.FC<ModalTopProps> = ({ detail, cast, part, id }) =>
                 )}
             </S.ModalTop>
             <S.SumDiv>
-                <Title title="Summary" />
+                <S.SumTitle>Summary</S.SumTitle>
                 <S.InfoOverview>{detail?.overview}</S.InfoOverview>
             </S.SumDiv>
         </>
