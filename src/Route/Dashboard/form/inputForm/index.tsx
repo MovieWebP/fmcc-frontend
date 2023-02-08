@@ -25,9 +25,10 @@ export const InputForm: React.FC<InputFormProps> = ({ title, baseUrl, setApiData
         else if (title === "Update") {
             return {
                 "videoId": +Object(e.target)[0].value,
-                "title": `${Object(e.target)[1].value}`,
-                "movieId": +Object(e.target)[2].value,
-                "backdrop_path": `${Object(e.target)[3].value}`,
+                "url": `${Object(e.target)[1].value}`,
+                "title": `${Object(e.target)[2].value}`,
+                "movieId": +Object(e.target)[3].value,
+                "backdrop_path": `${Object(e.target)[4].value}`,
             }
         }
         else if (title === "Delete" || title === "Get") {
