@@ -39,8 +39,8 @@ function Video() {
                                     url={`${video?.url}`}
                                     playing={false}
                                     controls
-                                    width="60rem"
-                                    height="40rem"
+                                    width="100%"
+                                    height="100%"
                                 />
                             </S.VideoWrap>
                         </>

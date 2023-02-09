@@ -16,10 +16,11 @@ font-size: 4rem;
 `;
 
 export const VideoWrap = styled.div`
-    width: 60rem;
-     height: 40rem; 
+     width: 45rem;
+     height: 30rem; 
      margin: 2rem;
      overflow: hidden; 
+     border: 1px solid #323232;
      border-radius: 1rem;
 `;
 

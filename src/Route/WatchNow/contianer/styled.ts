@@ -29,7 +29,7 @@ export const Image = styled.img`
     width: 18rem;
     };
     @media screen and (max-width: 500px) and (min-width: 300px) {
-    width: 23rem;
+    width: 21rem;
     };
 `;
 
