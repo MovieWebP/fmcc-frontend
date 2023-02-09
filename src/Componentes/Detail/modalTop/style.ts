@@ -77,6 +77,8 @@ export const InfoDate = styled.span`
 export const InfoOverview = styled.div`
     color: ${(props) => props.theme.white};
     min-width: 100px;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin-top: 5px;
     @media screen and (max-width: 500px) and (min-width: 300px) {
         font-size: 1.4rem;
