@@ -40,6 +40,9 @@ export const Recommend: React.FC<RecommendProps> = ({recommend, part, id}) => {
                                 src={makeImagePath(
                                     recommend.poster_path
                                 )}
+                                onClick={() =>
+                                    modalOpen(part, recommend.id, id)
+                                }
                             />
                             <S.RecommendTitle
                                 key={recommend.id}
