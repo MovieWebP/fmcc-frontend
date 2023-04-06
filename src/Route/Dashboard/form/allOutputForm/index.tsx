@@ -26,6 +26,7 @@ export const AllOutputForm: React.FC = () => {
     useEffect(() => {
         getMovies()
     }, [])
+    console.log(videos?.results.map((index: GetMovieProps) => index.title), "videos")
 
     return (
         <S.GetAllOutputForm>
